@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-     <title>Aurélien Amet | Recherches</title>
+    <title>Aurélien Amet | Recherches</title>
     <link rel="icon" type="image/png" href="src/favicon.png" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -19,7 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <link href="style-main.css" rel="stylesheet" />
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -102,14 +102,34 @@
 </head>
 
 <body class="font-body selection:bg-secondary-container">
-    <!-- TopAppBar -->
+
+    <!-- Nav Bar -->
     <nav
         class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200/15 dark:border-zinc-800/15 shadow-sm dark:shadow-none">
-        <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto">
-            <div class="text-2xl font-['Newsreader'] font-bold tracking-tight text-emerald-950 dark:text-emerald-50">
-                LinguistCode
-            </div>
-            <div class="hidden md:flex space-x-12 items-center">
+        <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto flex-wrap">
+
+            <!-- Logo -->
+            <a href="index.html"
+                class="group relative flex items-center h-8 font-['Newsreader'] font-bold tracking-tight text-emerald-950 dark:text-emerald-50 w-48">
+                <span
+                    class="absolute text-2xl transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0">
+                    LinguistCode
+                </span>
+                <span
+                    class="absolute text-lg whitespace-nowrap transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 text-primary">
+                    Aurélien Amet
+                </span>
+            </a>
+
+            <!-- Bouton Hamburger (Visible uniquement sur mobile) -->
+            <button id="mobile-menu-btn"
+                class="md:hidden flex items-center text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 focus:outline-none">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+
+            <!-- Liens de navigation (Cachés par défaut sur mobile, visibles sur desktop) -->
+            <div id="nav-links"
+                class="hidden w-full absolute top-20 left-0 bg-white/95 dark:bg-zinc-950/95 flex-col items-center py-6 gap-6 shadow-md border-b border-zinc-200/15 md:static md:flex md:flex-row md:w-auto md:space-x-12 md:bg-transparent md:py-0 md:gap-0 md:shadow-none md:border-none">
                 <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
                     href="index.html">Accueil</a>
                 <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
@@ -118,11 +138,20 @@
                     href="Research.html">Recherche</a>
                 <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
                     href="WIP.html">Contact</a>
+
+                <!-- Bouton CV pour Mobile (S'intègre dans le menu déroulant) -->
+                <a href="src/cv.pdf" target="_blank"
+                    class="md:hidden bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm mt-2">
+                    Télécharger CV
+                </a>
             </div>
+
+            <!-- Bouton CV pour Desktop (Reste à droite) -->
             <a href="src/cv.pdf" target="_blank"
-                class="bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm">
+                class="hidden md:block bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm">
                 Télécharger CV
             </a>
+
         </div>
     </nav>
     <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
@@ -135,7 +164,7 @@
                         d'Investigation</span>
                 </div>
                 <h1 class="font-headline text-5xl md:text-7xl italic text-primary leading-tight mb-8">
-                    Décrypter le sens au cœur du pouvoir.
+                    Décrypter le sens, au cœur du pouvoir.
                 </h1>
                 <p class="font-body text-lg text-on-surface-variant leading-relaxed max-w-2xl">
                     Mes travaux actuels se concentrent sur l'utilisation de la peur par les présidents americains du 21e
@@ -236,66 +265,109 @@
             <span class="h-px bg-outline-variant flex-grow"></span>
         </div>
 
-    <!-- Approches Théoriques Section -->
-    <section class="theoretical-section">
-        <div class="theoretical-grid">
-            <div class="theoretical-cell wide">
-                <h3>Analyse Critique de Discours (CDA)</h3>
-                <p class="text-justify">A l'intersection de la linguistique, des sciences politiques et de l'histoire, mon travail en CDA cherche à dévoiler les mécanismes qui permettent à la peur d'être utilisée discursivement par des acteurs politiques afin de persuader et de pousser à l'action. Un regard historique est nécessaire pour comprendre le système politique americain et son évolution. Ce contexte historique est une variable capitale pour l'analyse critique. A la croisée des sciences politiques, la linguistique et plus particulièrement la pragmatique permettent d'analyser les relations de pouvoir entre communicants et offrent un cadre solide pour comprendre le non-dit et l'implicite.</p>
+        <!-- Approches Théoriques Section -->
+        <section class="theoretical-section">
+            <div class="theoretical-grid">
+                <div class="theoretical-cell wide">
+                    <h3>Analyse Critique de Discours (CDA)</h3>
+                    <p class="text-justify">A l'intersection de la linguistique, des sciences politiques et de
+                        l'histoire, mon travail en CDA cherche à dévoiler les mécanismes qui permettent à la peur d'être
+                        utilisée discursivement par des acteurs politiques afin de persuader et de pousser à l'action.
+                        Un regard historique est nécessaire pour comprendre le système politique americain et son
+                        évolution. Ce contexte historique est une variable capitale pour l'analyse critique. A la
+                        croisée des sciences politiques, la linguistique et plus particulièrement la pragmatique
+                        permettent d'analyser les relations de pouvoir entre communicants et offrent un cadre solide
+                        pour comprendre le non-dit et l'implicite.</p>
 
-                <p class="text-justify">Je porte un interet tout particulier aux discours liberticides, anti-démocratiques, autoritaires mais aussi au discours anti-scientifiques, fallacieux et conspirationistes. Cela m'amène à étudier, entre autres, les discours populistes et ethnonationalistes et leurs évolutions historiques.
-                </p>
+                    <p class="text-justify">Je porte un interet tout particulier aux discours liberticides,
+                        anti-démocratiques, autoritaires mais aussi au discours anti-scientifiques, fallacieux et
+                        conspirationistes. Cela m'amène à étudier, entre autres, les discours populistes et
+                        ethnonationalistes et leurs évolutions historiques.
+                    </p>
 
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Discours</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Société</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Idéologie</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Politique</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Hégémonie</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Populisme</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">CMT</span>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Discours</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Société</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Idéologie</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Politique</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Hégémonie</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Populisme</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">CMT</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="theoretical-cell narrow">
-                <h3>Pragmatique</h3>
-                <p class="text-justify">Mes travaux me poussent à (re)considérer les mécanismes politesses, de transmissions d'émotions et d'information, au délà des approchées (néo-)gricéenes. C'est dans le dépassement des normes conversationnelles que l'usage qui est fait de la langue se révèle le plus interessant.</p>
-                <p class="text-justify"> Interessé par l'étude d'une variété de phénomènes pragmatiques, je travaille actuellement sur les notions d'impolitesse stratégique, de persuasion, de manipulation, sur la transmission des émotions et le rapport à la vérité.</p>
+                <div class="theoretical-cell narrow">
+                    <h3>Pragmatique</h3>
+                    <p class="text-justify">Mes travaux me poussent à (re)considérer les mécanismes politesses, de
+                        transmissions d'émotions et d'information, au délà des approchées (néo-)gricéenes. C'est dans le
+                        dépassement des normes conversationnelles que l'usage qui est fait de la langue se révèle le
+                        plus interessant.</p>
+                    <p class="text-justify"> Interessé par l'étude d'une variété de phénomènes pragmatiques, je
+                        travaille actuellement sur les notions d'impolitesse stratégique, de persuasion, de
+                        manipulation, sur la transmission des émotions et le rapport à la vérité.</p>
 
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Redéfinition</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Deixis</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Information Structure</span>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Redéfinition</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Deixis</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Information
+                            Structure</span>
+                    </div>
                 </div>
-            </div>
 
-            
-            <div class="theoretical-cell narrow">
-                <h3>Linguistique de Corpus (CL)</h3>
-                <p class="text-justify">La linguistique de corpus permet d'aborder précisement des analyses quantitatives de larges corpus, de les annoters et d'extraire des schémas qu'il aurait été difficile de percevoir à l'oeuil nu. Le developpement des outils d'analyse peine a rattraper le rythme de l'expansion des corpus numériques, ce qui représente également un enjeu particulier pour la recherche.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Sketchengine</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Python</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">TXM</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">NLP</span>
+
+                <div class="theoretical-cell narrow">
+                    <h3>Linguistique de Corpus (CL)</h3>
+                    <p class="text-justify">La linguistique de corpus permet d'aborder précisement des analyses
+                        quantitatives de larges corpus, de les annoters et d'extraire des schémas qu'il aurait été
+                        difficile de percevoir à l'oeuil nu. Le developpement des outils d'analyse peine a rattraper le
+                        rythme de l'expansion des corpus numériques, ce qui représente également un enjeu particulier
+                        pour la recherche.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Sketchengine</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Python</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">TXM</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">NLP</span>
+                    </div>
                 </div>
+
+                <div class="theoretical-cell wide">
+                    <h3>Analyse Grammaticale</h3>
+                    <p class="text-justify">Au coeur du travail en linguistique appliquée se trouve l'analyse des faits
+                        de langues. Au fil des années, mon travail m'a conduit à me spécialiser dans l'analyse du
+                        domaine nominal au sens large, en y incluant les questions de détermination et référence, puis
+                        par extension le domaine adjectival.</p>
+                    <p class="text-justify">La phrase complexe, les réagencements de l'ordre canonique et leurs
+                        conséquences sur la structure informationnelle de l'énoncé informent grandement le reste de mes
+                        recherches, en faisant le lien entre l'interface syntaxe/sémantique et pragmatique.</p>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Nominalisation</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Référence</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Dénotation</span>
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Conotation</span>
+                    </div>
+                </div>
+
             </div>
-
-            <div class="theoretical-cell wide">
-                <h3>Analyse Grammaticale</h3>
-                <p class="text-justify">Au coeur du travail en linguistique appliquée se trouve l'analyse des faits de langues. Au fil des années, mon travail m'a conduit à me spécialiser dans l'analyse du domaine nominal au sens large, en y incluant les questions de détermination et référence, puis par extension le domaine adjectival.</p>
-                <p class="text-justify">La phrase complexe, les réagencements de l'ordre canonique et leurs conséquences sur la structure informationnelle de l'énoncé informent grandement le reste de mes recherches, en faisant le lien entre l'interface syntaxe/sémantique et pragmatique.</p>
-
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Nominalisation</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Référence</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Dénotation</span>
-                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Conotation</span>
-                </div> 
-            </div>
-
-        </div>
-    </section>
+        </section>
 
 
         <!-- Publications Section -->
@@ -528,8 +600,9 @@
     </footer>
 
     <script>
+        // script pour le bouton de copie d'email
         const emailToCopy = 'amet.sorbonne@gmail.com';
-        document.getElementById('copyEmailBtn').addEventListener('click', async () => {
+        document.getElementById('copyEmailBtnS').addEventListener('click', async () => {
             try {
                 await navigator.clipboard.writeText(emailToCopy);
                 const toast = document.createElement('div');
@@ -541,5 +614,23 @@
                 alert('Impossible de copier l\'email. Veuillez le copier manuellement : ' + emailToCopy);
             }
         });
+        // script pour le menu mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            // Bascule l'affichage du menu
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+
+            // Change l'icône hamburger en croix quand le menu est ouvert
+            if (navLinks.classList.contains('hidden')) {
+                menuIcon.textContent = 'menu';
+            } else {
+                menuIcon.textContent = 'close';
+            }
+        });
+
     </script>
 </body>
