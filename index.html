@@ -105,14 +105,34 @@
 
 <body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
 
-    <!-- TopAppBar -->
+    <!-- Nav Bar -->
     <nav
         class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200/15 dark:border-zinc-800/15 shadow-sm dark:shadow-none">
-        <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto">
-            <div class="text-2xl font-['Newsreader'] font-bold tracking-tight text-emerald-950 dark:text-emerald-50">
-                LinguistCode
-            </div>
-            <div class="hidden md:flex space-x-12 items-center">
+        <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto flex-wrap">
+
+            <!-- Logo -->
+            <a href="index.html"
+                class="group relative flex items-center h-8 font-['Newsreader'] font-bold tracking-tight text-emerald-950 dark:text-emerald-50 w-48">
+                <span
+                    class="absolute text-2xl transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0">
+                    LinguistCode
+                </span>
+                <span
+                    class="absolute text-lg whitespace-nowrap transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 text-primary">
+                    Aurélien Amet
+                </span>
+            </a>
+
+
+            <!-- Bouton Menu (mobile only) -->
+            <button id="mobile-menu-btn"
+                class="md:hidden flex items-center text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 focus:outline-none">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+
+            <!-- Liens de navigation (desktop only) -->
+            <div id="nav-links"
+                class="hidden w-full absolute top-20 left-0 bg-white/95 dark:bg-zinc-950/95 flex-col items-center py-6 gap-6 shadow-md border-b border-zinc-200/15 md:static md:flex md:flex-row md:w-auto md:space-x-12 md:bg-transparent md:py-0 md:gap-0 md:shadow-none md:border-none">
                 <a class="font-['Newsreader'] italic font-medium text-emerald-900 dark:text-emerald-400 border-b-2 border-emerald-900 dark:border-emerald-400 pb-1 translate-y-[1px] transition-transform"
                     href="index.html">Accueil</a>
                 <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
@@ -121,11 +141,20 @@
                     href="Research.html">Recherche</a>
                 <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
                     href="WIP.html">Contact</a>
+
+                <!-- Bouton CV (dans le menu sur mobile) -->
+                <a href="src/cv.pdf" target="_blank"
+                    class="md:hidden bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm mt-2">
+                    Télécharger CV
+                </a>
             </div>
+
+            <!-- Bouton CV (A droite sur desktop) -->
             <a href="src/cv.pdf" target="_blank"
-                class="bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm">
+                class="hidden md:block bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm">
                 Télécharger CV
             </a>
+
         </div>
     </nav>
     <main class="pt-32 pb-20 px-8 max-w-7xl mx-auto">
@@ -171,7 +200,9 @@
                 </div>
             </div>
         </section>
-        <!-- Fields of Specialization: Bento-style with tonal shifts -->
+
+
+        <!-- Domaines d'Expertise -->
         <section class="mb-32">
             <div class="mb-12">
                 <h2 class="font-headline text-4xl text-primary font-bold mb-2">Domaines d'Expertise</h2>
@@ -253,7 +284,9 @@
                 class="flex flex-wrap justify-between items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
                 <a href="https://celiso.paris-sorbonne.fr/en/homepage/"
                     class="font-headline italic text-2xl text-primary">CeLiSo (UR7332), Sorbonne Université</a>
-                <a href="https://www.sorbonne-nouvelle.fr/departement-monde-anglophone-21481.kjsp" class="font-headline italic text-2xl text-primary">Département Monde Anglophone, Sorbonne Nouvelle</a>
+                <a href="https://www.sorbonne-nouvelle.fr/departement-monde-anglophone-21481.kjsp"
+                    class="font-headline italic text-2xl text-primary">Département Monde Anglophone, Sorbonne
+                    Nouvelle</a>
             </div> <br>
             <hr>
             <br>
@@ -291,6 +324,7 @@
     </footer>
 
     <script>
+        // script pour le bouton de copie d'email
         const emailToCopy = 'amet.sorbonne@gmail.com';
         document.getElementById('copyEmailBtnS').addEventListener('click', async () => {
             try {
@@ -304,6 +338,24 @@
                 alert('Impossible de copier l\'email. Veuillez le copier manuellement : ' + emailToCopy);
             }
         });
+        // script pour le menu mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            // Bascule l'affichage du menu
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+
+            // Change l'icône hamburger en croix quand le menu est ouvert
+            if (navLinks.classList.contains('hidden')) {
+                menuIcon.textContent = 'menu';
+            } else {
+                menuIcon.textContent = 'close';
+            }
+        });
+
     </script>
 </body>
 
