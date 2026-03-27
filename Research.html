@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+     <title>Aurélien Amet | Recherches</title>
+    <link rel="icon" type="image/png" href="src/favicon.png" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="style-main.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#b3ccc3",
+                        "outline": "#707975",
+                        "on-surface-variant": "#3f4945",
+                        "on-background": "#1a1c1c",
+                        "inverse-primary": "#94d3c1",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-container": "#506760",
+                        "primary-fixed-dim": "#94d3c1",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#00342b",
+                        "error": "#ba1a1a",
+                        "tertiary": "#4e2013",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary-fixed": "#370e04",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f3f3f3",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#00201a",
+                        "primary-fixed": "#afefdd",
+                        "tertiary-fixed-dim": "#ffb5a1",
+                        "on-tertiary-fixed-variant": "#6d382a",
+                        "secondary": "#4c635c",
+                        "on-primary-container": "#7ebdac",
+                        "surface-dim": "#dadada",
+                        "on-secondary-fixed-variant": "#354b45",
+                        "secondary-fixed": "#cfe8df",
+                        "inverse-surface": "#2f3131",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#29695b",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdbd1",
+                        "on-secondary-fixed": "#081f1a",
+                        "background": "#f9f9f9",
+                        "tertiary-container": "#693527",
+                        "primary-container": "#004d40",
+                        "surface": "#f9f9f9",
+                        "on-primary-fixed-variant": "#065043",
+                        "on-tertiary-container": "#e89f8c",
+                        "outline-variant": "#bfc9c4",
+                        "secondary-container": "#cce5dc",
+                        "surface-container": "#eeeeee",
+                        "on-surface": "#1a1c1c"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .editorial-shadow {
+            box-shadow: 0 12px 32px -4px rgba(0, 52, 43, 0.06);
+        }
+    </style>
+</head>
+
+<body class="font-body selection:bg-secondary-container">
+    <!-- TopAppBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200/15 dark:border-zinc-800/15 shadow-sm dark:shadow-none">
+        <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto">
+            <div class="text-2xl font-['Newsreader'] font-bold tracking-tight text-emerald-950 dark:text-emerald-50">
+                LinguistCode
+            </div>
+            <div class="hidden md:flex space-x-12 items-center">
+                <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                    href="Home.html">Accueil</a>
+                <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                    href="WIP.html">Enseignement</a>
+                <a class="font-['Newsreader'] italic font-medium text-emerald-900 dark:text-emerald-400 border-b-2 border-emerald-900 dark:border-emerald-400 pb-1 translate-y-[1px] transition-transform"
+                    href="Research.html">Recherche</a>
+                <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                    href="WIP.html">Contact</a>
+            </div>
+            <a href="src/cv.pdf" target="_blank"
+                class="bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm">
+                Télécharger CV
+            </a>
+        </div>
+    </nav>
+    <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+        <!-- Hero Section -->
+        <section class="mb-24 flex flex-col md:flex-row gap-16 items-start">
+            <div class="md:w-3/5">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-[2px] bg-primary"></div>
+                    <span class="font-label text-xs uppercase tracking-[0.2em] text-secondary">Champs
+                        d'Investigation</span>
+                </div>
+                <h1 class="font-headline text-5xl md:text-7xl italic text-primary leading-tight mb-8">
+                    Décrypter le sens au cœur du pouvoir.
+                </h1>
+                <p class="font-body text-lg text-on-surface-variant leading-relaxed max-w-2xl">
+                    Mes travaux actuels se concentrent sur l'utilisation de la peur par les présidents americains du 21e
+                    siècle, en explorant les intersections
+                    entre langage, idéologie et structures de domination à travers l'analyse de grands corpus. Bien que
+                    mon cadre théorique principal soit l'Analyse Critique de Discours, je m'intéresse également à la
+                    stylistique, à la pragmatique et à la linguistique de corpus. Dans tous ces domaines, l'analyse de
+                    faits de langue est absolument centrale, et il est important de la replacer au centre des recherches
+                    en analyse du discours, un domaine riche à la croisée des disciplines qui tend parfois à s'éloigner
+                    de l'étude rigoureuse du langage pour se concentrer sur des questions plus larges, délaissant ainsi
+                    les niveau micro de l'analyse, au profit d'analyses méso et macro.
+                </p>
+            </div>
+            <div class="md:w-2/5 aspect-[4/5] relative bg-surface-container-low overflow-hidden editorial-shadow">
+                <img class="w-full h-full object-cover grayscale opacity-40 mix-blend-multiply"
+                    data-alt="Sunrise at the US Capitol in Washington DC, Published on July 12, 2020, by Andy Feliciotti on Unsplash"
+                    src="src/research image.avif" />
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
+            </div>
+        </section>
+
+        <!-- Current Research Project (Bento Layout) -->
+        <section class="mb-32" id="thesis">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="font-headline text-3xl italic text-primary">Projet Doctoral</h2>
+                <span class="h-px bg-outline-variant flex-grow"></span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <div
+                    class="md:col-span-8 bg-surface-container-low p-10 rounded-xl border border-outline-variant/30 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <span
+                                class="px-3 py-1 bg-secondary-container text-on-secondary-fixed text-[10px] font-bold uppercase tracking-widest rounded-full">En
+                                cours</span>
+                            <span class="text-on-surface-variant text-xs font-medium">2022 — <i>present</i></span>
+                        </div>
+                        <h3 class="font-headline text-4xl font-semibold text-primary mb-6 leading-tight">
+                            La communication de la peur en politique: Une analyse de la transmission et du
+                            fonctionnement de la peur dans le discours présidentiel américain au XXIe siècle.
+                        </h3>
+                        <p class="text-on-surface-variant leading-relaxed text-justify-hyphens font-light mb-8">
+                            Ce travail porte sur l'utilisation, la réception, et la création de la peur dans le discours
+                            présidentiel américain entre 2001 et 2022. Le corpus utilisé se compose de productions
+                            langagières
+                            (écrites et orales) de différents acteurs politiques Américains - qu'ils soient des
+                            représentants
+                            élus ou des activistes. Bien qu'avant tout un travail de recherche linguistique et
+                            rhétorique, des
+                            notions de psychologie sociale et de science politique sont mobilisées pour mieux comprendre
+                            les
+                            mécanismes de la peur et les stratégies discursives qui gouvernent son utilisation. Comme
+                            dans tous
+                            les travaux en analyse critique du discours, une attention particulière est portée au
+                            contexte
+                            sociopolitique, culturel et historique dans lequel les discours sont produits et reçus,
+                            ainsi qu'aux
+                            rapports de pouvoir qui les traversent.
+
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2 text-primary">
+                            <span class="material-symbols-outlined text-sm">school</span>
+                            <span class="text-xs font-semibold tracking-wide uppercase">Sorbonne Université</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-primary">
+                            <span class="material-symbols-outlined text-sm"
+                                style="font-variation-settings: 'FILL' 1;">lab_research</span>
+                            <span class="text-xs font-semibold tracking-wide uppercase">Laboratoire CeLiSo (UR
+                                7332)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-4 grid grid-rows-3 gap-5">
+                    <div
+                        class="bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-center items-center text-center">
+                        <span class="text-5xl font-headline italic mb-2">8.9 M</span>
+                        <p class="text-xs uppercase tracking-widest opacity-80">de mots</p>
+                    </div>
+                    <div
+                        class="bg-secondary-fixed p-8 rounded-xl flex flex-col justify-center items-center text-center">
+                        <span class="text-5xl font-headline italic mb-2 text-primary">3</span>
+                        <p class="text-xs uppercase tracking-widest text-on-surface-variant">Présidents</p>
+                    </div>
+                    <div
+                        class="bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-center items-center text-center">
+                        <span class="text-5xl font-headline italic mb-2">3290</span>
+                        <p class="text-xs uppercase tracking-widest opacity-80">discours</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex items-center gap-4 mb-12">
+            <span class="h-px bg-outline-variant flex-grow"></span>
+            <h2 class="font-headline text-3xl italic text-primary">Cadres théoriques et intérêts de recherche</h2>
+            <span class="h-px bg-outline-variant flex-grow"></span>
+        </div>
+
+    <!-- Approches Théoriques Section -->
+    <section class="theoretical-section">
+        <div class="theoretical-grid">
+            <div class="theoretical-cell wide">
+                <h3>Analyse Critique de Discours (CDA)</h3>
+                <p class="text-justify">A l'intersection de la linguistique, des sciences politiques et de l'histoire, mon travail en CDA cherche à dévoiler les mécanismes qui permettent à la peur d'être utilisée discursivement par des acteurs politiques afin de persuader et de pousser à l'action. Un regard historique est nécessaire pour comprendre le système politique americain et son évolution. Ce contexte historique est une variable capitale pour l'analyse critique. A la croisée des sciences politiques, la linguistique et plus particulièrement la pragmatique permettent d'analyser les relations de pouvoir entre communicants et offrent un cadre solide pour comprendre le non-dit et l'implicite.</p>
+
+                <p class="text-justify">Je porte un interet tout particulier aux discours liberticides, anti-démocratiques, autoritaires mais aussi au discours anti-scientifiques, fallacieux et conspirationistes. Cela m'amène à étudier, entre autres, les discours populistes et ethnonationalistes et leurs évolutions historiques.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Discours</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Société</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Idéologie</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Politique</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Hégémonie</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Populisme</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">CMT</span>
+                </div>
+            </div>
+
+            <div class="theoretical-cell narrow">
+                <h3>Pragmatique</h3>
+                <p class="text-justify">Mes travaux me poussent à (re)considérer les mécanismes politesses, de transmissions d'émotions et d'information, au délà des approchées (néo-)gricéenes. C'est dans le dépassement des normes conversationnelles que l'usage qui est fait de la langue se révèle le plus interessant.</p>
+                <p class="text-justify"> Interessé par l'étude d'une variété de phénomènes pragmatiques, je travaille actuellement sur les notions d'impolitesse stratégique, de persuasion, de manipulation, sur la transmission des émotions et le rapport à la vérité.</p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Redéfinition</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Deixis</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Information Structure</span>
+                </div>
+            </div>
+
+            
+            <div class="theoretical-cell narrow">
+                <h3>Linguistique de Corpus (CL)</h3>
+                <p class="text-justify">La linguistique de corpus permet d'aborder précisement des analyses quantitatives de larges corpus, de les annoters et d'extraire des schémas qu'il aurait été difficile de percevoir à l'oeuil nu. Le developpement des outils d'analyse peine a rattraper le rythme de l'expansion des corpus numériques, ce qui représente également un enjeu particulier pour la recherche.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Sketchengine</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Python</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">TXM</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">NLP</span>
+                </div>
+            </div>
+
+            <div class="theoretical-cell wide">
+                <h3>Analyse Grammaticale</h3>
+                <p class="text-justify">Au coeur du travail en linguistique appliquée se trouve l'analyse des faits de langues. Au fil des années, mon travail m'a conduit à me spécialiser dans l'analyse du domaine nominal au sens large, en y incluant les questions de détermination et référence, puis par extension le domaine adjectival.</p>
+                <p class="text-justify">La phrase complexe, les réagencements de l'ordre canonique et leurs conséquences sur la structure informationnelle de l'énoncé informent grandement le reste de mes recherches, en faisant le lien entre l'interface syntaxe/sémantique et pragmatique.</p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Nominalisation</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Référence</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Dénotation</span>
+                    <span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-label uppercase tracking-wider">Conotation</span>
+                </div> 
+            </div>
+
+        </div>
+    </section>
+
+
+        <!-- Publications Section -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <span class="h-px bg-outline-variant flex-grow"></span>
+                <h2 class="font-headline text-3xl italic text-primary">Publications</h2>
+
+            </div>
+            <div class="space-y-12">
+                <!-- Pub 1 -->
+                <div class="flex flex-col md:flex-row gap-8 items-start group">
+                    <span class="font-label text-sm text-secondary pt-1">2024</span>
+                    <div class="flex-1">
+                        <h3
+                            class="font-headline text-2xl group-hover:text-primary transition-colors cursor-pointer mb-2">
+                            "Donald Trump et le discours de la peur : Mise en scène d'une terrifiante immigration"
+                        </h3>
+                        <p class="font-body text-on-surface-variant italic mb-4">ELIS -
+                            Echanges de linguistique en Sorbonne, 2024, 9, pp.60 - 79</p>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
+                            Une exploration de la construction linguistique et la transmission de la peur autour des
+                            questions d’immigration dans le discours de Donald Trump prononcé lors de sa victoire aux
+                            primaires républicaines le 21 juillet 2016.
+                        </p>
+                    </div>
+                    <a class="text-primary hover:underline font-label text-xs uppercase tracking-widest flex items-center gap-2"
+                        href="https://hal.sorbonne-universite.fr/CELISO/hal-04588030v1">
+                        Lire <span class="material-symbols-outlined text-sm" data-icon="book">book</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Communication Section -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <span class="h-px bg-outline-variant flex-grow"></span>
+                <h2 class="font-headline text-3xl italic text-primary">Communications</h2>
+                <span class="h-px bg-outline-variant flex-grow"></span>
+
+            </div>
+            <div class="space-y-12">
+                <!-- Comm 1 -->
+                <div class="flex flex-col md:flex-row gap-8 items-start group">
+                    <span class="font-label text-sm text-secondary pt-1">2025/10</span>
+                    <div class="flex-1">
+                        <h3
+                            class="font-headline text-2xl group-hover:text-primary transition-colors cursor-pointer mb-2">
+                            "Communication(s) de la peur dans le discours présidentiel américain : approches
+                            interdisciplinaires."
+                        </h3>
+                        <p class="font-body text-on-surface-variant italic mb-4">Séminaire du Laboratoire SeSyLIA,
+                            Université Sorbonne Nouvelle</p>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
+                            Quelles sont les avantages d'une approche interdisciplinaire pour l'étude du discours
+                            politique ? A travers 3 études de cas, cette communication a exploré différentes approches
+                            méthodologiques pour analyser l'écriture de la peur et son utilisation dans un corpus large.
+                        </p>
+                    </div>
+
+                    <p class="text-primary hover:underline font-label text-xs uppercase tracking-widest flex items-center gap-2"
+                        href="#">
+                        <span class="material-symbols-outlined text-sm" data-icon="contact_mail">contact_mail</span>
+                        Conf. Invité
+                    </p>
+                </div>
+                <!-- Comm 2 -->
+                <div class="flex flex-col md:flex-row gap-8 items-start group">
+                    <span class="font-label text-sm text-secondary pt-1">2025/06</span>
+                    <div class="flex-1">
+                        <h3
+                            class="font-headline text-2xl group-hover:text-primary transition-colors cursor-pointer mb-2">
+                            "Analyse du nom Horror comme un shell noun dans le discours présidentiel
+                            républicain du 21e siècle."</h3>
+                        <p class="font-body text-on-surface-variant italic mb-4">64e Congrès annuel de la SAES, Atelier
+                            de l’ALAES - Université de Toulouse, France</p>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
+                            Ouvrage traitant de l'évolution des marqueurs énonciatifs dans les contenus générés par les
+                            intelligences artificielles et leur impact sur la réception humaine.
+                        </p>
+                    </div>
+                    <p class="text-primary hover:underline font-label text-xs uppercase tracking-widest flex items-center gap-2"
+                        href="#">
+                        <span class="material-symbols-outlined text-sm" data-icon="article">article</span>
+                        Réponse à CFP
+                    </p>
+                </div>
+                <!-- Comm 3 -->
+                <div class="flex flex-col md:flex-row gap-8 items-start group">
+                    <span class="font-label text-sm text-secondary pt-1">2024/11</span>
+                    <div class="flex-1">
+                        <h3
+                            class="font-headline text-2xl group-hover:text-primary transition-colors cursor-pointer mb-2">
+                            "De Bush à Trump : vers une déstructuration et une radicalisation du discours
+                            présidentiel Américain. Apports de la linguistique de corpus à l’analyse critique de
+                            discours politiques."
+                        </h3>
+                        <p class="font-body text-on-surface-variant italic mb-4">Séminaire du Laboratoire CIRLEP –
+                            Langues et Corpus, Université de Reims Champagne-Ardenne</p>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
+
+                        </p>
+                    </div>
+
+                    <p class="text-primary hover:underline font-label text-xs uppercase tracking-widest flex items-center gap-2"
+                        href="#">
+                        <span class="material-symbols-outlined text-sm" data-icon="contact_mail">contact_mail</span>
+                        Conf. Invité
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Interventions dans les médias -->
+        <section class="mb-32">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="font-headline text-3xl italic text-primary">Interventions dans les médias</h2>
+                <span class="h-px bg-outline-variant flex-grow"></span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Intervention 1 -->
+                <div class="group border-l-2 border-primary-container pl-6 py-2">
+                    <span class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Le
+                        Monde</span>
+                    <h3
+                        class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
+                        Donald Trump et la rhétorique : les secrets de sa méthode pour convaincre les électeurs.</h3>
+                    <p class="text-on-surface-variant text-xs font-medium mb-4">11 octobre 2024</p>
+                    <a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all"
+                        href="https://www.youtube.com/watch?v=ep30-Q2SyOE">
+                        Voir l'entretien
+                        <span class="material-symbols-outlined text-sm">video_camera_front</span>
+                    </a>
+                </div>
+                <!-- Intervention 2 -->
+                <div class="group border-l-2 border-primary-container pl-6 py-2">
+                    <span
+                        class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Libération</span>
+                    <h3
+                        class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
+                        Rhétorique de la peur. Dette Publique : Bayrou et Macron, ou la stratégie risquée de la
+                        politique frisson.</h3>
+                    <p class="text-on-surface-variant text-xs font-medium mb-4">8 aout 2025</p>
+                    <a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all"
+                        href="https://www.liberation.fr/politique/dette-publique-bayrou-et-macron-ou-la-strategie-risquee-de-la-politique-frisson-20250808_FBUMNER4RZHJLBCQC6KNNCJ7GI/">
+                        Lire l'article
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <!-- Intervention 3 -->
+                <div class="group border-l-2 border-primary-container pl-6 py-2">
+                    <span class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Sciences
+                        et Vie Junior</span>
+                    <h3
+                        class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
+                        "Le langage: ton super pouvoir".</h3>
+                    <p class="text-on-surface-variant text-xs font-medium mb-4">Septembre 2025</p>
+                </div>
+                <!-- Intervention 4 -->
+                <div class="group border-l-2 border-primary-container pl-6 py-2">
+                    <span class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Public
+                        Sénat</span>
+                    <h3
+                        class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
+                        Rhétorique de la peur. Dette Publique : Bayrou et Macron, ou la stratégie risquée de la
+                        politique frisson.</h3>
+                    <p class="text-on-surface-variant text-xs font-medium mb-4">18 septembre 2025</p>
+                    <a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all"
+                        href="https://www.publicsenat.fr/emission/sens-public/lintegrale-du-18-septembre-2025-e12">
+                        Regarder l'émission
+                        <span class="material-symbols-outlined text-sm">video_camera_front</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Background / CTA -->
+        <section class="bg-primary-container text-on-primary-container p-12 rounded-2xl relative overflow-hidden">
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="font-headline text-4xl font-bold mb-6">Prêt pour une collaboration scientifique ?</h2>
+                    <p class="text-on-primary-container/80 text-lg leading-relaxed mb-8">
+                        Toujours ouvert aux échanges sur la linguistique de corpus, la pragmatique ou l'analyse du
+                        discours. N'hésitez pas à me contacter pour des projets de recherche ou des conférences.
+                    </p>
+                    <div class="flex gap-4">
+                        <button id="copyEmailBtn"
+                            class="hoverbutton bg-on-primary-container text-primary-container px-6 py-3 rounded font-bold uppercase text-xs tracking-widest">Me
+                            Contacter</button>
+                        <button
+                            class="border border-on-primary-container text-on-primary-container px-6 py-3 rounded font-bold uppercase text-xs tracking-widest">ResearchGate</button>
+                    </div>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <div
+                        class="w-48 h-48 rounded-full border-4 border-dashed border-on-primary-container/30 flex items-center justify-center p-4">
+                        <span class="material-symbols-outlined text-8xl opacity-40">edit_note</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <!-- Footer -->
+    <footer class="bg-zinc-100 dark:bg-zinc-900 w-full py-12 px-8">
+        <div class="bg-zinc-200 dark:border-zinc-800 h-[1px] w-full mb-8 opacity-20"></div>
+        <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto space-y-6 md:space-y-0">
+            <div class="flex flex-col items-center md:items-start">
+                <span
+                    class="font-['Newsreader'] font-semibold text-zinc-900 dark:text-zinc-100 text-xl">LinguistCode</span>
+                <p class="font-['Manrope'] text-sm tracking-wide text-zinc-500 dark:text-zinc-400 mt-2">©2026 Aurélien
+                    AMET. Tous droits réservés.</p>
+            </div>
+
+            <div class="flex gap-2">
+                <a href="https://example.com" aria-label="External link"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm hover:opacity-80 transition-opacity">
+                    <span class="material-symbols-outlined text-lg" data-icon="link">link</span>
+                </a>
+                <button id="copyEmailBtn" aria-label="Copy email address"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm hover:opacity-80 transition-opacity">
+                    <span class="material-symbols-outlined text-lg" data-icon="alternate_email">alternate_email</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const emailToCopy = 'amet.sorbonne@gmail.com';
+        document.getElementById('copyEmailBtn').addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(emailToCopy);
+                const toast = document.createElement('div');
+                toast.textContent = 'Email copié !';
+                toast.className = 'fixed bottom-6 right-6 bg-emerald-700 text-white text-sm px-4 py-2 rounded shadow-lg';
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 2200);
+            } catch (err) {
+                alert('Impossible de copier l\'email. Veuillez le copier manuellement : ' + emailToCopy);
+            }
+        });
+    </script>
+</body>
