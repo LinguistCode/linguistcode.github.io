@@ -20,85 +20,7 @@
         rel="stylesheet" />
     <link href="style-main.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "secondary-fixed-dim": "#b3ccc3",
-                        "outline": "#707975",
-                        "on-surface-variant": "#3f4945",
-                        "on-background": "#1a1c1c",
-                        "inverse-primary": "#94d3c1",
-                        "inverse-on-surface": "#f1f1f1",
-                        "surface-container-high": "#e8e8e8",
-                        "on-secondary-container": "#506760",
-                        "primary-fixed-dim": "#94d3c1",
-                        "surface-container-highest": "#e2e2e2",
-                        "surface-bright": "#f9f9f9",
-                        "on-error": "#ffffff",
-                        "on-tertiary": "#ffffff",
-                        "primary": "#00342b",
-                        "error": "#ba1a1a",
-                        "tertiary": "#4e2013",
-                        "on-secondary": "#ffffff",
-                        "surface-variant": "#e2e2e2",
-                        "on-tertiary-fixed": "#370e04",
-                        "on-error-container": "#93000a",
-                        "surface-container-low": "#f3f3f3",
-                        "on-primary": "#ffffff",
-                        "on-primary-fixed": "#00201a",
-                        "primary-fixed": "#afefdd",
-                        "tertiary-fixed-dim": "#ffb5a1",
-                        "on-tertiary-fixed-variant": "#6d382a",
-                        "secondary": "#4c635c",
-                        "on-primary-container": "#7ebdac",
-                        "surface-dim": "#dadada",
-                        "on-secondary-fixed-variant": "#354b45",
-                        "secondary-fixed": "#cfe8df",
-                        "inverse-surface": "#2f3131",
-                        "error-container": "#ffdad6",
-                        "surface-tint": "#29695b",
-                        "surface-container-lowest": "#ffffff",
-                        "tertiary-fixed": "#ffdbd1",
-                        "on-secondary-fixed": "#081f1a",
-                        "background": "#f9f9f9",
-                        "tertiary-container": "#693527",
-                        "primary-container": "#004d40",
-                        "surface": "#f9f9f9",
-                        "on-primary-fixed-variant": "#065043",
-                        "on-tertiary-container": "#e89f8c",
-                        "outline-variant": "#bfc9c4",
-                        "secondary-container": "#cce5dc",
-                        "surface-container": "#eeeeee",
-                        "on-surface": "#1a1c1c"
-                    },
-                    fontFamily: {
-                        "headline": ["Newsreader"],
-                        "body": ["Manrope"],
-                        "label": ["Manrope"]
-                    },
-                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-                },
-            },
-        }
-    </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-
-        body {
-            background-color: #f9f9f9;
-            color: #1a1c1c;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .editorial-shadow {
-            box-shadow: 0 12px 32px -4px rgba(0, 52, 43, 0.06);
-        }
-    </style>
+    <script src="tailwind-config.js"></script>
 </head>
 
 <body class="font-body selection:bg-secondary-container">
@@ -167,7 +89,8 @@
                     Décrypter le sens, au cœur du pouvoir.
                 </h1>
                 <p class="font-body text-lg text-on-surface-variant leading-relaxed max-w-2xl">
-                    Mes travaux actuels se concentrent sur l'utilisation de la peur par les présidents americains du 21e
+                    Mes recherches actuelles se concentrent sur l'utilisation de la peur par les présidents americains
+                    du XXIe
                     siècle, en explorant les intersections
                     entre langage, idéologie et structures de domination à travers l'analyse de grands corpus. Bien que
                     mon cadre théorique principal soit l'Analyse Critique de Discours, je m'intéresse également à la
@@ -535,8 +458,7 @@
                         Sénat</span>
                     <h3
                         class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
-                        Rhétorique de la peur. Dette Publique : Bayrou et Macron, ou la stratégie risquée de la
-                        politique frisson.</h3>
+                        Sens Public. </h3>
                     <p class="text-on-surface-variant text-xs font-medium mb-4">18 septembre 2025</p>
                     <a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all"
                         href="https://www.publicsenat.fr/emission/sens-public/lintegrale-du-18-septembre-2025-e12">
@@ -587,7 +509,7 @@
             </div>
 
             <div class="flex gap-2">
-                <a href="https://example.com" aria-label="External link"
+                <a href="https://cv.hal.science/aurelien-amet" aria-label="External link"
                     class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm hover:opacity-80 transition-opacity">
                     <span class="material-symbols-outlined text-lg" data-icon="link">link</span>
                 </a>
@@ -599,38 +521,5 @@
         </div>
     </footer>
 
-    <script>
-        // script pour le bouton de copie d'email
-        const emailToCopy = 'amet.sorbonne@gmail.com';
-        document.getElementById('copyEmailBtnS').addEventListener('click', async () => {
-            try {
-                await navigator.clipboard.writeText(emailToCopy);
-                const toast = document.createElement('div');
-                toast.textContent = 'Email copié !';
-                toast.className = 'fixed bottom-6 right-6 bg-emerald-700 text-white text-sm px-4 py-2 rounded shadow-lg';
-                document.body.appendChild(toast);
-                setTimeout(() => toast.remove(), 2200);
-            } catch (err) {
-                alert('Impossible de copier l\'email. Veuillez le copier manuellement : ' + emailToCopy);
-            }
-        });
-        // script pour le menu mobile
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.getElementById('nav-links');
-        const menuIcon = mobileMenuBtn.querySelector('.material-symbols-outlined');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            // Bascule l'affichage du menu
-            navLinks.classList.toggle('hidden');
-            navLinks.classList.toggle('flex');
-
-            // Change l'icône hamburger en croix quand le menu est ouvert
-            if (navLinks.classList.contains('hidden')) {
-                menuIcon.textContent = 'menu';
-            } else {
-                menuIcon.textContent = 'close';
-            }
-        });
-
-    </script>
+    <script src="scripts.js" defer></script>
 </body>
