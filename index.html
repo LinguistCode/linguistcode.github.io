@@ -21,86 +21,9 @@
         rel="stylesheet" />
     <link href="style-main.css" rel="stylesheet" />
 
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "secondary-fixed-dim": "#b3ccc3",
-                        "outline": "#707975",
-                        "on-surface-variant": "#3f4945",
-                        "on-background": "#1a1c1c",
-                        "inverse-primary": "#94d3c1",
-                        "inverse-on-surface": "#f1f1f1",
-                        "surface-container-high": "#e8e8e8",
-                        "on-secondary-container": "#506760",
-                        "primary-fixed-dim": "#94d3c1",
-                        "surface-container-highest": "#e2e2e2",
-                        "surface-bright": "#f9f9f9",
-                        "on-error": "#ffffff",
-                        "on-tertiary": "#ffffff",
-                        "primary": "#024127",
-                        "error": "#ba1a1a",
-                        "tertiary": "#4e2013",
-                        "on-secondary": "#ffffff",
-                        "surface-variant": "#e2e2e2",
-                        "on-tertiary-fixed": "#370e04",
-                        "on-error-container": "#93000a",
-                        "surface-container-low": "#f3f3f3",
-                        "on-primary": "#ffffff",
-                        "on-primary-fixed": "#00201a",
-                        "primary-fixed": "#afefdd",
-                        "tertiary-fixed-dim": "#ffb5a1",
-                        "on-tertiary-fixed-variant": "#6d382a",
-                        "secondary": "#4c635c",
-                        "on-primary-container": "#7ebdac",
-                        "surface-dim": "#dadada",
-                        "on-secondary-fixed-variant": "#354b45",
-                        "secondary-fixed": "#cfe8df",
-                        "inverse-surface": "#2f3131",
-                        "error-container": "#ffdad6",
-                        "surface-tint": "#29695b",
-                        "surface-container-lowest": "#ffffff",
-                        "tertiary-fixed": "#ffdbd1",
-                        "on-secondary-fixed": "#081f1a",
-                        "background": "#f9f9f9",
-                        "tertiary-container": "#693527",
-                        "primary-container": "#004d40",
-                        "surface": "#f9f9f9",
-                        "on-primary-fixed-variant": "#065043",
-                        "on-tertiary-container": "#e89f8c",
-                        "outline-variant": "#bfc9c4",
-                        "secondary-container": "#cce5dc",
-                        "surface-container": "#eeeeee",
-                        "on-surface": "#1a1c1c"
-                    },
-                    fontFamily: {
-                        "headline": ["Newsreader", "serif"],
-                        "body": ["Manrope", "sans-serif"],
-                        "label": ["Manrope", "sans-serif"]
-                    },
-                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-                },
-            },
-        }
-    </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+    <script src="tailwind-config.js"></script>
 
-        body {
-            background-color: #f9f9f9;
-            color: #1a1c1c;
-            font-family: 'Manrope', sans-serif;
-        }
 
-        .editorial-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-        }
-    </style>
 </head>
 
 <body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
@@ -173,11 +96,11 @@
                 </h1>
                 <p class="font-body text-xl text-on-surface-variant max-w-xl leading-relaxed mb-10">
                     Professeur Agrégé d'Anglais, doctorant en linguistique anglaise à Sorbonne Université, actuellement
-                    ATER à l'Université Sorbonne Nouvelle. Je travaille principalement en Analyse Critique du Discours
-                    Politique, en Stylistique et en pragmatique.
+                    ATER à l'Université Sorbonne Nouvelle. Je travaille principalement en analyse critique du discours
+                    politique, en stylistique et en pragmatique.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                      <a href="Research.html#thesis"
+                    <a href="Research.html#thesis"
                         class="bg-primary text-on-primary px-8 py-4 font-label text-sm tracking-widest uppercase rounded-sm flex items-center gap-2 hover:shadow-lg transition-all active:translate-y-px">
                         Explorer les travaux
                         <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
@@ -227,10 +150,10 @@
                     <h3 class="font-headline text-2xl font-bold mb-4 text-primary group-hover:text-on-primary">
                         Pragmatique &amp; Sémantique</h3>
                     <p class="font-body text-on-surface-variant group-hover:text-on-primary/80 leading-relaxed">
-                        Cette partie de mon travail vise à répertorier le vocabulaire de la peur employé par différents
-                        acteurs politique, en observant l'utilisation faite de ces termes et les stratégies discursives
-                        qui gouvernent ces emplois. A cela s'ajoute de nouvelles typologies des mots de la peur, basées
-                        sur leurs fonctionnement lexico-grammaticaux.
+                        Cette partie de mes recherches vise à répertorier le vocabulaire de la peur employé par
+                        différents acteurs politique, en observant l'utilisation faite de ces termes et les stratégies
+                        discursives qui gouvernent ces emplois. A cela s'ajoute de nouvelles typologies des mots de la
+                        peur, basées sur leurs fonctionnements lexico-grammaticaux.
 
                     </p>
                 </div>
@@ -240,18 +163,20 @@
                     <h3 class="font-headline text-2xl font-bold mb-4 text-primary group-hover:text-on-primary">
                         Linguistique de Corpus</h3>
                     <p class="font-body text-on-surface-variant group-hover:text-on-primary/80 leading-relaxed">
-                        Le travail en CDA est réalisé à la croisée de linguistique de corpus. Il s'agit à terme de
-                        construire un corpus de discours présidentiels annoté permettant de reconnaitre et de classer
+                        Le travail en CDA est réalisé à la croisée de la linguistique de corpus. Il s'agit à terme de
+                        construire un corpus de discours présidentiels annotés permettant de reconnaitre et de classer
                         les différents appels à la peur.
                     </p>
                 </div>
             </div>
         </section>
+
         <!-- Current Research Block: Tonal Layering -->
         <section
             class="bg-surface-container-lowest border border-outline-variant/15 p-12 md:p-20 relative overflow-hidden">
             <div class="relative z-10 max-w-3xl">
-                <span class="font-label text-xs uppercase tracking-[0.3em] text-secondary-fixed-dim mb-4 block">En
+                <span
+                    class="font-label text-xs uppercase tracking-[0.3em] text-secondary-fixed-dim mb-4 block font-bold">En
                     cours</span>
                 <h2 class="font-headline text-4xl md:text-5xl text-primary font-bold mb-4 leading-tight">
                     La communication de la peur en politique:
@@ -261,7 +186,7 @@
                     présidentiel américain au XXIe siècle.
                 </h3>
                 <p class="font-body text-lg text-on-surface-variant mb-8">
-                    Ce travail porte sur l'utilisation, la réception, et la création de la peur dans le discours
+                    Cette thèse porte sur l'utilisation, la réception, et la création de la peur dans le discours
                     présidentiel américain entre 2001 et 2022. Le corpus utilisé se compose de productions langagières
                     (écrites et orales) de différents acteurs politiques Américains - qu'ils soient des représentants
                     élus ou des activistes. Bien qu'avant tout un travail de recherche linguistique et rhétorique, des
@@ -315,7 +240,7 @@
                     class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm hover:opacity-80 transition-opacity">
                     <span class="material-symbols-outlined text-lg" data-icon="link">link</span>
                 </a>
-                <button id="copyEmailBtnS" aria-label="Copy email address"
+                <button id="copyEmailBtn" aria-label="Copy email address"
                     class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm hover:opacity-80 transition-opacity">
                     <span class="material-symbols-outlined text-lg" data-icon="alternate_email">alternate_email</span>
                 </button>
@@ -323,40 +248,7 @@
         </div>
     </footer>
 
-    <script>
-        // script pour le bouton de copie d'email
-        const emailToCopy = 'amet.sorbonne@gmail.com';
-        document.getElementById('copyEmailBtnS').addEventListener('click', async () => {
-            try {
-                await navigator.clipboard.writeText(emailToCopy);
-                const toast = document.createElement('div');
-                toast.textContent = 'Email copié !';
-                toast.className = 'fixed bottom-6 right-6 bg-emerald-700 text-white text-sm px-4 py-2 rounded shadow-lg';
-                document.body.appendChild(toast);
-                setTimeout(() => toast.remove(), 2200);
-            } catch (err) {
-                alert('Impossible de copier l\'email. Veuillez le copier manuellement : ' + emailToCopy);
-            }
-        });
-        // script pour le menu mobile
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.getElementById('nav-links');
-        const menuIcon = mobileMenuBtn.querySelector('.material-symbols-outlined');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            // Bascule l'affichage du menu
-            navLinks.classList.toggle('hidden');
-            navLinks.classList.toggle('flex');
-
-            // Change l'icône hamburger en croix quand le menu est ouvert
-            if (navLinks.classList.contains('hidden')) {
-                menuIcon.textContent = 'menu';
-            } else {
-                menuIcon.textContent = 'close';
-            }
-        });
-
-    </script>
+    <script src="scripts.js" defer></script>
 </body>
 
 </html>
