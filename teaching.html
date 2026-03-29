@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="scripts.js"></script>
+    <script src="tailwind.config.js"></script>
+    <script src="books-script.js"></script>
+    <link href="style-main.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+
+</head>
+
+<body class="bg-surface font-body text-on-surface">
+
+    <!-- Nav Bar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200/15 dark:border-zinc-800/15 shadow-sm dark:shadow-none">
+        <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto flex-wrap">
+
+            <!-- Logo -->
+            <a href="index.html"
+                class="group relative flex items-center h-8 font-['Newsreader'] font-bold tracking-tight text-emerald-950 dark:text-emerald-50 w-48">
+                <span
+                    class="absolute text-2xl transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0">
+                    LinguistCode
+                </span>
+                <span
+                    class="absolute text-lg whitespace-nowrap transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 text-primary">
+                    Aurélien Amet
+                </span>
+            </a>
+
+
+            <!-- Bouton Menu (mobile only) -->
+            <button id="mobile-menu-btn"
+                class="md:hidden flex items-center text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 focus:outline-none">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+
+            <!-- Liens de navigation (desktop only) -->
+            <div id="nav-links"
+                class="hidden w-full absolute top-20 left-0 bg-white/95 dark:bg-zinc-950/95 flex-col items-center py-6 gap-6 shadow-md border-b border-zinc-200/15 md:static md:flex md:flex-row md:w-auto md:space-x-12 md:bg-transparent md:py-0 md:gap-0 md:shadow-none md:border-none">
+                <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                    href="index.html">Accueil</a>
+                <a class="font-['Newsreader'] italic font-medium text-emerald-900 dark:text-emerald-400 border-b-2 border-emerald-900 dark:border-emerald-400 pb-1 translate-y-[1px] transition-transform"
+                    href="WIP.html">Enseignement</a>
+                <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                    href="Research.html">Recherche</a>
+                <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                    href="WIP.html">Contact</a>
+
+                <!-- Bouton CV (dans le menu sur mobile) -->
+                <a href="src/cv.pdf" target="_blank"
+                    class="md:hidden bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm mt-2">
+                    Télécharger CV
+                </a>
+            </div>
+
+            <!-- Bouton CV (A droite sur desktop) -->
+            <a href="src/cv.pdf" target="_blank"
+                class="hidden md:block bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm">
+                Télécharger CV
+            </a>
+
+        </div>
+    </nav>
+    <main class="pt-32 pb-24 max-w-7xl mx-auto px-6">
+        <!-- Hero Branding -->
+        <header class="mb-24 text-center">
+            <h1 class="font-headline text-6xl md:text-7xl font-light text-primary mb-6 tracking-tight">Enseignement</h1>
+            <p class="max-w-2xl mx-auto text-on-surface-variant text-lg leading-relaxed">
+                Une exploration des cours que j'ai eu le privilège d'enseigner dans les différents établissements où
+                j'ai exercé.
+            </p>
+        </header>
+        <!-- Section 1: Établissements d'Enseignement -->
+        <section class="mb-32">
+            <div class="flex items-baseline gap-4 mb-12">
+                <span class="text-primary font-bold text-sm tracking-widest uppercase">01</span>
+                <h2 class="font-headline text-4xl text-primary">Établissements d'Enseignement</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Card 1: Sorbonne -->
+                <div class="flip-card h-96 group cursor-pointer" onclick="updateLibrary('sorbonne')">
+                    <div class="flip-card-inner shadow-xl">
+                        <div class="flip-card-front bg-surface-container overflow-hidden rounded-lg">
+                            <img alt="Sorbonne photo by Octave 444 on wikipedia"
+                                class="w-full h-full object-cover group-hover:grayscale transition-all duration-700"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Sorbonne_cour_int%C3%A9rieure_et_chapelle_Sainte-Ursule_%28fa%C3%A7ade_nord%29.jpg/960px-Sorbonne_cour_int%C3%A9rieure_et_chapelle_Sainte-Ursule_%28fa%C3%A7ade_nord%29.jpg?_=20251116090943" />
+                            <div
+                                class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/80 to-transparent w-full">
+                                <p class="text-white font-headline text-xl">Sorbonne Université</p>
+                                <p class="text-white/70 text-sm">Paris, France</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back bg-primary text-on-primary p-8 flex flex-col justify-center rounded-lg border-2 border-primary-fixed">
+                            <h3 class="font-headline text-2xl mb-6 italic">Détails du Poste</h3>
+                            <div class="space-y-4 font-label text-sm">
+                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
+                                    <span class="opacity-70">Contrat</span>
+                                    <span>Doctorant Contractuel</span>
+                                </div>
+                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
+                                    <span class="opacity-70">Durée</span>
+                                    <span>2022 — 2025</span>
+                                </div>
+                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
+                                    <span class="opacity-70">Cours</span>
+                                    <span>7 unités différentes</span>
+                                </div>
+                                <div class="pt-4">
+                                    <span class="opacity-70 block mb-1">Adresse</span>
+                                    <span class="italic">17 rue Francis de Croisset, 75018 Paris</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card 2: Sorbonne Nouvelle -->
+                <div class="flip-card h-96 group cursor-pointer" onclick="updateLibrary('sorbonne_nouvelle')">
+                    <div class="flip-card-inner shadow-xl">
+                        <div class="flip-card-front bg-surface-container overflow-hidden rounded-lg">
+                            <img alt="Sorbonne Nouvelle, photo prise par ManoSolo13241324, Wikipédia"
+                                class="w-full h-full object-cover group-hover:grayscale transition-all duration-700"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Campus_Nation.jpg/1280px-Campus_Nation.jpg" />
+                            <div
+                                class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/80 to-transparent w-full">
+                                <p class="text-white font-headline text-xl">Sorbonne Nouvelle</p>
+                                <p class="text-white/70 text-sm">Paris, France</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back bg-primary text-on-primary p-8 flex flex-col justify-center rounded-lg border-2 border-primary-fixed">
+                            <h3 class="font-headline text-2xl mb-6 italic">Détails du Poste</h3>
+                            <div class="space-y-4 font-label text-sm">
+                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
+                                    <span class="opacity-70">Contrat</span>
+                                    <span>ATER</span>
+                                </div>
+                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
+                                    <span class="opacity-70">Durée</span>
+                                    <span>2025-2026</span>
+                                </div>
+                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
+                                    <span class="opacity-70">Cours</span>
+                                    <span>5 unités différentes</span>
+                                </div>
+                                <div class="pt-4">
+                                    <span class="opacity-70 block mb-1">Adresse</span>
+                                    <span class="italic">8, avenue de Saint-Mandé, 75012 Paris</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Saint Louis -->
+                <div class="flip-card h-96 group cursor-pointer" onclick="updateLibrary('saint_louis')">
+                    <div class="flip-card-inner shadow-xl">
+                        <div class="flip-card-front bg-surface-container overflow-hidden rounded-lg">
+                            <img alt="Lycée Saint Louis, photo Wikimapia prise par Andreidan"
+                                class="w-full h-full object-cover group-hover:grayscale transition-all duration-700"
+                                src="https://photos.wikimapia.org/p/00/06/06/74/76_full.jpg" />
+                            <div
+                                class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/80 to-transparent w-full">
+                                <p class="text-white font-headline text-xl">Lycée Saint Louis</p>
+                                <p class="text-white/70 text-sm">Paris, France</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back bg-primary text-on-primary p-8 flex flex-col justify-center rounded-lg border-2 border-primary-fixed">
+                            <h3 class="font-headline text-2xl mb-6 italic">Détails du Poste</h3>
+                            <div class="space-y-4 font-label text-sm">
+                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
+                                    <span class="opacity-70">Contrat</span>
+                                    <span>Colleur</span>
+                                </div>
+                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
+                                    <span class="opacity-70">Durée</span>
+                                    <span>2025-2026</span>
+                                </div>
+                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
+                                    <span class="opacity-70">Cours</span>
+                                    <span>2h de colle/semaine</span>
+                                </div>
+                                <div class="pt-4">
+                                    <span class="opacity-70 block mb-1">Adresse</span>
+                                    <span class="italic">44, boulevard Saint-Michel, 75006 Paris</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Section 2: Ma Bibliothèque de Cours -->
+        <section class="relative hidden" id="library-section">
+            <div class="flex items-baseline gap-4 mb-16">
+                <span class="text-primary font-bold text-sm tracking-widest uppercase">02</span>
+                <h2 class="font-headline text-4xl text-primary" id="library-title">Ma Bibliothèque de Cours</h2>
+            </div>
+            <div class="relative bg-stone-100/50 p-12 rounded-xl border border-stone-200 min-h-[500px]">
+
+                <!-- Wooden Shelf Graphic Layer -->
+                <div class="absolute bottom-10 left-0 w-full h-4 bg-[#4a3728] shadow-2xl rounded-full opacity-60"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-8 justify-items-center"
+                    id="books-grid">
+
+                    <!-- Books will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Detailed Course Modal Overlay -->
+    <div class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-8" id="course-modal">
+
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+
+        <!-- Modal Content -->
+        <div
+            class="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl flex flex-col md:flex-row animate-fade-in border border-stone-200">
+
+            <!-- Close Button -->
+            <button class="absolute top-6 right-6 text-stone-400 hover:text-primary transition-colors z-10"
+                onclick="closeModal()">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+
+            <!-- Decorative Sidebar -->
+            <div
+                class="w-full md:w-1/4 bg-stone-10 border-b md:border-b-0 md:border-r border-stone-200 p-10 flex flex-col items-center justify-center text-center">
+                <div class="w-24 h-24 rounded-full bg-primary/5 flex items-center justify-center mb-6"
+                    id="modal-icon-container">
+                    <span class="material-symbols-outlined text-5xl text-primary" id="modal-icon">menu_book</span>
+                </div>
+                <h4 class="text-xs tracking-[0.3em] uppercase text-primary font-bold mb-2" id="modal-course-code"></h4>
+                <div class="w-12 h-0.5 bg-primary/20 mb-6 mx-auto"></div>
+                <p class="font-headline italic text-lg text-on-surface-variant" id="modal-instructor">Aurélien AMET
+                </p>
+            </div>
+
+            <!-- Main Info -->
+            <div class="w-full md:w-2/3 p-10 md:p-14">
+                <div class="mb-10">
+                    <h2 class="font-headline text-4xl text-primary mb-4 leading-tight" id="modal-title">title</h2>
+                    <p class="text-on-surface-variant leading-relaxed text-lg italic" id="modal-description">desc</p>
+                </div>
+                <div class="grid grid-cols-1 gap-10">
+                    <div>
+                        <h3 class="font-headline text-xl text-primary border-b border-stone-100 pb-2 mb-4">Objectifs
+                            d'Apprentissage</h3>
+                        <ul class="space-y-3 text-on-surface-variant list-none" id="modal-objectives">
+                            <!-- Dynamic content, see books-script.js -->
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-headline text-xl text-primary border-b border-stone-100 pb-2 mb-4">Bibliographie
+                            Sélective</h3>
+                        <div class="space-y-4 text-sm text-on-surface-variant font-serif" id="modal-bibliography">
+                            <!-- Dynamic content, see books-script.js -->
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-headline text-lg text-primary border-b border-stone-100 pb-2 mb-2">Contenu
+                            pédagogique</h4>
+                        <div class="space-y-4 text-sm text-on-surface-variant font-serif" id="modal-teachingmaterial">
+                            <!-- Dynamic content, see books-script.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-100 dark:bg-zinc-900 w-full py-12 px-8">
+        <div class="bg-zinc-200 dark:border-zinc-800 h-[1px] w-full mb-8 opacity-20"></div>
+        <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto space-y-6 md:space-y-0">
+            <div class="flex flex-col items-center md:items-start">
+                <span
+                    class="font-['Newsreader'] font-semibold text-zinc-900 dark:text-zinc-100 text-xl">LinguistCode</span>
+                <p class="font-['Manrope'] text-sm tracking-wide text-zinc-500 dark:text-zinc-400 mt-2">©2026 Aurélien
+                    AMET. Tous droits réservés.</p>
+            </div>
+
+            <div class="flex gap-2">
+                <a href="https://cv.hal.science/aurelien-amet" target="_blank" aria-label="Link to HAL profile"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm hover:opacity-80 transition-opacity">
+                    <span class="material-symbols-outlined text-lg" data-icon="link">link</span>
+                </a>
+                <button id="copyEmailBtn" aria-label="Copy email address"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm hover:opacity-80 transition-opacity">
+                    <span class="material-symbols-outlined text-lg" data-icon="alternate_email">alternate_email</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
