@@ -119,30 +119,102 @@ const allCourses = {
     sorbonne_nouvelle: [
         {
             id: 'sn1',
-            title: "Natures & Fonctions",
-            code: "GRAM L1 S1",
+            title: "La Subjectivité dans la langue",
+            code: "LING L1 S1",
             icon: "menu_book",
             bg: "bg-primary-container",
             text: "text-tertiary-fixed",
             border: "border-primary",
-            description: "Apprendre à reconnaitre précisement les mots et les groupes de mots, ainsi que leurs fonctions dans la phrase.",
+            description: "A travers l'étude de différents phénomènes et de plusieurs approches théorique, le cours propose une réflexion sur les façon d'appréhender la présence de l'énonciateur dans le discours.",
             objectives: [
-                "Maîtriser les critères de reconnaissances des parties du discours, léxicales et grammaticales.",
-                "Identifier les groupes de mots (syntagmes et propositions) et leurs structures internes.",
-                "Reconnaitre les fonctions syntaxiques des mots, syntagmes et propositions."
+                "Comprendre la théorie de la relativité linguistique et ses limites.",
+                "Comprendre les méthodes de recherche en lignuistique.",
+                "Reconnaitre les marques de la deixis spatiale, temporelle et personnelle.",
+                "Comprendre la création du sens et la distinction entre connotation et dénotation",
+                "Maîtriser le passage du discours direct au discours indirect."
             ],
             bibliography: [
-                "Mignot, Élise. Linguistique anglaise. Paris, Armand Colin. « Portail », (2016)",
-                "Lapaire, Jean-Rémi, Rotgé, Wilfrid. Linguistique et grammaire de l'anglais. Toulouse, PUM.« Amphi 7 - Langues », (2002)",
-                "Rivière, Claude. Syntaxe simple - à l'usage des anglicistes. Paris, Orphys. (2016)"
+                "-"
 
             ],
             teachingmaterial: [
                 "Création d'exercices d'application et d'évaluations. Contenu théorique du cours harmonisé entre les groupes. "
             ],
         },
+        {
+            id: 'sn2',
+            title: "L'Intersubjectivité",
+            code: "LING L1 S2",
+            icon: "menu_book",
+            bg: "bg-primary-container",
+            text: "text-tertiary-fixed",
+            border: "border-primary",
+            description: "Ce cours d'introduction à la pragmatique s'inscrit dans la continuité du module LING L1 S1 en essayant de mettre à jour les enjeux de nos communciations interpersonnelles.",
+            objectives: [
+                "Comprendre la distinction entre message explicite et implicite.",
+                "Maitriser les bases des théories de Grice, Searle et Austin.",
+                "Arriver à reconnaitre la façon dont l'organisation syntaxique de la phrase influence le message.",
+                "Maîtriser le passif et la modalité ainsi que leurs implications dans le discours.",
+                "Comprendre les enjeux principaux et les grandes théories de la politesse/impolitesse, puis s'en servir pour expliquer l'humour et la manipulation."
+            ],
+            bibliography: [
+                "-"
 
-    ],
+            ],
+            teachingmaterial: [
+                "Création de points théoriques, d'exercices d'application et d'évaluations."
+            ],
+        },
+        {
+            id: 'sn3',
+            title: "Critical Discourse Analysis",
+            code: "LING/CIVI L2 S2",
+            icon: "menu_book",
+            bg: "bg-primary-container",
+            text: "text-tertiary-fixed",
+            border: "border-primary",
+            description: "",
+            objectives: [
+                "Comprendre l'intérêt de la CDA dans l'analyse des discours publics.",
+                "Développer des outils critiques permettant de liés phénomènes linguistiques, rhétoriques et socio-politiques.",
+                "Être capable de reconnaitre et d'analyser les appels à l'émotion, à la crédibilité et à la raison, ainsi que les types Aristotelien de discours.",
+                "Être capable de reconnaitre et d'analyser les métaphores (théories de la <i>métaphore conceptuelle</i> et politique",
+                "Être capable de reconnaitre et d'analyser plusieurs stratégies rhétoriques et les phénomènes linguistiques sur lesquels elles reposent.",
+                "Mieux comprendre certains enjeux sociopolitiques du Royaume-Uni et des Etats-Unis au XXIe."
+            ],
+            bibliography: [
+                "-Teun A. Van Dijk, ‘Principles of Critical Discourse Analysis’, 1993",
+                "- Ruth Wodak, ‘Critical Discourse Analysis’, 2004",
+                "- Piotr Cap, ‘Critical Discourse Analysis – Theories, Methodologies, Domains’, 2020"
+
+            ],
+            teachingmaterial: [
+                "Création de plusieurs semaines de cours sur différents thèmes imposés."
+            ],
+        },
+        {
+            id: 'sn4',
+            title: "Introduction to CxG",
+            code: "LING L3 S1",
+            icon: "menu_book",
+            bg: "bg-primary-container",
+            text: "text-tertiary-fixed",
+            border: "border-primary",
+            description: "",
+            objectives: [
+                "Comprendre le fondement du travail sur corpus (COCA) et des méthodes de recherche en linguistique.",
+                "Comprendre la théorie derrière la grammaire de construction.",
+                "Etre capable de reconnaitre et d'analyser certaines constructions verbales.",
+                "Arriver à s'interroger sur les évolutions d'utilisations de certaines constructions à travers le temps et à travers le monde."
+            ],
+            bibliography: [
+                "-"
+
+            ],
+            teachingmaterial: [
+                "Contenu théorique du cours et exercices harmonisés entre les groupes."
+            ],
+        },
     saint_louis: [
         {
             id: 'sl1',
