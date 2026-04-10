@@ -178,15 +178,15 @@ const allCourses = {
                 "Comprendre l'intérêt de la CDA dans l'analyse des discours publics.",
                 "Développer des outils critiques permettant de liés phénomènes linguistiques, rhétoriques et socio-politiques.",
                 "Être capable de reconnaitre et d'analyser les appels à l'émotion, à la crédibilité et à la raison, ainsi que les types Aristotelien de discours.",
-                "Être capable de reconnaitre et d'analyser les métaphores (théories de la <i>métaphore conceptuelle</i> et politique",
+                "Être capable de reconnaitre et d'analyser les métaphores (théories de la métaphore conceptuelle et screnarios politiques",
                 "Être capable de reconnaitre et d'analyser plusieurs stratégies rhétoriques et les phénomènes linguistiques sur lesquels elles reposent.",
                 "Mieux comprendre certains enjeux sociopolitiques du Royaume-Uni et des Etats-Unis au XXIe."
             ],
             bibliography: [
                 "-Teun A. Van Dijk, ‘Principles of Critical Discourse Analysis’, 1993",
                 "- Ruth Wodak, ‘Critical Discourse Analysis’, 2004",
-                "- Piotr Cap, ‘Critical Discourse Analysis – Theories, Methodologies, Domains’, 2020"
-
+                "- Piotr Cap, ‘Critical Discourse Analysis – Theories, Methodologies, Domains’, 2020",
+                "- Musolff, Andreas, Political metaphor analysis: discourse and scenarios, London, UK ; New York, NY, USA: Bloomsbury Academic, 2016",
             ],
             teachingmaterial: [
                 "Création de plusieurs semaines de cours sur différents thèmes imposés."
@@ -209,12 +209,12 @@ const allCourses = {
             ],
             bibliography: [
                 "-"
-
             ],
             teachingmaterial: [
                 "Contenu théorique du cours et exercices harmonisés entre les groupes."
             ],
         },
+    ],
     saint_louis: [
         {
             id: 'sl1',
@@ -229,6 +229,7 @@ const allCourses = {
                 "Préparer les élèves aux différentes épreuves de concours qu'ils passeront."
             ],
             bibliography: [
+                "X"
             ],
             teachingmaterial: [
                 "Sélection de 4 nouveaux articles de presse écrite anglophone chaque semaine."
