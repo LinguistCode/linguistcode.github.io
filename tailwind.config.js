@@ -1,4 +1,9 @@
-tailwind.config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+        "./*.{html,js}",
+        "./src/**/*.{html,js}"
+    ],
     darkMode: "class",
     theme: {
         extend: {
@@ -59,4 +64,5 @@ tailwind.config = {
             borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
         },
     },
+    plugins: [],
 }
