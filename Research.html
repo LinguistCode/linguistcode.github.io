@@ -5,77 +5,24 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Aurélien Amet | Recherches</title>
+    <title>Aurélien Amet | Portfolio Académique</title>
     <link rel="icon" type="image/png" href="src/favicon.png" />
+
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="src/output.css" rel="stylesheet" />
     <link href="style-main.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script src="tailwind.config.js"></script>
 </head>
 
 <body class="font-body selection:bg-secondary-container">
 
-    <!-- Nav Bar -->
-    <nav
-        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200/15 dark:border-zinc-800/15 shadow-sm dark:shadow-none">
-        <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto flex-wrap">
+    <div id="header-placeholder"></div>
 
-            <!-- Logo -->
-            <a href="index.html"
-                class="group relative flex items-center h-8 font-['Newsreader'] font-bold tracking-tight text-emerald-950 dark:text-emerald-50 w-48">
-                <span
-                    class="absolute text-2xl transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0">
-                    LinguistCode
-                </span>
-                <span
-                    class="absolute text-lg whitespace-nowrap transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 text-primary">
-                    Aurélien Amet
-                </span>
-            </a>
-
-            <!-- Bouton Hamburger (Visible uniquement sur mobile) -->
-            <button id="mobile-menu-btn"
-                class="md:hidden flex items-center text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 focus:outline-none">
-                <span class="material-symbols-outlined text-3xl">menu</span>
-            </button>
-
-            <!-- Liens de navigation (Cachés par défaut sur mobile, visibles sur desktop) -->
-            <div id="nav-links"
-                class="hidden w-full absolute top-20 left-0 bg-white/95 dark:bg-zinc-950/95 flex-col items-center py-6 gap-6 shadow-md border-b border-zinc-200/15 md:static md:flex md:flex-row md:w-auto md:space-x-12 md:bg-transparent md:py-0 md:gap-0 md:shadow-none md:border-none">
-                <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
-                    href="index.html">Accueil</a>
-                <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
-                    href="teaching.html">Enseignement</a>
-                <a class="font-['Newsreader'] italic font-medium text-emerald-900 dark:text-emerald-400 border-b-2 border-emerald-900 dark:border-emerald-400 pb-1 translate-y-[1px] transition-transform"
-                    href="Research.html">Recherche</a>
-                <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
-                    href="WIP.html">Contact</a>
-
-                <!-- Bouton CV pour Mobile (S'intègre dans le menu déroulant) -->
-                <a href="src/cv.pdf" target="_blank"
-                    class="md:hidden bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm mt-2">
-                    Télécharger CV
-                </a>
-            </div>
-
-            <!-- Bouton CV pour Desktop (Reste à droite) -->
-            <a href="src/cv.pdf" target="_blank"
-                class="hidden md:block bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm">
-                Télécharger CV
-            </a>
-
-        </div>
-    </nav>
     <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
         <!-- Hero Section -->
         <section class="mb-24 flex flex-col md:flex-row gap-16 items-start">
@@ -101,12 +48,23 @@
                     les niveau micro de l'analyse, au profit d'analyses méso et macro.
                 </p>
             </div>
-            <div class="md:w-2/5 aspect-[4/5] relative bg-surface-container-low overflow-hidden editorial-shadow">
-                <img class="w-full h-full object-cover grayscale opacity-40 mix-blend-multiply"
+            <div class="md:w-2/5 aspect-[4/5] relative bg-surface-container-low overflow-hidden editorial-shadow group">
+                <img class="w-full h-full object-cover opacity-60 mix-blend-multiply"
                     data-alt="Sunrise at the US Capitol in Washington DC, Published on July 12, 2020, by Andy Feliciotti on Unsplash"
                     src="src/research image.avif" />
-                <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
+
+                <!-- Ajout de pointer-events-none pour ne pas bloquer le clic sur le lien en dessous -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none">
+                </div>
+
+                <!-- Crédit photo (Gris transparent, en bas à droite, visible au survol) -->
+                <div
+                    class="absolute bottom-0 right-0 z-10 bg-zinc-900/70 backdrop-blur-sm text-white/90 text-[10px] font-body px-3 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-tl-md">
+                    Photo par <a href="https://unsplash.com/" target="_blank" class="hover:underline">Andy
+                        Feliciotti</a> sur Unsplash, 2020.
+                </div>
             </div>
+
         </section>
 
         <!-- Current Research Project (Bento Layout) -->
@@ -326,159 +284,510 @@
         </section>
 
         <!-- Communication Section -->
+        <!-- Communication Section -->
         <section class="mb-24">
             <div class="flex items-center gap-4 mb-12">
                 <span class="h-px bg-outline-variant flex-grow"></span>
                 <h2 class="font-headline text-3xl italic text-primary">Communications</h2>
                 <span class="h-px bg-outline-variant flex-grow"></span>
-
             </div>
-            <div class="space-y-12">
-                <!-- Comm 1 -->
-                <div class="flex flex-col md:flex-row gap-8 items-start group">
-                    <span class="font-label text-sm text-secondary pt-1">2025/10</span>
-                    <div class="flex-1">
-                        <h3
-                            class="font-headline text-2xl group-hover:text-primary transition-colors cursor-pointer mb-2">
-                            "Communication(s) de la peur dans le discours présidentiel américain : approches
-                            interdisciplinaires."
-                        </h3>
-                        <p class="font-body text-on-surface-variant italic mb-4">Séminaire du Laboratoire SeSyLIA,
-                            Université Sorbonne Nouvelle</p>
-                        <p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
-                            Quelles sont les avantages d'une approche interdisciplinaire pour l'étude du discours
-                            politique ? A travers 3 études de cas, cette communication a exploré différentes approches
-                            méthodologiques pour analyser l'écriture de la peur et son utilisation dans un corpus large.
-                        </p>
+
+            <div class="space-y-0">
+                <!-- ================= COMMUNICATIONS VISIBLES (Les 3 plus récentes) ================= -->
+                <div>
+                    <!-- Comm 13 : 2026/06 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group border-b border-outline-variant/20 pb-10 mb-10">
+                        <!-- Colonne Date -->
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2026/06</span>
+                        </div>
+                        <!-- Colonne Contenu -->
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "L'émancipation sous tension : comment Donald Trump libère en divisant."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium">
+                                65e Congrès annuel de la SAES, Atelier de la SSADA — Université de Poitiers, France
+                            </p>
+                        </div>
+                        <!-- Colonne Badge -->
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full border border-outline-variant/30">
+                                <span class="material-symbols-outlined text-[14px]" data-icon="article">article</span>
+                                Réponse à CFP
+                            </span>
+                        </div>
                     </div>
 
-                    <p class="text-primary hover:underline font-label text-xs uppercase tracking-widest flex items-center gap-2"
-                        href="#">
-                        <span class="material-symbols-outlined text-sm" data-icon="contact_mail">contact_mail</span>
-                        Conf. Invité
-                    </p>
-                </div>
-                <!-- Comm 2 -->
-                <div class="flex flex-col md:flex-row gap-8 items-start group">
-                    <span class="font-label text-sm text-secondary pt-1">2025/06</span>
-                    <div class="flex-1">
-                        <h3
-                            class="font-headline text-2xl group-hover:text-primary transition-colors cursor-pointer mb-2">
-                            "Analyse du nom Horror comme un shell noun dans le discours présidentiel
-                            républicain du 21e siècle."</h3>
-                        <p class="font-body text-on-surface-variant italic mb-4">64e Congrès annuel de la SAES, Atelier
-                            de l’ALAES - Université de Toulouse, France</p>
-                        <p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
-                                                        Est-ce que le nom <i>horror</i> est utilisé par les présidents américains comme vecteur
-                            d'émotion? La littérature admet généralement que les noms d'émotions ne sont pas les
-                            éléments les plus aptes à émouvoirs. Les contextes d'apparition de ce nom dans notre corpus
-                            révèle qu'il fonctionne comme un shell noun. Ce fonctionnement fait du nom horreur un outil
-                            de transmission de la peur relativement adapté.
-                        </p>
-                    </div>
-                    <p class="text-primary hover:underline font-label text-xs uppercase tracking-widest flex items-center gap-2"
-                        href="#">
-                        <span class="material-symbols-outlined text-sm" data-icon="article">article</span>
-                        Réponse à CFP
-                    </p>
-                </div>
-                <!-- Comm 3 -->
-                <div class="flex flex-col md:flex-row gap-8 items-start group">
-                    <span class="font-label text-sm text-secondary pt-1">2024/11</span>
-                    <div class="flex-1">
-                        <h3
-                            class="font-headline text-2xl group-hover:text-primary transition-colors cursor-pointer mb-2">
-                            "De Bush à Trump : vers une déstructuration et une radicalisation du discours
-                            présidentiel Américain. Apports de la linguistique de corpus à l’analyse critique de
-                            discours politiques."
-                        </h3>
-                        <p class="font-body text-on-surface-variant italic mb-4">Séminaire du Laboratoire CIRLEP –
-                            Langues et Corpus, Université de Reims Champagne-Ardenne</p>
-                        <p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
-
-                        </p>
+                    <!-- Comm 12 : 2025/10 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group border-b border-outline-variant/20 pb-10 mb-10">
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2025/10</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "Communication(s) de la peur dans le discours présidentiel américain : approches
+                                interdisciplinaires."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium mb-4">
+                                Séminaire du Laboratoire SeSyLIA, Université Sorbonne Nouvelle
+                            </p>
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
+                                Quelles sont les avantages d'une approche interdisciplinaire pour l'étude du discours
+                                politique ? A travers 3 études de cas, cette communication a exploré différentes
+                                approches méthodologiques pour analyser l'écriture de la peur et son utilisation dans un
+                                corpus large.
+                            </p>
+                        </div>
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full border border-primary/20">
+                                <span class="material-symbols-outlined text-[14px]"
+                                    data-icon="contact_mail">contact_mail</span>
+                                Conf. Invité
+                            </span>
+                        </div>
                     </div>
 
-                    <p class="text-primary hover:underline font-label text-xs uppercase tracking-widest flex items-center gap-2"
-                        href="#">
-                        <span class="material-symbols-outlined text-sm" data-icon="contact_mail">contact_mail</span>
-                        Conf. Invité
-                    </p>
+                    <!-- Comm 11 : 2025/06 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group border-b border-outline-variant/20 pb-10 mb-10">
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2025/06</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "Analyse du nom Horror comme un shell noun dans le discours présidentiel républicain du
+                                21e siècle."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium mb-4">
+                                64e Congrès annuel de la SAES, Atelier de l’ALAES — Université de Toulouse, France
+                            </p>
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl">
+                                Est-ce que le nom <i>horror</i> est utilisé par les présidents américains comme vecteur
+                                d'émotion? La littérature admet généralement que les noms d'émotions ne sont pas les
+                                éléments les plus aptes à émouvoir. Les contextes d'apparition de ce nom dans notre
+                                corpus révèle qu'il fonctionne comme un shell noun.
+                            </p>
+                        </div>
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full border border-outline-variant/30">
+                                <span class="material-symbols-outlined text-[14px]" data-icon="article">article</span>
+                                Réponse à CFP
+                            </span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- ================= COMMUNICATIONS CACHÉES PAR DÉFAUT ================= -->
+                <div id="extra-comms" class="hidden">
+
+                    <!-- Comm 10 : 2024/11 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group border-b border-outline-variant/20 pb-10 mb-10">
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2024/11</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "De Bush à Trump : vers une déstructuration et une radicalisation du discours
+                                présidentiel Américain. Apports de la linguistique de corpus à l’analyse critique de
+                                discours politiques."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium">
+                                Séminaire du Laboratoire CIRLEP – Langues et Corpus, Université de Reims
+                                Champagne-Ardenne
+                            </p>
+                        </div>
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full border border-primary/20">
+                                <span class="material-symbols-outlined text-[14px]"
+                                    data-icon="contact_mail">contact_mail</span>
+                                Conf. Invité
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Comm 9 : 2024/10 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group border-b border-outline-variant/20 pb-10 mb-10">
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2024/10</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "Recherche en linguistique assistées par ordinateur : des programmes d'analyses de
+                                corpus aux logiciels de prise de note et d'assistance bibliographique."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium">
+                                Séminaire de Master Recherche en Linguistique Anglaise UFR d'Anglais, Sorbonne
+                                Université
+                            </p>
+                        </div>
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full border border-primary/20">
+                                <span class="material-symbols-outlined text-[14px]"
+                                    data-icon="contact_mail">contact_mail</span>
+                                Conf. Invité
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Comm 8 : 2024/06 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group border-b border-outline-variant/20 pb-10 mb-10">
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2024/06</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "L'incarnation de l'horreur dans les discours présidentiels de G.W. BUSH."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium">
+                                Journée d'Etude: Les émotions négatives dans la langue: entre exprimer une émotion
+                                négative et émouvoir. - CeLiSo, Sorbonne Université, France
+                            </p>
+                        </div>
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full border border-outline-variant/30">
+                                <span class="material-symbols-outlined text-[14px]" data-icon="article">article</span>
+                                Réponse à CFP
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Comm 7 : 2024/06 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group border-b border-outline-variant/20 pb-10 mb-10">
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2024/06</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "Frontières et immigration dans les discours présidentiels républicains du 21ème
+                                siècle."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium">
+                                63e Congrès annuel de la SAES, Atelier de la SSADA — Université de Lorraine, France
+                            </p>
+                        </div>
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full border border-outline-variant/30">
+                                <span class="material-symbols-outlined text-[14px]" data-icon="article">article</span>
+                                Réponse à CFP
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Comm 6 : 2024/06 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group border-b border-outline-variant/20 pb-10 mb-10">
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2024/06</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "Discours de la peur en politique aux Etats-Unis au XXIème siècle."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium">
+                                62e Congrès annuel de la SAES, Atelier de la SSADA — Université Rennes 2, France
+                            </p>
+                        </div>
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full border border-outline-variant/30">
+                                <span class="material-symbols-outlined text-[14px]" data-icon="article">article</span>
+                                Réponse à CFP
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Comm 5 : 2024/04 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group border-b border-outline-variant/20 pb-10 mb-10">
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2024/04</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "Making a boogeyman: linguistic creation of antagonists in 21st century republican
+                                presidential discourse."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium">
+                                10th French-American Graduate Symposium State University New York, Albany & Sorbonne
+                                University — SUNY, Albany, N.Y, Etats-Unis
+                            </p>
+                        </div>
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full border border-outline-variant/30">
+                                <span class="material-symbols-outlined text-[14px]" data-icon="article">article</span>
+                                Réponse à CFP
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Comm 4 : 2024/02 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group border-b border-outline-variant/20 pb-10 mb-10">
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2024/02</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "Les effrayants ennemis de Donald Trump."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium">
+                                Journée d'Etude des jeunes chercheurs.euses — CeLiSo, Sorbonne Université, France
+                            </p>
+                        </div>
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full border border-outline-variant/30">
+                                <span class="material-symbols-outlined text-[14px]" data-icon="article">article</span>
+                                Réponse à CFP
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Comm 3 : 2023/06 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group border-b border-outline-variant/20 pb-10 mb-10">
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2023/06</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "Le Langage de la peur en politique: une analyse linguistique et rhétorique de la
+                                création et du fonctionnement de la peur dans le discours politique américain au XXIe
+                                siècle."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium">
+                                62e Congrès annuel de la SAES, Atelier de l'ALAES — Université Rennes 2, France
+                            </p>
+                        </div>
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full border border-outline-variant/30">
+                                <span class="material-symbols-outlined text-[14px]" data-icon="article">article</span>
+                                Réponse à CFP
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Comm 2 : 2023/04 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group border-b border-outline-variant/20 pb-10 mb-10">
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2023/04</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "Donald Trump and the rhetoric of fear."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium">
+                                9th French-American Graduate Symposium State University New York, Albany & Sorbonne
+                                University — Sorbonne Université, France
+                            </p>
+                        </div>
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full border border-outline-variant/30">
+                                <span class="material-symbols-outlined text-[14px]" data-icon="article">article</span>
+                                Réponse à CFP
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Comm 1 : 2023/02 -->
+                    <div
+                        class="flex flex-col md:flex-row gap-6 md:gap-8 items-start group last:border-0 last:pb-0 last:mb-0">
+                        <div class="md:w-24 shrink-0 pt-1.5">
+                            <span class="font-label text-sm font-bold text-secondary">2023/02</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="font-headline text-2xl font-medium group-hover:text-primary transition-colors cursor-pointer mb-2 leading-snug">
+                                "Le langage de la peur en politique: le cas de Donald Trump."
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium">
+                                Journée d'Etude des jeunes chercheurs.euses — CeLiSo, Sorbonne Université, France
+                            </p>
+                        </div>
+                        <div class="shrink-0 md:pt-1.5">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full border border-outline-variant/30">
+                                <span class="material-symbols-outlined text-[14px]" data-icon="article">article</span>
+                                Réponse à CFP
+                            </span>
+                        </div>
+                    </div>
+
+                </div> <!-- Fin de la zone cachée -->
+
+                <!-- Bouton "Afficher tout" -->
+                <div class="flex justify-center mt-6 pt-4">
+                    <button id="toggle-comms-btn"
+                        class="text-primary hover:text-emerald-800 font-label text-xs uppercase tracking-widest flex items-center gap-2 transition-all px-4 py-2 border border-primary/20 rounded-full hover:bg-primary/5">
+                        Afficher tout
+                        <span class="material-symbols-outlined text-sm">expand_more</span>
+                    </button>
+                </div>
+
             </div>
         </section>
 
 
 
         <!-- Interventions dans les médias -->
-        <section class="mb-32">
+
+        <section class="mb-32 relative group/carousel">
             <div class="flex items-center gap-4 mb-12">
                 <h2 class="font-headline text-3xl italic text-primary">Interventions dans les médias</h2>
                 <span class="h-px bg-outline-variant flex-grow"></span>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Intervention 1 -->
-                <div class="group border-l-2 border-primary-container pl-6 py-2">
-                    <span class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Le
-                        Monde</span>
-                    <h3
-                        class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
-                        Donald Trump et la rhétorique : les secrets de sa méthode pour convaincre les électeurs.</h3>
-                    <p class="text-on-surface-variant text-xs font-medium mb-4">11 octobre 2024</p>
-                    <a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all"
-                        href="https://www.youtube.com/watch?v=ep30-Q2SyOE">
-                        Voir l'entretien
-                        <span class="material-symbols-outlined text-sm">video_camera_front</span>
-                    </a>
-                </div>
-                <!-- Intervention 2 -->
-                <div class="group border-l-2 border-primary-container pl-6 py-2">
+
+            <div class="relative w-full overflow-hidden rounded-lg">
+                <!-- Zone de survol Gauche -->
+                <div id="scroll-left"
+                    class="absolute left-0 top-0 bottom-0 z-20 w-32 bg-gradient-to-r from-surface via-surface/80 to-transparent flex items-center justify-start opacity-0 group-hover/carousel:opacity-100 transition-opacity cursor-pointer hidden md:flex">
                     <span
-                        class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Libération</span>
-                    <h3
-                        class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
-                        Rhétorique de la peur. Dette Publique : Bayrou et Macron, ou la stratégie risquée de la
-                        politique frisson.</h3>
-                    <p class="text-on-surface-variant text-xs font-medium mb-4">8 aout 2025</p>
-                    <a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all"
-                        href="https://www.liberation.fr/politique/dette-publique-bayrou-et-macron-ou-la-strategie-risquee-de-la-politique-frisson-20250808_FBUMNER4RZHJLBCQC6KNNCJ7GI/">
-                        Lire l'article
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
+                        class="material-symbols-outlined text-5xl text-primary drop-shadow-md transition-transform ml-2">chevron_left</span>
                 </div>
-                <!-- Intervention 3 -->
-                <div class="group border-l-2 border-primary-container pl-6 py-2">
-                    <span class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Sciences
-                        et Vie Junior</span>
-                    <h3
-                        class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
-                        "Le langage: ton super pouvoir".</h3>
-                    <p class="text-on-surface-variant text-xs font-medium mb-4">Septembre 2025</p>
+
+                <!-- Zone de survol Droite -->
+                <div id="scroll-right"
+                    class="absolute right-0 top-0 bottom-0 z-20 w-32 bg-gradient-to-l from-surface via-surface/80 to-transparent flex items-center justify-end opacity-0 group-hover/carousel:opacity-100 transition-opacity cursor-pointer hidden md:flex">
+                    <span
+                        class="material-symbols-outlined text-5xl text-primary drop-shadow-md transition-transform mr-2">chevron_right</span>
                 </div>
-                <!-- Intervention 4 -->
-                <div class="group border-l-2 border-primary-container pl-6 py-2">
-                    <span class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Public
-                        Sénat</span>
-                    <h3
-                        class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
-                        Sens Public. </h3>
-                    <p class="text-on-surface-variant text-xs font-medium mb-4">18 septembre 2025</p>
-                    <a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all"
-                        href="https://www.publicsenat.fr/emission/sens-public/lintegrale-du-18-septembre-2025-e12">
-                        Regarder l'émission
-                        <span class="material-symbols-outlined text-sm">video_camera_front</span>
-                    </a>
+
+                <!-- Conteneur Carousel -->
+                <div id="media-carousel" class="overflow-x-auto md:overflow-hidden py-4 px-2"
+                    style="scrollbar-width: none;">
+
+                    <div id="carousel-track" class="flex gap-12 w-max">
+
+                        <!-- Intervention 1 -->
+                        <div
+                            class="flex-none w-[280px] md:w-[320px] group border-l-2 border-primary-container pl-6 py-2">
+                            <span
+                                class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Le
+                                Monde</span>
+                            <h3
+                                class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
+                                Donald Trump et la rhétorique : les secrets de sa méthode pour convaincre les électeurs.
+                            </h3>
+                            <p class="text-on-surface-variant text-xs font-medium mb-4">11 octobre 2024</p>
+                            <a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all"
+                                href="https://www.youtube.com/watch?v=ep30-Q2SyOE">
+                                Voir l'entretien
+                                <span class="material-symbols-outlined text-sm">video_camera_front</span>
+                            </a>
+                        </div>
+
+                        <!-- Intervention 2 -->
+                        <div
+                            class="flex-none w-[280px] md:w-[320px] group border-l-2 border-primary-container pl-6 py-2">
+                            <span
+                                class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Libération</span>
+                            <h3
+                                class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
+                                Rhétorique de la peur. Dette Publique : Bayrou et Macron, ou la stratégie risquée de la
+                                politique frisson.
+                            </h3>
+                            <p class="text-on-surface-variant text-xs font-medium mb-4">8 août 2025</p>
+                            <a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all"
+                                href="https://www.liberation.fr/politique/dette-publique-bayrou-et-macron-ou-la-strategie-risquee-de-la-politique-frisson-20250808_FBUMNER4RZHJLBCQC6KNNCJ7GI/">
+                                Lire l'article
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+
+                        <!-- Intervention 3 -->
+                        <div
+                            class="flex-none w-[280px] md:w-[320px] group border-l-2 border-primary-container pl-6 py-2">
+                            <span
+                                class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Sciences
+                                et Vie Junior</span>
+                            <h3
+                                class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
+                                "Le langage: ton super pouvoir".
+                            </h3>
+                            <p class="text-on-surface-variant text-xs font-medium mb-4">Septembre 2025</p>
+                        </div>
+
+                        <!-- Intervention 4 -->
+                        <div
+                            class="flex-none w-[280px] md:w-[320px] group border-l-2 border-primary-container pl-6 py-2">
+                            <span
+                                class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Public
+                                Sénat</span>
+                            <h3
+                                class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
+                                Sens Public.
+                            </h3>
+                            <p class="text-on-surface-variant text-xs font-medium mb-4">18 septembre 2025</p>
+                            <a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all"
+                                href="https://www.publicsenat.fr/emission/sens-public/lintegrale-du-18-septembre-2025-e12">
+                                Regarder l'émission
+                                <span class="material-symbols-outlined text-sm">video_camera_front</span>
+                            </a>
+                        </div>
+
+                        <!-- Intervention 5 -->
+                        <div
+                            class="flex-none w-[280px] md:w-[320px] group border-l-2 border-primary-container pl-6 py-2">
+                            <span
+                                class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2 block">Radio
+                                Campus Paris</span>
+                            <h3
+                                class="font-headline text-xl font-semibold text-on-surface group-hover:text-primary transition-colors mb-2">
+                                Émission du 12 Juin 2026
+                            </h3>
+                            <p class="text-on-surface-variant text-xs font-medium mb-4">12 juin 2026</p>
+                            <a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all"
+                                href="https://www.radiocampusparis.org">
+                                Écouter l'émission
+                                <span class="material-symbols-outlined text-sm">mic</span>
+                            </a>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Academic Background / CTA -->
+
+        <!-- Collaboration -->
         <section class="bg-primary-container text-on-primary-container p-12 rounded-2xl relative overflow-hidden">
             <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
                 <div class="md:w-1/2">
-                    <h2 class="font-headline text-4xl font-bold mb-6">Prêt pour une collaboration scientifique ?</h2>
+                    <h2 class="font-headline text-4xl font-bold mb-6">Prêt pour une collaboration scientifique ?
+                    </h2>
                     <p class="text-on-primary-container/80 text-lg leading-relaxed mb-8">
-                        Toujours ouvert aux échanges sur la linguistique de corpus, la pragmatique ou l'analyse du
+                        Toujours ouvert aux échanges sur la linguistique de corpus, la pragmatique ou l'analyse
+                        du
                         discours. N'hésitez pas à me contacter pour des projets de recherche ou des conférences.
                     </p>
                     <div class="flex gap-4">
@@ -500,29 +809,8 @@
 
 
     </main>
-    <!-- Footer -->
-    <footer class="bg-zinc-100 dark:bg-zinc-900 w-full py-12 px-8">
-        <div class="bg-zinc-200 dark:border-zinc-800 h-[1px] w-full mb-8 opacity-20"></div>
-        <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto space-y-6 md:space-y-0">
-            <div class="flex flex-col items-center md:items-start">
-                <span
-                    class="font-['Newsreader'] font-semibold text-zinc-900 dark:text-zinc-100 text-xl">LinguistCode</span>
-                <p class="font-['Manrope'] text-sm tracking-wide text-zinc-500 dark:text-zinc-400 mt-2">©2026 Aurélien
-                    AMET. Tous droits réservés.</p>
-            </div>
 
-            <div class="flex gap-2">
-                <a href="https://cv.hal.science/aurelien-amet" aria-label="External link"
-                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm hover:opacity-80 transition-opacity">
-                    <span class="material-symbols-outlined text-lg" data-icon="link">link</span>
-                </a>
-                <button id="copyEmailBtn" aria-label="Copy email address"
-                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm hover:opacity-80 transition-opacity">
-                    <span class="material-symbols-outlined text-lg" data-icon="alternate_email">alternate_email</span>
-                </button>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script src="scripts.js" defer></script>
 </body>
