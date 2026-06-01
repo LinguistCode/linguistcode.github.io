@@ -6,80 +6,23 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Aurélien Amet | Portfolio Académique</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="icon" type="image/png" href="src/favicon.png" />
+
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="src/output.css" rel="stylesheet" />
     <link href="style-main.css" rel="stylesheet" />
-
-    <script src="tailwind.config.js"></script>
-
-
 </head>
 
 <body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
 
-    <!-- Nav Bar -->
-    <nav
-        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200/15 dark:border-zinc-800/15 shadow-sm dark:shadow-none">
-        <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto flex-wrap">
+    <div id="header-placeholder"></div>
 
-            <!-- Logo -->
-            <a href="index.html"
-                class="group relative flex items-center h-8 font-['Newsreader'] font-bold tracking-tight text-emerald-950 dark:text-emerald-50 w-48">
-                <span
-                    class="absolute text-2xl transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0">
-                    LinguistCode
-                </span>
-                <span
-                    class="absolute text-lg whitespace-nowrap transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 text-primary">
-                    Aurélien Amet
-                </span>
-            </a>
-
-
-            <!-- Bouton Menu (mobile only) -->
-            <button id="mobile-menu-btn"
-                class="md:hidden flex items-center text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 focus:outline-none">
-                <span class="material-symbols-outlined text-3xl">menu</span>
-            </button>
-
-            <!-- Liens de navigation (desktop only) -->
-            <div id="nav-links"
-                class="hidden w-full absolute top-20 left-0 bg-white/95 dark:bg-zinc-950/95 flex-col items-center py-6 gap-6 shadow-md border-b border-zinc-200/15 md:static md:flex md:flex-row md:w-auto md:space-x-12 md:bg-transparent md:py-0 md:gap-0 md:shadow-none md:border-none">
-                <a class="font-['Newsreader'] italic font-medium text-emerald-900 dark:text-emerald-400 border-b-2 border-emerald-900 dark:border-emerald-400 pb-1 translate-y-[1px] transition-transform"
-                    href="index.html">Accueil</a>
-                <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
-                    href="teaching.html">Enseignement</a>
-                <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
-                    href="Research.html">Recherche</a>
-                <a class="font-['Newsreader'] italic font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
-                    href="WIP.html">Contact</a>
-
-                <!-- Bouton CV (dans le menu sur mobile) -->
-                <a href="src/cv.pdf" target="_blank"
-                    class="md:hidden bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm mt-2">
-                    Télécharger CV
-                </a>
-            </div>
-
-            <!-- Bouton CV (A droite sur desktop) -->
-            <a href="src/cv.pdf" target="_blank"
-                class="hidden md:block bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm">
-                Télécharger CV
-            </a>
-
-        </div>
-    </nav>
     <main class="pt-32 pb-20 px-8 max-w-7xl mx-auto">
 
         <!-- Tailwind Hero Section: Asymmetrical Editorial Layout -->
@@ -109,9 +52,18 @@
                 </div>
             </div>
             <div class="col-span-7 lg:col-span-3 relative">
-                <div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-sm shadow-xl">
-                    <img alt="Aurélien Amet" class="w-full h-full object-cover grayscale contrast-125"
-                        data-alt="Illustration Homepage" src="https://placehold.co/300x600" />
+                <!-- Ajout de "relative" et "group" sur le conteneur de l'image -->
+                <div
+                    class="aspect-[4/5] bg-surface-container opacity-60 overflow-hidden rounded-sm shadow-xl relative group">
+                    <img alt="Trinity Library" class="w-full h-full object-cover contrast-125"
+                        data-alt="Illustration Homepage" src="src/trinity-library-dublin.jpg" />
+
+                    <!-- Crédit photo (Gris transparent, en bas à droite, visible au survol) -->
+                    <div
+                        class="absolute bottom-0 right-0 bg-zinc-900/70 backdrop-blur-sm text-white/90 text-[10px] font-body px-3 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-tl-md">
+                        Photo par <a href="https://unsplash.com/fr/@henry_be" target="_blank"
+                            class="hover:underline">Enrico Bet</a> sur Unsplash, 2018.
+                    </div>
                 </div>
                 <!-- Floating Detail Card -->
                 <div
@@ -225,29 +177,8 @@
             </div>
         </section>
     </main>
-    <!-- Footer -->
-    <footer class="bg-zinc-100 dark:bg-zinc-900 w-full py-12 px-8">
-        <div class="bg-zinc-200 dark:border-zinc-800 h-[1px] w-full mb-8 opacity-20"></div>
-        <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto space-y-6 md:space-y-0">
-            <div class="flex flex-col items-center md:items-start">
-                <span
-                    class="font-['Newsreader'] font-semibold text-zinc-900 dark:text-zinc-100 text-xl">LinguistCode</span>
-                <p class="font-['Manrope'] text-sm tracking-wide text-zinc-500 dark:text-zinc-400 mt-2">©2026 Aurélien
-                    AMET. Tous droits réservés.</p>
-            </div>
 
-            <div class="flex gap-2">
-                <a href="https://cv.hal.science/aurelien-amet" target="_blank" aria-label="Link to HAL profile"
-                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm hover:opacity-80 transition-opacity">
-                    <span class="material-symbols-outlined text-lg" data-icon="link">link</span>
-                </a>
-                <button id="copyEmailBtn" aria-label="Copy email address"
-                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm hover:opacity-80 transition-opacity">
-                    <span class="material-symbols-outlined text-lg" data-icon="alternate_email">alternate_email</span>
-                </button>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script src="scripts.js" defer></script>
 </body>
