@@ -1,0 +1,40 @@
+<nav
+    class="fixed top-0 w-full z-50 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-zinc-200/15 dark:border-zinc-800/15 shadow-sm dark:shadow-none">
+    <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto flex-wrap">
+
+        <a href="index.html"
+            class="group relative flex items-center h-8 font-['Newsreader'] font-bold tracking-tight w-48">
+            <span
+                class="absolute text-lg whitespace-nowrap transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 text-primary">
+                Aurélien Amet
+            </span>
+            <span
+                class="absolute text-2xl transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 text-emerald-950 dark:text-emerald-50">
+                LinguistCode
+            </span>
+        </a>
+
+        <button id="mobile-menu-btn"
+            class="md:hidden flex items-center text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 focus:outline-none">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+
+        <div id="nav-links"
+            class="hidden w-full absolute top-20 left-0 bg-white/95 dark:bg-zinc-950/95 flex-col items-center py-6 gap-6 shadow-md border-b border-zinc-200/15 md:static md:flex md:flex-row md:w-auto md:space-x-12 md:bg-transparent md:py-0 md:gap-0 md:shadow-none md:border-none">
+            <a class="nav-link" data-page="index.html" href="index.html">Accueil</a>
+            <a class="nav-link" data-page="teaching.html" href="teaching.html">Enseignement</a>
+            <a class="nav-link" data-page="Research.html" href="Research.html">Recherche</a>
+            <a class="nav-link" data-page="WIP.html" href="WIP.html">Contact</a>
+
+            <a href="src/cv.pdf" target="_blank"
+                class="md:hidden bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm mt-2">
+                Télécharger CV
+            </a>
+        </div>
+
+        <a href="src/cv.pdf" target="_blank"
+            class="hidden md:block bg-primary text-on-primary px-6 py-2.5 text-sm font-label tracking-wide hover:opacity-90 transition-opacity rounded-sm">
+            Télécharger CV
+        </a>
+    </div>
+</nav>
