@@ -2,97 +2,25 @@
 
 <html class="h-full" lang="fr">
 
+
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "surface-container-highest": "#e3e2e1",
-            "surface-variant": "#e3e2e1",
-            "on-secondary-fixed": "#081f1a",
-            "primary-fixed-dim": "#94d3c1",
-            "secondary-container": "#cce5dc",
-            "on-error-container": "#93000a",
-            "primary-container": "#004d40",
-            "tertiary-fixed": "#ffdbd1",
-            "surface": "#faf9f8",
-            "on-background": "#1a1c1c",
-            "secondary": "#4c635c",
-            "primary-fixed": "#afefdd",
-            "surface-container": "#eeeeed",
-            "on-secondary-fixed-variant": "#354b45",
-            "on-secondary-container": "#506760",
-            "on-primary-fixed": "#00201a",
-            "surface-tint": "#29695b",
-            "on-tertiary-fixed-variant": "#6d382a",
-            "on-surface-variant": "#3f4945",
-            "inverse-on-surface": "#f1f0f0",
-            "primary": "#00342b",
-            "error-container": "#ffdad6",
-            "tertiary-container": "#693527",
-            "on-secondary": "#ffffff",
-            "on-surface": "#1a1c1c",
-            "on-tertiary-fixed": "#370e04",
-            "on-primary-fixed-variant": "#065043",
-            "on-primary": "#ffffff",
-            "on-error": "#ffffff",
-            "secondary-fixed": "#cfe8df",
-            "outline-variant": "#bfc9c4",
-            "background": "#faf9f8",
-            "surface-container-lowest": "#ffffff",
-            "secondary-fixed-dim": "#b3ccc3",
-            "inverse-surface": "#2f3130",
-            "tertiary-fixed-dim": "#ffb5a1",
-            "surface-container-high": "#e9e8e7",
-            "outline": "#707975",
-            "inverse-primary": "#94d3c1",
-            "surface-bright": "#faf9f8",
-            "surface-container-low": "#f4f3f2",
-            "on-tertiary": "#ffffff",
-            "tertiary": "#4e2013",
-            "surface-dim": "#dadad9",
-            "on-tertiary-container": "#e89f8c",
-            "on-primary-container": "#7ebdac",
-            "error": "#ba1a1a"
-          },
-          fontFamily: {
-            "headline": ["Newsreader", "serif"],
-            "body": ["Manrope", "sans-serif"],
-            "label": ["Manrope", "sans-serif"]
-          },
-          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-        },
-      },
-    }
-  </script>
-  <style>
-    .material-symbols-outlined {
-      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
-      display: inline-block;
-      vertical-align: middle
-    }
+  <title>Aurélien Amet | Portfolio Académique</title>
+  <link rel="icon" type="image/png" href="src/favicon.png" />
 
-    .grain-texture {
-      background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDjmKGweU9WeCEJ-5GfcbmVNHISpp7fxtV6yGUoG_U9_447xs0bQ_YitZJgQxnamdfImezDJ4asvfydLp9uZK7ZHMVaPjUqpzP0xSK5Wj0hHlfU03MypvQ8vnusN8ErM6s2mQZT9Qrly4RoKVG5Eov9mPODOJgwo_p-PWWaFqK-0AI8omfczOI5c-f4goPvMkpBw2eMZMibBY0sm9r5tzdYlvC1mt9J0mN-pHK0ybaTTNVWKi_MYRgtF4p68OK8z9gUakL50n4HNu0S);
-      opacity: 0.03;
-      pointer-events: none
-    }
-  </style>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <link href="src/output.css" rel="stylesheet" />
+  <link href="style-main.css" rel="stylesheet" />
 </head>
+
 
 <body
   class="bg-surface font-body text-on-surface flex flex-col min-h-screen selection:bg-secondary-container selection:text-on-secondary-container">
@@ -182,13 +110,9 @@
       </div>
     </div>
   </main>
-  <footer class="bg-stone-50 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800">
-    <div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full mt-auto max-w-7xl mx-auto">
-      <div class="font-serif font-semibold text-teal-900 text-sm mb-4 md:mb-0">
-        © 2026 Aurélien Amet
-      </div>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
+
+  <script src="scripts.js" defer></script>
 </body>
 
 </html>
