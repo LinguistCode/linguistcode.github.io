@@ -19,6 +19,7 @@
     <link href="src/output.css" rel="stylesheet" />
     <link href="style-main.css" rel="stylesheet" />
     <link href="css/biblio-covers.css" rel="stylesheet" />
+    <link href="css/appendices-sidebar.css" rel="stylesheet" />
 
     <style>
         /* couvertures : lie le mono aux covers générées à Fira Code, comme le terminal */
@@ -367,6 +368,7 @@
 <body class="font-body selection:bg-secondary-container bg-surface text-on-surface">
 
     <div id="header-placeholder"></div>
+    <div id="sidebar-placeholder"></div>
 
     <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
 
@@ -867,6 +869,8 @@
 
         document.addEventListener("DOMContentLoaded", loadBibliography);
     </script>
+
+    <script src="js/appendices-sidebar.js" defer></script>
 
 </body>
 

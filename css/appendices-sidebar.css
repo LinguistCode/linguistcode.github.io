@@ -1,0 +1,179 @@
+/* appendices-sidebar.css
+ * -----------------------------------------------------------------
+ * Rail de navigation flottant entre les pages d'annexes.
+ * Discret par défaut (points + trait), les libellés n'apparaissent
+ * qu'au survol — sauf pour la page active, toujours identifiée.
+ * Injecté par js/appendices-sidebar.js, indépendant du contenu de
+ * la page (position fixed), donc aucun balisage à ajouter au body.
+ */
+
+.appendix-rail {
+    position: fixed;
+    left: 1.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    /* sous le header (z-30), au-dessus du contenu */
+}
+
+.rail-track {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 0.2rem 0;
+}
+
+.rail-line-bg,
+.rail-line-progress {
+    position: absolute;
+    left: 4px;
+    top: 0;
+    width: 1px;
+    height: 0;
+    /* la hauteur/position réelle est calculée en JS à partir des centres des points */
+}
+
+.rail-line-bg {
+    background-color: #e2e2de;
+    z-index: 0;
+}
+
+.rail-line-progress {
+    background-color: #004d40;
+    z-index: 1;
+    transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rail-item {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateX(-6px);
+    animation: railIn 0.5s ease forwards;
+}
+
+.rail-item:nth-child(2) {
+    animation-delay: 40ms;
+}
+
+.rail-item:nth-child(3) {
+    animation-delay: 80ms;
+}
+
+.rail-item:nth-child(4) {
+    animation-delay: 120ms;
+}
+
+.rail-item:nth-child(5) {
+    animation-delay: 160ms;
+}
+
+.rail-item:nth-child(6) {
+    animation-delay: 200ms;
+}
+
+@keyframes railIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.rail-dot {
+    flex-shrink: 0;
+    width: 9px;
+    height: 9px;
+    border-radius: 9999px;
+    background-color: #ffffff;
+    border: 2px solid #c7d1cc;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rail-item:hover .rail-dot {
+    border-color: #004d40;
+    transform: scale(1.25);
+}
+
+.rail-item.is-active .rail-dot {
+    background-color: #004d40;
+    border-color: #004d40;
+    box-shadow: 0 0 0 4px rgba(0, 77, 64, 0.14);
+}
+
+.rail-icon {
+    flex-shrink: 0;
+    font-size: 1.05rem;
+    color: #9aa39e;
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, color 0.25s ease;
+}
+
+.rail-item:hover .rail-icon,
+.rail-item.is-active .rail-icon {
+    width: 1.05rem;
+    opacity: 1;
+}
+
+.rail-item:hover .rail-icon {
+    color: #004d40;
+}
+
+.rail-item.is-active .rail-icon {
+    color: #004d40;
+}
+
+.rail-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: #3f4945;
+    white-space: nowrap;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+}
+
+.rail-item:hover .rail-label {
+    max-width: 11rem;
+    opacity: 1;
+}
+
+.rail-item.is-active .rail-label {
+    max-width: 11rem;
+    opacity: 0.85;
+    font-weight: 600;
+    color: #004d40;
+}
+
+/* discrétion : on retire le rail plutôt que de le laisser chevaucher
+   le contenu ou le menu mobile sur les petits/moyens écrans */
+@media (max-width: 1180px) {
+    .appendix-rail {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rail-item,
+    .rail-dot,
+    .rail-icon,
+    .rail-label,
+    .rail-line-progress {
+        animation: none;
+        transition: none;
+    }
+
+    .rail-item {
+        opacity: 1;
+        transform: none;
+    }
+}
