@@ -1,0 +1,232 @@
+[
+  {
+    "citekey": "schmidCognitiveEffectsShell1999",
+    "title": "Cognitive Effects of Shell Nouns",
+    "tags": [
+      "nominal",
+      "nominalization",
+      "pragmatics",
+      "shell_noun"
+    ],
+    "thesis_chapter": [
+      "chapter-3"
+    ],
+    "framework": [
+      "grammar",
+      "linguistics"
+    ],
+    "pub_year": 1999,
+    "authors": [
+      "Hans-Jörg Schmid"
+    ],
+    "item_type": "bookSection",
+    "best_quote": null,
+    "related_pubs": [
+      {
+        "display": "Schmid (2018)",
+        "target_file": "Schmid 2018.md"
+      },
+      {
+        "display": "Schmid (2000)",
+        "target_file": "Schmid 2000.md"
+      }
+    ],
+    "citation": "Schmid, Hans-Jörg. 1999. ‘Cognitive Effects of Shell Nouns’. In _Current Issues in Linguistic Theory_, edited by Karen Van Hoek, Andrej A. Kibrik, and Leo Noordman, vol. 176. John Benjamins Publishing Company. https://doi.org/10.1075/cilt.176.09sch.",
+    "source_file": "Schmid 1999.md",
+    "cover_url": null
+  },
+  {
+    "citekey": "Schmid+2000",
+    "title": "English abstract nouns as conceptual shells",
+    "tags": [
+      "nominal",
+      "nominalization",
+      "pragmatics",
+      "shell_noun"
+    ],
+    "thesis_chapter": [
+      "chapter-3"
+    ],
+    "framework": [
+      "grammar",
+      "linguistics"
+    ],
+    "pub_year": 2000,
+    "authors": [
+      "Hans-Jörg Schmid"
+    ],
+    "item_type": "book",
+    "best_quote": null,
+    "related_pubs": [
+      {
+        "display": "Schmid (1999)",
+        "target_file": "Schmid 1999.md"
+      },
+      {
+        "display": "Schmid (2018)",
+        "target_file": "Schmid 2018.md"
+      },
+      {
+        "display": "Mahlberg (2005)",
+        "target_file": "Mahlberg 2005.md"
+      }
+    ],
+    "citation": "Schmid, Hans-Jörg. 2000. _English Abstract Nouns as Conceptual Shells_. De Gruyter Mouton. https://doi.org/doi:10.1515/9783110808704.",
+    "source_file": "Schmid 2000.md",
+    "cover_url": "./src/img/cov-schmid_2000.jpg"
+  },
+  {
+    "citekey": "mahlbergEnglishGeneralNouns2005",
+    "title": "English general nouns: a corpus theoretical approach",
+    "tags": [
+      "corpus_ling",
+      "general_nouns",
+      "nominal"
+    ],
+    "thesis_chapter": [],
+    "framework": [
+      "linguistics"
+    ],
+    "pub_year": 2005,
+    "authors": [
+      "Michaela Mahlberg"
+    ],
+    "item_type": "book",
+    "best_quote": null,
+    "related_pubs": [],
+    "citation": "Mahlberg, Michaela. 2005. _English General Nouns: A Corpus Theoretical Approach_. Studies in Corpus Linguistics, Volume 20. J. Benjamins.",
+    "source_file": "Mahlberg 2005.md",
+    "cover_url": "./src/img/cov-mahlberg_2005.png"
+  },
+  {
+    "citekey": "kimPresidentObamaPolymorphous2011",
+    "title": "President Obama and the Polymorphous Other in U.S. Political Discourse",
+    "tags": [
+      "racism",
+      "otherness",
+      "Obama",
+      "tea_party",
+      "political_discourse",
+      "terrorism",
+      "conservatism"
+    ],
+    "thesis_chapter": [
+      "chapter-5"
+    ],
+    "framework": [
+      "political_sciences"
+    ],
+    "pub_year": 2011,
+    "authors": [
+      "Claire Jean Kim"
+    ],
+    "item_type": "journalArticle",
+    "best_quote": "\"Conservatives still wax on about government spending on minorities, but they have a new bogeyman now: the Al Qaeda-trained terrorist residing in disguise among Americans and plotting the total destruction of Western civilization.2\" (Kim 2011: 169)",
+    "related_pubs": [],
+    "citation": "Kim, Claire Jean. 2011. ‘President Obama and the Polymorphous Other in U.S. Political Discourse’. _Asian American Law Journal_ 18: 165.",
+    "source_file": "Kim 2011.md",
+    "cover_url": null
+  },
+  {
+    "citekey": "capCrossingSymbolicDistances2015",
+    "title": "Crossing Symbolic Distances in Political Discourse Space",
+    "tags": [
+      "Bush",
+      "threat",
+      "ideology",
+      "DST",
+      "proximization",
+      "war-on-terror",
+      "political_discourse",
+      "pragmatics",
+      "enemy",
+      "methodology"
+    ],
+    "thesis_chapter": [
+      "chapter-5",
+      "chapter-1"
+    ],
+    "framework": [
+      "DA"
+    ],
+    "pub_year": 2015,
+    "authors": [
+      "Piotr Cap"
+    ],
+    "item_type": "journalArticle",
+    "best_quote": null,
+    "related_pubs": [
+      {
+        "display": "Cap (2016)",
+        "target_file": "Cap 2016.md"
+      }
+    ],
+    "citation": "Cap, Piotr. 2015. ‘Crossing Symbolic Distances in Political Discourse Space’. _Critical Discourse Studies_ 12 (March): 1–17. https://doi.org/10.1080/17405904.2015.1013481.",
+    "source_file": "Cap 2015.md",
+    "cover_url": null
+  },
+  {
+    "citekey": "schmidShellNounsEnglish2018",
+    "title": "Shell nouns in English – a personal roundup",
+    "tags": [
+      "nominal",
+      "nominalization",
+      "pragmatics",
+      "shell_noun"
+    ],
+    "thesis_chapter": [
+      "chapter-3"
+    ],
+    "framework": [
+      "grammar",
+      "linguistics"
+    ],
+    "pub_year": 2018,
+    "authors": [
+      "Hans-Jörg Schmid"
+    ],
+    "item_type": "journalArticle",
+    "best_quote": null,
+    "related_pubs": [
+      {
+        "display": "Schmid (2000)",
+        "target_file": "Schmid 2000.md"
+      },
+      {
+        "display": "Schmid (1999)",
+        "target_file": "Schmid 1999.md"
+      }
+    ],
+    "citation": "Schmid, Hans-Jörg. 2018. ‘Shell Nouns in English – a Personal Roundup’. _Caplletra. Revista Internacional de Filologia_, no. 64 (March): 109. https://doi.org/10.7203/caplletra.64.11368.",
+    "source_file": "Schmid 2018.md",
+    "cover_url": null
+  },
+  {
+    "citekey": "resendeConstructionThreatsEnemies2023",
+    "title": "The construction of threats and enemies in US presidential discourses (1993-2013)",
+    "tags": [
+      "Bush",
+      "Obama",
+      "threat",
+      "political_discourse"
+    ],
+    "thesis_chapter": [
+      "chapter-5"
+    ],
+    "framework": [
+      "DA",
+      "political_sciences"
+    ],
+    "pub_year": 2023,
+    "authors": [
+      "Erica Simone Almeida Resende",
+      "Lucas Amaral Batista Leite"
+    ],
+    "item_type": "journalArticle",
+    "best_quote": "\"From this perspective, foreign policy can be seen as a social and political practice of border building, as it discursively produces differences based on dichotomies such as “inside/outside”, “friend/enemy”, “self/other”, where the identity/alterity nexus operates in the co-constitution and (re)affirmation of social relations between political entities.\" (2023:107)",
+    "related_pubs": [],
+    "citation": "Resende, Erica Simone Almeida, and Lucas Amaral Batista Leite. 2023. ‘The Construction of Threats and Enemies in US Presidential Discourses (1993-2013)’. _Topoi (Rio de Janeiro)_ 24 (52): 103–30. https://doi.org/10.1590/2237-101x02405205.",
+    "source_file": "Resende 2023.md",
+    "cover_url": null
+  }
+]

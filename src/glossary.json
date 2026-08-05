@@ -1,0 +1,23 @@
+[
+  {
+    "term": "Ergativity",
+    "id": "ergativity",
+    "definition": "A morphosyntactic alignment pattern in which the single argument of an intransitive verb (S) is treated like the object of a transitive verb (O), rather than like the subject (A) — the reverse of [[Nominative-Accusative Alignment]]. Found in languages such as Basque, Georgian, and many Australian languages.",
+    "aliases": ["Ergative-absolutive alignment", "Ergative alignment"],
+    "tags": ["morphosyntax", "alignment"]
+  },
+  {
+    "term": "Nominative-Accusative Alignment",
+    "id": "nominative-accusative-alignment",
+    "definition": "A morphosyntactic alignment pattern in which S and A are treated alike (both nominative), and O is marked differently (accusative). The mirror pattern of [[Ergativity]], and the more common typological choice cross-linguistically.",
+    "aliases": ["Accusative alignment"],
+    "tags": ["morphosyntax", "alignment"]
+  },
+  {
+    "term": "Split Ergativity",
+    "id": "split-ergativity",
+    "definition": "A system in which a single language shows [[Ergativity]] in some grammatical contexts (e.g. past tense, or with certain persons) and [[Nominative-Accusative Alignment]] in others. Common conditioning factors include tense/aspect, person, and clause type.",
+    "aliases": [],
+    "tags": ["morphosyntax", "alignment"]
+  }
+]

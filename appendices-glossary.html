@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aurélien Amet | Glossaire</title>
+    <link rel="icon" type="image/png" href="src/favicon.png" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <link href="src/output.css" rel="stylesheet" />
+    <link href="style-main.css" rel="stylesheet" />
+
+    <style>
+        /* ============ EN-TÊTE / RECHERCHE ============ */
+        .glossary-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .glossary-search {
+            flex: 1 1 320px;
+            background-color: var(--surface-container-low, #f4f4f2);
+            border: 1px solid var(--outline-variant, #d6d6d1);
+            border-radius: 8px;
+            color: var(--on-surface, #1b1c18);
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.92rem;
+            padding: 10px 14px;
+            transition: border-color 0.15s ease;
+        }
+
+        .glossary-search::placeholder {
+            color: var(--on-surface-variant, #74776e);
+        }
+
+        .glossary-search:focus {
+            outline: none;
+            border-color: var(--primary, #2f6b4f);
+        }
+
+        .glossary-count {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            color: var(--on-surface-variant, #74776e);
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+
+        /* ============ NAV A-Z ============ */
+        .az-nav {
+            position: sticky;
+            top: 5.5rem;
+            z-index: 10;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+            padding: 10px 0;
+            margin-bottom: 2rem;
+            background-color: var(--surface, #fbfbf9);
+            border-bottom: 1px solid var(--outline-variant, #d6d6d1);
+        }
+
+        .az-nav button {
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            color: var(--on-surface-variant, #9a9d92);
+            cursor: pointer;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+        .az-nav button:hover:not(:disabled) {
+            color: var(--primary, #2f6b4f);
+            background-color: rgba(63, 130, 89, 0.1);
+        }
+
+        .az-nav button:disabled {
+            color: var(--outline-variant, #d6d6d1);
+            cursor: default;
+        }
+
+        .az-nav button.is-current {
+            color: var(--surface, #fbfbf9);
+            background-color: var(--primary, #2f6b4f);
+        }
+
+        /* ============ GROUPES / ENTRÉES ============ */
+        #glossary-list {
+            max-width: 58rem;
+        }
+
+        .letter-group {
+            margin-bottom: 2rem;
+            scroll-margin-top: 4.5rem;
+        }
+
+        .letter-heading {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 1.8rem;
+            color: var(--primary, #2f6b4f);
+            border-bottom: 1px solid var(--outline-variant, #d6d6d1);
+            padding-bottom: 6px;
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-entry {
+            border-bottom: 1px solid var(--outline-variant, #e3e3de);
+        }
+
+        .entry-header {
+            width: 100%;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 0.85rem 0.25rem;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .entry-term {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--on-surface-variant, #55584f);
+            transition: color 0.15s ease;
+        }
+
+        .entry-header:hover .entry-term,
+        .glossary-entry.is-open .entry-term {
+            color: var(--primary, #2f6b4f);
+        }
+
+        .entry-chevron {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            color: var(--on-surface-variant, #9a9d92);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .glossary-entry.is-open .entry-chevron {
+            transform: rotate(90deg);
+            color: var(--primary, #2f6b4f);
+        }
+
+        .entry-body {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.22s ease;
+        }
+
+        .glossary-entry.is-open .entry-body {
+            grid-template-rows: 1fr;
+        }
+
+        .entry-body-inner {
+            overflow: hidden;
+        }
+
+        .entry-definition {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--on-surface, #33352f);
+            padding: 0 0.25rem 1rem;
+        }
+
+        .entry-definition .xref {
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            color: var(--secondary, #2f6fed);
+            cursor: pointer;
+            border-bottom: 1px dotted color-mix(in srgb, var(--secondary, #2f6fed) 40%, transparent);
+        }
+
+        .entry-definition .xref:hover {
+            border-bottom-color: var(--secondary, #2f6fed);
+        }
+
+        .entry-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 0 0.25rem 1rem;
+        }
+
+        .entry-tag {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.68rem;
+            color: var(--on-surface-variant, #74776e);
+            border: 1px solid var(--outline-variant, #d6d6d1);
+            border-radius: 999px;
+            padding: 2px 9px;
+            letter-spacing: 0.03em;
+        }
+
+        .glossary-entry.is-flashed .entry-term {
+            animation: flash-term 1.1s ease;
+        }
+
+        @keyframes flash-term {
+            0% {
+                color: var(--primary, #2f6b4f);
+            }
+
+            60% {
+                color: var(--primary, #2f6b4f);
+            }
+
+            100% {
+                color: var(--on-surface-variant, #55584f);
+            }
+        }
+
+        .letter-group.is-hidden-by-filter,
+        .glossary-entry.is-hidden-by-filter {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="font-body selection:bg-secondary-container bg-surface text-on-surface">
+
+    <div id="header-placeholder"></div>
+
+    <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+
+        <section class="mb-10">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-[2px] bg-primary"></div>
+                <span class="font-label text-xs uppercase tracking-[0.2em] text-secondary">Annexes</span>
+            </div>
+            <h1 class="font-headline text-5xl md:text-7xl italic text-primary leading-tight mb-8">
+                Glossaire
+            </h1>
+            <p class="font-body text-lg text-on-surface-variant leading-relaxed max-w-3xl">
+                Définitions des notions et concepts complexes mobilisés dans la thèse. Cliquez sur un terme pour
+                afficher sa définition complète ; les termes soulignés renvoient à d'autres entrées du glossaire.
+            </p>
+        </section>
+
+        <section class="glossary-controls">
+            <input type="text" id="glossary-search" class="glossary-search"
+                placeholder="Rechercher un terme, un alias, un mot de la définition..." />
+            <span class="glossary-count" id="glossary-count"></span>
+        </section>
+
+        <nav class="az-nav" id="az-nav" aria-label="Navigation alphabétique"></nav>
+
+        <section id="glossary-container">
+            <div id="loading-message" class="text-on-surface-variant italic font-headline text-xl">
+                Chargement du glossaire...
+            </div>
+            <div id="glossary-list"></div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="scripts.js"></script>
+
+    <script>
+        const GLOSSARY_JSON_PATH = "./src/glossary.json";
+        const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+        let allTerms = [];
+        let termsById = new Map();
+        let termsByNormalizedName = new Map();
+
+        function stripAccents(str) {
+            return (str || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+
+        function normalize(str) {
+            return stripAccents(str || "").toLowerCase().trim();
+        }
+
+        function slugify(str) {
+            return normalize(str).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+        }
+
+        function firstLetter(term) {
+            const clean = stripAccents(term || "").trim();
+            const c = clean.charAt(0).toUpperCase();
+            return /[A-Z]/.test(c) ? c : "#";
+        }
+
+        function escapeHtml(str) {
+            return (str || "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;");
+        }
+
+        // Transforme le texte (déjà échappé) en insérant des liens cliquables
+        // pour toute occurrence de [[Terme]] ou [[Terme|Texte affiché]].
+        function renderDefinition(text) {
+            const escaped = escapeHtml(text);
+            return escaped.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, targetRaw, displayRaw) => {
+                const target = targetRaw.trim();
+                const display = (displayRaw || targetRaw).trim();
+                const targetEntry = termsByNormalizedName.get(normalize(target));
+                if (!targetEntry) {
+                    // terme référencé mais introuvable dans le glossaire : affiché tel quel, non cliquable
+                    return display;
+                }
+                return `<button type="button" class="xref" data-target="${targetEntry.id}">${display}</button>`;
+            });
+        }
+
+        function buildAzNav() {
+            const present = new Set(allTerms.map(t => firstLetter(t.term)));
+            const nav = document.getElementById("az-nav");
+            nav.innerHTML = "";
+            ALPHABET.forEach(letter => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.textContent = letter;
+                if (!present.has(letter)) {
+                    btn.disabled = true;
+                } else {
+                    btn.addEventListener("click", () => {
+                        document.getElementById(`letter-${letter}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+                }
+                nav.appendChild(btn);
+            });
+        }
+
+        function buildEntry(entry) {
+            const wrap = document.createElement("div");
+            wrap.className = "glossary-entry";
+            wrap.id = `entry-${entry.id}`;
+            wrap.dataset.id = entry.id;
+
+            const header = document.createElement("button");
+            header.type = "button";
+            header.className = "entry-header";
+            header.setAttribute("aria-expanded", "false");
+
+            const termSpan = document.createElement("span");
+            termSpan.className = "entry-term";
+            termSpan.textContent = entry.term;
+
+            const chevron = document.createElement("span");
+            chevron.className = "entry-chevron";
+            chevron.textContent = "›";
+
+            header.append(termSpan, chevron);
+
+            const body = document.createElement("div");
+            body.className = "entry-body";
+            const bodyInner = document.createElement("div");
+            bodyInner.className = "entry-body-inner";
+
+            const def = document.createElement("p");
+            def.className = "entry-definition";
+            def.innerHTML = renderDefinition(entry.definition);
+            bodyInner.appendChild(def);
+
+            if (entry.tags && entry.tags.length) {
+                const tagsWrap = document.createElement("div");
+                tagsWrap.className = "entry-tags";
+                entry.tags.forEach(tag => {
+                    const chip = document.createElement("span");
+                    chip.className = "entry-tag";
+                    chip.textContent = tag;
+                    tagsWrap.appendChild(chip);
+                });
+                bodyInner.appendChild(tagsWrap);
+            }
+
+            body.appendChild(bodyInner);
+
+            header.addEventListener("click", () => toggleEntry(entry.id));
+            wrap.append(header, body);
+            return wrap;
+        }
+
+        function toggleEntry(id, forceOpen) {
+            const el = document.getElementById(`entry-${id}`);
+            if (!el) return;
+            const shouldOpen = forceOpen !== undefined ? forceOpen : !el.classList.contains("is-open");
+            el.classList.toggle("is-open", shouldOpen);
+            el.querySelector(".entry-header").setAttribute("aria-expanded", String(shouldOpen));
+        }
+
+        function jumpToEntry(id) {
+            const el = document.getElementById(`entry-${id}`);
+            if (!el) return;
+            toggleEntry(id, true);
+            el.scrollIntoView({ behavior: "smooth", block: "center" });
+            el.classList.remove("is-flashed");
+            // force reflow pour pouvoir rejouer l'animation si on reclique le même terme
+            void el.offsetWidth;
+            el.classList.add("is-flashed");
+            history.replaceState(null, "", `#${id}`);
+        }
+
+        function renderList(entries) {
+            const container = document.getElementById("glossary-list");
+            container.innerHTML = "";
+
+            const sorted = [...entries].sort((a, b) =>
+                normalize(a.term).localeCompare(normalize(b.term), "fr")
+            );
+
+            let currentLetter = null;
+            let groupEl = null;
+
+            sorted.forEach(entry => {
+                const letter = firstLetter(entry.term);
+                if (letter !== currentLetter) {
+                    currentLetter = letter;
+                    groupEl = document.createElement("div");
+                    groupEl.className = "letter-group";
+                    groupEl.id = `letter-${letter}`;
+                    groupEl.dataset.letter = letter;
+                    const heading = document.createElement("h2");
+                    heading.className = "letter-heading";
+                    heading.textContent = letter;
+                    groupEl.appendChild(heading);
+                    container.appendChild(groupEl);
+                }
+                groupEl.appendChild(buildEntry(entry));
+            });
+
+            container.addEventListener("click", (e) => {
+                const xref = e.target.closest(".xref");
+                if (xref) {
+                    e.stopPropagation();
+                    jumpToEntry(xref.dataset.target);
+                }
+            });
+        }
+
+        function applySearch() {
+            const query = normalize(document.getElementById("glossary-search").value);
+            let visibleCount = 0;
+
+            document.querySelectorAll(".letter-group").forEach(group => {
+                let anyVisible = false;
+                group.querySelectorAll(".glossary-entry").forEach(entryEl => {
+                    const entry = termsById.get(entryEl.dataset.id);
+                    const haystack = normalize(
+                        [entry.term, (entry.aliases || []).join(" "), entry.definition, (entry.tags || []).join(" ")].join(" ")
+                    );
+                    const matches = query === "" || haystack.includes(query);
+                    entryEl.classList.toggle("is-hidden-by-filter", !matches);
+                    if (matches) {
+                        anyVisible = true;
+                        visibleCount++;
+                    }
+                });
+                group.classList.toggle("is-hidden-by-filter", !anyVisible);
+            });
+
+            const count = document.getElementById("glossary-count");
+            count.textContent = `${visibleCount} terme${visibleCount === 1 ? "" : "s"}`;
+        }
+
+        function setupScrollSpy() {
+            const groups = Array.from(document.querySelectorAll(".letter-group"));
+            const navButtons = Array.from(document.querySelectorAll("#az-nav button"));
+            if (!groups.length) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (!e.isIntersecting) return;
+                    const letter = e.target.dataset.letter;
+                    navButtons.forEach(b => b.classList.toggle("is-current", b.textContent === letter));
+                });
+            }, { rootMargin: "-10% 0px -80% 0px" });
+
+            groups.forEach(g => observer.observe(g));
+        }
+
+        async function loadGlossary() {
+            const loadingMsg = document.getElementById("loading-message");
+            let entries;
+            try {
+                const res = await fetch(GLOSSARY_JSON_PATH);
+                entries = await res.json();
+            } catch (err) {
+                console.error("[glossary] Impossible de charger le glossaire :", err);
+                loadingMsg.textContent = "Erreur de chargement. Vérifiez que src/glossary.json existe.";
+                return;
+            }
+
+            if (!entries || entries.length === 0) {
+                loadingMsg.textContent = "Aucun terme trouvé. Vérifiez que src/glossary.json existe.";
+                return;
+            }
+
+            // normalisation : id auto-généré si absent, aliases/tags par défaut
+            allTerms = entries.map(e => ({
+                id: e.id || slugify(e.term),
+                term: e.term,
+                definition: e.definition || "",
+                aliases: e.aliases || [],
+                tags: e.tags || []
+            }));
+
+            termsById = new Map(allTerms.map(t => [t.id, t]));
+            termsByNormalizedName = new Map();
+            allTerms.forEach(t => {
+                termsByNormalizedName.set(normalize(t.term), t);
+                (t.aliases || []).forEach(alias => termsByNormalizedName.set(normalize(alias), t));
+            });
+
+            loadingMsg.style.display = "none";
+            buildAzNav();
+            renderList(allTerms);
+            applySearch();
+            setupScrollSpy();
+
+            document.getElementById("glossary-search").addEventListener("input", applySearch);
+
+            // lien profond : #terme dans l'URL au chargement
+            if (location.hash) {
+                const id = location.hash.slice(1);
+                if (termsById.has(id)) {
+                    // laisse le layout se stabiliser avant de scroller
+                    requestAnimationFrame(() => jumpToEntry(id));
+                }
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", loadGlossary);
+    </script>
+
+</body>
+
+</html>

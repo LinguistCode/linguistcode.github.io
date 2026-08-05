@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aurélien Amet | Inventaire du Corpus</title>
+    <link rel="icon" type="image/png" href="src/favicon.png" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <link href="src/output.css" rel="stylesheet" />
+    <link href="style-main.css" rel="stylesheet" />
+</head>
+
+<body class="font-body selection:bg-secondary-container bg-surface text-on-surface">
+
+    <div id="header-placeholder"></div>
+
+    <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-[2px] bg-primary"></div>
+                <span class="font-label text-xs uppercase tracking-[0.2em] text-secondary">Données de recherche</span>
+            </div>
+            <h1 class="font-headline text-5xl md:text-7xl italic text-primary leading-tight mb-8">
+                Inventaire du Corpus
+            </h1>
+            <p class="font-body text-lg text-on-surface-variant leading-relaxed max-w-3xl">
+                Accédez à l'intégralité des données textuelles mobilisées dans le cadre de ma thèse. Ce corpus rassemble
+                les productions langagières (discours, déclarations, interventions) des présidents américains du XXIe
+                siècle, annotées et prêtes pour l'analyse textométrique.
+            </p>
+        </section>
+
+        <section class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12 max-w-3xl">
+            <div
+                class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/20 flex flex-col justify-center">
+                <span class="font-headline italic text-4xl text-primary font-bold mb-1" id="kpi-speeches">--</span>
+                <span class="font-label text-xs uppercase tracking-wider text-outline">Discours indexés</span>
+            </div>
+            <div
+                class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/20 flex flex-col justify-center">
+                <span class="font-headline italic text-4xl text-primary font-bold mb-1">2001 — 2021</span>
+                <span class="font-label text-xs uppercase tracking-wider text-outline">Période étudiée</span>
+            </div>
+        </section>
+
+        <section
+            class="bg-surface-container border border-outline-variant/20 p-6 rounded-xl mb-8 flex flex-col lg:flex-row gap-4 items-center justify-between">
+
+            <div class="flex flex-col md:flex-row gap-4 w-full lg:w-auto flex-grow">
+                <div class="relative w-full md:w-72">
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-xl">search</span>
+                    <input type="text" id="search-corpus" placeholder="Rechercher un titre..."
+                        class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-lg pl-12 pr-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors font-body">
+                </div>
+
+                <div class="relative w-full md:w-48">
+                    <select id="year-filter"
+                        class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors font-body text-on-surface-variant cursor-pointer appearance-none">
+                        <option value="all">Toutes les années</option>
+                    </select>
+                    <span
+                        class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline text-xl pointer-events-none">expand_more</span>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 w-full lg:w-auto justify-start lg:justify-end shrink-0">
+                <button data-filter="all"
+                    class="filter-btn bg-primary text-on-primary px-4 py-2 text-xs font-label uppercase tracking-wider rounded-sm transition-all">Tous</button>
+                <button data-filter="Bush"
+                    class="filter-btn bg-surface-container-lowest hover:bg-surface-container-high text-on-surface border border-outline-variant/30 px-4 py-2 text-xs font-label uppercase tracking-wider rounded-sm transition-all">G.
+                    W. Bush</button>
+                <button data-filter="Obama"
+                    class="filter-btn bg-surface-container-lowest hover:bg-surface-container-high text-on-surface border border-outline-variant/30 px-4 py-2 text-xs font-label uppercase tracking-wider rounded-sm transition-all">B.
+                    Obama</button>
+                <button data-filter="Trump"
+                    class="filter-btn bg-surface-container-lowest hover:bg-surface-container-high text-on-surface border border-outline-variant/30 px-4 py-2 text-xs font-label uppercase tracking-wider rounded-sm transition-all">D.
+                    Trump</button>
+            </div>
+        </section>
+
+        <section
+            class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden shadow-sm">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr
+                            class="bg-surface-container-high border-b border-outline-variant/30 text-xs font-label uppercase tracking-wider text-secondary">
+                            <th class="py-4 px-6 w-32">Date</th>
+                            <th class="py-4 px-6 w-32">Président</th>
+                            <th class="py-4 px-6">Titre du Discours</th>
+                            <th class="py-4 px-6 w-24 text-center">Dossier</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpus-table-body"
+                        class="divide-y divide-outline-variant/10 text-sm text-on-surface-variant font-body">
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="no-results" class="hidden p-12 text-center text-outline font-headline italic text-lg">
+                Aucun discours ne correspond à vos critères de recherche.
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="scripts.js" defer></script>
+
+    <script>
+        // 1. Dictionnaire des dossiers Google Drive
+        const driveFolders = {
+            "Bush": {
+                "1999": "https://drive.google.com/drive/folders/ID_BUSH_1999",
+                "2001": "https://drive.google.com/drive/folders/ID_BUSH_2001"
+            },
+            "Obama": {
+                "2009": "https://drive.google.com/drive/folders/ID_OBAMA_2009"
+            },
+            "Trump": {
+                "2020": "https://drive.google.com/drive/folders/ID_TRUMP_2020",
+                "2021": "https://drive.google.com/drive/folders/ID_TRUMP_2021"
+            }
+        };
+
+        // Initialisation des variables
+        let corpusData = [];
+        const tableBody = document.getElementById('corpus-table-body');
+        const searchInput = document.getElementById('search-corpus');
+        const yearFilterSelect = document.getElementById('year-filter');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const noResults = document.getElementById('no-results');
+
+        let currentFilter = 'all'; // Filtre Président
+        let currentYearFilter = 'all'; // Filtre Année
+        let searchQuery = '';
+
+        // Formater les dates proprement
+        function formatDate(dateString) {
+            const dateObj = new Date(dateString);
+            if (isNaN(dateObj)) return dateString;
+            const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+            return dateObj.toLocaleDateString('fr-FR', options);
+        }
+
+        // Peupler le menu déroulant des années dynamiquement
+        function populateYearFilter() {
+            const years = new Set();
+            corpusData.forEach(item => {
+                const dateObj = new Date(item.date);
+                if (!isNaN(dateObj)) {
+                    years.add(dateObj.getFullYear().toString());
+                }
+            });
+
+            // Tri décroissant (de la plus récente à la plus ancienne)
+            const sortedYears = Array.from(years).sort((a, b) => b - a);
+
+            sortedYears.forEach(year => {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearFilterSelect.appendChild(option);
+            });
+        }
+
+        // Fonction d'affichage du tableau avec le double filtre
+        function renderTable() {
+            tableBody.innerHTML = '';
+
+            const filteredData = corpusData.filter(item => {
+                const dateObj = new Date(item.date);
+                const itemYear = !isNaN(dateObj) ? dateObj.getFullYear().toString() : "";
+
+                const matchesSpeaker = currentFilter === 'all' || item.president === currentFilter;
+                const matchesYear = currentYearFilter === 'all' || itemYear === currentYearFilter;
+                const matchesSearch = (item.title && item.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
+                    (item.president && item.president.toLowerCase().includes(searchQuery.toLowerCase()));
+
+                // L'élément doit valider les 3 conditions (Recherche ET Président ET Année)
+                return matchesSpeaker && matchesSearch && matchesYear;
+            });
+
+            if (filteredData.length === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+
+                filteredData.forEach(item => {
+                    const dateObj = new Date(item.date);
+                    const year = !isNaN(dateObj) ? dateObj.getFullYear().toString() : "";
+
+                    const folderLink = (driveFolders[item.president] && driveFolders[item.president][year])
+                        ? driveFolders[item.president][year]
+                        : "#";
+
+                    const row = document.createElement('tr');
+                    row.className = "hover:bg-surface-container-low transition-colors duration-200";
+                    row.innerHTML = `
+                        <td class="py-4 px-6 font-mono text-xs whitespace-nowrap">${formatDate(item.date)}</td>
+                        <td class="py-4 px-6 font-semibold text-primary">${item.president}</td>
+                        <td class="py-4 px-6 font-medium text-on-surface">${item.title}</td>
+                        <td class="py-4 px-6 text-center">
+                            <a href="${folderLink}" target="_blank" class="text-primary hover:text-secondary inline-flex items-center justify-center group" title="Ouvrir le dossier Drive de l'année ${year}">
+                                <span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">folder_open</span>
+                            </a>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+        }
+
+        // Écouteur : Barre de recherche
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderTable();
+        });
+
+        // Écouteur : Menu déroulant des années
+        yearFilterSelect.addEventListener('change', (e) => {
+            currentYearFilter = e.target.value;
+            renderTable();
+        });
+
+        // Écouteur : Boutons de président
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                filterButtons.forEach(b => {
+                    b.className = "filter-btn bg-surface-container-lowest hover:bg-surface-container-high text-on-surface border border-outline-variant/30 px-4 py-2 text-xs font-label uppercase tracking-wider rounded-sm transition-all";
+                });
+                btn.className = "filter-btn bg-primary text-on-primary px-4 py-2 text-xs font-label uppercase tracking-wider rounded-sm transition-all";
+
+                currentFilter = btn.getAttribute('data-filter');
+                renderTable();
+            });
+        });
+
+        // CHARGEMENT DU FICHIER JSON
+        async function loadCorpus() {
+            try {
+                tableBody.innerHTML = `<tr><td colspan="4" class="py-8 text-center text-outline italic">Chargement de la base de données...</td></tr>`;
+
+                const response = await fetch('index_corpus.json');
+                if (!response.ok) throw new Error("Impossible de charger le fichier JSON.");
+
+                corpusData = await response.json();
+
+                const kpiSpeeches = document.getElementById('kpi-speeches');
+                if (kpiSpeeches) kpiSpeeches.innerText = corpusData.length.toLocaleString('fr-FR');
+
+                // On génère la liste des années AVANT de rendre le tableau
+                populateYearFilter();
+                renderTable();
+
+            } catch (error) {
+                console.error("Erreur lors du chargement :", error);
+                tableBody.innerHTML = `<tr><td colspan="4" class="py-8 text-center text-error font-bold">Erreur : Impossible de charger les données. Vérifiez que index_corpus.json est bien dans le même dossier.</td></tr>`;
+            }
+        }
+
+        loadCorpus();
+    </script>
+</body>
+
+</html>

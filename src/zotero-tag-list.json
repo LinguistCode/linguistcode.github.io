@@ -1,0 +1,890 @@
+[
+  {
+    "tag": "20th_century",
+    "color": "#1A5276"
+  },
+  {
+    "tag": "21st_century",
+    "color": "#2980B9"
+  },
+  {
+    "tag": "9/11",
+    "color": "#000000"
+  },
+  {
+    "tag": "A trouver",
+    "color": "#F39C12"
+  },
+  {
+    "tag": "BIS-Sorbonne",
+    "color": "#8E44AD"
+  },
+  {
+    "tag": "Bush",
+    "color": "#E74C3C"
+  },
+  {
+    "tag": "DST",
+    "color": "#16A085"
+  },
+  {
+    "tag": "Inutile",
+    "color": "#BDC3C7"
+  },
+  {
+    "tag": "LGBTQ+",
+    "color": "#9B59B6"
+  },
+  {
+    "tag": "Obama",
+    "color": "#3498DB"
+  },
+  {
+    "tag": "Trump",
+    "color": "#E67E22"
+  },
+  {
+    "tag": "TTR",
+    "color": "#2ECC71"
+  },
+  {
+    "tag": "UK",
+    "color": "#273746"
+  },
+  {
+    "tag": "USA",
+    "color": "#34495E"
+  },
+  {
+    "tag": "Urgent",
+    "color": "#C0392B"
+  },
+  {
+    "tag": "abstract_concept",
+    "color": "#AAB7B8"
+  },
+  {
+    "tag": "accountability",
+    "color": "#D35400"
+  },
+  {
+    "tag": "adjectives",
+    "color": "#28B463"
+  },
+  {
+    "tag": "affect",
+    "color": "#F1C40F"
+  },
+  {
+    "tag": "aggression",
+    "color": "#CB4335"
+  },
+  {
+    "tag": "analogy",
+    "color": "#7D3C98"
+  },
+  {
+    "tag": "anarchy",
+    "color": "#17202A"
+  },
+  {
+    "tag": "anger",
+    "color": "#A93226"
+  },
+  {
+    "tag": "anticipation",
+    "color": "#1F618D"
+  },
+  {
+    "tag": "antisemitism",
+    "color": "#4A235A"
+  },
+  {
+    "tag": "anxiety",
+    "color": "#76448A"
+  },
+  {
+    "tag": "arabs",
+    "color": "#117864"
+  },
+  {
+    "tag": "argumentation",
+    "color": "#F5B041"
+  },
+  {
+    "tag": "auxiliaries",
+    "color": "#229954"
+  },
+  {
+    "tag": "avoidance",
+    "color": "#839192"
+  },
+  {
+    "tag": "categorization",
+    "color": "#2E86C1"
+  },
+  {
+    "tag": "causal",
+    "color": "#CA6F1E"
+  },
+  {
+    "tag": "cognition",
+    "color": "#EB984E"
+  },
+  {
+    "tag": "cognitive_ling",
+    "color": "#EC7063"
+  },
+  {
+    "tag": "cold_war",
+    "color": "#515A5A"
+  },
+  {
+    "tag": "communication",
+    "color": "#58D68D"
+  },
+  {
+    "tag": "computational_ling",
+    "color": "#45B39D"
+  },
+  {
+    "tag": "conceptual_change",
+    "color": "#1ABC9C"
+  },
+  {
+    "tag": "conflict",
+    "color": "#922B21"
+  },
+  {
+    "tag": "conjunctive_errors",
+    "color": "#7B241C"
+  },
+  {
+    "tag": "connotation",
+    "color": "#5B2C6F"
+  },
+  {
+    "tag": "conservatism",
+    "color": "#154360"
+  },
+  {
+    "tag": "conspiracy",
+    "color": "#145A32"
+  },
+  {
+    "tag": "conversation_analysis",
+    "color": "#1E8449"
+  },
+  {
+    "tag": "coping_behavior",
+    "color": "#239B56"
+  },
+  {
+    "tag": "coronavirus",
+    "color": "#E74C3C"
+  },
+  {
+    "tag": "corpus_ling",
+    "color": "#DC7633"
+  },
+  {
+    "tag": "correlation",
+    "color": "#F0B27A"
+  },
+  {
+    "tag": "creativity",
+    "color": "#F5CBA7"
+  },
+  {
+    "tag": "critical_mathematics_edu",
+    "color": "#73C6B6"
+  },
+  {
+    "tag": "criticism",
+    "color": "#85929E"
+  },
+  {
+    "tag": "cultural_variants",
+    "color": "#3498DB"
+  },
+  {
+    "tag": "culture_wars",
+    "color": "#BA4A00"
+  },
+  {
+    "tag": "debates",
+    "color": "#D98880"
+  },
+  {
+    "tag": "decision_making",
+    "color": "#AF7AC5"
+  },
+  {
+    "tag": "definition",
+    "color": "#5499C7"
+  },
+  {
+    "tag": "demagoguery",
+    "color": "#7E5109"
+  },
+  {
+    "tag": "democracy",
+    "color": "#154360"
+  },
+  {
+    "tag": "determination",
+    "color": "#1A5276"
+  },
+  {
+    "tag": "deviance",
+    "color": "#4A235A"
+  },
+  {
+    "tag": "dictionaries",
+    "color": "#A569BD"
+  },
+  {
+    "tag": "disconfirming_evidence",
+    "color": "#943126"
+  },
+  {
+    "tag": "discourse",
+    "color": "#5D6D7E"
+  },
+  {
+    "tag": "discursive_strategies",
+    "color": "#5DADE2"
+  },
+  {
+    "tag": "dog_whistling",
+    "color": "#873600"
+  },
+  {
+    "tag": "drones",
+    "color": "#7F8C8D"
+  },
+  {
+    "tag": "emotion",
+    "color": "#F1948A"
+  },
+  {
+    "tag": "emotion_words",
+    "color": "#E6B0AA"
+  },
+  {
+    "tag": "emotional_contagion",
+    "color": "#D2B4DE"
+  },
+  {
+    "tag": "emotive_words",
+    "color": "#D7BDE2"
+  },
+  {
+    "tag": "empathy",
+    "color": "#A9DFBF"
+  },
+  {
+    "tag": "enaction",
+    "color": "#76D7C4"
+  },
+  {
+    "tag": "enemy",
+    "color": "#641E16"
+  },
+  {
+    "tag": "english",
+    "color": "#1D8348"
+  },
+  {
+    "tag": "enquete_terrain",
+    "color": "#A2D9CE"
+  },
+  {
+    "tag": "epidemiology",
+    "color": "#D4EFDF"
+  },
+  {
+    "tag": "epistemology/bayesian",
+    "color": "#F9E79F"
+  },
+  {
+    "tag": "ethics",
+    "color": "#FCF3CF"
+  },
+  {
+    "tag": "ethos",
+    "color": "#F5CBA7"
+  },
+  {
+    "tag": "europe",
+    "color": "#2874A6"
+  },
+  {
+    "tag": "executive_power",
+    "color": "#B03A2E"
+  },
+  {
+    "tag": "expectations",
+    "color": "#E8DAEF"
+  },
+  {
+    "tag": "experiments",
+    "color": "#D6EAF8"
+  },
+  {
+    "tag": "extremists",
+    "color": "#6E2C00"
+  },
+  {
+    "tag": "fallacy",
+    "color": "#9A7D0A"
+  },
+  {
+    "tag": "far_right",
+    "color": "#78281F"
+  },
+  {
+    "tag": "fear",
+    "color": "#4A235A"
+  },
+  {
+    "tag": "fear_appeal",
+    "color": "#512E5F"
+  },
+  {
+    "tag": "figurative_framing",
+    "color": "#1B4F72"
+  },
+  {
+    "tag": "film_criticism",
+    "color": "#17A589"
+  },
+  {
+    "tag": "foreign_relations",
+    "color": "#2E4053"
+  },
+  {
+    "tag": "fotu",
+    "color": "#F39C12"
+  },
+  {
+    "tag": "frames",
+    "color": "#8E44AD"
+  },
+  {
+    "tag": "france",
+    "color": "#2980B9"
+  },
+  {
+    "tag": "future",
+    "color": "#27AE60"
+  },
+  {
+    "tag": "game_theory",
+    "color": "#F39C12"
+  },
+  {
+    "tag": "general-nouns",
+    "color": "#1ABC9C"
+  },
+  {
+    "tag": "grammatical_metaphor",
+    "color": "#8E44AD"
+  },
+  {
+    "tag": "guilt",
+    "color": "#2C3E50"
+  },
+  {
+    "tag": "hate",
+    "color": "#922B21"
+  },
+  {
+    "tag": "health",
+    "color": "#27AE60"
+  },
+  {
+    "tag": "hegemony",
+    "color": "#154360"
+  },
+  {
+    "tag": "hermeneutics",
+    "color": "#7E5109"
+  },
+  {
+    "tag": "hispanics",
+    "color": "#B9770E"
+  },
+  {
+    "tag": "horror",
+    "color": "#17202A"
+  },
+  {
+    "tag": "hyperbole",
+    "color": "#C39BD3"
+  },
+  {
+    "tag": "hypocrisy",
+    "color": "#808B96"
+  },
+  {
+    "tag": "ideology",
+    "color": "#5D6D7E"
+  },
+  {
+    "tag": "imminence",
+    "color": "#E59866"
+  },
+  {
+    "tag": "immigration",
+    "color": "#F5B041"
+  },
+  {
+    "tag": "imperialism",
+    "color": "#4A235A"
+  },
+  {
+    "tag": "implicit",
+    "color": "#D7DBDD"
+  },
+  {
+    "tag": "influence",
+    "color": "#48C9B0"
+  },
+  {
+    "tag": "islam",
+    "color": "#239B56"
+  },
+  {
+    "tag": "juries",
+    "color": "#1E8449"
+  },
+  {
+    "tag": "language_acquisition",
+    "color": "#85C1E9"
+  },
+  {
+    "tag": "legitimisation",
+    "color": "#3498DB"
+  },
+  {
+    "tag": "lexematic",
+    "color": "#5DADE2"
+  },
+  {
+    "tag": "lexical_patterns",
+    "color": "#2874A6"
+  },
+  {
+    "tag": "lexicology",
+    "color": "#1B4F72"
+  },
+  {
+    "tag": "liberal_oligarchy",
+    "color": "#7D6608"
+  },
+  {
+    "tag": "liberalism",
+    "color": "#B7950B"
+  },
+  {
+    "tag": "loaded_words",
+    "color": "#D4E6F1"
+  },
+  {
+    "tag": "logic",
+    "color": "#F9E79F"
+  },
+  {
+    "tag": "lying",
+    "color": "#A93226"
+  },
+  {
+    "tag": "manipulation",
+    "color": "#7B241C"
+  },
+  {
+    "tag": "mass_media",
+    "color": "#34495E"
+  },
+  {
+    "tag": "mathematics",
+    "color": "#E74C3C"
+  },
+  {
+    "tag": "meaning",
+    "color": "#F5CBA7"
+  },
+  {
+    "tag": "memory",
+    "color": "#EAF2F8"
+  },
+  {
+    "tag": "mental_imagery",
+    "color": "#A9DFBF"
+  },
+  {
+    "tag": "metaphor",
+    "color": "#58D68D"
+  },
+  {
+    "tag": "methodology",
+    "color": "#F1948A"
+  },
+  {
+    "tag": "military_policy",
+    "color": "#1C2833"
+  },
+  {
+    "tag": "modality",
+    "color": "#E8DAEF"
+  },
+  {
+    "tag": "mood_induction",
+    "color": "#FCF3CF"
+  },
+  {
+    "tag": "morality",
+    "color": "#FDEBD0"
+  },
+  {
+    "tag": "motivation",
+    "color": "#D5F5E3"
+  },
+  {
+    "tag": "narratives",
+    "color": "#ABEBC6"
+  },
+  {
+    "tag": "nationalism",
+    "color": "#CD6155"
+  },
+  {
+    "tag": "neuroticism",
+    "color": "#A569BD"
+  },
+  {
+    "tag": "nominal",
+    "color": "#5499C7"
+  },
+  {
+    "tag": "nominalization",
+    "color": "#48C9B0"
+  },
+  {
+    "tag": "nonverbal_communication",
+    "color": "#F4D03F"
+  },
+  {
+    "tag": "ocd",
+    "color": "#EB984E"
+  },
+  {
+    "tag": "otherness",
+    "color": "#CB4335"
+  },
+  {
+    "tag": "parts_of_speech",
+    "color": "#7D3C98"
+  },
+  {
+    "tag": "pattern_analysis",
+    "color": "#2E86C1"
+  },
+  {
+    "tag": "persuasion",
+    "color": "#138D75"
+  },
+  {
+    "tag": "philosophy",
+    "color": "#F1C40F"
+  },
+  {
+    "tag": "poetics",
+    "color": "#E67E22"
+  },
+  {
+    "tag": "polarization",
+    "color": "#922B21"
+  },
+  {
+    "tag": "policy",
+    "color": "#76448A"
+  },
+  {
+    "tag": "politeness",
+    "color": "#1F618D"
+  },
+  {
+    "tag": "political_discourse",
+    "color": "#117864"
+  },
+  {
+    "tag": "political_psychology",
+    "color": "#D4AC0D"
+  },
+  {
+    "tag": "politics",
+    "color": "#CA6F1E"
+  },
+  {
+    "tag": "pop_culture",
+    "color": "#B03A2E"
+  },
+  {
+    "tag": "populism",
+    "color": "#6C3483"
+  },
+  {
+    "tag": "post-truth",
+    "color": "#2874A6"
+  },
+  {
+    "tag": "power",
+    "color": "#148F77"
+  },
+  {
+    "tag": "pragmatics",
+    "color": "#B7950B"
+  },
+  {
+    "tag": "prejudice",
+    "color": "#B9770E"
+  },
+  {
+    "tag": "problem_solving",
+    "color": "#943126"
+  },
+  {
+    "tag": "pronouns",
+    "color": "#5B2C6F"
+  },
+  {
+    "tag": "propaganda",
+    "color": "#21618C"
+  },
+  {
+    "tag": "proximization",
+    "color": "#117A65"
+  },
+  {
+    "tag": "psychoanalysis",
+    "color": "#9A7D0A"
+  },
+  {
+    "tag": "psycholinguistics",
+    "color": "#935116"
+  },
+  {
+    "tag": "ptsd",
+    "color": "#78281F"
+  },
+  {
+    "tag": "race",
+    "color": "#512E5F"
+  },
+  {
+    "tag": "racism",
+    "color": "#1B4F72"
+  },
+  {
+    "tag": "reasoning",
+    "color": "#0E6251"
+  },
+  {
+    "tag": "redefinition",
+    "color": "#7D6608"
+  },
+  {
+    "tag": "reference",
+    "color": "#7E5109"
+  },
+  {
+    "tag": "reformulation",
+    "color": "#641E16"
+  },
+  {
+    "tag": "registers_of_speech",
+    "color": "#4A235A"
+  },
+  {
+    "tag": "religion",
+    "color": "#154360"
+  },
+  {
+    "tag": "repetition",
+    "color": "#0B5345"
+  },
+  {
+    "tag": "republicans",
+    "color": "#7A8288"
+  },
+  {
+    "tag": "rescue_narrative",
+    "color": "#626567"
+  },
+  {
+    "tag": "risk",
+    "color": "#4D5656"
+  },
+  {
+    "tag": "sadness",
+    "color": "#1B2631"
+  },
+  {
+    "tag": "scarcity",
+    "color": "#17202A"
+  },
+  {
+    "tag": "screening_test",
+    "color": "#D0D3D4"
+  },
+  {
+    "tag": "semantics",
+    "color": "#A6ACAF"
+  },
+  {
+    "tag": "sentences",
+    "color": "#797D7F"
+  },
+  {
+    "tag": "sex_role",
+    "color": "#515A5A"
+  },
+  {
+    "tag": "shell_noun",
+    "color": "#424949"
+  },
+  {
+    "tag": "sign",
+    "color": "#FDF2E9"
+  },
+  {
+    "tag": "sign_language",
+    "color": "#FADBD8"
+  },
+  {
+    "tag": "social_aspects",
+    "color": "#F5EEF8"
+  },
+  {
+    "tag": "social_change",
+    "color": "#EAF2F8"
+  },
+  {
+    "tag": "social_choice",
+    "color": "#E8F8F5"
+  },
+  {
+    "tag": "social_media",
+    "color": "#E9F7EF"
+  },
+  {
+    "tag": "socialism",
+    "color": "#FEF9E7"
+  },
+  {
+    "tag": "sociolinguistics",
+    "color": "#F8F9F9"
+  },
+  {
+    "tag": "speech_acts",
+    "color": "#F4F6F7"
+  },
+  {
+    "tag": "statistics",
+    "color": "#E5E8E8"
+  },
+  {
+    "tag": "stylistic",
+    "color": "#CCD1D1"
+  },
+  {
+    "tag": "stylistics",
+    "color": "#B2BABB"
+  },
+  {
+    "tag": "symbol",
+    "color": "#99A3A4"
+  },
+  {
+    "tag": "syntax",
+    "color": "#7F8C8D"
+  },
+  {
+    "tag": "tea_party",
+    "color": "#616A6B"
+  },
+  {
+    "tag": "terrorism",
+    "color": "#EC7063"
+  },
+  {
+    "tag": "tests",
+    "color": "#AF7AC5"
+  },
+  {
+    "tag": "theory",
+    "color": "#5DADE2"
+  },
+  {
+    "tag": "threat",
+    "color": "#48C9B0"
+  },
+  {
+    "tag": "torture",
+    "color": "#52BE80"
+  },
+  {
+    "tag": "treatment",
+    "color": "#F4D03F"
+  },
+  {
+    "tag": "troubles_telling",
+    "color": "#EB984E"
+  },
+  {
+    "tag": "truth",
+    "color": "#CACFD2"
+  },
+  {
+    "tag": "uber_index",
+    "color": "#AAB7B8"
+  },
+  {
+    "tag": "uncertainty",
+    "color": "#839192"
+  },
+  {
+    "tag": "us-vs-them",
+    "color": "#5D6D7E"
+  },
+  {
+    "tag": "verbs",
+    "color": "#34495E"
+  },
+  {
+    "tag": "violence",
+    "color": "#2C3E50"
+  },
+  {
+    "tag": "war",
+    "color": "#CB4335"
+  },
+  {
+    "tag": "war-on-terror",
+    "color": "#8E44AD"
+  },
+  {
+    "tag": "watergate",
+    "color": "#2980B9"
+  },
+  {
+    "tag": "worry",
+    "color": "#16A085"
+  },
+  {
+    "tag": "zero_article",
+    "color": "#27AE60"
+  }
+]
