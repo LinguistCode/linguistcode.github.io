@@ -190,6 +190,41 @@
             padding: 0 0.25rem 1rem;
         }
 
+        .entry-definition p {
+            margin: 0 0 0.9rem;
+        }
+
+        .entry-definition p:last-child,
+        .entry-definition ol:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-definition .entry-ordered-list {
+            list-style: none;
+            counter-reset: entry-item;
+            margin: 0 0 0.9rem;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .entry-definition .entry-ordered-list li {
+            position: relative;
+            padding-left: 1.75rem;
+        }
+
+        .entry-definition .entry-ordered-list li::before {
+            counter-increment: entry-item;
+            content: counter(entry-item) ".";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            color: var(--primary, #2f6b4f);
+        }
+
         .entry-definition .xref {
             background: none;
             border: none;
@@ -320,9 +355,9 @@
                 .replace(/>/g, "&gt;");
         }
 
-        // Transforme le texte (déjà échappé) en insérant des liens cliquables
-        // pour toute occurrence de [[Terme]] ou [[Terme|Texte affiché]].
-        function renderDefinition(text) {
+        // Transforme un fragment de texte (déjà destiné à un seul bloc) en insérant
+        // des liens cliquables pour toute occurrence de [[Terme]] ou [[Terme|Texte affiché]].
+        function renderInline(text) {
             const escaped = escapeHtml(text);
             return escaped.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, targetRaw, displayRaw) => {
                 const target = targetRaw.trim();
@@ -334,6 +369,36 @@
                 }
                 return `<button type="button" class="xref" data-target="${targetEntry.id}">${display}</button>`;
             });
+        }
+
+        // Transforme le texte brut d'une définition en blocs HTML : les lignes
+        // "1. ...", "2. ..." consécutives deviennent une liste ordonnée <ol>,
+        // les autres lignes deviennent des paragraphes <p>. Les lignes vides
+        // séparent les blocs. Les [[wikilinks]] sont résolus dans chaque ligne.
+        function renderDefinition(text) {
+            const lines = (text || "").split("\n").map(l => l.trim()).filter(l => l.length > 0);
+            let html = "";
+            let inList = false;
+
+            lines.forEach(line => {
+                const match = line.match(/^(\d+)[.)]\s+(.*)$/);
+                if (match) {
+                    if (!inList) {
+                        html += '<ol class="entry-ordered-list">';
+                        inList = true;
+                    }
+                    html += `<li>${renderInline(match[2])}</li>`;
+                } else {
+                    if (inList) {
+                        html += "</ol>";
+                        inList = false;
+                    }
+                    html += `<p>${renderInline(line)}</p>`;
+                }
+            });
+
+            if (inList) html += "</ol>";
+            return html;
         }
 
         function buildAzNav() {
@@ -348,7 +413,7 @@
                     btn.disabled = true;
                 } else {
                     btn.addEventListener("click", () => {
-                        document.getElementById(`letter-${letter}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                        document.getElementById(`letter-${letter}`)?.scrollIntoView({behavior: "smooth", block: "start"});
                     });
                 }
                 nav.appendChild(btn);
@@ -381,7 +446,7 @@
             const bodyInner = document.createElement("div");
             bodyInner.className = "entry-body-inner";
 
-            const def = document.createElement("p");
+            const def = document.createElement("div");
             def.className = "entry-definition";
             def.innerHTML = renderDefinition(entry.definition);
             bodyInner.appendChild(def);
@@ -417,7 +482,7 @@
             const el = document.getElementById(`entry-${id}`);
             if (!el) return;
             toggleEntry(id, true);
-            el.scrollIntoView({ behavior: "smooth", block: "center" });
+            el.scrollIntoView({behavior: "smooth", block: "center"});
             el.classList.remove("is-flashed");
             // force reflow pour pouvoir rejouer l'animation si on reclique le même terme
             void el.offsetWidth;
@@ -498,7 +563,7 @@
                     const letter = e.target.dataset.letter;
                     navButtons.forEach(b => b.classList.toggle("is-current", b.textContent === letter));
                 });
-            }, { rootMargin: "-10% 0px -80% 0px" });
+            }, {rootMargin: "-10% 0px -80% 0px"});
 
             groups.forEach(g => observer.observe(g));
         }
@@ -558,6 +623,7 @@
     </script>
 
     <script src="js/appendices-sidebar.js" defer></script>
+    <script src="scripts.js defer"></script>
 
 
 </body>

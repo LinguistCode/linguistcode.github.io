@@ -3,21 +3,46 @@
     "term": "Ergativity",
     "id": "ergativity",
     "definition": "A morphosyntactic alignment pattern in which the single argument of an intransitive verb (S) is treated like the object of a transitive verb (O), rather than like the subject (A) — the reverse of [[Nominative-Accusative Alignment]]. Found in languages such as Basque, Georgian, and many Australian languages.",
-    "aliases": ["Ergative-absolutive alignment", "Ergative alignment"],
-    "tags": ["morphosyntax", "alignment"]
+    "aliases": [
+      "Ergative-absolutive alignment",
+      "Ergative alignment"
+    ],
+    "tags": [
+      "morphosyntax",
+      "alignment"
+    ]
   },
   {
     "term": "Nominative-Accusative Alignment",
     "id": "nominative-accusative-alignment",
     "definition": "A morphosyntactic alignment pattern in which S and A are treated alike (both nominative), and O is marked differently (accusative). The mirror pattern of [[Ergativity]], and the more common typological choice cross-linguistically.",
-    "aliases": ["Accusative alignment"],
-    "tags": ["morphosyntax", "alignment"]
+    "aliases": [
+      "Accusative alignment"
+    ],
+    "tags": [
+      "morphosyntax",
+      "alignment"
+    ]
   },
   {
     "term": "Split Ergativity",
     "id": "split-ergativity",
     "definition": "A system in which a single language shows [[Ergativity]] in some grammatical contexts (e.g. past tense, or with certain persons) and [[Nominative-Accusative Alignment]] in others. Common conditioning factors include tense/aspect, person, and clause type.",
     "aliases": [],
-    "tags": ["morphosyntax", "alignment"]
+    "tags": [
+      "morphosyntax",
+      "alignment"
+    ]
+  },
+  {
+    "term": "Idéologie",
+    "id": "ideology",
+    "definition": "Concept fondamentalement polysémique et contesté, l'idéologie est appréhendée selon plusieurs paradigmes complémentaires au sein de l'analyse du discours :\n1. Dans la perspective socio-cognitive de Teun A. van Dijk, elle est définie comme un système de croyances fondamentales, générales et abstraites partagées par les membres d'un groupe social ; elle constitue l'assise « axiomatique » des représentations sociales et des attitudes de l'endogroupe, structurant son identité, ses valeurs, ses objectifs, ses ressources et ses relations avec l'exogroupe (Van Dijk, 2006, p. 115-116).\n2. À cette approche cognitive s'ajoute la conception marxiste et structuraliste de Louis Althusser, pour qui l'idéologie est « la représentation du rapport imaginaire des individus à leurs conditions réelles d'existence », dotée d'une existence matérielle puisqu'elle s'incarne toujours au sein d'un appareil institutionnel et de pratiques sociales quotidiennes (Althusser, 1971, p. 162-166, cité dans Wodak & Forchtner, 2018, p. 37-38).\n3. Rompant avec la dichotomie dogmatique de la vérité et de l'erreur, l'approche discursive de John Frow la redéfinit quant à elle comme un « état provisoire du discours » (une fonction de son appropriation et de son usage au sein des rapports de force), qui engendre des configurations spécifiques de positions de sujet régissant l'entrée des individus dans l'espace discursif (Frow, 1985, p. 203-204).\n4. Enfin, sur le plan sémiologique, Roland Barthes en propose une lecture formelle, la caractérisant comme la forme même des signifiés de connotation par lesquels la culture, le savoir et l'histoire envahissent le système linguistique (Barthes, 1964, p. 91).",
+    "aliases": [],
+    "tags": [
+      "analyse du discours",
+      "idéologie",
+      "sémiologie"
+    ]
   }
 ]
