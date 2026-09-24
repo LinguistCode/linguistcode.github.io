@@ -1,37 +1,347 @@
 [
   {
-    "term": "Ergativity",
-    "id": "ergativity",
-    "definition": "A morphosyntactic alignment pattern in which the single argument of an intransitive verb (S) is treated like the object of a transitive verb (O), rather than like the subject (A) — the reverse of [[Nominative-Accusative Alignment]]. Found in languages such as Basque, Georgian, and many Australian languages.",
+    "term": "11-Septembre",
+    "id": "september-11",
+    "definition": "Désigne les attentats perpétrés par al-Qaïda le 11 septembre 2001 contre le World Trade Center et le Pentagone, et, par extension, l'événement discursif qui en résulte. Dans le discours de George W. Bush, l'attaque est d'emblée cadrée comme un acte de guerre plutôt que comme un crime, ce qui fonde le récit de la « [[guerre contre la terreur]] » et la construction d'un ennemi à la fois diffus et absolu (Jackson, 2005 ; Hodges & Nilep, 2007 ; Merskin, 2004). L'événement devient ensuite une ressource argumentative mobilisée pour [[Légitimation|légitimer]] des politiques ultérieures, notamment l'invasion de l'Irak, par l'association discursive entre les attentats et le régime de Saddam Hussein (Gershkoff & Kushner, 2005 ; Hubanks, 2009).",
     "aliases": [
-      "Ergative-absolutive alignment",
-      "Ergative alignment"
+      "11 septembre",
+      "9/11",
+      "attentats du 11 septembre 2001"
     ],
     "tags": [
-      "morphosyntax",
-      "alignment"
+      "histoire politique",
+      "terrorisme"
     ]
   },
   {
-    "term": "Nominative-Accusative Alignment",
-    "id": "nominative-accusative-alignment",
-    "definition": "A morphosyntactic alignment pattern in which S and A are treated alike (both nominative), and O is marked differently (accusative). The mirror pattern of [[Ergativity]], and the more common typological choice cross-linguistically.",
+    "term": "Anxiété",
+    "id": "anxiety",
+    "definition": "État émotionnel d'appréhension orienté vers une menace incertaine, diffuse ou future, par opposition à la [[peur]], réponse à une menace présente ou imminente et identifiée (LeDoux & Pine, 2016 ; LaBar, 2016). Dans les théories de l'évaluation cognitive, elle correspond au thème relationnel d'une menace incertaine et existentielle (Smith & Lazarus, 1993). Les travaux de Reiss (1991, 1997) distinguent l'anxiété-trait de la sensibilité à l'anxiété, c'est-à-dire la peur des sensations d'anxiété elles-mêmes ; l'angoisse de mort est par ailleurs décrite comme un facteur transdiagnostique (Iverach, Menzies & Menzies, 2014).",
     "aliases": [
-      "Accusative alignment"
+      "anxiety",
+      "angoisse"
     ],
     "tags": [
-      "morphosyntax",
-      "alignment"
+      "émotions",
+      "psychologie"
     ]
   },
   {
-    "term": "Split Ergativity",
-    "id": "split-ergativity",
-    "definition": "A system in which a single language shows [[Ergativity]] in some grammatical contexts (e.g. past tense, or with certain persons) and [[Nominative-Accusative Alignment]] in others. Common conditioning factors include tense/aspect, person, and clause type.",
+    "term": "Appel à la peur",
+    "id": "fear-appeal",
+    "definition": "Stratégie persuasive consistant à présenter à l'auditoire une menace grave et susceptible de l'atteindre afin de susciter la [[peur]] et d'orienter ses attitudes ou ses comportements, le plus souvent vers une réponse recommandée par le locuteur.\n1. En psychologie de la persuasion, le modèle fondateur de l'école de Yale conçoit la peur comme une pulsion dont la réduction renforce l'adhésion à la recommandation (Hovland, Janis & Kelley, 1982) ; la méta-analyse de Tannenbaum et al. (2015) confirme l'efficacité globale des appels à la peur, accrue lorsque le message comporte des énoncés d'efficacité (ce que l'on peut faire contre la menace) ; voir aussi [[Pivot peur/solution]].\n2. En théorie de l'argumentation, l'appel à la peur ([[ad metum]]) n'est pas [[Argument fallacieux|fallacieux]] par nature : il le devient selon son usage dans le contexte dialogique (Walton, 2000). Dans une perspective rhétorique, il peut au contraire nourrir la délibération (Pfau, 2007 ; Innocenti, 2011).\n3. En analyse du discours politique, il repose sur la construction discursive de la [[menace]] (Cap, 2016 ; Wodak, 2015).",
+    "aliases": [
+      "fear appeal",
+      "appel à la crainte"
+    ],
+    "tags": [
+      "argumentation",
+      "rhétorique",
+      "persuasion"
+    ]
+  },
+  {
+    "term": "Appraisal-tendency",
+    "id": "appraisal-tendency",
+    "definition": "Cadre théorique issu des théories de l'évaluation cognitive (appraisal) selon lequel chaque émotion est associée à un profil d'évaluations (certitude, contrôle, responsabilité, etc.) qui, une fois activé, oriente le jugement et la décision au-delà de la situation qui l'a déclenché. Il prolonge l'idée que les émotions correspondent à des « thèmes relationnels centraux » définis par des composantes d'évaluation (Smith & Lazarus, 1993). Il prédit notamment que la [[peur]], associée à l'[[incertitude]] et à un faible contrôle, entraîne des estimations pessimistes du risque et des choix d'évitement, tandis que la colère, associée à la certitude et au contrôle, favorise la prise de risque (Lerner et al., 2015). En contexte politique, peur et colère ont des effets différenciés sur le traitement de l'information : la peur favorise la recherche d'information, la colère le recours aux attitudes préalables (Parker & Isbell, 2010).",
+    "aliases": [
+      "Appraisal-Tendency Framework",
+      "ATF"
+    ],
+    "tags": [
+      "émotions",
+      "psychologie"
+    ]
+  },
+  {
+    "term": "Argument ad baculum",
+    "id": "ad-baculum",
+    "definition": "Argument par la menace (littéralement « au bâton ») : le locuteur cherche à faire accepter une conclusion ou une action en signifiant, explicitement ou indirectement, que l'allocutaire subira une conséquence négative dont le locuteur lui-même a le contrôle. Walton (2000) le distingue de l'[[appel à la peur]] ([[ad metum]]), où le danger invoqué ne dépend pas du locuteur, et montre que la menace peut prendre la forme d'un acte de langage indirect. Classé traditionnellement parmi les [[sophisme|sophismes]], il n'est pas fallacieux en soi mais selon le type de dialogue dans lequel il intervient (Walton, 1992, 2000). Sa force persuasive et son statut ont été rediscutés par Casey (2019) et Herman (2020).",
+    "aliases": [
+      "ad baculum",
+      "argumentum ad baculum",
+      "appel à la force"
+    ],
+    "tags": [
+      "argumentation",
+      "sophismes"
+    ]
+  },
+  {
+    "term": "Argument ad metum",
+    "id": "ad-metum",
+    "definition": "[[Appel à la peur]] au sens argumentatif : le locuteur invoque un danger qui menace l'allocutaire pour le conduire à adopter une conclusion ou une action censée l'en préserver, sans que ce danger dépende de la volonté du locuteur (à la différence de l'[[ad baculum]]). Walton (2000) en propose un schème relevant du raisonnement pratique : une situation redoutable est présentée à l'allocutaire ; si celui-ci accomplit (ou n'accomplit pas) l'action A, les conséquences redoutées se produiront ; il devrait donc s'en abstenir (ou l'accomplir). Son évaluation dépend des questions critiques associées au schème (réalité et probabilité du danger, existence d'alternatives) et du contexte dialogique (Walton, 2000, 2008 ; Macagno & Walton, 2014).",
+    "aliases": [
+      "ad metum",
+      "argumentum ad metum"
+    ],
+    "tags": [
+      "argumentation",
+      "sophismes"
+    ]
+  },
+  {
+    "term": "Argument fallacieux",
+    "id": "fallacy",
+    "definition": "Argument qui présente l'apparence d'un raisonnement valide ou raisonnable mais qui ne l'est pas dans le contexte où il est employé. Dans l'approche pragmatique de Walton (1992, 2008), le sophisme n'est pas une propriété formelle de l'argument mais l'usage détourné d'un schème argumentatif par ailleurs légitime, qui entrave le but du dialogue en cours ; les appels aux émotions ne sont donc pas fallacieux en eux-mêmes. Cette conception permet d'évaluer au cas par cas les [[appel à la peur|appels à la peur]] et à la [[menace]] (Walton, 2000 ; Macagno & Walton, 2014) et d'analyser d'autres procédés, comme l'homme de paille (De Saussure, 2018).",
+    "aliases": [
+      "sophisme",
+      "paralogisme",
+      "fallacy"
+    ],
+    "tags": [
+      "argumentation",
+      "sophismes"
+    ]
+  },
+  {
+    "term": "Arrogance de l'ignorance",
+    "id": "arrogance-of-ignorance",
+    "definition": "Expression forgée par Wodak (2015) pour désigner l'attitude qui résulte de la corrélation entre [[populisme]] de droite et anti-intellectualisme : l'appel au sens commun et aux valeurs traditionnelles ([[Conservatisme|conservatrices]]), associé à une rhétorique agressive d'exclusion, disqualifie l'expertise et le savoir au profit d'une ignorance revendiquée comme authentique. Wodak en voit une illustration dans certaines franges du Tea Party américain, incarnée par des figures comme Sarah Palin ou Michele Bachmann. La notion éclaire l'anti-intellectualisme du discours de Trump (Reyes, 2020 ; Degani, 2016).",
+    "aliases": [
+      "arrogance of ignorance",
+      "anti-intellectualisme"
+    ],
+    "tags": [
+      "populisme",
+      "analyse du discours"
+    ]
+  },
+  {
+    "term": "Coercition",
+    "id": "coercion",
+    "definition": "Chez Chilton (2004), l'une des fonctions stratégiques du discours politique, aux côtés de la [[légitimation]]/délégitimation et de la représentation/déformation (misrepresentation). Elle recouvre les actes de langage adossés à des sanctions (ordres, lois, menaces), mais aussi des formes plus diffuses : fixer l'agenda, sélectionner les thèmes, imposer des présupposés que l'auditoire doit accepter, au moins provisoirement, pour traiter le discours. Le pouvoir coercitif du discours dépend des ressources institutionnelles du locuteur, ce qui confère au discours présidentiel une force particulière (Chilton, 2004 ; Cap, 2006).",
+    "aliases": [
+      "coercion"
+    ],
+    "tags": [
+      "analyse du discours",
+      "pragmatique"
+    ]
+  },
+  {
+    "term": "Concepts mobilisateurs",
+    "id": "mobilising-concepts",
+    "definition": "Notion empruntée à Viktorovitch (2021) : termes abstraits, consensuels et à forte valeur positive (liberté, justice, sécurité, peuple, nation) auxquels il est difficile de s'opposer et que chacun peut remplir de son propre contenu. Leur imprécision est la condition de leur efficacité : ils suscitent l'adhésion sans engager le locuteur sur un contenu précis. Ils se rapprochent des [[mots émotifs]], dont la signification émotive reste stable alors que le contenu descriptif est flou ou redéfinissable (Stevenson, 1944 ; Macagno & Walton, 2014).",
     "aliases": [],
     "tags": [
-      "morphosyntax",
-      "alignment"
+      "analyse du discours",
+      "sémantique",
+      "persuasion"
+    ]
+  },
+  {
+    "term": "Connotation",
+    "id": "connotation",
+    "definition": "Signification seconde d'une unité lexicale, qui s'ajoute à sa dénotation (relation au référent) et relève des associations culturelles, affectives ou évaluatives qu'elle véhicule. La notion recouvre des conceptions hétérogènes selon les traditions logique, linguistique et sémiotique, dont Garza Cuarón (1991) propose une revue critique. Hayakawa & Hayakawa (1990) distinguent connotations informatives (socialement partagées) et affectives (liées aux sentiments suscités) ; la dimension évaluative de la connotation rejoint la « [[Mot émotif|signification émotive]] » de Stevenson (1937) et son exploitation argumentative (Macagno & Walton, 2014).",
+    "aliases": [],
+    "tags": [
+      "sémantique"
+    ]
+  },
+  {
+    "term": "Conservatisme",
+    "id": "conservatism",
+    "definition": "[[Idéologie]] politique attachée à la préservation des institutions, traditions et hiérarchies héritées, privilégiant le changement graduel et méfiante envers les projets de réforme fondés sur la raison abstraite ; la tradition intellectuelle en fait remonter la formulation à Edmund Burke (Kirk, 2001 ; Jones, 2017 ; Heywood, 2022).\n1. Aux États-Unis, le conservatisme moderne combine libéralisme économique, conservatisme moral et [[Religion|religieux]] et fermeté en politique étrangère, synthèse consolidée sous Reagan (Farber, 2012 ; Howison, 2014), infléchie par le [[conservatisme compassionnel]] de George W. Bush, puis radicalisée avec le Tea Party et Trump (Williamson, Skocpol & Coggin, 2011 ; Barber & Pope, 2019a ; Douzou, 2022).\n2. En psychologie politique, il est associé à une sensibilité accrue à la [[menace]], à l'[[incertitude]] et au changement (Jost et al., 2003) et à une motivation de protection plutôt que de pourvoi (Janoff-Bulman, 2009).\n3. En linguistique cognitive, Lakoff (2016b) le rattache au modèle moral du « Père strict », opposé au « Parent nourricier » progressiste.",
+    "aliases": [
+      "conservatism"
+    ],
+    "tags": [
+      "idéologie",
+      "science politique"
+    ]
+  },
+  {
+    "term": "Conservatisme compassionnel",
+    "id": "compassionate-conservatism",
+    "definition": "Programme et slogan de George W. Bush lors de la campagne présidentielle de 2000, visant à associer les [[Conservatisme|principes conservateurs]] (gouvernement limité, responsabilité individuelle, marché) à une attention affichée aux plus démunis, notamment par le soutien public aux organisations caritatives confessionnelles. Il sert à la fois de repositionnement électoral vers le centre et d'outil de communication présidentielle (Holtzman, 2010). Sa portée réelle a été discutée : après le [[11-Septembre]], la « doctrine Bush » sécuritaire prend le pas sur ce programme (Soltani & Jawan, 2010 ; Vaïsse, 2008 ; Conlan & Dinan, 2007).",
+    "aliases": [
+      "compassionate conservatism"
+    ],
+    "tags": [
+      "idéologie",
+      "histoire politique"
+    ]
+  },
+  {
+    "term": "Crise économique",
+    "id": "economic-crisis",
+    "definition": "Désigne principalement la crise financière de 2007-2008 et la récession qui s'ensuit, contexte de l'entrée en fonction de Barack Obama. En analyse du discours politique, la crise n'est pas seulement un fait économique mais une construction discursive : elle légitime des mesures d'exception et nourrit l'[[incertitude]] sur laquelle s'appuient les [[appel à la peur|appels à la peur]]. Moffitt (2016) fait de la « performance de la crise » une composante centrale du [[Populisme|style populiste]], le leader construisant et dramatisant la crise pour s'en présenter comme le remède (voir aussi Roberts, 2024).",
+    "aliases": [
+      "crise de 2008",
+      "Grande Récession",
+      "crise"
+    ],
+    "tags": [
+      "histoire politique",
+      "populisme"
+    ]
+  },
+  {
+    "term": "Définition persuasive",
+    "id": "persuasive-definition",
+    "definition": "Définition qui modifie le sens descriptif d'un terme tout en conservant sa [[Mot émotif|signification émotive]], afin de réorienter l'attitude de l'auditoire envers ce que le terme désigne (Stevenson, 1937, 1944). Macagno & Walton (2008, 2010a, 2014) en décrivent la structure argumentative et la distinguent de la quasi-définition, qui modifie la valeur émotive d'un terme sans en changer le sens descriptif. En discours politique, le pouvoir de définir (ce qu'est la « terreur », la « guerre », l'« ennemi ») constitue une ressource majeure du président (Zarefsky, 2004 ; Schiappa, 2003).",
+    "aliases": [
+      "persuasive definition",
+      "quasi-définition"
+    ],
+    "tags": [
+      "argumentation",
+      "sémantique"
+    ]
+  },
+  {
+    "term": "Discours",
+    "id": "discourse",
+    "definition": "Notion polysémique :\n1. En linguistique, le langage en usage, envisagé au-delà de la phrase et dans son contexte de production et de réception (Johnson & McLean, 2020).\n2. Dans la tradition foucaldienne, relue notamment par Frow (1985) et Cusset (2006), ensemble de pratiques réglées qui forment systématiquement les objets dont elles parlent et sont indissociables de rapports de pouvoir (voir [[Idéologie]]).\n3. En analyse critique du discours, une forme de pratique sociale, à la fois constituée par le social et constitutive de celui-ci ; Fairclough (1992, 2003) l'analyse selon trois dimensions articulées : texte, pratique discursive (production, distribution, consommation) et pratique sociale.\nJørgensen & Phillips (2002) comparent ces approches ; Van Dijk (1997) les rapporte spécifiquement au discours politique (voir [[Politolinguistique]]).",
+    "aliases": [
+      "discourse"
+    ],
+    "tags": [
+      "analyse du discours"
+    ]
+  },
+  {
+    "term": "Discours émotionnant",
+    "id": "emotion-inducing-discourse",
+    "definition": "[[Discours]] qui transmet des [[Émotion|émotions]] : il ne se contente pas de dire ou de montrer l'émotion du locuteur, mais la fait circuler vers l'allocutaire. Chez Plantin (2011, 2021), l'émotion n'est pas un simple état intérieur exprimé par le langage : elle est construite, argumentée et partagée dans l'interaction, dont elle constitue une condition.",
+    "aliases": [
+      "discours émotionnant"
+    ],
+    "tags": [
+      "émotions",
+      "analyse du discours"
+    ]
+  },
+  {
+    "term": "Discours épidictique",
+    "id": "epideictic-discourse",
+    "definition": "L'un des trois genres rhétoriques distingués par Aristote (2018 ; voir [[Preuves rhétoriques]]), à côté du délibératif (orienté vers l'avenir, l'utile et le nuisible) et du judiciaire (orienté vers le passé, le juste et l'injuste) : l'épidictique porte sur le présent et relève de l'éloge et du blâme. Perelman & Olbrechts-Tyteca (2008) lui confèrent une fonction argumentative centrale : renforcer l'adhésion à des valeurs communes, disposition préalable à l'action. Dans le discours présidentiel, notamment commémoratif, l'épidictique sert à préparer ou à justifier l'action guerrière ([[Légitimation|légitimation]]) (Bostdorff, 2011 ; Hubanks, 2009).",
+    "aliases": [
+      "genre épidictique",
+      "epideictic"
+    ],
+    "tags": [
+      "rhétorique"
+    ]
+  },
+  {
+    "term": "Émotion",
+    "id": "emotion",
+    "definition": "Notion dont la définition varie selon les disciplines :\n1. En psychologie, un épisode de réponse coordonnée à un événement jugé pertinent : les théories de l'évaluation cognitive (voir [[Appraisal-tendency]]) l'associent à des configurations d'évaluations (Smith & Lazarus, 1993) et le modèle des processus composants la décrit comme la synchronisation de composantes cognitive, physiologique, motivationnelle, expressive et subjective (Shuman & Scherer, 2014) ; l'approche évolutionniste de Plutchik (2001) postule huit émotions primaires, dont la [[peur]].\n2. En neurosciences, on distingue les circuits de survie non conscients de l'expérience consciente de l'émotion (LeDoux & Pine, 2016).\n3. En linguistique, Wierzbicka (1999a) montre que la catégorie emotion est propre à l'anglais et que les concepts émotionnels varient selon les langues ; Geeraerts (2014) retrace l'émergence historique du sens psychologique du mot. En analyse du discours et en pragmatique, l'émotion est étudiée comme construite, exprimée et argumentée dans l'interaction (Plantin, 2011 ; Wharton & De Saussure, 2024).\nLe champ interdisciplinaire des emotion studies réunit ces approches (Haviland-Jones, Lewis & Barrett, 2016).",
+    "aliases": [
+      "emotion",
+      "emotion studies"
+    ],
+    "tags": [
+      "émotions",
+      "psychologie",
+      "linguistique"
+    ]
+  },
+  {
+    "term": "Ethos",
+    "id": "ethos",
+    "definition": "[[Preuve rhétorique]] fondée sur l'image de soi que l'orateur construit dans son discours pour se rendre crédible ; Aristote (2018) la fait reposer sur la prudence, la vertu et la bienveillance. Amossy (Amossy & Mitterand, 2021) distingue l'ethos discursif, construit dans l'énonciation, de l'ethos préalable, image du locuteur antérieure à sa prise de parole. Herman (2022) en propose une approche pragmatique ; Antrobus (2005) l'applique à la rhétorique de George W. Bush.",
+    "aliases": [],
+    "tags": [
+      "rhétorique",
+      "argumentation"
+    ]
+  },
+  {
+    "term": "Extrême-droite",
+    "id": "far-right",
+    "definition": "Famille politique caractérisée par le nativisme (l'idée que l'État doit être réservé au groupe natif et que les éléments non natifs menacent la nation), l'autoritarisme et, pour sa composante contemporaine dominante, le [[populisme]]. La science politique distingue la droite radicale, qui accepte le cadre démocratique tout en contestant la démocratie libérale, de l'extrême droite proprement dite, qui rejette la démocratie (Mudde & Rovira Kaltwasser, 2017 ; Norris, 2005). Wodak (2015) montre que ses discours reposent sur une « [[Peur|politique de la peur]] » construisant des boucs émissaires ; Pelinka (2018) y souligne le rôle des politiques identitaires. Mondon (2025) et Mondon & Yates (2024) critiquent la banalisation de ces partis par l'usage euphémisant du terme « populisme ».",
+    "aliases": [
+      "far right",
+      "extrême droite",
+      "droite radicale"
+    ],
+    "tags": [
+      "science politique",
+      "populisme"
+    ]
+  },
+  {
+    "term": "Faits indiscutables",
+    "id": "undeniable-facts",
+    "definition": "Dans la réflexion d'Arendt (1969), les vérités de fait se distinguent des vérités de raison : contingentes et fragiles, elles ne peuvent être établies que par témoignage, mais constituent le sol commun sur lequel se déploie le débat politique ; le mensonge politique moderne ne vise pas seulement à dissimuler, mais à substituer une réalité fabriquée aux faits (Arendt, 1972). La notion éclaire les discours de l'ère dite de « post-vérité », où l'appel aux émotions et aux croyances prime sur les faits établis (McIntyre, 2018 ; Keyes, 2004 ; Kessler, Rizzo & Kelly, 2020). Voir aussi [[Logocratie]].",
+    "aliases": [
+      "vérité de fait",
+      "factual truth"
+    ],
+    "tags": [
+      "philosophie politique",
+      "post-vérité"
+    ]
+  },
+  {
+    "term": "Goodness of fit",
+    "id": "goodness-of-fit",
+    "definition": "Test statistique évaluant l'écart entre une distribution observée et une distribution théorique attendue ; dans sa version la plus courante (test du khi-deux d'ajustement), il compare les fréquences observées d'une variable catégorielle à celles que prédirait une hypothèse, par exemple une répartition proportionnelle à la taille des sous-corpus. Brezina (2018) en présente l'usage en linguistique de corpus et les conditions d'application, notamment la sensibilité aux faibles effectifs. Voir aussi [[Log-likelihood]].",
+    "aliases": [
+      "test d'ajustement",
+      "khi-deux d'ajustement",
+      "chi-square goodness-of-fit"
+    ],
+    "tags": [
+      "statistiques",
+      "linguistique de corpus"
+    ]
+  },
+  {
+    "term": "Gradient d'appréhension",
+    "id": "apprehension-gradient",
+    "definition": "Continuum ordonnant les réponses défensives selon l'imminence et la proximité de la menace : de l'appréhension anticipatoire (menace potentielle, lointaine) à la [[peur]] puis à la panique (menace présente, proche). Mobbs et al. (2015) décrivent ce continuum d'imminence de la menace et les circuits neuronaux qui y correspondent ; il prolonge les modèles éthologiques des réponses anti-prédatrices (Kavaliers & Choleris, 2001) et recoupe la distinction entre [[anxiété]] et peur (LeDoux & Pine, 2016). Voir aussi [[Gradient de peur]].",
+    "aliases": [
+      "threat imminence continuum"
+    ],
+    "tags": [
+      "émotions",
+      "neurosciences"
+    ]
+  },
+  {
+    "term": "Gradient de peur",
+    "id": "fear-gradient",
+    "definition": "Échelle d'intensité ordonnant les [[Peur|états de peur]], de l'appréhension à la terreur. Plutchik (2001) représente chaque émotion primaire sur un axe d'intensité (apprehension < fear < terror), et les [[Sentiment mining|lexiques d'intensité affective]] (Mohammad, 2018) permettent d'attribuer aux lexèmes de la peur un score quantifiable. Cette gradation fonde la comparaison, en corpus, de l'intensité de la peur exprimée ou suscitée par les différents lexèmes (fear, terror, afraid). Voir aussi [[Gradient d'appréhension]].",
+    "aliases": [
+      "gradient d'intensité"
+    ],
+    "tags": [
+      "émotions",
+      "sémantique",
+      "linguistique de corpus"
+    ]
+  },
+  {
+    "term": "Guerre contre la terreur",
+    "id": "war-on-terror",
+    "definition": "Traduction de War on Terror, expression forgée par l'administration Bush après le [[11-Septembre]] pour désigner la campagne militaire, sécuritaire et idéologique contre le [[terrorisme]]. [[Métaphore conceptuelle]] plus que guerre au sens juridique, elle cadre le terrorisme comme un problème militaire plutôt que pénal, contre un ennemi abstrait (un mode d'action, voire une émotion) et sans limites temporelles ni géographiques définies (Jackson, 2005 ; Record, 2003 ; Hodges & Nilep, 2007). L'administration Obama a pris ses distances avec l'expression tout en maintenant une grande partie des pratiques qu'elle désignait (Mullin, 2011 ; Long, 2013 ; Oeser, 2016).",
+    "aliases": [
+      "War on Terror",
+      "guerre contre le terrorisme",
+      "Global War on Terror",
+      "GWOT"
+    ],
+    "tags": [
+      "terrorisme",
+      "métaphore",
+      "histoire politique"
+    ]
+  },
+  {
+    "term": "Hyperonyme",
+    "id": "hypernym",
+    "definition": "Unité lexicale dont le sens inclut celui d'autres unités, ses hyponymes, qui en sont des spécifications (ex. emotion à l'égard de fear, anger ou joy). L'hyperonymie structure le lexique en relations d'inclusion et assure une fonction de cohésion textuelle par la reprise d'un terme au moyen d'un superordonné ou d'un nom général (Halliday & Hasan, 2014). Dans le domaine des [[Émotion|émotions]], l'identification des hyperonymes est compliquée par la variation interlinguistique des catégories (Wierzbicka, 1999a ; Goddard & Wierzbicka, 2016).",
+    "aliases": [
+      "hyperonymie",
+      "hypernym",
+      "superordonné"
+    ],
+    "tags": [
+      "sémantique"
     ]
   },
   {
@@ -43,6 +353,417 @@
       "analyse du discours",
       "idéologie",
       "sémiologie"
+    ]
+  },
+  {
+    "term": "Immigration",
+    "id": "immigration",
+    "definition": "Thème central de la construction discursive de la [[menace]] dans le discours politique occidental contemporain. Les travaux en analyse critique du discours et en linguistique de corpus montrent la récurrence de [[Métaphore conceptuelle|métaphores]] déshumanisantes : l'eau (flux, vagues, inondation), l'invasion, le parasite, le pays comme contenant (Charteris-Black, 2006 ; Hogan & Haltinner, 2015 ; Taylor, 2022), ainsi que de topoï associant migrants, criminalité et charge économique (Baker et al., 2008 ; Khosravinik, 2014). Dans le discours de Trump, le mur matérialise la séparation entre le [[Opposition Nous/Eux|Nous national et l'Autre menaçant]] (Demata, 2021) ; ce discours s'écarte des données empiriques sur les flux migratoires et les effets du contrôle frontalier (Massey, Durand & Pren, 2016 ; Pierce, Bolter & Selee, 2018).",
+    "aliases": [
+      "métaphore de l'eau"
+    ],
+    "tags": [
+      "analyse du discours",
+      "métaphore",
+      "science politique"
+    ]
+  },
+  {
+    "term": "Légitimation",
+    "id": "legitimisation",
+    "definition": "Fonction stratégique du discours politique par laquelle le locuteur justifie son droit à être obéi, ses décisions ou ses actions en invoquant des raisons, des valeurs, l'autorité ou la nécessité ; elle a pour pendant la délégitimation de l'adversaire (Chilton, 2004 ; voir aussi [[Coercition]]). Cap (2006) en analyse les mécanismes dans la rhétorique de guerre américaine et montre qu'elle repose, dans les discours d'intervention, sur la construction d'une [[menace]] imminente ([[proxémisation]] ; Cap, 2013b). La légitimation de la guerre s'appuie notamment sur la représentation polarisée de [[Opposition Nous/Eux|« Nous » et « Eux »]] (Oddo, 2011).",
+    "aliases": [
+      "legitimisation",
+      "légitimisation",
+      "délégitimation"
+    ],
+    "tags": [
+      "analyse du discours",
+      "pragmatique"
+    ]
+  },
+  {
+    "term": "Log-likelihood",
+    "id": "log-likelihood",
+    "definition": "Test statistique (rapport de vraisemblance, G²) utilisé en linguistique de corpus pour déterminer si la différence de fréquence d'un mot entre deux corpus, ou entre un corpus et un corpus de référence, est significative. Dunning (1993) en a montré la supériorité sur le [[Goodness of fit|khi-deux]] pour les événements rares, fréquents dans les données textuelles et mal décrits par l'approximation normale. Il est à la base du calcul des mots-clés (keyness) ; sa valeur indique la significativité, non la taille de l'effet, qui doit être mesurée séparément (Brezina, 2018 ; McEnery & Hardie, 2012).",
+    "aliases": [
+      "LL",
+      "log-likelihood test",
+      "G²",
+      "rapport de vraisemblance"
+    ],
+    "tags": [
+      "statistiques",
+      "linguistique de corpus"
+    ]
+  },
+  {
+    "term": "Logocratie",
+    "id": "logocracy",
+    "definition": "Littéralement « gouvernement par les mots ». Le terme reçoit plusieurs acceptions :\n1. Chez Walker (2008 : 220), la « logocratic governance » consiste à « legislating political inequality through content restrictions on speech », c'est-à-dire à produire l'inégalité politique en restreignant le contenu de ce qui peut être dit.\n2. Chez Kirkwood (1990 : 88), à propos de l'Union soviétique, il s'agit d'« [a] government by words which create an illusion and conceal reality but at the same time retain their connection with reality by encoding it ».\n3. Hannah Arendt emploie également le terme à propos des régimes totalitaires (dans Friedrich, 1954 : 133-134).\nAcception retenue dans la thèse : « Notre acception du terme se situe entre l'utilisation d'Arendt et celle de Kirkwood : il s'agit d'un type de régime dans lequel le discours est utilisé pour créer une nouvelle réalité. Le discours logocratique tourne en boucle sur lui-même, il est auto-référentiel ou tautologique dans la mesure où le discours crée le monde qui est ensuite commenté dans le discours. »\nVoir aussi [[Faits indiscutables]].",
+    "aliases": [
+      "logocracy",
+      "logocratic governance",
+      "discours logocratique"
+    ],
+    "tags": [
+      "philosophie politique",
+      "analyse du discours"
+    ]
+  },
+  {
+    "term": "Logos",
+    "id": "logos",
+    "definition": "[[Preuve rhétorique]] qui réside dans le discours lui-même, en tant qu'il démontre ou paraît démontrer, principalement par l'[[enthymème]] et l'exemple (Aristote, 2018). Dans la nouvelle rhétorique, le logos recouvre l'ensemble des techniques argumentatives (arguments quasi logiques, arguments fondés sur la structure du réel, etc.) visant l'adhésion d'un auditoire (Perelman & Olbrechts-Tyteca, 2008). Dans le discours politique, il se manifeste notamment par la mobilisation de chiffres et de statistiques, dont l'autorité apparente peut masquer des usages trompeurs (Spirer, Spirer & Jaffe, 1998 ; Jablonka & Bergsten, 2021).",
+    "aliases": [],
+    "tags": [
+      "rhétorique",
+      "argumentation"
+    ]
+  },
+  {
+    "term": "Manipulation",
+    "id": "manipulation",
+    "definition": "Pratique discursive par laquelle un locuteur exerce un contrôle illégitime sur les croyances ou les actions d'autrui, généralement contre sa volonté ou ses intérêts. Van Dijk (2006b) la définit comme un abus de pouvoir articulant trois dimensions : sociale (domination), cognitive (contrôle des représentations) et discursive. Les approches cognitivo-pragmatiques, notamment issues de la [[Relevance Theory]], la décrivent comme l'exploitation de contraintes cognitives visant à neutraliser la vigilance critique de l'allocutaire (De Saussure, 2005 ; Oswald, 2010 ; Maillat, 2014). Breton (2020) l'oppose à l'argumentation en ce qu'elle prive le récepteur de sa liberté de jugement ; Sorlin (2016, 2017) en étudie les mécanismes à partir des théories de la (im)politesse.",
+    "aliases": [
+      "manipulation"
+    ],
+    "tags": [
+      "pragmatique",
+      "analyse du discours"
+    ]
+  },
+  {
+    "term": "Menace",
+    "id": "threat",
+    "definition": "Situation ou entité évaluée comme susceptible de porter atteinte à l'intégrité, aux intérêts ou aux valeurs d'un individu ou d'un groupe ; c'est l'évaluation d'une menace qui déclenche la [[peur]] (Smith & Lazarus, 1993). En analyse du discours, la menace n'est pas donnée mais construite : Cap (2013b, 2016) montre comment le discours politique la présente comme proche, imminente et axiologiquement hostile ([[proxémisation]]) pour [[Légitimation|légitimer]] une action préventive. La construction de menaces et d'ennemis est un trait récurrent du discours présidentiel américain (Resende & Leite, 2023 ; Fiebig-von Hase & Lehmkuhl, 1997).",
+    "aliases": [
+      "threat"
+    ],
+    "tags": [
+      "analyse du discours",
+      "émotions"
+    ]
+  },
+  {
+    "term": "Métaphore",
+    "id": "metaphor",
+    "definition": "Figure par laquelle un terme est employé pour désigner une réalité autre que celle qu'il désigne littéralement, sur la base d'une analogie. La tradition philosophique en discute le statut : Ricœur (1975) y voit une innovation sémantique à l'échelle de l'énoncé, tandis que Davidson (1978) soutient qu'elle n'a pas d'autre sens que son sens littéral et opère par ses effets. La linguistique cognitive la redéfinit comme un phénomène de pensée (voir [[Métaphore conceptuelle]]). En analyse du discours politique, elle est étudiée pour sa fonction persuasive et idéologique (Charteris-Black, 2004 ; Musolff, 2016a) ; son identification en corpus repose sur des procédures explicites de type MIP/MIPVU (Steen, 2010).",
+    "aliases": [
+      "metaphor"
+    ],
+    "tags": [
+      "métaphore",
+      "rhétorique",
+      "sémantique"
+    ]
+  },
+  {
+    "term": "Métaphore conceptuelle",
+    "id": "conceptual-metaphor",
+    "definition": "Selon la théorie de la métaphore conceptuelle (Lakoff & Johnson, 1980), la [[métaphore]] est d'abord un mécanisme de pensée : comprendre un domaine conceptuel cible, souvent abstrait, à travers un domaine source, souvent concret et ancré dans l'expérience corporelle, au moyen de correspondances systématiques (ex. ARGUMENT IS WAR). Kövecses (2004) en montre le rôle dans la conceptualisation des émotions, notamment de la [[peur]] (FEAR IS A HIDDEN ENEMY, FEAR IS A FLUID IN A CONTAINER). L'analyse critique de la métaphore (Charteris-Black, 2004) et l'approche par scénarios (Musolff, 2016a) en étudient l'exploitation idéologique dans le discours politique, par exemple les métaphores de l'eau pour l'[[immigration]] (Taylor, 2022) ou de la guerre pour le [[terrorisme]] et la maladie (Mongoven, 2006).",
+    "aliases": [
+      "conceptual metaphor",
+      "CMT"
+    ],
+    "tags": [
+      "métaphore",
+      "linguistique cognitive"
+    ]
+  },
+  {
+    "term": "Mot émotif",
+    "id": "emotive-word",
+    "definition": "Mot dont la signification comporte, outre un contenu descriptif, une dimension émotive ou évaluative ([[connotation]]) qui oriente l'attitude de l'auditoire envers le référent (ex. terrorist vs freedom fighter, ou [[Welfare Queen]]). Voir aussi [[Définition persuasive]] et [[Concepts mobilisateurs]]. La notion remonte à la « signification émotive » de Stevenson (1937, 1944) ; Macagno & Walton (2010a, 2014, 2019) en analysent l'usage argumentatif : le mot émotif véhicule un jugement de valeur implicite qui dispense de l'argumenter, ce qui en fait un instrument privilégié de la persuasion et, parfois, de la [[manipulation]]. Hayakawa & Hayakawa (1990) en décrivent la forme extrême avec les [[snarl-words]] et purr-words.",
+    "aliases": [
+      "mots émotifs",
+      "emotive word",
+      "emotive language"
+    ],
+    "tags": [
+      "sémantique",
+      "argumentation",
+      "émotions"
+    ]
+  },
+  {
+    "term": "Opposition Nous/Eux",
+    "id": "us-them",
+    "definition": "Structuration polarisée de la représentation des groupes sociaux dans le discours, opposant un endogroupe valorisé à un exogroupe dévalorisé. Van Dijk (2006a) la formalise par le « carré [[Idéologie|idéologique]] » : mettre en avant les qualités de Nous et les défauts d'Eux, atténuer les défauts de Nous et les qualités d'Eux. Elle s'enracine dans les processus d'identité sociale et de conflit intergroupe mis en évidence en psychologie sociale (Sherif et al., 1961 ; Austin & Worchel, 1979). En discours politique, elle se réalise notamment par les pronoms personnels (Maitland & Wilson, 1987 ; Pennebaker, 2013) et sous-tend la [[légitimation]] de la guerre (Oddo, 2011 ; Merskin, 2004).",
+    "aliases": [
+      "Us vs Them",
+      "Nous vs Eux",
+      "carré idéologique"
+    ],
+    "tags": [
+      "analyse du discours",
+      "idéologie"
+    ]
+  },
+  {
+    "term": "Pathos",
+    "id": "pathos",
+    "definition": "[[Preuve rhétorique]] consistant à disposer l'auditoire à éprouver certaines émotions, qui modifient son jugement ; Aristote (2018) analyse les passions une à une, dont la [[peur]], définie comme une peine ou un trouble consécutif à la représentation d'un mal imminent, destructeur ou pénible. Charaudeau (2008) aborde le pathos en termes d'effets pathémiques visés par le discours politique, sans garantie de l'effet produit ; Plantin (2011) montre que l'[[émotion]] est argumentée et peut constituer une « bonne raison » (voir [[Discours émotionnant]]). Macagno & Walton (2014) décrivent les [[Mot émotif|ressources lexicales]] du pathos.",
+    "aliases": [],
+    "tags": [
+      "rhétorique",
+      "émotions",
+      "argumentation"
+    ]
+  },
+  {
+    "term": "Peur",
+    "id": "fear",
+    "definition": "[[Émotion]] de base déclenchée par la perception d'une [[menace]], dont la définition diffère selon les disciplines :\n1. En neurosciences et en psychologie, elle relève de circuits défensifs de survie (amygdale) orientant des réponses de figement, de fuite ou de lutte, que LeDoux & Pine (2016) distinguent de l'expérience consciente de la peur ; elle s'oppose à l'[[anxiété]] par l'imminence et la précision de la menace (LaBar, 2016 ; Mobbs et al., 2015). Plutchik (2001) la range parmi les huit émotions primaires, sur un [[Gradient de peur|gradient d'intensité]] allant de l'appréhension à la terreur (voir aussi [[Gradient d'appréhension]], [[Peur de l'inconnu]] et [[Scarcity mindset]]).\n2. En linguistique, la peur est étudiée à travers son lexique (noms, notamment en emploi de [[shell noun]], adjectifs, verbes psychologiques ; relations d'[[hyperonymie]]) ses constructions (Kitis, 2009a, 2009b ; Cislaru, 2009 ; Blumenthal, 2019), ses [[Sémantique des cadres|cadres sémantiques]] (Ströbel, 2021), ses [[Métaphore conceptuelle|métaphores]] (Kövecses, 2004) et ses variations interlinguistiques (Wierzbicka, 1999a).\n3. En philosophie et en science politique, la peur est un ressort du pouvoir, de Hobbes (2018) aux analyses contemporaines de la « culture de la peur » (Robin, 2004 ; Glassner, 2018) et de la « politique de la peur » de la [[Extrême-droite|droite populiste]] (Wodak, 2015). Ses objets politiques récurrents sont l'[[Immigration|étranger]], la criminalité et le changement social, ce dernier étant associé au [[conservatisme]] (Jost et al., 2003).",
+    "aliases": [
+      "fear",
+      "crainte"
+    ],
+    "tags": [
+      "émotions",
+      "psychologie",
+      "neurosciences",
+      "science politique"
+    ]
+  },
+  {
+    "term": "Peur de l'inconnu",
+    "id": "fear-of-the-unknown",
+    "definition": "Propension à éprouver de la [[peur]] en raison de l'absence perçue d'information, à quelque niveau de conscience ou de traitement que ce soit ; Carleton (2016) en fait une peur fondamentale, sous-jacente aux autres peurs. Elle est étroitement liée à l'intolérance à l'incertitude, mesurée par des échelles psychométriques (Carleton, Norton & Asmundson, 2007). En discours politique, l'incertitude constitue une ressource : présenter l'avenir ou l'Autre comme inconnaissable renforce la perception de [[menace]] et la demande de protection (Jost et al., 2003 ; Lerner et al., 2015).",
+    "aliases": [
+      "fear of the unknown",
+      "intolérance à l'incertitude",
+      "incertitude"
+    ],
+    "tags": [
+      "émotions",
+      "psychologie"
+    ]
+  },
+  {
+    "term": "Pivot peur/solution",
+    "id": "fear-solution-pivot",
+    "definition": "Articulation argumentative décrite par Viktorovitch (2021) : le locuteur suscite d'abord la [[peur]] en construisant une [[menace]], puis présente une solution (mesure, politique ou sa propre personne) comme l'issue permettant d'y échapper, de sorte que la peur se convertit en adhésion. Le mécanisme repose sur le rapport entre peur et espoir exposé dans la Rhétorique d'Aristote (2018 ; voir [[Pathos]]) : pour que la peur pousse à délibérer et à agir plutôt qu'à la résignation, il faut que subsiste un espoir de salut. Il rejoint la structure menace + recommandation des modèles de l'[[appel à la peur]], dont l'efficacité dépend de la crédibilité de la réponse proposée (Tannenbaum et al., 2015).",
+    "aliases": [
+      "pivot peur-solution",
+      "fear-solution"
+    ],
+    "tags": [
+      "argumentation",
+      "rhétorique",
+      "persuasion"
+    ]
+  },
+  {
+    "term": "Politolinguistique",
+    "id": "politolinguistics",
+    "definition": "Champ interdisciplinaire situé à l'intersection de la linguistique et de la science politique, qui étudie le langage politique (lexique, argumentation, genres, usages stratégiques) à l'aide des outils de l'analyse linguistique. Cedroni (2013) en propose un programme visant à intégrer à l'étude du discours la dimension politologique des acteurs, des institutions et des contextes. Le champ recoupe l'analyse du [[discours]] politique (Van Dijk, 1997 ; Chilton, 2004 ; Wodak & Forchtner, 2018).",
+    "aliases": [
+      "politolinguistics",
+      "Politolinguistik"
+    ],
+    "tags": [
+      "analyse du discours",
+      "science politique"
+    ]
+  },
+  {
+    "term": "Populisme",
+    "id": "populism",
+    "definition": "Notion contestée, appréhendée selon trois grandes approches :\n1. Idéationnelle : une [[Idéologie|idéologie]] « mince » qui divise la société en deux groupes homogènes et antagonistes, le « peuple pur » et l'« élite corrompue », et fait de la politique l'expression de la volonté générale du peuple (Mudde, 2004 ; Mudde & Rovira Kaltwasser, 2017) ; Mudde (2004) parle d'un « Zeitgeist populiste » pour désigner sa diffusion dans le discours dominant.\n2. Discursive et post-marxiste : une logique politique de construction du « peuple » par l'articulation de demandes hétérogènes autour de signifiants vides (Laclau, 2005).\n3. Stylistique et performative : un style politique fondé sur l'appel au peuple contre l'élite, les « mauvaises manières » et la performance de la [[crise]] ou de la [[menace]] (Moffitt, 2016, 2020).\nMüller (2017) y souligne l'antipluralisme et la revendication morale de représentation exclusive du peuple ; Collovald (2005) et Mondon & Yates (2024) critiquent les usages stigmatisants ou euphémisants du terme. Voir aussi [[Arrogance de l'ignorance]].",
+    "aliases": [
+      "populism",
+      "discours populiste",
+      "Zeitgeist populiste"
+    ],
+    "tags": [
+      "populisme",
+      "science politique",
+      "idéologie"
+    ]
+  },
+  {
+    "term": "Preuves rhétoriques",
+    "id": "rhetorical-proofs",
+    "definition": "Chez Aristote (2018), les preuves techniques (pisteis entechnoi) sont celles que l'orateur produit par le discours, par opposition aux preuves extra-techniques (témoignages, documents). Elles sont de trois ordres : l'[[ethos]] (le caractère de l'orateur), le [[pathos]] (les dispositions émotionnelles de l'auditoire) et le [[logos]] (le discours lui-même, en tant qu'il démontre ou paraît démontrer). Cette tripartition reste un cadre de référence de la rhétorique et de l'analyse argumentative contemporaines (Reboul, 2001 ; Amossy & Mitterand, 2021) ; Raissouni (2020) l'applique aux discours de Bush et d'Obama sur la [[guerre contre la terreur]]. Voir aussi [[Discours épidictique]].",
+    "aliases": [
+      "preuve rhétorique",
+      "pisteis",
+      "modes de persuasion"
+    ],
+    "tags": [
+      "rhétorique"
+    ]
+  },
+  {
+    "term": "Proxémisation",
+    "id": "proximization",
+    "definition": "Traduction de proximization (Cap, 2013b) : stratégie discursive consistant à présenter des événements ou entités éloignés comme de plus en plus proches du centre déictique (le locuteur et son auditoire) et menaçants pour lui, afin de [[Légitimation|légitimer]] une action préventive. Cap la modélise selon trois dimensions (modèle STA) : spatiale (l'entité hostile se rapproche physiquement), temporelle (la menace est imminente, voire déjà à l'œuvre) et axiologique (les valeurs de l'Autre entrent en conflit avec celles du Nous) (Cap, 2006, 2013a, 2015). Le modèle prolonge la théorie de l'espace discursif de Chilton (2004, 2005) et est appliqué à la communication de la [[menace]] dans l'espace public (Cap, 2016).",
+    "aliases": [
+      "proximisation",
+      "proximization",
+      "modèle STA"
+    ],
+    "tags": [
+      "analyse du discours",
+      "pragmatique",
+      "linguistique cognitive"
+    ]
+  },
+  {
+    "term": "Relevance Theory",
+    "id": "relevance-theory",
+    "definition": "Théorie pragmatique cognitive fondée sur deux principes : la cognition humaine tend à maximiser la pertinence (principe cognitif) et tout stimulus ostensif communique la présomption de sa propre pertinence optimale (principe communicatif) (Sperber & Wilson, 1995 ; Wilson & Sperber, 2006). La pertinence d'une information est fonction des effets cognitifs qu'elle produit et de l'effort de traitement qu'elle requiert. La théorie a été étendue aux [[Émotion|émotions]] (Wharton et al., 2021 ; Wharton & De Saussure, 2024) et à l'analyse de la [[manipulation]] comme exploitation des mécanismes de traitement de l'information (De Saussure, 2005 ; Maillat, 2014).",
+    "aliases": [
+      "théorie de la pertinence",
+      "RT"
+    ],
+    "tags": [
+      "pragmatique"
+    ]
+  },
+  {
+    "term": "Religion",
+    "id": "religion",
+    "definition": "Dans le discours présidentiel américain, la religion fonctionne comme ressource de [[légitimation]] et de mobilisation. Bellah (1967) décrit une « religion civile » américaine, ensemble de croyances, symboles et rituels qui sacralisent la nation sans relever d'une confession particulière. Le discours de George W. Bush fait un usage explicite du langage religieux, notamment dans le cadrage manichéen de la [[guerre contre la terreur]] (Smith, 2008 ; Schroepfer, 2008 ; Frances Turek, 2014) ; Hughes (2019) analyse ce recours stratégique comme une « carte de Dieu ». Le nationalisme chrétien, qui fusionne identité américaine et christianisme, constitue une composante de l'électorat [[Conservatisme|conservateur]] (Whitehead & Perry, 2020).",
+    "aliases": [
+      "religion civile",
+      "civil religion"
+    ],
+    "tags": [
+      "science politique",
+      "rhétorique"
+    ]
+  },
+  {
+    "term": "Scarcity mindset",
+    "id": "scarcity-mindset",
+    "definition": "État cognitif induit par la perception d'un manque (d'argent, de temps, de ressources) qui capte l'attention sur ce manque (effet de « tunnel ») et réduit la « bande passante » cognitive disponible pour d'autres décisions (Mullainathan & Shafir, 2013). Les travaux expérimentaux lui associent une prise de risque accrue (Liang, Ye & Liu, 2021) et une diminution des réponses empathiques envers autrui (Li, Meng & Cui, 2023). Voir aussi [[Peur]].",
+    "aliases": [
+      "mentalité de pénurie",
+      "scarcity"
+    ],
+    "tags": [
+      "psychologie"
+    ]
+  },
+  {
+    "term": "Sémantique des cadres",
+    "id": "frame-semantics",
+    "definition": "Théorie sémantique de Fillmore selon laquelle le sens d'une unité lexicale ne peut être compris qu'en relation avec un cadre (frame), structure de connaissances schématiques décrivant une situation type, ses participants et leurs relations. Fillmore & Atkins (1992) l'illustrent par le cadre du RISQUE (risk, danger, peril, hazard), analyse qui préfigure l'entreprise lexicographique de FrameNet. Ströbel (2021) applique une approche par cadres aux réalisations linguistiques du concept de [[Peur|PEUR]]. À distinguer du framing politique au sens de Lakoff (2014b), qui désigne l'orientation du débat par le choix des cadres moraux et conceptuels activés.",
+    "aliases": [
+      "frame semantics",
+      "cadre sémantique",
+      "frame"
+    ],
+    "tags": [
+      "sémantique",
+      "linguistique cognitive"
+    ]
+  },
+  {
+    "term": "Sentiment mining",
+    "id": "sentiment-mining",
+    "definition": "Ensemble de méthodes computationnelles visant à détecter automatiquement dans les textes l'[[Valence|orientation évaluative]] (positive ou négative) ou les [[Émotion|émotions]] exprimées, généralement au moyen de lexiques annotés. Le LIWC (Boyd et al., 2022), qui assigne les mots à des catégories psychologiques (dont émotions positives, négatives et anxiété), et les lexiques d'intensité affective du NRC (Mohammad, 2018), qui attribuent à chaque mot un score d'intensité pour des émotions comme la [[peur]], en sont des exemples. Ces outils mesurent des fréquences lexicales et non des émotions ressenties, et appellent une validation qualitative en contexte.",
+    "aliases": [
+      "fouille d'opinions",
+      "analyse de sentiments",
+      "sentiment analysis"
+    ],
+    "tags": [
+      "linguistique de corpus",
+      "émotions",
+      "méthodologie"
+    ]
+  },
+  {
+    "term": "Shell noun",
+    "id": "shell-noun",
+    "definition": "Nom abstrait (ex. fact, idea, problem, fear) dont le contenu est incomplet et spécifié par le cotexte, typiquement par une proposition complétive ou un segment antérieur. Schmid (2000) leur attribue trois fonctions : caractériser le contenu qu'ils encapsulent, en faire un concept temporaire et relier des segments du discours ; ils apparaissent dans des patrons comme N + that-clause, N + be + that-clause ou this/that + N. En encapsulant des propositions sous une étiquette évaluative, les shell nouns orientent l'interprétation et peuvent présenter comme acquis un contenu discutable, à la manière d'un [[mot émotif]] (Schmid, 1999, 2000, 2018).",
+    "aliases": [
+      "shell nouns",
+      "nom coquille"
+    ],
+    "tags": [
+      "sémantique",
+      "grammaire",
+      "linguistique de corpus"
+    ]
+  },
+  {
+    "term": "Snarl-word",
+    "id": "snarl-word",
+    "definition": "Terme de Hayakawa & Hayakawa (1990) désignant les mots par lesquels le locuteur exprime son hostilité ou sa désapprobation plus qu'il ne décrit le référent ; ils s'opposent aux purr-words, qui expriment l'approbation. Ces énoncés relèvent de la fonction affective plutôt que de la fonction informative du langage, ce qui les rapproche des [[mots émotifs]] (Stevenson, 1937 ; Macagno & Walton, 2014). Hoffmann (2005) applique la distinction aux discours de George W. Bush.",
+    "aliases": [
+      "snarl-words",
+      "purr-word",
+      "purr-words"
+    ],
+    "tags": [
+      "sémantique",
+      "émotions"
+    ]
+  },
+  {
+    "term": "Syllogisme",
+    "id": "syllogism",
+    "definition": "Raisonnement déductif dans lequel une conclusion découle nécessairement de deux prémisses. Aristote (2018) en fait le modèle du [[logos]] rhétorique sous la forme de l'enthymème, « syllogisme rhétorique » dont les prémisses sont seulement probables et dont une partie reste souvent implicite, l'auditoire étant amené à la reconstruire. Appliqué à l'[[appel à la peur]], ce format permet de reconstruire la structure argumentative de l'énoncé (menace, conséquence, action requise) et d'en repérer les prémisses non dites (Walton, 2000 ; Perelman & Olbrechts-Tyteca, 2008).",
+    "aliases": [
+      "enthymème",
+      "syllogism"
+    ],
+    "tags": [
+      "argumentation",
+      "rhétorique"
+    ]
+  },
+  {
+    "term": "Terrorisme",
+    "id": "terrorism",
+    "definition": "Notion sans définition consensuelle, ni juridique ni scientifique, qui désigne en général l'usage ou la menace de la [[violence]] contre des civils à des fins politiques, en vue de produire un effet de [[peur]] dépassant les victimes directes. Le droit international peine à en fixer les contours (Fry, 2002 ; Guillaume, 2004). Rapoport (2013) en périodise l'histoire moderne en quatre « vagues » (anarchiste, anticoloniale, nouvelle gauche, religieuse), modèle discuté (Parker & Sitter, 2016 ; Millington, 2024) ; la thèse d'un « nouveau terrorisme » après la guerre froide est également contestée (Duyvesteyn, 2004 ; Spencer, 2006). Les termes terror et terrorism fonctionnent eux-mêmes comme des [[mots émotifs]] délégitimants, dont la grammaire et l'usage politique conditionnent la représentation de l'ennemi (Crichton, 2007 ; Jackson, 2005).",
+    "aliases": [
+      "terrorism"
+    ],
+    "tags": [
+      "terrorisme",
+      "science politique"
+    ]
+  },
+  {
+    "term": "Valence",
+    "id": "valence",
+    "definition": "Dimension hédonique de l'affect, qui oppose le positif (agréable) au négatif (désagréable) ; dans les théories de l'évaluation, elle correspond à l'évaluation du caractère intrinsèquement plaisant ou déplaisant d'un stimulus (Shuman & Scherer, 2014). En linguistique, la valence désigne l'orientation évaluative, positive ou négative, d'une unité ou d'un énoncé, telle que la décrit la théorie de l'Appraisal (Martin & White, 2007) ou telle que la mesurent les [[Sentiment mining|outils lexicaux]] (Boyd et al., 2022). À ne pas confondre avec la valence syntaxique (nombre d'arguments d'un prédicat).",
+    "aliases": [
+      "polarité",
+      "valence émotionnelle"
+    ],
+    "tags": [
+      "émotions",
+      "sémantique"
+    ]
+  },
+  {
+    "term": "Violence",
+    "id": "violence",
+    "definition": "Chez Arendt (1972), la violence se distingue du pouvoir : instrumentale par nature, elle peut détruire le pouvoir mais non le créer, et apparaît là où le pouvoir, fondé sur l'action concertée, est menacé. Gurr (1968, 2016) explique la violence politique collective par la privation relative, écart perçu entre les attentes et les capacités d'un groupe. Dans le discours politique étudié, la violence ([[Terrorisme|terroriste]], criminelle, par armes à feu) constitue à la fois l'objet de la [[menace]] et, dans la rhétorique de guerre, ce que le discours [[Légitimation|légitime]] en retour (Jackson, 2005 ; Campbell, 2015).",
+    "aliases": [
+      "violence politique"
+    ],
+    "tags": [
+      "science politique",
+      "philosophie politique"
+    ]
+  },
+  {
+    "term": "Welfare Queen",
+    "id": "welfare-queen",
+    "definition": "Figure rhétorique popularisée par Ronald Reagan lors de sa campagne de 1976, désignant une femme qui fraude l'aide sociale pour vivre dans l'opulence. Sous une formulation sans marqueur racial explicite, l'expression mobilise un stéréotype racialisé et genré (la mère noire célibataire et oisive) qui sert à [[Légitimation|délégitimer]] l'État-providence (Hancock, 2003, 2004 ; Nadasen, 2007). Elle s'inscrit dans la longue tradition américaine de distinction entre pauvres « méritants » et « non méritants » (Katz, 2013) et constitue un exemple type de dog whistle racial (Haney-López, 2014).",
+    "aliases": [
+      "welfare queen"
+    ],
+    "tags": [
+      "histoire politique",
+      "analyse du discours"
     ]
   }
 ]

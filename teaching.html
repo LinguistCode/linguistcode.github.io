@@ -23,216 +23,193 @@
 
     <div id="header-placeholder"></div>
 
-    <main class="pt-32 pb-24 max-w-7xl mx-auto px-6">
+    <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
 
-        <!-- Hero Branding -->
-
-        <header class="mb-24 text-center">
-            <h1 class="font-headline text-6xl md:text-7xl font-light text-primary mb-6 tracking-tight">Enseignement</h1>
-            <p class="max-w-2xl mx-auto text-on-surface-variant text-lg leading-relaxed">
-                Une exploration des cours que j'ai eu le privilège d'enseigner dans les différents établissements où
-                j'ai exercé.
-            </p>
-        </header>
-
-        <!-- Section 1: Établissements d'Enseignement -->
-        <section class="mb-32">
-            <div class="flex items-baseline gap-4 mb-12">
-                <span class="text-primary font-bold text-sm tracking-widest uppercase">01</span>
-                <h2 class="font-headline text-4xl text-primary">Établissements d'Enseignement</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- Card 1: Sorbonne -->
-                <div class="flip-card h-96 group cursor-pointer" onclick="updateLibrary('sorbonne')">
-                    <div class="flip-card-inner shadow-xl">
-                        <div class="flip-card-front bg-surface-container overflow-hidden rounded-lg">
-                            <img alt="Sorbonne photo by Octave 444 on wikipedia"
-                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Sorbonne_cour_int%C3%A9rieure_et_chapelle_Sainte-Ursule_%28fa%C3%A7ade_nord%29.jpg/960px-Sorbonne_cour_int%C3%A9rieure_et_chapelle_Sainte-Ursule_%28fa%C3%A7ade_nord%29.jpg?_=20251116090943" />
-                            <div
-                                class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/80 to-transparent w-full">
-                                <p class="text-white font-headline text-xl">Sorbonne Université</p>
-                                <p class="text-white/70 text-sm">Paris, France</p>
-                            </div>
-                        </div>
-                        <div
-                            class="flip-card-back bg-primary text-on-primary p-8 flex flex-col justify-center rounded-lg border-2 border-primary-fixed">
-                            <h3 class="font-headline text-2xl mb-6 italic">Détails du Poste</h3>
-                            <div class="space-y-4 font-label text-sm">
-                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
-                                    <span class="opacity-70">Contrat</span>
-                                    <span>Doctorant Contractuel</span>
-                                </div>
-                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
-                                    <span class="opacity-70">Durée</span>
-                                    <span>2022 — 2025</span>
-                                </div>
-                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
-                                    <span class="opacity-70">Cours</span>
-                                    <span>7 unités différentes</span>
-                                </div>
-                                <div class="pt-4">
-                                    <span class="opacity-70 block mb-1">Adresse</span>
-                                    <span class="italic">17 rue Francis de Croisset, 75018 Paris</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Card 2: Sorbonne Nouvelle -->
-                <div class="flip-card h-96 group cursor-pointer" onclick="updateLibrary('sorbonne_nouvelle')">
-                    <div class="flip-card-inner shadow-xl">
-                        <div class="flip-card-front bg-surface-container overflow-hidden rounded-lg">
-                            <img alt="Sorbonne Nouvelle, photo prise par ManoSolo13241324, Wikipédia"
-                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Campus_Nation.jpg/1280px-Campus_Nation.jpg" />
-                            <div
-                                class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/80 to-transparent w-full">
-                                <p class="text-white font-headline text-xl">Sorbonne Nouvelle</p>
-                                <p class="text-white/70 text-sm">Paris, France</p>
-                            </div>
-                        </div>
-                        <div
-                            class="flip-card-back bg-primary text-on-primary p-8 flex flex-col justify-center rounded-lg border-2 border-primary-fixed">
-                            <h3 class="font-headline text-2xl mb-6 italic">Détails du Poste</h3>
-                            <div class="space-y-4 font-label text-sm">
-                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
-                                    <span class="opacity-70">Contrat</span>
-                                    <span>ATER</span>
-                                </div>
-                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
-                                    <span class="opacity-70">Durée</span>
-                                    <span>2025-2026</span>
-                                </div>
-                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
-                                    <span class="opacity-70">Cours</span>
-                                    <span>5 Unités</span>
-                                </div>
-                                <div class="pt-4">
-                                    <span class="opacity-70 block mb-1">Adresse</span>
-                                    <span class="italic">8, avenue de Saint-Mandé, 75012 Paris</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: Saint Loouis -->
-                <div class="flip-card h-96 group cursor-pointer" onclick="updateLibrary('saint_louis')">
-                    <div class="flip-card-inner shadow-xl">
-                        <div class="flip-card-front bg-surface-container overflow-hidden rounded-lg">
-                            <img alt="Lycée Saint Louis, photo Wikimapia prise par Andreidan"
-                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                                src="https://photos.wikimapia.org/p/00/06/06/74/76_full.jpg" />
-                            <div
-                                class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/80 to-transparent w-full">
-                                <p class="text-white font-headline text-xl">Lycée Saint Louis</p>
-                                <p class="text-white/70 text-sm">Paris, France</p>
-                            </div>
-                        </div>
-                        <div
-                            class="flip-card-back bg-primary text-on-primary p-8 flex flex-col justify-center rounded-lg border-2 border-primary-fixed">
-                            <h3 class="font-headline text-2xl mb-6 italic">Détails du Poste</h3>
-                            <div class="space-y-4 font-label text-sm">
-                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
-                                    <span class="opacity-70">Contrat</span>
-                                    <span>Colleur</span>
-                                </div>
-                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
-                                    <span class="opacity-70">Durée</span>
-                                    <span>2025-2026</span>
-                                </div>
-                                <div class="flex justify-between border-b border-primary-fixed-dim/30 pb-2">
-                                    <span class="opacity-70">Cours</span>
-                                    <span>2h de colle/semaine</span>
-                                </div>
-                                <div class="pt-4">
-                                    <span class="opacity-70 block mb-1">Adresse</span>
-                                    <span class="italic">44, boulevard Saint-Michel, 75006 Paris</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Hero Section (même structure que Research.html) -->
+        <section class="mb-24">
+            <div class="md:w-3/5">
+                <h1 class="font-headline text-5xl md:text-7xl italic text-primary leading-tight mb-8">Enseignement</h1>
+                <p class="font-body text-lg text-on-surface-variant leading-relaxed max-w-2xl">
+                    Une exploration des cours que j'ai eu le privilège d'enseigner dans les différents établissements où
+                    j'ai exercé.
+                </p>
             </div>
         </section>
 
-        <!-- Section 2: Classes Shelf -->
-        <section class="relative hidden" id="library-section">
-            <div class="flex items-baseline gap-4 mb-16">
-                <span class="text-primary font-bold text-sm tracking-widest uppercase">02</span>
-                <h2 class="font-headline text-4xl text-primary" id="library-title">Ma Bibliothèque de Cours</h2>
+        <!-- Section 1 : Établissements -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-4">
+                <h2 class="font-headline text-3xl italic text-primary">Établissements</h2>
+                <span class="h-px bg-outline-variant flex-grow"></span>
             </div>
-            <div class="relative bg-stone-100/50 p-12 rounded-xl border border-stone-200 min-h-[500px]">
+            <p class="text-sm text-on-surface-variant mb-10">Sélectionnez un établissement pour afficher les cours
+                correspondants.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <!-- Wooden Shelf -->
-                <div class="absolute bottom-10 left-0 w-full h-4 bg-[#4a3728] shadow-2xl rounded-full opacity-60"></div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-8 justify-items-center"
-                    id="books-grid">
-                </div>
+                <!-- Sorbonne Université -->
+                <article class="uni-card group" data-uni="sorbonne">
+                    <div class="uni-card-media">
+                        <img alt="Sorbonne photo by Octave 444 on wikipedia"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Sorbonne_cour_int%C3%A9rieure_et_chapelle_Sainte-Ursule_%28fa%C3%A7ade_nord%29.jpg/960px-Sorbonne_cour_int%C3%A9rieure_et_chapelle_Sainte-Ursule_%28fa%C3%A7ade_nord%29.jpg?_=20251116090943" />
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-headline text-2xl text-primary leading-tight">Sorbonne Université</h3>
+                        <p class="text-sm text-on-surface-variant mb-5">Paris, France</p>
+                        <dl class="text-sm space-y-2 mb-5">
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/40 pb-2">
+                                <dt class="text-on-surface-variant">Contrat</dt>
+                                <dd class="text-right">Doctorant contractuel</dd>
+                            </div>
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/40 pb-2">
+                                <dt class="text-on-surface-variant">Période</dt>
+                                <dd class="text-right">2022 — 2025</dd>
+                            </div>
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/40 pb-2">
+                                <dt class="text-on-surface-variant">Cours</dt>
+                                <dd class="text-right">7 unités différentes</dd>
+                            </div>
+                        </dl>
+                        <p class="text-xs italic text-on-surface-variant mb-6">17 rue Francis de Croisset, 75018 Paris
+                        </p>
+                        <button type="button" class="uni-card-btn" aria-pressed="false" aria-controls="library-section">
+                            <span class="label-idle">Voir les cours</span>
+                            <span class="label-active">Cours affichés</span>
+                            <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_downward</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Sorbonne Nouvelle -->
+                <article class="uni-card group" data-uni="sorbonne_nouvelle" data-default>
+                    <div class="uni-card-media">
+                        <img alt="Sorbonne Nouvelle, photo prise par ManoSolo13241324, Wikipédia"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Campus_Nation.jpg/1280px-Campus_Nation.jpg" />
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-headline text-2xl text-primary leading-tight">Sorbonne Nouvelle</h3>
+                        <p class="text-sm text-on-surface-variant mb-5">Paris, France</p>
+                        <dl class="text-sm space-y-2 mb-5">
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/40 pb-2">
+                                <dt class="text-on-surface-variant">Contrat</dt>
+                                <dd class="text-right">ATER</dd>
+                            </div>
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/40 pb-2">
+                                <dt class="text-on-surface-variant">Période</dt>
+                                <dd class="text-right">2025 — 2026, 2026 — 2027</dd>
+                            </div>
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/40 pb-2">
+                                <dt class="text-on-surface-variant">Cours</dt>
+                                <dd class="text-right">5 unités</dd>
+                            </div>
+                        </dl>
+                        <p class="text-xs italic text-on-surface-variant mb-6">8, avenue de Saint-Mandé, 75012 Paris</p>
+                        <button type="button" class="uni-card-btn" aria-pressed="false" aria-controls="library-section">
+                            <span class="label-idle">Voir les cours</span>
+                            <span class="label-active">Cours affichés</span>
+                            <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_downward</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Lycée Saint-Louis -->
+                <article class="uni-card group" data-uni="saint_louis">
+                    <div class="uni-card-media">
+                        <img alt="Lycée Saint Louis, photo Wikimapia prise par Andreidan"
+                            src="https://photos.wikimapia.org/p/00/06/06/74/76_full.jpg" />
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-headline text-2xl text-primary leading-tight">Lycée Saint-Louis</h3>
+                        <p class="text-sm text-on-surface-variant mb-5">Paris, France</p>
+                        <dl class="text-sm space-y-2 mb-5">
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/40 pb-2">
+                                <dt class="text-on-surface-variant">Contrat</dt>
+                                <dd class="text-right">Colleur</dd>
+                            </div>
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/40 pb-2">
+                                <dt class="text-on-surface-variant">Période</dt>
+                                <dd class="text-right">2025 — 2026</dd>
+                            </div>
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/40 pb-2">
+                                <dt class="text-on-surface-variant">Cours</dt>
+                                <dd class="text-right">2 h de colle / semaine</dd>
+                            </div>
+                        </dl>
+                        <p class="text-xs italic text-on-surface-variant mb-6">44, boulevard Saint-Michel, 75006 Paris
+                        </p>
+                        <button type="button" class="uni-card-btn" aria-pressed="false" aria-controls="library-section">
+                            <span class="label-idle">Voir les cours</span>
+                            <span class="label-active">Cours affichés</span>
+                            <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_downward</span>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Section 2 : Bibliothèque de cours -->
+        <section id="library-section" class="scroll-mt-28" aria-live="polite">
+            <div class="flex items-center gap-4 mb-4">
+                <h2 class="font-headline text-3xl italic text-primary">Bibliothèque de cours</h2>
+                <span class="h-px bg-outline-variant flex-grow"></span>
+            </div>
+            <p class="text-sm text-on-surface-variant mb-10">
+                <span id="library-uni" class="font-semibold text-primary"></span>
+                <span id="library-count"></span> — cliquez sur un livre pour en voir le détail.
+            </p>
+            <div class="bg-stone-100/50 px-6 md:px-12 pt-12 pb-8 rounded-xl border border-stone-200">
+                <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12" id="books-grid"></ul>
             </div>
         </section>
     </main>
 
     <!-- Detailed Course Modal Overlay -->
-    <div class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-8" id="course-modal">
+    <div class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-8" id="course-modal"
+        role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <!-- Backdrop -->
-        <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm" data-close-modal></div>
         <!-- Modal Content -->
         <div
-            class="fixed m-auto bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl flex flex-col md:flex-row animate-fade-in border border-stone-200">
+            class="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl flex flex-col md:flex-row animate-fade-in border border-stone-200">
             <!-- Close Button -->
-            <button class="absolute top-6 right-6 text-stone-400 hover:text-primary transition-colors z-10"
-                onclick="closeModal()">
-                <span class="material-symbols-outlined text-3xl">close</span>
+            <button type="button" id="modal-close" aria-label="Fermer"
+                class="absolute top-6 right-6 text-stone-400 hover:text-primary transition-colors z-10"
+                data-close-modal>
+                <span class="material-symbols-outlined text-3xl" aria-hidden="true">close</span>
             </button>
 
             <!-- Decorative Sidebar -->
             <div
                 class="w-full md:w-1/3 bg-stone-50 border-b md:border-b-0 md:border-r border-stone-100 p-10 flex flex-col items-center justify-center text-center">
-                <div class="w-24 h-24 rounded-full bg-primary/5 flex items-center justify-center mb-6"
-                    id="modal-icon-container">
-                    <span class="material-symbols-outlined text-5xl text-primary" id="modal-icon">menu_book</span>
+                <div class="w-24 h-24 rounded-full bg-primary/5 flex items-center justify-center mb-6">
+                    <span class="material-symbols-outlined text-5xl text-primary" id="modal-icon"
+                        aria-hidden="true">menu_book</span>
                 </div>
-                <h4 class="text-xs tracking-[0.3em] uppercase text-primary font-bold mb-2" id="modal-course-code">
-                    COURSE-CODE</h4>
+                <p class="text-xs tracking-[0.3em] uppercase text-primary font-bold mb-2" id="modal-course-code"></p>
                 <div class="w-12 h-0.5 bg-primary/20 mb-6 mx-auto"></div>
-                <p class="font-headline italic text-lg text-on-surface-variant" id="modal-instructor">Aurélien Amet</p>
+                <p class="font-headline italic text-lg text-on-surface-variant" id="modal-uni"></p>
             </div>
 
             <!-- Main Info -->
             <div class="w-full md:w-2/3 p-10 md:p-14">
-                <div class="mb-10">
-                    <h2 class="font-headline text-4xl text-primary mb-4 leading-tight" id="modal-title">COURSE-TITLE
-                    </h2>
-                    <p class="mb-4 text-on-surface-variant leading-relaxed text-lg italic" id="modal-description">
-                        COURSE-DESCRIPTION</p>
-                    <div class="grid grid-cols-1 gap-10">
-                        <div>
-                            <h3 class="font-headline text-xl text-primary border-b border-stone-100 pb-2 mb-4">
-                                OBJECTIVES</h3>
-                            <ul class="space-y-3 text-on-surface-variant list-none" id="modal-objectives">
-                                <!-- Dynamic content -->
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="font-headline text-xl text-primary border-b border-stone-100 pb-2 mb-4">
-                                BIBLIOGRAPHY</h3>
-                            <div class="space-y-4 text-sm text-on-surface-variant font-serif" id="modal-bibliography">
-                                <!-- Dynamic content -->
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="font-headline text-xl text-primary border-b border-stone-100 pb-2 mb-4">
-                                TEACHING MATERIAL</h3>
-                            <div class="space-y-4 text-sm text-on-surface-variant font-serif"
-                                id="modal-teachingmaterial">
-                                <!-- Dynamic content -->
-                            </div>
-                        </div>
+                <h2 class="font-headline text-4xl text-primary mb-4 leading-tight pr-8" id="modal-title"></h2>
+                <p class="mb-10 text-on-surface-variant leading-relaxed text-lg italic" id="modal-description"></p>
+                <div class="grid grid-cols-1 gap-10">
+                    <div id="modal-objectives-block">
+                        <h3 class="font-headline text-xl italic text-primary border-b border-stone-100 pb-2 mb-4">
+                            Objectifs</h3>
+                        <ul class="space-y-3 text-on-surface-variant list-none" id="modal-objectives"></ul>
+                    </div>
+                    <div id="modal-bibliography-block">
+                        <h3 class="font-headline text-xl italic text-primary border-b border-stone-100 pb-2 mb-4">
+                            Bibliographie</h3>
+                        <ul class="space-y-3 text-sm text-on-surface-variant list-none" id="modal-bibliography"></ul>
+                    </div>
+                    <div id="modal-teachingmaterial-block">
+                        <h3 class="font-headline text-xl italic text-primary border-b border-stone-100 pb-2 mb-4">
+                            Supports pédagogiques</h3>
+                        <ul class="space-y-3 text-sm text-on-surface-variant list-none" id="modal-teachingmaterial">
+                        </ul>
                     </div>
                 </div>
             </div>

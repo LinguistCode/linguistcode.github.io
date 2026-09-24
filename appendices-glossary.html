@@ -289,10 +289,6 @@
     <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
 
         <section class="mb-10">
-            <div class="flex items-center gap-4 mb-6">
-                <div class="w-12 h-[2px] bg-primary"></div>
-                <span class="font-label text-xs uppercase tracking-[0.2em] text-secondary">Annexes</span>
-            </div>
             <h1 class="font-headline text-5xl md:text-7xl italic text-primary leading-tight mb-8">
                 Glossaire
             </h1>
@@ -413,7 +409,7 @@
                     btn.disabled = true;
                 } else {
                     btn.addEventListener("click", () => {
-                        document.getElementById(`letter-${letter}`)?.scrollIntoView({behavior: "smooth", block: "start"});
+                        document.getElementById(`letter-${letter}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
                     });
                 }
                 nav.appendChild(btn);
@@ -482,7 +478,7 @@
             const el = document.getElementById(`entry-${id}`);
             if (!el) return;
             toggleEntry(id, true);
-            el.scrollIntoView({behavior: "smooth", block: "center"});
+            el.scrollIntoView({ behavior: "smooth", block: "center" });
             el.classList.remove("is-flashed");
             // force reflow pour pouvoir rejouer l'animation si on reclique le même terme
             void el.offsetWidth;
@@ -563,7 +559,7 @@
                     const letter = e.target.dataset.letter;
                     navButtons.forEach(b => b.classList.toggle("is-current", b.textContent === letter));
                 });
-            }, {rootMargin: "-10% 0px -80% 0px"});
+            }, { rootMargin: "-10% 0px -80% 0px" });
 
             groups.forEach(g => observer.observe(g));
         }

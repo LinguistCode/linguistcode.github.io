@@ -113,9 +113,6 @@ const allCourses = {
         },
     ],
 
-
-
-
     sorbonne_nouvelle: [
         {
             id: 'sn1',
@@ -238,92 +235,141 @@ const allCourses = {
     ],
 };
 
+const uniNames = {
+    sorbonne: "Sorbonne Université",
+    sorbonne_nouvelle: "Sorbonne Nouvelle",
+    saint_louis: "Lycée Saint-Louis",
+};
+
 let currentUni = '';
+let lastTrigger = null;
 
-function updateLibrary(uniKey) {
-    const librarySection = document.getElementById('library-section');
-    const booksGrid = document.getElementById('books-grid');
-    const title = document.getElementById('library-title');
-
-    const uniNames = {
-        sorbonne: "Sorbonne Université",
-        sorbonne_nouvelle: "Sorbonne Nouvelle",
-        saint_louis: "Lycée Saint-Louis",
-    };
-
-    // Book Grid
-    booksGrid.innerHTML = '';
-    const courses = allCourses[uniKey];
-
-    courses.forEach(course => {
-        const bookHTML = `
-                <div class="book-container w-full max-w-[280px] animate-fade-in">
-                    <div class="book relative w-full h-[400px] cursor-pointer" onclick="openModal('${uniKey}', '${course.id}')">
-                        <div class="absolute inset-0 ${course.bg} ${course.text} rounded-r-md rounded-l flex flex-col items-center justify-between p-8 border-l-8 ${course.border} z-20 shadow-lg ${course.bg.includes('white') || course.bg.includes('stone-50') ? 'border-r border-t border-b border-stone-200' : ''}">
-                            <div class="w-full border-t border-b ${course.text.includes('fixed') ? 'border-tertiary-fixed/30' : 'border-primary/20'} py-4 text-center">
-                                <span class="text-xs tracking-[0.3em] uppercase opacity-70">${course.code.split('-')[0]}</span>
-                            </div>
-                            <h3 class="font-headline text-2xl text-center leading-tight">${course.title}</h3>
-                            <div class="flex flex-col items-center gap-2">
-                                <span class="material-symbols-outlined text-4xl">${course.icon}</span>
-                                <span class="text-xs italic opacity-60">Aurélien Amet</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        booksGrid.innerHTML += bookHTML;
-    });
-
-    title.innerText = `Bibliothèque de Cours : ${uniNames[uniKey]}`;
-
-    if (librarySection.classList.contains('hidden')) {
-        librarySection.classList.remove('hidden');
-    }
-
-    librarySection.scrollIntoView({ behavior: 'smooth' });
+// Nettoie les entrées de listes : retire les tirets initiaux et ignore les placeholders ("-", "X", "").
+function cleanList(items) {
+    return (items || [])
+        .map(item => String(item).replace(/^[\s\-–—]+/, '').trim())
+        .filter(item => item && item.toUpperCase() !== 'X');
 }
 
-function openModal(uniKey, courseId) {
-    const course = allCourses[uniKey].find(c => c.id === courseId);
-    const modal = document.getElementById('course-modal');
-
-    document.getElementById('modal-title').innerText = course.title;
-    document.getElementById('modal-course-code').innerText = course.code;
-    document.getElementById('modal-icon').innerText = course.icon;
-    document.getElementById('modal-description').innerText = course.description;
-
-    const objList = document.getElementById('modal-objectives');
-    objList.innerHTML = '';
-    course.objectives.forEach(obj => {
+function fillList(listId, items) {
+    const list = document.getElementById(listId);
+    const block = document.getElementById(`${listId}-block`);
+    const clean = cleanList(items);
+    list.innerHTML = '';
+    clean.forEach(text => {
         const li = document.createElement('li');
         li.className = 'flex gap-3';
-        li.innerHTML = `<span class="text-primary">-</span> ${obj}`;
-        objList.appendChild(li);
+        const dash = document.createElement('span');
+        dash.className = 'text-primary shrink-0';
+        dash.textContent = '—';
+        const content = document.createElement('span');
+        content.textContent = text;
+        li.append(dash, content);
+        list.appendChild(li);
+    });
+    block.hidden = clean.length === 0;
+}
+
+function updateLibrary(uniKey, { scroll = true } = {}) {
+    const courses = allCourses[uniKey];
+    if (!courses) return;
+    currentUni = uniKey;
+
+    // État sélectionné des cartes
+    document.querySelectorAll('.uni-card').forEach(card => {
+        const selected = card.dataset.uni === uniKey;
+        card.classList.toggle('is-selected', selected);
+        card.querySelector('.uni-card-btn').setAttribute('aria-pressed', String(selected));
     });
 
-    const bibList = document.getElementById('modal-bibliography');
-    bibList.innerHTML = '';
-    course.bibliography.forEach(bib => {
-        const p = document.createElement('p');
-        p.innerHTML = `— ${bib}`;
-        bibList.appendChild(p);
-    });
+    // En-tête de la bibliothèque
+    document.getElementById('library-uni').textContent = uniNames[uniKey];
+    document.getElementById('library-count').textContent =
+        `· ${courses.length} cours`;
 
-    const teachMat = document.getElementById('modal-teachingmaterial');
-    teachMat.innerHTML = '';
-    course.teachingmaterial.forEach(mat => {
-        const p = document.createElement('p');
-        p.innerHTML = `— ${mat}`;
-        teachMat.appendChild(p);
-    });
+    // Livres
+    const booksGrid = document.getElementById('books-grid');
+    booksGrid.innerHTML = courses.map(course => {
+        const lineColor = course.text.includes('fixed') ? 'border-tertiary-fixed/30' : 'border-primary/20';
+        return `
+            <li class="book-slot animate-fade-in">
+                <button type="button" class="book ${course.bg} ${course.text} ${course.border}"
+                    data-course="${course.id}" aria-haspopup="dialog">
+                    <span class="w-full border-t border-b ${lineColor} py-3 text-center">
+                        <span class="text-xs tracking-[0.25em] uppercase opacity-80">${course.code}</span>
+                    </span>
+                    <span class="font-headline text-2xl text-center leading-tight">${course.title}</span>
+                    <span class="flex flex-col items-center gap-3">
+                        <span class="material-symbols-outlined text-4xl" aria-hidden="true">${course.icon}</span>
+                        <span class="book-cue">Voir le détail
+                            <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                        </span>
+                    </span>
+                </button>
+            </li>`;
+    }).join('');
+
+    if (scroll) {
+        const section = document.getElementById('library-section');
+        const top = section.getBoundingClientRect().top;
+        // On ne défile que si la bibliothèque n'est pas déjà bien visible
+        if (top > window.innerHeight * 0.6 || top < 0) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+}
+
+function openModal(uniKey, courseId, trigger) {
+    const course = allCourses[uniKey].find(c => c.id === courseId);
+    if (!course) return;
+    const modal = document.getElementById('course-modal');
+    lastTrigger = trigger || null;
+
+    document.getElementById('modal-title').textContent = course.title;
+    document.getElementById('modal-course-code').textContent = course.code;
+    document.getElementById('modal-icon').textContent = course.icon;
+    document.getElementById('modal-uni').textContent = uniNames[uniKey];
+
+    const desc = document.getElementById('modal-description');
+    desc.textContent = course.description || '';
+    desc.hidden = !course.description;
+
+    fillList('modal-objectives', course.objectives);
+    fillList('modal-bibliography', course.bibliography);
+    fillList('modal-teachingmaterial', course.teachingmaterial);
 
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    document.getElementById('modal-close').focus();
 }
 
 function closeModal() {
     const modal = document.getElementById('course-modal');
+    if (modal.classList.contains('hidden')) return;
     modal.classList.add('hidden');
     document.body.style.overflow = '';
+    if (lastTrigger) lastTrigger.focus();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Cartes d'établissement
+    document.querySelectorAll('.uni-card').forEach(card => {
+        card.querySelector('.uni-card-btn').addEventListener('click', () => updateLibrary(card.dataset.uni));
+    });
+
+    // Livres (délégation d'événements)
+    document.getElementById('books-grid').addEventListener('click', e => {
+        const book = e.target.closest('.book');
+        if (book) openModal(currentUni, book.dataset.course, book);
+    });
+
+    // Fermeture de la modale : fond, bouton, touche Échap
+    document.querySelectorAll('[data-close-modal]').forEach(el => el.addEventListener('click', closeModal));
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    // Établissement affiché par défaut : carte marquée data-default
+    const first = document.querySelector('.uni-card[data-default]') || document.querySelector('.uni-card');
+    if (first) updateLibrary(first.dataset.uni, { scroll: false });
+});
