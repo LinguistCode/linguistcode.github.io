@@ -108,6 +108,36 @@
     ]
   },
   {
+    "term": "Augmenter",
+    "id": "augmenter",
+    "definition": "Deuxième des trois mouvements expressifs distingués par Neveux (2025 : 97-99), avec [[Interjeter]] et [[Désaligner]] : l'expressivité s'y manifeste par un surcroît de matière linguistique, selon un principe iconique (plus de forme pour plus de sens). Il recouvre la répétition et la réduplication (stupid stupid slob, Stuuuuupid!, ponctuation redoublée), l'étirement vocal et ses transcriptions écrites (majuscules), la suffixation non lexicalisée (angriness plutôt que anger) et l'insertion expressive, que Neveux préfère à l'« insertion explétive » de Bauer (outfuckingside, abso-bloody-lutely) (2025 : 97, 170-173, 175) ; l'[[hyperbole]] peut également relever de ce mouvement (2025 : 216). Avec interjeter, c'est un mouvement typique du contexte d'expressivité immédiate, qui transmet surtout de l'intensité plutôt qu'une évaluation (2025 : 89, 105-106). En revanche, l'augmentation entièrement codée dans le système (comparatif et superlatif, structures du type the more…, the more…) n'est que modérément expressive : elle ne manifeste pas de [[trait adversatif]] et sa [[charge expressive]] est répartie sur plusieurs marqueurs (2025 : 172).",
+    "aliases": [
+      "augmentation",
+      "augmentation expressive",
+      "augmenté",
+      "insertion expressive",
+      "réduplication"
+    ],
+    "tags": [
+      "expressivité",
+      "linguistique anglaise",
+      "morphologie"
+    ]
+  },
+  {
+    "term": "Charge expressive",
+    "id": "expressive-charge",
+    "definition": "Chez Neveux (2025 : 90, 102), degré d'[[expressivité]] d'un énoncé, qui dépend de deux facteurs :\n1. La réalisation du [[trait adversatif]] : la charge est élevée lorsqu'il se réalise de façon ponctuelle, comme un élément interjectif (ouch, wow, fuck), et elle se « démultiplie » lorsque ces points se multiplient ; elle est au contraire « divisée » lorsqu'elle repose sur plusieurs marqueurs en eux-mêmes non expressifs (clivage, structures it BE X wh-).\n2. La saillance du mouvement expressif pour le sujet-interprète, qui décroît avec la conventionnalisation du sens et de la forme : les expressifs tendent à se « décharger » en se stabilisant dans le système.\nNeveux rend par cette notion l'emphase ou la « véhémence » que la tradition reconnaît à la métaphore (2025 : 212, 221).",
+    "aliases": [
+      "expressivité démultipliée",
+      "expressivité divisée"
+    ],
+    "tags": [
+      "expressivité",
+      "linguistique anglaise"
+    ]
+  },
+  {
     "term": "Coercition",
     "id": "coercion",
     "definition": "Chez Chilton (2004), l'une des fonctions stratégiques du discours politique, aux côtés de la [[légitimation]]/délégitimation et de la représentation/déformation (misrepresentation). Elle recouvre les actes de langage adossés à des sanctions (ordres, lois, menaces), mais aussi des formes plus diffuses : fixer l'agenda, sélectionner les thèmes, imposer des présupposés que l'auditoire doit accepter, au moins provisoirement, pour traiter le discours. Le pouvoir coercitif du discours dépend des ressources institutionnelles du locuteur, ce qui confère au discours présidentiel une force particulière (Chilton, 2004 ; Cap, 2006).",
@@ -191,6 +221,23 @@
     ]
   },
   {
+    "term": "Désaligner",
+    "id": "desaligner",
+    "definition": "Troisième des trois mouvements expressifs distingués par Neveux (2025 : 97-99), avec [[Interjeter]] et [[Augmenter]] : l'énoncé rompt l'alignement attendu entre forme et sens, ou entre les constituants. Le désalignement peut être :\n1. Syntaxique : inversion de l'ordre des mots, constructions binominales affectives (angel of a girl, wow of a time, idiot of a N), où le nom qualitatif est promu en tête syntaxique (2025 : 98, 173-174).\n2. Lexical ou de registre : variation perceptible de registre à propos d'un même référent (« bouffer » pour « manger », « foutre » pour « faire ») (2025 : 98, 173).\n3. Figural : la [[métaphore]] et certaines [[Hyperbole|hyperboles]] expressives, qui reposent sur un conflit catégoriel (Juliet is the sun, you're an angel : un être humain reçoit une prédication « désalignée ») (2025 : 98, 212, 221). Il peut se doubler d'un désalignement syntaxique (the desert of my mind) (2025 : 227).\nC'est le mouvement le plus complexe : il requiert une maîtrise avancée du code lexico-grammatical et réalise le [[trait adversatif]] dans l'opposition entre sémantique et syntaxe (2025 : 98). Plus fréquent en contexte d'expressivité médiate, il rend davantage la qualité singulière de l'expérience émotionnelle que son intensité, et peut porter une [[valence]] (you're an angel est un jugement favorable) (2025 : 89, 105-106). Neveux y voit une « surliaison » plutôt qu'une « déliaison » entre forme et sens (2025 : 98).",
+    "aliases": [
+      "désalignement",
+      "désalignement figural",
+      "désalignement syntaxique",
+      "désaligné"
+    ],
+    "tags": [
+      "expressivité",
+      "linguistique anglaise",
+      "syntaxe",
+      "métaphore"
+    ]
+  },
+  {
     "term": "Discours",
     "id": "discourse",
     "definition": "Notion polysémique :\n1. En linguistique, le langage en usage, envisagé au-delà de la phrase et dans son contexte de production et de réception (Johnson & McLean, 2020).\n2. Dans la tradition foucaldienne, relue notamment par Frow (1985) et Cusset (2006), ensemble de pratiques réglées qui forment systématiquement les objets dont elles parlent et sont indissociables de rapports de pouvoir (voir [[Idéologie]]).\n3. En analyse critique du discours, une forme de pratique sociale, à la fois constituée par le social et constitutive de celui-ci ; Fairclough (1992, 2003) l'analyse selon trois dimensions articulées : texte, pratique discursive (production, distribution, consommation) et pratique sociale.\nJørgensen & Phillips (2002) comparent ces approches ; Van Dijk (1997) les rapporte spécifiquement au discours politique (voir [[Politolinguistique]]).",
@@ -204,7 +251,7 @@
   {
     "term": "Discours émotionnant",
     "id": "emotion-inducing-discourse",
-    "definition": "[[Discours]] qui transmet des [[Émotion|émotions]] : il ne se contente pas de dire ou de montrer l'émotion du locuteur, mais la fait circuler vers l'allocutaire. Chez Plantin (2011, 2021), l'émotion n'est pas un simple état intérieur exprimé par le langage : elle est construite, argumentée et partagée dans l'interaction, dont elle constitue une condition.",
+    "definition": "[[Discours]] qui transmet des [[Émotion|émotions]] : il ne se contente pas de dire ou de montrer l'émotion du locuteur, mais la fait circuler vers l'allocutaire. Chez Plantin (2011, 2021), l'émotion n'est pas un simple état intérieur exprimé par le langage : elle est construite, argumentée et partagée dans l'interaction, dont elle constitue une condition. Voir aussi [[Expressivité]].",
     "aliases": [
       "discours émotionnant"
     ],
@@ -247,6 +294,27 @@
     "tags": [
       "rhétorique",
       "argumentation"
+    ]
+  },
+  {
+    "term": "Expressivité",
+    "id": "expressivity",
+    "definition": "Chez Neveux (2025 : 236), « la manifestation dynamique, dans le discours, d'une expérience émotionnelle vécue par le sujet parlant (ou représentée comme telle) » : l'expressif est l'indice d'une intensité émotionnelle (IE), manifestée et interprétée comme telle grâce à une cohérence indicielle (2025 : 89). Neveux en donne une définition étroite : l'expressif relève du subjectif, mais le subjectif excède l'expressif (les déictiques ou les alternances pronominales en sont exclus) (2025 : 92, 96). Elle distingue deux contextes (2025 : 95-96) :\n1. L'expressivité immédiate : le sujet parlant ému et le sujet-interprète se font face, le moment de l'énonciation coïncide avec celui de l'IE, et l'interprète perçoit la Cohérence Indicielle Multimodale (CIM) des indices verbaux, vocaux et corporels.\n2. L'expressivité médiate (ou narrative) : le moment de l'énonciation ne coïncide pas avec celui de l'IE, et le seul canal linguistique re-présente l'émotion, que l'interprète reconstruit (fiction, récit, écrit).\nLe mouvement est la « condition formelle systématique » de l'expressivité ; il se réalise selon trois mouvements, [[Interjeter]], [[Augmenter]] et [[Désaligner]] (2025 : 89, 97-99). Neveux caractérise enfin les expressifs, par différence avec les éléments descriptifs, par sept traits : CIM, reproductibilité, [[trait adversatif]], [[charge expressive]] variable, incorporation du sens expressif menant à l'incarnation du sujet parlant, contrainte interprétative, et corrélation entre mouvement expressif et rendu de l'IE (avec ou sans [[valence]]) (2025 : 100-106, 236-237). Voir aussi [[Discours émotionnant]].",
+    "aliases": [
+      "expressivité linguistique",
+      "expressif",
+      "expressifs",
+      "expressivité immédiate",
+      "expressivité médiate",
+      "Cohérence Indicielle Multimodale",
+      "CIM",
+      "intensité émotionnelle",
+      "IE"
+    ],
+    "tags": [
+      "expressivité",
+      "émotions",
+      "linguistique anglaise"
     ]
   },
   {
@@ -332,6 +400,22 @@
     ]
   },
   {
+    "term": "Hyperbole",
+    "id": "hyperbole",
+    "definition": "Figure d'exagération qui présente une réalité en excédant délibérément ce qu'elle est, en plus ou en moins (Morier, 1998 ; Molinié, 2006 ; Dupriez, 2014). Burgers et al. (2016) la définissent opérationnellement comme une expression plus extrême que ne le justifie son référent, et proposent une procédure d'identification en corpus (HIP, Hyperbole Identification Procedure). Plusieurs dimensions en sont étudiées :\n1. Sémantique : l'hyperbole repose sur des formulations extrêmes ou absolues, du type « tout ou rien » (Norrick, 1982 ; Cano Mora, 2009).\n2. Pragmatique et interactionnelle : en conversation, elle est co-construite par les interlocuteurs et remplit des fonctions évaluatives, affectives et humoristiques (McCarthy & Carter, 2004). Les locuteurs disent y recourir pour souligner, clarifier ou faire rire (Roberts & Kreuz, 1994).\n3. Diachronique : l'usage répété des termes hyperboliques en érode la force, ce qui entraîne leur remplacement (Krieger, 2023).\n4. Expressive : chez Neveux (2025 : 98, 103-104, 216), l'hyperbole relève du mouvement [[Augmenter|augmenter]] et, dans ses emplois expressifs, du [[Désaligner|désalignement]] figural. En excédant les limites factuelles crédibles, elle sort du domaine vériconditionnel et impose une contrainte interprétative qui conduit à inférer l'état émotionnel du locuteur. Sa [[charge expressive]] décroît à mesure que l'interprétation hyperbolique se conventionnalise (Neveux, 2025 : 75, 102, citant Claridge, 2011).\nRitter (2010) plaide pour réhabiliter l'hyperbole comme ressource rhétorique à part entière, au-delà de sa réputation d'excès trompeur. Voir aussi [[Expressivité]].",
+    "aliases": [
+      "hyperbolique",
+      "exagération",
+      "overstatement"
+    ],
+    "tags": [
+      "rhétorique",
+      "sémantique",
+      "pragmatique",
+      "expressivité"
+    ]
+  },
+  {
     "term": "Hyperonyme",
     "id": "hypernym",
     "definition": "Unité lexicale dont le sens inclut celui d'autres unités, ses hyponymes, qui en sont des spécifications (ex. emotion à l'égard de fear, anger ou joy). L'hyperonymie structure le lexique en relations d'inclusion et assure une fonction de cohésion textuelle par la reprise d'un terme au moyen d'un superordonné ou d'un nom général (Halliday & Hasan, 2014). Dans le domaine des [[Émotion|émotions]], l'identification des hyperonymes est compliquée par la variation interlinguistique des catégories (Wierzbicka, 1999a ; Goddard & Wierzbicka, 2016).",
@@ -366,6 +450,22 @@
       "analyse du discours",
       "métaphore",
       "science politique"
+    ]
+  },
+  {
+    "term": "Interjeter",
+    "id": "interjeter",
+    "definition": "Premier des trois mouvements expressifs distingués par Neveux (2025 : 97-99), avec [[Augmenter]] et [[Désaligner]] : il regroupe tous les éléments exclamatifs (interjections primaires et secondaires, jurons, vocatifs expressifs), qui mettent en jeu un constituant « bref » (wow!, ouch, fuck, Spectateurs !). C'est le mouvement le premier acquis par l'enfant, jugé prototypique de l'[[expressivité]] et typique du contexte d'expressivité immédiate ; selon l'hypothèse de Neveux, il fournit le modèle dont découlent les deux autres mouvements. Les interjections primaires (wow, ouch), qui n'ont plus qu'un emploi interjectif, se distinguent des secondaires, dérivées d'un mot lexical (fuck, damn) : ces dernières cumulent un double [[trait adversatif]], formel (le mouvement interjeté) et sémantique (la charge transgressive du sens tabou encore actif en synchronie) (2025 : 121-123). Les expressifs interjetés transmettent une émotion de réaction plutôt a-valente, antérieure à toute évaluation positive ou négative (2025 : 105-106). Le mouvement peut subsister sous forme résiduelle dans des emplois syntaxiquement intégrés (I was like wow, this wow of a romantic comedy, to be wowed into V-ing) (2025 : chap. 5).",
+    "aliases": [
+      "interjection",
+      "interjections",
+      "interjeté",
+      "mouvement interjectif"
+    ],
+    "tags": [
+      "expressivité",
+      "linguistique anglaise",
+      "pragmatique"
     ]
   },
   {
@@ -448,7 +548,7 @@
   {
     "term": "Métaphore",
     "id": "metaphor",
-    "definition": "Figure par laquelle un terme est employé pour désigner une réalité autre que celle qu'il désigne littéralement, sur la base d'une analogie. La tradition philosophique en discute le statut : Ricœur (1975) y voit une innovation sémantique à l'échelle de l'énoncé, tandis que Davidson (1978) soutient qu'elle n'a pas d'autre sens que son sens littéral et opère par ses effets. La linguistique cognitive la redéfinit comme un phénomène de pensée (voir [[Métaphore conceptuelle]]). En analyse du discours politique, elle est étudiée pour sa fonction persuasive et idéologique (Charteris-Black, 2004 ; Musolff, 2016a) ; son identification en corpus repose sur des procédures explicites de type MIP/MIPVU (Steen, 2010).",
+    "definition": "Figure par laquelle un terme est employé pour désigner une réalité autre que celle qu'il désigne littéralement, sur la base d'une analogie. La tradition philosophique en discute le statut : Ricœur (1975) y voit une innovation sémantique à l'échelle de l'énoncé, tandis que Davidson (1978) soutient qu'elle n'a pas d'autre sens que son sens littéral et opère par ses effets. Neveux (2025 : 210-213, 221) l'analyse comme un [[Désaligner|désalignement figural]] : un conflit catégoriel entre le référent et sa prédication, porteur d'une forte [[charge expressive]]. La linguistique cognitive la redéfinit comme un phénomène de pensée (voir [[Métaphore conceptuelle]]). En analyse du discours politique, elle est étudiée pour sa fonction persuasive et idéologique (Charteris-Black, 2004 ; Musolff, 2016a) ; son identification en corpus repose sur des procédures explicites de type MIP/MIPVU (Steen, 2010).",
     "aliases": [
       "metaphor"
     ],
@@ -461,7 +561,7 @@
   {
     "term": "Métaphore conceptuelle",
     "id": "conceptual-metaphor",
-    "definition": "Selon la théorie de la métaphore conceptuelle (Lakoff & Johnson, 1980), la [[métaphore]] est d'abord un mécanisme de pensée : comprendre un domaine conceptuel cible, souvent abstrait, à travers un domaine source, souvent concret et ancré dans l'expérience corporelle, au moyen de correspondances systématiques (ex. ARGUMENT IS WAR). Kövecses (2004) en montre le rôle dans la conceptualisation des émotions, notamment de la [[peur]] (FEAR IS A HIDDEN ENEMY, FEAR IS A FLUID IN A CONTAINER). L'analyse critique de la métaphore (Charteris-Black, 2004) et l'approche par scénarios (Musolff, 2016a) en étudient l'exploitation idéologique dans le discours politique, par exemple les métaphores de l'eau pour l'[[immigration]] (Taylor, 2022) ou de la guerre pour le [[terrorisme]] et la maladie (Mongoven, 2006).",
+    "definition": "Selon la théorie de la métaphore conceptuelle (Lakoff & Johnson, 1980), la [[métaphore]] est d'abord un mécanisme de pensée : comprendre un domaine conceptuel cible, souvent abstrait, à travers un domaine source, souvent concret et ancré dans l'expérience corporelle, au moyen de correspondances systématiques (ex. ARGUMENT IS WAR). Kövecses (2004) en montre le rôle dans la conceptualisation des émotions, notamment de la [[peur]] (FEAR IS A HIDDEN ENEMY, FEAR IS A FLUID IN A CONTAINER). L'analyse critique de la métaphore (Charteris-Black, 2004) et l'approche par scénarios (Musolff, 2016a) en étudient l'exploitation idéologique dans le discours politique, par exemple les métaphores de l'eau pour l'[[immigration]] (Taylor, 2022) ou de la guerre pour le [[terrorisme]] et la maladie (Mongoven, 2006).\nNeveux (2025 : 213-219) formule plusieurs réserves à l'égard de cette théorie :\n1. En ramenant la métaphore à une correspondance entre domaines conceptuels, la théorie de la métaphore conceptuelle la détache de sa réalisation linguistique et ignore ce qui la constitue du point de vue linguistique : sa métaphoricité, c'est-à-dire sa mise en forme, et son [[expressivité]]. Lakoff & Johnson (1980) ne traitent d'ailleurs pas de l'expressivité.\n2. La plupart des énoncés qu'elle étudie (« Juliette est chaleureuse », « ne perds pas ton temps ») ont une métaphoricité nulle : la correspondance est installée dans le code, aucun mouvement n'est perceptible et l'énoncé a un statut comparable à celui d'un énoncé descriptif. La théorie porte davantage sur des analogies conventionnelles et des formules plus ou moins figées que sur la métaphore proprement dite : the magic is gone, donné pour exemple de LOVE IS MAGIC, est le plus souvent figé et ne regagne en métaphoricité que par défigement (the old magic is gone).\n3. L'identification de domaines corrélés ne permet donc pas de prédire le potentiel expressif d'un énoncé, et le cadre se prête mal à l'étude des métaphores créatives, qui font surgir la saillance d'une analogie en un point de [[Désaligner|désalignement]] sémantique : moins une métaphore est expressive, plus elle est conventionnelle.\n4. Bien que la théorie revendique une approche « expérientielle » et incarnée, son prisme conceptuel l'a détournée du corps et de l'intensité émotionnelle que la métaphore expressive manifeste.",
     "aliases": [
       "conceptual metaphor",
       "CMT"
@@ -613,7 +713,7 @@
   {
     "term": "Relevance Theory",
     "id": "relevance-theory",
-    "definition": "Théorie pragmatique cognitive fondée sur deux principes : la cognition humaine tend à maximiser la pertinence (principe cognitif) et tout stimulus ostensif communique la présomption de sa propre pertinence optimale (principe communicatif) (Sperber & Wilson, 1995 ; Wilson & Sperber, 2006). La pertinence d'une information est fonction des effets cognitifs qu'elle produit et de l'effort de traitement qu'elle requiert. La théorie a été étendue aux [[Émotion|émotions]] (Wharton et al., 2021 ; Wharton & De Saussure, 2024) et à l'analyse de la [[manipulation]] comme exploitation des mécanismes de traitement de l'information (De Saussure, 2005 ; Maillat, 2014).",
+    "definition": "Théorie pragmatique cognitive fondée sur deux principes : la cognition humaine tend à maximiser la pertinence (principe cognitif) et tout stimulus ostensif communique la présomption de sa propre pertinence optimale (principe communicatif) (Sperber & Wilson, 1995 ; Wilson & Sperber, 2006). La pertinence d'une information est fonction des effets cognitifs qu'elle produit et de l'effort de traitement qu'elle requiert. La théorie a été étendue aux [[Émotion|émotions]] (Wharton et al., 2021 ; Wharton & De Saussure, 2024) et à l'analyse de la [[manipulation]] comme exploitation des mécanismes de traitement de l'information (De Saussure, 2005 ; Maillat, 2014).\nNeveux (2025 : 220-222) formule des réserves sur le traitement de la [[métaphore]] par la théorie :\n1. Le cadre n'est pas conçu pour faire place aux émotions dans le discours, et il refuse toute spécificité au langage métaphorique en l'incluant dans les usages « vagues » (loose use) du langage.\n2. Analyser une métaphore comme un ensemble d'implicatures faibles, que l'interprète aurait la responsabilité de reconstruire (analyse de Jane is my anchor in the storm par Carston, 2002, citée par Neveux), revient à remplacer la puissance synthétique et émotionnelle de l'énoncé par une liste de propriétés analytiques ; traiter le sens expressif comme un contenu propositionnel restituable est, selon Neveux, un contresens.\n3. L'idée d'hypothèses « faiblement manifestes » contredit l'emphase et la véhémence que la tradition reconnaît à la métaphore, et que Neveux nomme [[charge expressive]] : l'emploi fréquent des intensifieurs really et literally avec les énoncés métaphoriques (You are my anchor, literally ; He's really a true angel) en témoigne.\nNeveux (2025 : 104, 222) rejoint en revanche les travaux de De Saussure et Wharton qui ouvrent la théorie à la dimension affective, notamment leur notion d'« effets émotionnels » (voir Wharton & De Saussure, 2024).",
     "aliases": [
       "théorie de la pertinence",
       "RT"
@@ -730,9 +830,21 @@
     ]
   },
   {
+    "term": "Trait adversatif",
+    "id": "adversative-feature",
+    "definition": "Chez Neveux (2025 : 100-102), à la suite de Guillaume, tension constitutive de l'[[expressivité]] entre le système linguistique institué et l'expression de l'émotion incarnée : l'expressif se manifeste par un mouvement contre le système, bien que rendu possible par lui. Il se réalise systématiquement au niveau formel (le mouvement lui-même, par exemple interjeté) et, occasionnellement, au niveau sémantique (charge transgressive des mots dérivés d'un domaine tabou : damn, shit, fuck) ou syntaxique (désorganisation de la linéarité attendue : idiot of a N). Neveux refuse de définir l'expressivité comme écart à la norme, mais y voit une forme de transgression, « même minimale » (2025 : 91). Le trait adversatif pourrait être lié à la frustration du locuteur face aux capacités expressives limitées du langage (2025 : 101-102). Voir [[Interjeter]], [[Augmenter]] et [[Désaligner]].",
+    "aliases": [
+      "tension adversative"
+    ],
+    "tags": [
+      "expressivité",
+      "linguistique anglaise"
+    ]
+  },
+  {
     "term": "Valence",
     "id": "valence",
-    "definition": "Dimension hédonique de l'affect, qui oppose le positif (agréable) au négatif (désagréable) ; dans les théories de l'évaluation, elle correspond à l'évaluation du caractère intrinsèquement plaisant ou déplaisant d'un stimulus (Shuman & Scherer, 2014). En linguistique, la valence désigne l'orientation évaluative, positive ou négative, d'une unité ou d'un énoncé, telle que la décrit la théorie de l'Appraisal (Martin & White, 2007) ou telle que la mesurent les [[Sentiment mining|outils lexicaux]] (Boyd et al., 2022). À ne pas confondre avec la valence syntaxique (nombre d'arguments d'un prédicat).",
+    "definition": "Dimension hédonique de l'affect, qui oppose le positif (agréable) au négatif (désagréable) ; dans les théories de l'évaluation, elle correspond à l'évaluation du caractère intrinsèquement plaisant ou déplaisant d'un stimulus (Shuman & Scherer, 2014). En linguistique, la valence désigne l'orientation évaluative, positive ou négative, d'une unité ou d'un énoncé, telle que la décrit la théorie de l'Appraisal (Martin & White, 2007) ou telle que la mesurent les [[Sentiment mining|outils lexicaux]] (Boyd et al., 2022). Neveux (2025 : 105-106) fait l'hypothèse que les expressifs issus des mouvements [[Interjeter|interjeter]] et [[Augmenter|augmenter]] sont plutôt a-valents, alors que le [[Désaligner|désalignement]] peut porter une valence. À ne pas confondre avec la valence syntaxique (nombre d'arguments d'un prédicat).",
     "aliases": [
       "polarité",
       "valence émotionnelle"
