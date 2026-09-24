@@ -1,0 +1,277 @@
+{
+  "tags": [
+    {
+      "tag": "emotion",
+      "group": "Emotion",
+      "color": "#F1948A"
+    },
+    {
+      "tag": "fear",
+      "group": "Emotion",
+      "color": "#4A235A"
+    },
+    {
+      "tag": "fear_appeal",
+      "group": "Emotion",
+      "color": "#512E5F"
+    },
+    {
+      "tag": "threat",
+      "group": "Emotion",
+      "color": "#48C9B0"
+    },
+    {
+      "tag": "scarcity",
+      "group": "Emotion",
+      "color": "#17202A"
+    },
+    {
+      "tag": "emotion_words",
+      "group": "Lexicon & Grammar",
+      "color": "#E6B0AA"
+    },
+    {
+      "tag": "emotive_words",
+      "group": "Lexicon & Grammar",
+      "color": "#D7BDE2"
+    },
+    {
+      "tag": "shell_nouns",
+      "group": "Lexicon & Grammar",
+      "color": "#424949"
+    },
+    {
+      "tag": "nominalization",
+      "group": "Lexicon & Grammar",
+      "color": "#48C9B0"
+    },
+    {
+      "tag": "pronouns",
+      "group": "Lexicon & Grammar",
+      "color": "#5B2C6F"
+    },
+    {
+      "tag": "modality",
+      "group": "Lexicon & Grammar",
+      "color": "#E8DAEF"
+    },
+    {
+      "tag": "semantics",
+      "group": "Lexicon & Grammar",
+      "color": "#A6ACAF"
+    },
+    {
+      "tag": "definition",
+      "group": "Lexicon & Grammar",
+      "color": "#5499C7"
+    },
+    {
+      "tag": "frames",
+      "group": "Lexicon & Grammar",
+      "color": "#8E44AD"
+    },
+    {
+      "tag": "metaphor",
+      "group": "Figures",
+      "color": "#58D68D"
+    },
+    {
+      "tag": "hyperbole_&_figures",
+      "group": "Figures",
+      "color": "#C39BD3"
+    },
+    {
+      "tag": "politeness",
+      "group": "Pragmatics & Argumentation",
+      "color": "#1F618D"
+    },
+    {
+      "tag": "speech_acts",
+      "group": "Pragmatics & Argumentation",
+      "color": "#F4F6F7"
+    },
+    {
+      "tag": "argumentation",
+      "group": "Pragmatics & Argumentation",
+      "color": "#F5B041"
+    },
+    {
+      "tag": "persuasion",
+      "group": "Pragmatics & Argumentation",
+      "color": "#138D75"
+    },
+    {
+      "tag": "manipulation",
+      "group": "Pragmatics & Argumentation",
+      "color": "#7B241C"
+    },
+    {
+      "tag": "dog_whistling",
+      "group": "Pragmatics & Argumentation",
+      "color": "#873600"
+    },
+    {
+      "tag": "legitimization",
+      "group": "Pragmatics & Argumentation",
+      "color": "#3498DB"
+    },
+    {
+      "tag": "proximization",
+      "group": "Pragmatics & Argumentation",
+      "color": "#117A65"
+    },
+    {
+      "tag": "rhetorical_proofs",
+      "group": "Pragmatics & Argumentation",
+      "color": "#F5CBA7"
+    },
+    {
+      "tag": "narratives",
+      "group": "Pragmatics & Argumentation",
+      "color": "#ABEBC6"
+    },
+    {
+      "tag": "post-truth",
+      "group": "Pragmatics & Argumentation",
+      "color": "#2874A6"
+    },
+    {
+      "tag": "political_discourse",
+      "group": "Politics",
+      "color": "#117864"
+    },
+    {
+      "tag": "ideology",
+      "group": "Politics",
+      "color": "#5D6D7E"
+    },
+    {
+      "tag": "populism",
+      "group": "Politics",
+      "color": "#6C3483"
+    },
+    {
+      "tag": "conservatism",
+      "group": "Politics",
+      "color": "#154360"
+    },
+    {
+      "tag": "far_right",
+      "group": "Politics",
+      "color": "#78281F"
+    },
+    {
+      "tag": "racism_&_prejudice",
+      "group": "Politics",
+      "color": "#1B4F72"
+    },
+    {
+      "tag": "enemy_&_otherness",
+      "group": "Politics",
+      "color": "#641E16"
+    },
+    {
+      "tag": "religion",
+      "group": "Politics",
+      "color": "#154360"
+    },
+    {
+      "tag": "immigration",
+      "group": "Politics",
+      "color": "#F5B041"
+    },
+    {
+      "tag": "terrorism",
+      "group": "Politics",
+      "color": "#EC7063"
+    },
+    {
+      "tag": "war_&_violence",
+      "group": "Politics",
+      "color": "#CB4335"
+    },
+    {
+      "tag": "conspiracy",
+      "group": "Politics",
+      "color": "#145A32"
+    },
+    {
+      "tag": "media",
+      "group": "Politics",
+      "color": "#34495E"
+    },
+    {
+      "tag": "health_&_pandemic",
+      "group": "Politics",
+      "color": "#27AE60"
+    },
+    {
+      "tag": "Bush",
+      "group": "Presidents",
+      "color": "#E74C3C"
+    },
+    {
+      "tag": "Obama",
+      "group": "Presidents",
+      "color": "#3498DB"
+    },
+    {
+      "tag": "Trump",
+      "group": "Presidents",
+      "color": "#E67E22"
+    },
+    {
+      "tag": "statistics",
+      "group": "Method",
+      "color": "#E5E8E8"
+    },
+    {
+      "tag": "cognition",
+      "group": "Method",
+      "color": "#EB984E"
+    }
+  ],
+  "tag_groups": [
+    "Emotion",
+    "Lexicon & Grammar",
+    "Figures",
+    "Pragmatics & Argumentation",
+    "Politics",
+    "Presidents",
+    "Method"
+  ],
+  "chapters": [
+    {
+      "label": "Introduction",
+      "title": "Introduction"
+    },
+    {
+      "label": "Chapitre 1",
+      "title": "Chapitre 1 : Présentation du sujet"
+    },
+    {
+      "label": "Chapitre 2",
+      "title": "Chapitre 2 : Cadres théoriques et définitions"
+    },
+    {
+      "label": "Chapitre 3",
+      "title": "Chapitre 3 : Nommer la peur et la transmettre"
+    },
+    {
+      "label": "Chapitre 4",
+      "title": "Chapitre 4 : Figures rhétoriques expressives"
+    },
+    {
+      "label": "Chapitre 5",
+      "title": "Chapitre 5 : La figure de l’ennemi"
+    },
+    {
+      "label": "Chapitre 6",
+      "title": "Chapitre 6 : Récits politiques et post-vérité"
+    },
+    {
+      "label": "Conclusion",
+      "title": "Conclusion"
+    }
+  ]
+}

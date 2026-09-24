@@ -58,6 +58,186 @@
             color: #3fb950;
         }
 
+        /* ============ Keywords popup ============ */
+        .search-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tag-browser {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .tag-browser-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            height: 42px;
+            padding: 0 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            background: transparent;
+            color: var(--on-surface-variant, #3f4945);
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+        }
+
+        .tag-browser-btn .material-symbols-outlined {
+            font-size: 1.1rem;
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .tag-browser-btn:hover,
+        .tag-browser-btn[aria-expanded="true"] {
+            border-color: #3fb950;
+            color: #2f6b4f;
+            background-color: rgba(63, 185, 80, 0.06);
+        }
+
+        .tag-browser-btn:hover .material-symbols-outlined {
+            transform: rotate(-12deg);
+        }
+
+        .tag-browser-btn:active {
+            transform: scale(0.97);
+        }
+
+        .tag-browser-panel {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            z-index: 40;
+            width: min(620px, calc(100vw - 4rem));
+            max-height: 65vh;
+            overflow-y: auto;
+            padding: 1rem 1.25rem 1.25rem;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.25);
+            animation: tagPanelIn 0.18s ease-out;
+        }
+
+        @keyframes tagPanelIn {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tag-browser-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #6e7681;
+        }
+
+        .tag-browser-close {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            line-height: 1;
+            color: #6e7681;
+            cursor: pointer;
+        }
+
+        .tag-browser-close:hover {
+            color: #1f2328;
+        }
+
+        .tag-group-label {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: #2f6b4f;
+            margin: 0.9rem 0 0.45rem;
+        }
+
+        .tag-group-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag-option {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: 999px;
+            background: #fafafa;
+            color: #3f4945;
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.76rem;
+            cursor: pointer;
+            transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+        }
+
+        .tag-option:hover {
+            transform: translateY(-1px);
+        }
+
+        .tag-option:active {
+            transform: scale(0.96);
+        }
+
+        .tag-option-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 999px;
+            background: var(--dot, #9aa39e);
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+            /* pour voir les couleurs zotero trop claires */
+            flex-shrink: 0;
+        }
+
+        .tag-option-count {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.66rem;
+            color: #9aa39e;
+        }
+
+        .tag-option.is-active {
+            border-color: #3fb950;
+            background: rgba(63, 185, 80, 0.12);
+            color: #2f6b4f;
+            font-weight: 600;
+        }
+
+        @media (max-width: 640px) {
+            .tag-browser-btn span:last-child {
+                display: none;
+            }
+
+            .tag-browser-panel {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        .result-count {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.04em;
+            color: var(--on-surface-variant, #656d76);
+            margin: -1.5rem 0 1rem;
+        }
+
         /* ============ LISTE BIBLIOGRAPHIQUE ============ */
         #bibliography-list {
             max-width: 52rem;
@@ -106,6 +286,24 @@
 
         .biblio-entry:hover .biblio-entry-meta {
             opacity: 1;
+        }
+
+        .tools-section {
+            max-width: 52rem;
+            margin-top: 4rem;
+        }
+
+        .tools-heading {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tools-intro {
+            font-size: 0.9rem;
+            color: var(--on-surface-variant, #656d76);
+            margin: 0 0 1.25rem 1.25rem;
         }
 
         .biblio-entry.is-hidden-by-filter {
@@ -202,6 +400,48 @@
             padding-left: 12px;
             margin-bottom: 1.5rem;
             line-height: 1.6;
+        }
+
+        #detail-pane .pane-abstract {
+            font-size: 0.86rem;
+            line-height: 1.7;
+            color: #c9d1d9;
+            margin-bottom: 0.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        #detail-pane .pane-abstract.is-expanded {
+            display: block;
+        }
+
+        #detail-pane .pane-abstract-toggle {
+            background: none;
+            border: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.72rem;
+            color: #58a6ff;
+            cursor: pointer;
+        }
+
+        #detail-pane .pane-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.74rem;
+            color: #58a6ff;
+            text-decoration: none;
+            margin: -0.75rem 0 1.5rem;
+            word-break: break-all;
+        }
+
+        #detail-pane .pane-link:hover {
+            text-decoration: underline;
         }
 
         #detail-pane .pane-quote {
@@ -379,18 +619,37 @@
             </h1>
             <p class="font-body text-lg text-on-surface-variant leading-relaxed max-w-3xl">
                 Les ouvrages et articles ci-dessous constituent le socle théorique de la thèse. Cliquez sur une
-                référence pour afficher la fiche de lecture complète : couverture, citation, extrait clé, chapitre
-                concerné et cadre théorique mobilisé.
+                référence pour afficher sa fiche complète : résumé, domaine, mots-clés, chapitres de la thèse où elle
+                est mobilisée et publications liées. Auteurs, mots-clés et chapitres sont cliquables et se combinent
+                comme filtres.
             </p>
         </section>
 
         <section class="mb-6">
-            <div class="mb-5">
-                <input type="text" id="search-input" placeholder="Rechercher par titre, auteur..."
+            <div class="mb-5 search-row">
+                <input type="text" id="search-input"
+                    placeholder="Rechercher par titre, auteur, mot-clé, domaine, revue, année..."
                     class="w-full md:w-1/2 px-4 py-2 rounded-md border border-gray-300 bg-transparent text-on-surface focus:outline-none focus:border-primary transition-colors" />
+                <div class="tag-browser">
+                    <button type="button" id="tag-browser-btn" class="tag-browser-btn" aria-haspopup="dialog"
+                        aria-expanded="false" aria-controls="tag-browser-panel" title="Parcourir les mots-clés">
+                        <span class="material-symbols-outlined">sell</span>
+                        <span>Keywords</span>
+                    </button>
+                    <div id="tag-browser-panel" class="tag-browser-panel" role="dialog" aria-label="Mots-clés" hidden>
+                        <div class="tag-browser-head">
+                            <span>Tous les mots-clés</span>
+                            <button type="button" id="tag-browser-close" class="tag-browser-close"
+                                aria-label="Fermer">×</button>
+                        </div>
+                        <div id="tag-browser-groups"></div>
+                    </div>
+                </div>
             </div>
 
             <div id="chapter-filters" class="chapter-filters"></div>
+
+            <p id="result-count" class="result-count"></p>
 
             <div id="active-filters-display"
                 class="mb-4 text-sm font-medium text-primary hidden flex-wrap gap-2 items-center">
@@ -402,6 +661,16 @@
                 Chargement de la bibliographie...
             </div>
             <div id="bibliography-list"></div>
+
+            <!-- ============ OUTILS (logiciels, ressources) : hors chapitres, toujours en bas ============ -->
+            <div id="tools-section" class="tools-section" style="display:none;">
+                <div class="tools-heading">
+                    <div class="w-12 h-[2px] bg-primary"></div>
+                    <h2 class="font-headline text-3xl italic text-primary">Outils</h2>
+                </div>
+                <p class="tools-intro">Logiciels et ressources utilisés pour la constitution et l'analyse du corpus.</p>
+                <div id="tools-list"></div>
+            </div>
         </section>
 
     </main>
@@ -416,6 +685,12 @@
         <p class="pane-title" id="pane-title"></p>
         <p class="pane-meta" id="pane-meta"></p>
         <p class="pane-citation" id="pane-citation"></p>
+        <a class="pane-link" id="pane-link" href="#" target="_blank" rel="noopener" style="display:none;"></a>
+        <div id="pane-abstract-block" style="display:none;">
+            <p class="pane-section-label">Résumé</p>
+            <p class="pane-abstract" id="pane-abstract"></p>
+            <button type="button" class="pane-abstract-toggle" id="pane-abstract-toggle">Lire la suite</button>
+        </div>
         <div class="pane-quote" id="pane-quote-wrap" style="display:none;">
             <p id="pane-quote"></p>
         </div>
@@ -424,7 +699,7 @@
             <div class="pane-chips" id="pane-tags"></div>
         </div>
         <div id="pane-framework-block">
-            <p class="pane-section-label">Cadre théorique</p>
+            <p class="pane-section-label">Domaine</p>
             <div class="pane-chips" id="pane-framework"></div>
         </div>
         <div id="pane-chapter-block">
@@ -452,6 +727,10 @@
         };
 
         let tagColorMap = {};
+        const BIBLIOGRAPHY_META_PATH = "./src/bibliography-meta.json";
+        let chapterMeta = [];   // [{label, title}] dans l'ordre de la thèse
+        let tagGroupOf = {};    // clé normalisée du tag -> groupe
+        let tagGroupOrder = [];
 
         // --- BULLETPROOF MATCHING ---
         function getMatchKey(str) {
@@ -470,6 +749,32 @@
             const b = parseInt(hexcolor.substr(4, 2), 16);
             const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
             return (yiq >= 128) ? '#161b22' : '#ffffff';
+        }
+
+        // --- Recherche : insensible à la casse, aux accents et à la ponctuation des tags
+        // ("fear_appeal" = "fear appeal" = "Fear Appeal", "post truth" = "post-truth") ---
+        function normalizeSearch(str) {
+            return (str || "")
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                .toLowerCase()
+                .replace(/[_\-\/&.,;:()«»“”"'’]/g, " ")
+                .replace(/\s+/g, " ")
+                .trim();
+        }
+
+        function buildSearchIndex(entry) {
+            return normalizeSearch([
+                entry.title,
+                (entry.authors || []).join(" "),
+                (entry.tags || []).join(" "),
+                (entry.framework || []).join(" "),
+                (entry.thesis_chapter || []).join(" "),
+                entry.publication,
+                entry.pub_year,
+                formatItemType(entry.item_type),
+                // la section Outils répond aussi à ces mots-clés
+                entry.section === "tools" ? "tools outils software logiciel logiciels" : ""
+            ].filter(Boolean).join(" "));
         }
 
         // --- Formatting Helpers ---
@@ -500,14 +805,27 @@
                 "book": "Book",
                 "bookSection": "Book Section",
                 "journalArticle": "Journal Article",
-                "manuscript": "Manuscript"
+                "manuscript": "Manuscript",
+                "thesis": "Thesis",
+                "report": "Report",
+                "webpage": "Web Page",
+                "conferencePaper": "Conference Paper",
+                "newspaperArticle": "Newspaper Article",
+                "magazineArticle": "Magazine Article",
+                "blogPost": "Blog Post",
+                "encyclopediaArticle": "Encyclopedia Article",
+                "document": "Document",
+                "film": "Film",
+                "preprint": "Preprint",
+                "dataset": "Dataset",
+                "computerProgram": "Software"
             };
             return typeMapping[itemType] || itemType;
         }
 
+        // La citation est produite par build_bibliography.py en HTML échappé (seul <em> y figure).
         function formatCitation(text) {
-            if (!text) return "";
-            return text.replace(/_([^_]+)_/g, "<em>$1</em>");
+            return text || "";
         }
 
         // --- UI Rendering ---
@@ -610,6 +928,32 @@
 
             document.getElementById("pane-citation").innerHTML = formatCitation(entry.citation);
 
+            const link = document.getElementById("pane-link");
+            if (entry.url) {
+                link.href = entry.url;
+                link.textContent = (entry.doi ? `doi:${entry.doi}` : "Accéder à la publication") + " ↗";
+                link.style.display = "inline-flex";
+            } else {
+                link.style.display = "none";
+            }
+
+            const abstractBlock = document.getElementById("pane-abstract-block");
+            const abstractEl = document.getElementById("pane-abstract");
+            const abstractToggle = document.getElementById("pane-abstract-toggle");
+            if (entry.abstract) {
+                abstractEl.textContent = entry.abstract;
+                abstractEl.classList.remove("is-expanded");
+                abstractBlock.style.display = "block";
+                // le bouton n'apparaît que si le texte est effectivement tronqué
+                requestAnimationFrame(() => {
+                    const truncated = abstractEl.scrollHeight > abstractEl.clientHeight + 2;
+                    abstractToggle.style.display = truncated ? "inline" : "none";
+                    abstractToggle.textContent = "Lire la suite";
+                });
+            } else {
+                abstractBlock.style.display = "none";
+            }
+
             const quoteWrap = document.getElementById("pane-quote-wrap");
             if (entry.best_quote) {
                 document.getElementById("pane-quote").textContent = entry.best_quote;
@@ -662,6 +1006,12 @@
             document.getElementById("detail-overlay").classList.remove("is-open");
         }
 
+        document.getElementById("pane-abstract-toggle").addEventListener("click", () => {
+            const el = document.getElementById("pane-abstract");
+            const expanded = el.classList.toggle("is-expanded");
+            document.getElementById("pane-abstract-toggle").textContent = expanded ? "Réduire" : "Lire la suite";
+        });
+
         document.getElementById("pane-close-btn").addEventListener("click", closeDetailPane);
         document.getElementById("detail-overlay").addEventListener("click", closeDetailPane);
         document.addEventListener("keydown", (e) => {
@@ -678,7 +1028,9 @@
 
         function renderBiblioList(entries) {
             const container = document.getElementById("bibliography-list");
+            const toolsContainer = document.getElementById("tools-list");
             container.innerHTML = "";
+            toolsContainer.innerHTML = "";
 
             entries.forEach(entry => {
                 const item = document.createElement("div");
@@ -697,6 +1049,7 @@
                 metaLine.textContent = metaBits.join(" · ");
 
                 item.append(citationLine, metaLine);
+                item._entry = entry;
 
                 item.addEventListener("click", () => openDetailPane(entry));
                 item.addEventListener("keydown", (e) => {
@@ -706,14 +1059,17 @@
                     }
                 });
 
-                container.appendChild(item);
+                (entry.section === "tools" ? toolsContainer : container).appendChild(item);
             });
         }
 
         function buildChapterFilters(entries) {
             const chapters = new Set();
             entries.forEach(e => (e.thesis_chapter || []).forEach(c => chapters.add(c)));
-            const sorted = Array.from(chapters).sort();
+            const order = chapterMeta.map(c => c.label);
+            const rank = c => (order.indexOf(c) === -1 ? 999 : order.indexOf(c));
+            const sorted = Array.from(chapters).sort((a, b) => rank(a) - rank(b) || a.localeCompare(b));
+            const fullTitle = c => (chapterMeta.find(m => m.label === c) || {}).title || c;
 
             const container = document.getElementById("chapter-filters");
             if (!container) return;
@@ -731,6 +1087,7 @@
                 pill.type = "button";
                 pill.className = "chapter-pill";
                 pill.textContent = chapter;
+                pill.title = fullTitle(chapter);
                 pill.dataset.chapter = chapter;
                 container.appendChild(pill);
             });
@@ -744,14 +1101,20 @@
         }
 
         function applyFilters() {
-            const items = document.querySelectorAll("#bibliography-list .biblio-entry");
-            const searchTerm = activeFilters.search.toLowerCase().trim();
+            const items = document.querySelectorAll("#bibliography-container .biblio-entry");
+            // chaque mot de la requête doit apparaître quelque part (ET), dans n'importe quel ordre
+            const searchTerms = normalizeSearch(activeFilters.search).split(" ").filter(Boolean);
+            let visibleCount = 0;
 
-            items.forEach((item, i) => {
-                const entry = allEntries[i];
+            let visibleTools = 0;
+            const mainTotal = allEntries.filter(e => e.section !== "tools").length;
+
+            items.forEach(item => {
+                const entry = item._entry;
+                const isTool = entry.section === "tools";
                 let isMatch = true;
 
-                if (activeFilters.chapter !== "all" && !(entry.thesis_chapter || []).includes(activeFilters.chapter)) {
+                if (!isTool && activeFilters.chapter !== "all" && !(entry.thesis_chapter || []).includes(activeFilters.chapter)) {
                     isMatch = false;
                 }
                 if (activeFilters.tag && !(entry.tags || []).includes(activeFilters.tag)) {
@@ -763,15 +1126,25 @@
                 if (activeFilters.author && !(entry.authors || []).includes(activeFilters.author)) {
                     isMatch = false;
                 }
-                if (searchTerm) {
-                    const indexString = `${entry.title || ''} ${(entry.authors || []).join(' ')}`.toLowerCase();
-                    if (!indexString.includes(searchTerm)) {
+                if (searchTerms.length) {
+                    if (!entry._search) entry._search = buildSearchIndex(entry);
+                    if (!searchTerms.every(term => entry._search.includes(term))) {
                         isMatch = false;
                     }
                 }
 
                 item.classList.toggle("is-hidden-by-filter", !isMatch);
+                if (isMatch) isTool ? visibleTools++ : visibleCount++;
             });
+
+            document.getElementById("tools-section").style.display = visibleTools > 0 ? "block" : "none";
+
+            const countEl = document.getElementById("result-count");
+            if (countEl) {
+                countEl.textContent = visibleCount === mainTotal
+                    ? `${mainTotal} références`
+                    : `${visibleCount} / ${mainTotal} références`;
+            }
 
             document.querySelectorAll(".chapter-pill").forEach(p => {
                 p.classList.toggle("active", p.dataset.chapter === activeFilters.chapter);
@@ -780,13 +1153,99 @@
             updateActiveFiltersDisplay();
         }
 
+        // ============ FENÊTRE DES MOTS-CLÉS ============
+        function buildTagBrowser() {
+            const counts = {};
+            allEntries.forEach(e => (e.tags || []).forEach(t => { counts[t] = (counts[t] || 0) + 1; }));
+
+            const groups = {};
+            Object.keys(counts).forEach(tag => {
+                const g = tagGroupOf[getMatchKey(tag)] || "Other";
+                (groups[g] = groups[g] || []).push(tag);
+            });
+            const order = [...tagGroupOrder, ...Object.keys(groups).filter(g => !tagGroupOrder.includes(g))];
+
+            const wrap = document.getElementById("tag-browser-groups");
+            wrap.innerHTML = "";
+            order.filter(g => groups[g]).forEach(g => {
+                const label = document.createElement("p");
+                label.className = "tag-group-label";
+                label.textContent = g;
+                const chips = document.createElement("div");
+                chips.className = "tag-group-chips";
+
+                groups[g].sort((a, b) => a.localeCompare(b)).forEach(tag => {
+                    const btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.className = "tag-option";
+                    btn.dataset.tag = tag;
+                    const color = tagColorMap[getMatchKey(tag)];
+                    if (color) btn.style.setProperty("--dot", color);
+                    btn.innerHTML = `<span class="tag-option-dot"></span><span>${tag}</span><span class="tag-option-count">${counts[tag]}</span>`;
+
+                    if (color) {
+                        btn.addEventListener("mouseenter", () => {
+                            if (btn.classList.contains("is-active")) return;
+                            btn.style.backgroundColor = color;
+                            btn.style.borderColor = color;
+                            btn.style.color = getContrastColor(color);
+                        });
+                        btn.addEventListener("mouseleave", () => {
+                            btn.style.backgroundColor = "";
+                            btn.style.borderColor = "";
+                            btn.style.color = "";
+                        });
+                    }
+                    btn.addEventListener("click", () => {
+                        // re-cliquer le tag actif le retire
+                        activeFilters.tag = activeFilters.tag === tag ? null : tag;
+                        applyFilters();
+                        closeTagBrowser();
+                    });
+                    chips.appendChild(btn);
+                });
+                wrap.append(label, chips);
+            });
+        }
+
+        function syncTagBrowser() {
+            document.querySelectorAll(".tag-option").forEach(b => {
+                const active = b.dataset.tag === activeFilters.tag;
+                b.classList.toggle("is-active", active);
+                if (active) { b.style.backgroundColor = ""; b.style.borderColor = ""; b.style.color = ""; }
+            });
+        }
+
+        function openTagBrowser() {
+            syncTagBrowser();
+            document.getElementById("tag-browser-panel").hidden = false;
+            document.getElementById("tag-browser-btn").setAttribute("aria-expanded", "true");
+        }
+
+        function closeTagBrowser() {
+            document.getElementById("tag-browser-panel").hidden = true;
+            document.getElementById("tag-browser-btn").setAttribute("aria-expanded", "false");
+        }
+
+        document.getElementById("tag-browser-btn").addEventListener("click", (e) => {
+            e.stopPropagation();
+            document.getElementById("tag-browser-panel").hidden ? openTagBrowser() : closeTagBrowser();
+        });
+        document.getElementById("tag-browser-close").addEventListener("click", closeTagBrowser);
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest(".tag-browser")) closeTagBrowser();
+        });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeTagBrowser();
+        });
+
         function updateActiveFiltersDisplay() {
             const display = document.getElementById("active-filters-display");
             if (!display) return;
             let uiFilters = [];
 
             if (activeFilters.tag) uiFilters.push(`Tag: ${activeFilters.tag}`);
-            if (activeFilters.framework) uiFilters.push(`Cadre: ${activeFilters.framework}`);
+            if (activeFilters.framework) uiFilters.push(`Domaine: ${activeFilters.framework}`);
             if (activeFilters.author) uiFilters.push(`Auteur: ${activeFilters.author}`);
 
             if (uiFilters.length > 0) {
@@ -831,16 +1290,18 @@
             }
 
             try {
-                const tagsRes = await fetch("./src/zotero-tag-list.json");
-                if (tagsRes.ok) {
-                    const tagsData = await tagsRes.json();
-                    tagsData.forEach(item => {
-                        const safeKey = getMatchKey(item.tag);
-                        tagColorMap[safeKey] = item.color;
+                const metaRes = await fetch(BIBLIOGRAPHY_META_PATH);
+                if (metaRes.ok) {
+                    const meta = await metaRes.json();
+                    (meta.tags || []).forEach(item => {
+                        tagColorMap[getMatchKey(item.tag)] = item.color;
+                        tagGroupOf[getMatchKey(item.tag)] = item.group || "Other";
                     });
+                    tagGroupOrder = meta.tag_groups || [];
+                    chapterMeta = meta.chapters || [];
                 }
-            } catch (tagErr) {
-                console.warn("[bibliography] Fichier zotero-tag-list.json introuvable.", tagErr);
+            } catch (metaErr) {
+                console.warn("[bibliography] Fichier bibliography-meta.json introuvable.", metaErr);
             }
 
             // We safely format strings inside arrays without mutating the raw item_type string
@@ -862,6 +1323,8 @@
 
             renderBiblioList(entries);
             buildChapterFilters(entries);
+            buildTagBrowser();
+            applyFilters();
         }
 
         document.addEventListener("DOMContentLoaded", loadBibliography);
