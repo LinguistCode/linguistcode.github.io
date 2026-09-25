@@ -1,28 +1,9 @@
-/**
- * appendices-sidebar.js
- * -----------------------------------------------------------------
- * Charge le composant appendices-sidebar.html dans le placeholder
- * #sidebar-placeholder (même logique que header/footer), puis marque
- * l'entrée correspondant à la page courante comme active et anime
- * la ligne de progression.
- *
- * Usage, dans chaque page d'annexe :
- *   <link rel="stylesheet" href="css/appendices-sidebar.css">
- *   ...
- *   <div id="sidebar-placeholder"></div>
- *   ...
- *   <script src="js/appendices-sidebar.js" defer></script>
- *
- * Nécessite d'être servi via http(s) (un simple double-clic sur le
- * fichier .html ne permet pas le fetch() d'un fichier local).
- */
-
 (function () {
-    const COMPONENT_PATH = "appendices-sidebar.html";
+    const COMPONENT_PATH = "app-sidebar.html";
 
     function currentFileName() {
         const path = window.location.pathname.split("/").pop();
-        return path || "appendices-landing.html";
+        return path || "app-landing.html";
     }
 
     function positionLines() {
@@ -80,7 +61,7 @@
     async function init() {
         const placeholder = document.getElementById("sidebar-placeholder");
         if (!placeholder) {
-            console.warn("[appendices-sidebar] #sidebar-placeholder introuvable dans la page.");
+            console.warn("[app-sidebar] #sidebar-placeholder introuvable dans la page.");
             return;
         }
 
@@ -89,7 +70,7 @@
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
             placeholder.outerHTML = await res.text();
         } catch (err) {
-            console.error("[appendices-sidebar] Impossible de charger le composant :", err);
+            console.error("[app-sidebar] Impossible de charger le composant :", err);
             return;
         }
 
