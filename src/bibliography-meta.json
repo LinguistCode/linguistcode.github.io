@@ -27,47 +27,47 @@
     },
     {
       "tag": "emotion_words",
-      "group": "Lexicon & Grammar",
+      "group": "Linguistics",
       "color": "#E6B0AA"
     },
     {
       "tag": "emotive_words",
-      "group": "Lexicon & Grammar",
+      "group": "Linguistics",
       "color": "#D7BDE2"
     },
     {
       "tag": "shell_nouns",
-      "group": "Lexicon & Grammar",
+      "group": "Linguistics",
       "color": "#424949"
     },
     {
       "tag": "nominalization",
-      "group": "Lexicon & Grammar",
+      "group": "Linguistics",
       "color": "#48C9B0"
     },
     {
       "tag": "pronouns",
-      "group": "Lexicon & Grammar",
+      "group": "Linguistics",
       "color": "#5B2C6F"
     },
     {
       "tag": "modality",
-      "group": "Lexicon & Grammar",
+      "group": "Linguistics",
       "color": "#E8DAEF"
     },
     {
       "tag": "semantics",
-      "group": "Lexicon & Grammar",
+      "group": "Linguistics",
       "color": "#A6ACAF"
     },
     {
       "tag": "definition",
-      "group": "Lexicon & Grammar",
+      "group": "Linguistics",
       "color": "#5499C7"
     },
     {
       "tag": "frames",
-      "group": "Lexicon & Grammar",
+      "group": "Linguistics",
       "color": "#8E44AD"
     },
     {
@@ -116,7 +116,7 @@
       "color": "#3498DB"
     },
     {
-      "tag": "proximization",
+      "tag": "proximization_&_DST",
       "group": "Pragmatics & Argumentation",
       "color": "#117A65"
     },
@@ -137,72 +137,72 @@
     },
     {
       "tag": "political_discourse",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#117864"
     },
     {
       "tag": "ideology",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#5D6D7E"
     },
     {
       "tag": "populism",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#6C3483"
     },
     {
       "tag": "conservatism",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#154360"
     },
     {
       "tag": "far_right",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#78281F"
     },
     {
       "tag": "racism_&_prejudice",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#1B4F72"
     },
     {
       "tag": "enemy_&_otherness",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#641E16"
     },
     {
       "tag": "religion",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#154360"
     },
     {
       "tag": "immigration",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#F5B041"
     },
     {
       "tag": "terrorism",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#EC7063"
     },
     {
       "tag": "war_&_violence",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#CB4335"
     },
     {
       "tag": "conspiracy",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#145A32"
     },
     {
       "tag": "media",
-      "group": "Politics",
+      "group": "Politics & Society",
       "color": "#34495E"
     },
     {
       "tag": "health_&_pandemic",
-      "group": "Politics",
+      "group": "Psychology & Medicine",
       "color": "#27AE60"
     },
     {
@@ -221,24 +221,59 @@
       "color": "#E67E22"
     },
     {
-      "tag": "statistics",
-      "group": "Method",
-      "color": "#E5E8E8"
+      "tag": "grammar",
+      "group": "Linguistics",
+      "color": "#566573"
+    },
+    {
+      "tag": "sociolinguistics",
+      "group": "Linguistics",
+      "color": "#1E8449"
+    },
+    {
+      "tag": "methodology",
+      "group": "Linguistics",
+      "color": "#B9770E"
+    },
+    {
+      "tag": "american_political_history",
+      "group": "Politics & Society",
+      "color": "#1A5276"
+    },
+    {
+      "tag": "social_theory",
+      "group": "Politics & Society",
+      "color": "#7D6608"
     },
     {
       "tag": "cognition",
-      "group": "Method",
+      "group": "Psychology & Medicine",
       "color": "#EB984E"
     }
   ],
+  "fields": [
+    "Linguistics",
+    "Grammar",
+    "Pragmatics",
+    "Discourse Analysis",
+    "Rhetoric & Argumentation",
+    "Corpus Linguistics",
+    "Mathematics & Statistics",
+    "Political Science",
+    "History",
+    "Sociology",
+    "Psychology & Neuroscience",
+    "Philosophy",
+    "Literature"
+  ],
   "tag_groups": [
     "Emotion",
-    "Lexicon & Grammar",
+    "Linguistics",
     "Figures",
     "Pragmatics & Argumentation",
-    "Politics",
-    "Presidents",
-    "Method"
+    "Politics & Society",
+    "Psychology & Medicine",
+    "Presidents"
   ],
   "chapters": [
     {

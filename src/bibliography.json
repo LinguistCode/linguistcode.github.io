@@ -19,7 +19,8 @@
     "citation": "ACQUAVIVA, P., 2008, <em>Lexical plurals: a morphosemantic approach</em>, Oxford New York: Oxford University Press.",
     "tags": [
       "nominalization",
-      "semantics"
+      "semantics",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -282,7 +283,8 @@
     "citation": "ANGGORO, Aries Rahmat, MUKHRIZAL, Mukhrizal, SUFIYANDI, Sufiyandi, 2022, « A Syntactical Analysis on Sentence Structures Spoken by Joe Biden and Donald Trump in the Election Night Speeches », <em>Journal of English Education and Teaching</em> 6, 188‑206.",
     "tags": [
       "Trump",
-      "political_discourse"
+      "political_discourse",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -868,7 +870,8 @@
     "citation": "BAKER, Paul, GABRIELATOS, Costas, KHOSRAVINIK, Majid, KRZYZANOWSKI, Michał, MCENERY, Tony, WODAK, Ruth, 2008, « A useful methodological synergy? Combining critical discourse analysis and corpus linguistics to examine discourses of refugees and asylum seekers in the UK press », <em>Discourse &amp; Society</em> 19, 273‑306.",
     "tags": [
       "immigration",
-      "media"
+      "media",
+      "methodology"
     ],
     "framework": [
       "Corpus Linguistics"
@@ -942,11 +945,12 @@
     "doi": "",
     "url": "",
     "isbn": "9780060872588",
-    "abstract": "Intro -- Title Page -- Dedication -- Epigraph -- Contents -- Preface -- Chapter One -- Chapter Two -- Chapter Three -- Chapter Four -- Chapter Five -- Conclusion -- Appendix 1 -- Appendix 2 -- Appendix 3 -- Appendix 4 -- Appendix 5 -- Appendix 6 -- Appendix 7 -- Acknowledgments -- Searchable Terms -- About the Author -- Other Books by Randall Balmer -- Copyright -- About the Publisher",
+    "abstract": null,
     "citation": "BALMER, Randall, 2009, <em>God in the White House: How Faith Shaped the Presidency from John F. Kennedy to George W. Bush</em>, New York: HarperCollins Publishers.",
     "tags": [
       "Bush",
-      "religion"
+      "religion",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -1416,11 +1420,11 @@
     "abstract": "",
     "citation": "BONNERY, Stéphane, 2014, « Les statistiques : enjeu de connaissance ou manipulation ? », <em>La Pensée</em> 380, 5‑7.",
     "tags": [
-      "manipulation",
-      "statistics"
+      "manipulation"
     ],
     "framework": [
-      "Sociology"
+      "Sociology",
+      "Mathematics & Statistics"
     ],
     "thesis_chapter": [
       "Chapitre 6"
@@ -1649,10 +1653,11 @@
     "abstract": "",
     "citation": "BREZINA, Vaclav, 2018, <em>Statistics in corpus linguistics: a practical guide</em>, Cambridge ; New York, NY: Cambridge University Press.",
     "tags": [
-      "statistics"
+      "methodology"
     ],
     "framework": [
-      "Corpus Linguistics"
+      "Corpus Linguistics",
+      "Mathematics & Statistics"
     ],
     "thesis_chapter": [
       "Chapitre 3",
@@ -1829,7 +1834,8 @@
     "citation": "BURGERS, Christian, BRUGMAN, Britta C., RENARDEL DE LAVALETTE, Kiki Y., STEEN, Gerard J., 2016, « HIP: A Method for Linguistic Hyperbole Identification in Discourse », <em>Metaphor and Symbol</em> 31, 163‑178.",
     "tags": [
       "hyperbole_&_figures",
-      "metaphor"
+      "metaphor",
+      "methodology"
     ],
     "framework": [
       "Linguistics"
@@ -1965,7 +1971,7 @@
     "tags": [
       "Bush",
       "legitimization",
-      "proximization",
+      "proximization_&_DST",
       "war_&_violence"
     ],
     "framework": [
@@ -2091,7 +2097,7 @@
     "abstract": "The goal of this paper is to show how proximization theory, a recent cognitive-pragmatic model of crisis and threat construction, can be applied in Critical Discourse Studies (CDS). It is argued that the rapidly growing, intergeneric field of CDS is in need of new, interdisciplinary methodologies that will allow it to account for an increasingly broader spectrum of discourses, genres and thematic domains. Thus, proximization theory is used as a candidate methodological tool to handle three sample discourses—health, environment, modern technology—with a view to further applications. The results seem promising: the theory elucidates well the key features of public discourses within the CDS scope, for instance legitimization patterns in policy communication. Equally promising seem the prospects for proximization theory itself to continue to draw empirically from the expanding CDS territory.",
     "citation": "CAP, Piotr, 2013a, « Proximization Theory and Critical Discourse Studies: A Promising Connection? », <em>International Review of Pragmatics</em> 5, 293‑317.",
     "tags": [
-      "proximization",
+      "proximization_&_DST",
       "threat"
     ],
     "framework": [
@@ -2157,7 +2163,7 @@
     "citation": "CAP, Piotr, 2013b, <em>Proximization: The pragmatics of symbolic distance crossing</em>.",
     "tags": [
       "political_discourse",
-      "proximization",
+      "proximization_&_DST",
       "threat"
     ],
     "framework": [
@@ -2224,7 +2230,7 @@
       "enemy_&_otherness",
       "ideology",
       "political_discourse",
-      "proximization",
+      "proximization_&_DST",
       "terrorism",
       "threat"
     ],
@@ -2295,7 +2301,7 @@
       "immigration",
       "metaphor",
       "populism",
-      "proximization",
+      "proximization_&_DST",
       "threat"
     ],
     "framework": [
@@ -2719,7 +2725,8 @@
     "citation": "CHARTERIS-BLACK, Jonathan, 2004, <em>Corpus Approaches to Critical Metaphor Analysis</em>, London: Palgrave Macmillan UK.",
     "tags": [
       "metaphor",
-      "political_discourse"
+      "political_discourse",
+      "methodology"
     ],
     "framework": [
       "Corpus Linguistics"
@@ -2854,7 +2861,7 @@
       "metaphor",
       "modality",
       "political_discourse",
-      "proximization",
+      "proximization_&_DST",
       "semantics"
     ],
     "framework": [
@@ -2907,7 +2914,7 @@
     "citation": "CHILTON, Paul A., 2005, « Vectors, viewpoint and viewpoint shift: toward a discourse space theory », <em>Annual Review of Cognitive Linguistics, 3 (1): 78-116</em>.",
     "tags": [
       "cognition",
-      "proximization"
+      "proximization_&_DST"
     ],
     "framework": [
       "Discourse Analysis"
@@ -2960,7 +2967,7 @@
       "modality",
       "populism",
       "pronouns",
-      "proximization",
+      "proximization_&_DST",
       "threat"
     ],
     "framework": [
@@ -3051,7 +3058,8 @@
     "citation": "CISLARU, Georgeta, 2014, « Émotions et scénarios : questionnements méthodologiques pour une approche discursive », In NOVAKOVA, I., D. SIEPMANN &amp; P. BLUMENTHAL (ed.): « Les émotions dans le discours- Emotions in Discourse ».",
     "tags": [
       "emotion",
-      "frames"
+      "frames",
+      "methodology"
     ],
     "framework": [
       "Discourse Analysis"
@@ -3121,10 +3129,10 @@
     "abstract": "",
     "citation": "COCHRAN, William Gemmel, 1977, <em>Sampling Techniques</em>,3rd ed. New York: Wiley Series in Probability and Mathematical Statistics.",
     "tags": [
-      "statistics"
+      "methodology"
     ],
     "framework": [
-      "Corpus Linguistics"
+      "Mathematics & Statistics"
     ],
     "thesis_chapter": [
       "Chapitre 4"
@@ -3281,7 +3289,9 @@
     "isbn": "9780582084889",
     "abstract": "",
     "citation": "COOK, Chris, WALLER, David, 1998, <em>The Longman handbook of modern American history: 1763 - 1996</em>, Harlow: Longman.",
-    "tags": [],
+    "tags": [
+      "american_political_history"
+    ],
     "framework": [
       "History"
     ],
@@ -3343,7 +3353,9 @@
     "isbn": "9782130478546",
     "abstract": "",
     "citation": "COTTE, Pierre, 1996, <em>L’explication grammaticale de textes anglais</em>, Paris: Presses Universitaires de France.",
-    "tags": [],
+    "tags": [
+      "grammar"
+    ],
     "framework": [
       "Grammar"
     ],
@@ -3407,7 +3419,8 @@
     "tags": [
       "fear",
       "nominalization",
-      "terrorism"
+      "terrorism",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -3437,7 +3450,9 @@
     "isbn": "9780199340057",
     "abstract": "\"American Political History : A Very Short Introduction captures the richness of American political history, focusing primarily on national politics. It explores the nature of the two-party system, key turning points in American political history, representative presidential and congressional elections, struggles to expand the electorate, and critical social protest and third-party movements\"--Provided by publisher",
     "citation": "CRITCHLOW, Donald T., 2015, <em>American political history: a very short introduction</em>, Oxford (GB): Oxford University Press.",
-    "tags": [],
+    "tags": [
+      "american_political_history"
+    ],
     "framework": [
       "History"
     ],
@@ -3833,7 +3848,8 @@
     "abstract": "I refer to the sentences that are the subject of this paper as               Thing               sentences (TSs), illustrated by               The thing is that it’s not my phone               . These are copular specificational sentences with a definite singular subject and a finite complement clause. Prior research claimed that TSs focus attention on their complement clauses, are pragmatic or discourse markers, indicate a shift in subtopic or topic, communicate that the proposition represented by the complement clause is in “disconformity” with, or problematic in, its context, and that it represents a cause, reason, justification, or grounds for other propositions; these interpretations are claimed to be conventionally associated with the construction. I show that these earlier works are descriptively inaccurate and explanatorily incomplete. While the cause, reason, justification, and grounds interpretations have not been explained, some authors have claimed that the problem interpretation is due to the semantic poverty of               thing               . I demonstrate that the construction presents the complement proposition as both focused and presupposed and consequently as partially discontinuous with the discourse topic as it has developed up to the point at which the TS is uttered, thereby effecting a shift in the development of the current topic, though never a shift to an unrelated topic. I argue against analyzing TSs as discourse or pragmatic markers and I demonstrate that TSs need not communicate that their complements are problematic, that the range of other interpretations is greater than hitherto proposed, that these are due to the operation of general interpretive schemata, and therefore are not conventionally associated with the construction. I show that the presuppositional effects are due to the minimal semantic specification of               thing               and the fact that it is definite, and that the focusing effects are due to the predicate position of the clause and to the specificationality of the construction which makes the clause an argument of the subject and thus a marked focus. This analysis of               Thing               sentences demonstrates that speakers are attuned to the expectations of their audiences and exploit the lexical and syntactic resources of the language to create expression types to manage such things as topical development, and in the case of               Thing               sentences to signal an unexpected development of the current topic, leading to a change in its trajectory. The analysis shows that at this point in its history, TS interpretations are due to its linguistic features interacting in context with general pragmatic principles.",
     "citation": "DELAHUNTY, Gerald P., 2012, « An analysis of The thing is that S sentences », <em>Pragmatics. Quarterly Publication of the International Pragmatics Association (IPrA</em>), 41‑78.",
     "tags": [
-      "shell_nouns"
+      "shell_nouns",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -3946,7 +3962,8 @@
     "abstract": "Report from the Interior de Paul Auster est un récit autobiographique qui entreprend de faire état des souvenirs les plus anciens du narrateur (« your earlier thoughts, remnants of how you lived inside yourself as a small boy »), ou du moins ce qu’il en reste (« you can remember only some of it, isolated bits and pieces » [4]). On s’intéresse ici, dans une perspective linguistique et psycholinguistique, au titre, Report from the Interior, et aux termes qui le constituent, dans leurs rapports avec la narration à la 2ème personne, le narrateur se désignant par you. En quoi les termes report et interior sont-ils la trace d’un conflit, dont l’enjeu porte sur la personne ? Le terme interior semble en effet annoncer une narration à la 1ère personne alors que le terme report suppose l’emploi d’une autre personne, la 2ème ou la 3ème  ? C’est à ce hiatus linguistique et à son interprétation que cette étude est consacrée.           ,              Report from the Interior by Paul Auster is an autobiographical narrative told in the 2nd person. This essay focuses, from a linguistic and psycholinguistic perspective, on the title itself, Report from the Interior, as bearing the trace of a conflict, which is reflected in the use of the 2nd person. The term interior seems indeed to announce a 1st person narrative whereas the word report supposes the use of the 2nd or the 3rd person. It is to this linguistic hiatus and its interpretation that this study is devoted.",
     "citation": "DE MATTIA-VIVIES, Monique, 2019, « YOU The Obscure, un pronom très personnel », <em>E-rea</em> 17.1.",
     "tags": [
-      "pronouns"
+      "pronouns",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -4105,7 +4122,8 @@
     "citation": "DOUZOU, Marion, 2022, « Du Tea Party à Donald Trump : la radicalisation du Parti républicain aux États-Unis », <em>Cahiers d’histoire. Revue d’histoire critique</em>, 107‑125.",
     "tags": [
       "conservatism",
-      "far_right"
+      "far_right",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -4136,7 +4154,8 @@
     "abstract": "As a novel attack on the perennially vexing questions of the theoretical status of thematic roles and the inventory of possible roles, this paper defends a strategy of basing accounts of roles on more unified domains of linguistic data than have been used in the past to motivate roles, addressing in particular the problem of ARGUMENT SELECTION (principles determining which roles are associated with which grammatical relations). It is concluded that the best theory for describing this domain is not a traditional system of discrete roles (Agent, Patient, Source, etc.) but a theory in which the only roles are two cluster-concepts called PROTO-AGENT and PROTO-PATIENT, each characterized by a set of verbal entailments: an argument of a verb may bear either of the two proto-roles (or both) to varying degrees, according to the number of entailments of each kind the verb gives it. Both fine-grained and coarse-grained classes of verbal arguments (corresponding to traditional thematic roles and other classes as well) follow automatically, as do desired ‘role hierarchies’. By examining occurrences of the ‘same’ verb with different argument configurations—e.g. two forms of psych predicates and object-oblique alternations as in the familiar               spray/load               class—it can also be argued that proto-roles act as defaults in the learning of lexical meanings. Are proto-role categories manifested elsewhere in language or as cognitive categories? If so, they might be a means of making grammar acquisition easier for the child, they might explain certain other typological and acquisitional observations, and they may lead to an account of contrasts between unaccusative and unergative intransitive verbs that does not rely on deriving unaccusatives from underlying direct objects.",
     "citation": "DOWTY, David, 1991, « Thematic Proto-Roles and Argument Selection », <em>Language</em> 67, 547‑619.",
     "tags": [
-      "semantics"
+      "semantics",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -4244,10 +4263,11 @@
     "abstract": "",
     "citation": "DUNNING, Ted, 1993, « Accurate Methods for the Statistics of Surprise and Coincidence », <em>Computational Linguistics</em> 19, 61‑74.",
     "tags": [
-      "statistics"
+      "methodology"
     ],
     "framework": [
-      "Corpus Linguistics"
+      "Corpus Linguistics",
+      "Mathematics & Statistics"
     ],
     "thesis_chapter": [
       "Chapitre 3"
@@ -4510,7 +4530,8 @@
     "abstract": "",
     "citation": "ERMAN, Britt, 2001, « Pragmatic markers revisited with a focus on you know in adult and adolescent talk », <em>Journal of Pragmatics</em> 33, 1337‑1359.",
     "tags": [
-      "pronouns"
+      "pronouns",
+      "sociolinguistics"
     ],
     "framework": [
       "Pragmatics"
@@ -4838,7 +4859,8 @@
     "abstract": "The Rise and Fall of Modern American Conservatism tells the gripping story of perhaps the most significant political force of our time through the lives and careers of six leading figures at the heart of the movement. David Farber traces the history of modern conservatism from its revolt against New Deal liberalism, to its breathtaking resurgence under Ronald Reagan, to its spectacular defeat with the election of Barack Obama. Farber paints vivid portraits of Robert Taft, William F. Buckley Jr., Barry Goldwater, Phyllis Schlafly, Ronald Reagan, and George W. Bush. He shows how",
     "citation": "FARBER, David R., 2012, <em>The rise and fall of modern American conservatism: a short history</em>, Princeton, N.J Woodstock: Princeton University Press.",
     "tags": [
-      "conservatism"
+      "conservatism",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -4870,7 +4892,8 @@
     "citation": "FARIELLO, Griffin, 2008, <em>Red Scare: Memories of the American Inquisition</em>,1st ed. Erscheinungsort nicht ermittelbar: W. W. Norton &amp; Company, Incorporated.",
     "tags": [
       "enemy_&_otherness",
-      "fear"
+      "fear",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -4904,7 +4927,8 @@
     "tags": [
       "enemy_&_otherness",
       "immigration",
-      "war_&_violence"
+      "war_&_violence",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -5506,7 +5530,8 @@
     "citation": "GERSTLE, Gary, 2018, « The Rise and Fall(?) of America?s Neoliberal Order », <em>Transactions of the Royal Historical Society</em> 28, 241‑264.",
     "tags": [
       "conservatism",
-      "ideology"
+      "ideology",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -5570,9 +5595,11 @@
     "isbn": "9780521369602",
     "abstract": "",
     "citation": "GILES, Howard, COUPLAND, Nikolas, COUPLAND, Justine, 1991, « Accommodation theory: Communication, context, and consequence », In GILES, H., J. COUPLAND &amp; N. COUPLAND (ed.): « Contexts of Accommodation », 1‑68.",
-    "tags": [],
+    "tags": [
+      "sociolinguistics"
+    ],
     "framework": [
-      "Linguistics"
+      "Pragmatics"
     ],
     "thesis_chapter": [
       "Chapitre 5"
@@ -5606,9 +5633,11 @@
     "isbn": "9780122837500",
     "abstract": "",
     "citation": "GILES, Howard, POWESLAND, Peter F., 1979, <em>Speech style and social evaluation</em>, London: Acad. Pr.",
-    "tags": [],
+    "tags": [
+      "sociolinguistics"
+    ],
     "framework": [
-      "Linguistics"
+      "Pragmatics"
     ],
     "thesis_chapter": [
       "Chapitre 5"
@@ -5762,7 +5791,8 @@
     "citation": "GOFFMAN, Erving, 1956, <em>The Presentation of Self in Everyday Life</em>, Knopf Doubleday Publishing Group.",
     "tags": [
       "politeness",
-      "rhetorical_proofs"
+      "rhetorical_proofs",
+      "social_theory"
     ],
     "framework": [
       "Psychology & Neuroscience",
@@ -6059,7 +6089,7 @@
     "doi": "10.4324/9781315631073",
     "url": "https://doi.org/10.4324/9781315631073",
     "isbn": "9781594519147",
-    "abstract": "1. Explanations of political violence -- 2. Relative deprivation and the impetus to violence -- 3. The intensity and scope of relative deprivation -- 4. Social origins of deprivation : sources of rising expectations -- 5. Social origins of deprivation : determinants of value capabilities -- 6. Perspectives on violence and politics : socialization, tradition, and legitimacy -- 7. Perspectives on violence and politics : ideologies, utilities, and communication -- 8. The coercive balance -- 9. The balance of institutional support -- 10. Causes and processes of political violence : a conclusion",
+    "abstract": "",
     "citation": "GURR, Ted Robert, 2016, <em>Why men rebel</em>,Fortieth anniversary edition. Abingdon, Oxon New York, N.Y: Routledge.",
     "tags": [
       "fear",
@@ -6101,7 +6131,8 @@
     "abstract": "Cohesion in English is concerned with a relatively neglected part of the linguistic system: its resources for text construction, the range of meanings that are speciffically associated with relating what is being spoken or written to its semantic environment. A principal component of these resources is 'cohesion'. This book studies the cohesion that arises from semantic relations between sentences. Reference from one to the other, repetition of word meanings, the conjunctive force of but, so, then and the like are considered",
     "citation": "HALLIDAY, Michael A. K., HASAN, Ruqaiya, 2014, <em>Cohesion in English</em>, London: Routeledge.",
     "tags": [
-      "pronouns"
+      "pronouns",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -6140,7 +6171,8 @@
     "citation": "HALLIDAY, Michael A. K., MATTHIESSEN, Christian M. I. M., 2007, <em>An introduction to functional grammar</em>,3. ed., [Nachdr.]. London: Hodder Education.",
     "tags": [
       "modality",
-      "nominalization"
+      "nominalization",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -7159,7 +7191,8 @@
     "tags": [
       "conspiracy",
       "enemy_&_otherness",
-      "fear"
+      "fear",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -7386,10 +7419,11 @@
     "doi": "10.4324/9780203081501",
     "url": "https://doi.org/10.4324/9780203081501",
     "isbn": "9781136174100",
-    "abstract": "1. Introducing American conservatism -- 2. The south, civil rights, and the transformation of the Republican Party -- 3. The social backlash : riots, religion, and realignment -- 4. Crises, carter, and the triumph of Ronald Reagan -- 5. The image and reality of Ronald Reagan and American conservatism",
+    "abstract": "",
     "citation": "HOWISON, Jeffrey D., 2014, <em>The 1980 presidential election: Ronald Reagan and the shaping of the American conservative movement</em>, New York: Routledge.",
     "tags": [
-      "conservatism"
+      "conservatism",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -7453,7 +7487,9 @@
     "isbn": "9780521431460",
     "abstract": "",
     "citation": "HUDDLESTON, Rodney D., PULLUM, Geoffrey K., 2002, <em>The Cambridge grammar of the English language</em>, Cambridge, UK ; New York: Cambridge University Press.",
-    "tags": [],
+    "tags": [
+      "grammar"
+    ],
     "framework": [
       "Grammar"
     ],
@@ -7680,11 +7716,11 @@
     "abstract": "In mathematics education, there is general agreement regarding the significance of mathematical literacy (also quantitative literacy or numeracy) for informed citizenship, which often requires evaluating the use of numbers in public policy discourse. We hold that such an evaluation must accommodate the necessarily fragile relation between the information that numbers are taken to carry and the policy decisions they are meant to support. In doing so, attention needs to be paid to differences in how that relation is formed. With this in mind, we investigated a public discourse that heavily relied on numbers in the context of introducing, maintaining, and easing the rules and regulations directed to contain the spread of the virus SARS-CoV-2 during the first epidemic wave of COVID-19 in Germany with its peak in early April 2020. We used a public-service broadcasting outlet as data. Our theoretical stance is affiliated with post-structuralist discourse theory. As an outcome, we identified four major related strategies of using numbers, which we named rationalisation, contrast, association and recharging. In our view explicit attention to these strategies as well as identifying new ones can aid the task of furthering critical mathematical literacy.",
     "citation": "JABLONKA, Eva, BERGSTEN, Christer, 2021, « Numbers don’t speak for themselves: strategies of using numbers in public policy discourse », <em>Educational Studies in Mathematics</em> 108, 579‑596.",
     "tags": [
-      "political_discourse",
-      "statistics"
+      "political_discourse"
     ],
     "framework": [
-      "Discourse Analysis"
+      "Discourse Analysis",
+      "Mathematics & Statistics"
     ],
     "thesis_chapter": [
       "Chapitre 6"
@@ -7845,7 +7881,9 @@
     "isbn": "9780081022962",
     "abstract": "",
     "citation": "JOHNSON, Melissa N.P., MCLEAN, Ethan, 2020, « Discourse Analysis », In « International Encyclopedia of Human Geography », 377‑383.",
-    "tags": [],
+    "tags": [
+      "methodology"
+    ],
     "framework": [
       "Discourse Analysis"
     ],
@@ -7942,7 +7980,8 @@
     "abstract": "",
     "citation": "JØRGENSEN, Marianne, PHILLIPS, Louise, 2002, <em>Discourse Analysis as Theory and Method</em>, 6 Bonhill Street, London England EC2A 4PU United Kingdom: SAGE Publications Ltd.",
     "tags": [
-      "ideology"
+      "ideology",
+      "methodology"
     ],
     "framework": [
       "Discourse Analysis"
@@ -8045,7 +8084,8 @@
     "citation": "KATZ, Michael B., 2013, <em>The undeserving poor: America’s enduring confrontation with poverty</em>,Second edition. Oxford: Oxford University Press.",
     "tags": [
       "enemy_&_otherness",
-      "ideology"
+      "ideology",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -8441,7 +8481,8 @@
     "abstract": "",
     "citation": "KIRKWOOD, M., 1990, <em>Language Planning in the Soviet Union</em>, London: Palgrave Macmillan UK.",
     "tags": [
-      "ideology"
+      "ideology",
+      "sociolinguistics"
     ],
     "framework": [
       "Sociology"
@@ -8552,7 +8593,8 @@
     "tags": [
       "emotion",
       "emotion_words",
-      "nominalization"
+      "nominalization",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -8649,11 +8691,11 @@
     "abstract": "Models of evolution of simple languages have typically assumed full alignment of the speaker and listeners interests, with perfect understanding representing the optimal outcome for both parties. In more realistic settings, communicating individuals will often desire different outcomes from one another. Previous work has shown that misalignment of speaker-listener interests reduces the maximum informativeness among Nash-equilibrium languages, and that multiple equilibrium languages (with different degrees of informativeness) are supported. We study the stochastic evolutionary dynamics of signaling games in which the alignment of speaker-listener interests can vary. We find that increased misalignment of speaker-listener interests is associated with a decrease in information transmission. Moreover, the most common languages to evolve are typically the most informative languages supportable as static Nash equilibria, suggesting a solution to the ‘equilibrium selection problem’. In addition, our dynamics reveal the mechanism by which less informative languages evolve: words that previously signaled intense states come to be used hyperbolically for less intense states, with listeners’ interpretation of these newly-ambiguous words evolving downward in response. We ground our results in linguistic data on intensifiers such as so and very, words which have unique dynamics—with constant recycling and innovation that match our theoretical results well., Analyses of signaling and language have typically assumed that both speakers and listeners have a common interest, such as to communicate the location of predators or resources or to convey precise instructions on how to perform a particular task. However, Nature is also rife with situations where mutual interest cannot be assumed. Many such situations have gradated states, signals, and actions, where speaker and listener desire different actions in conjunction with different true states, which are only known to the speaker. For instance, baby birds regularly overstate their true hunger level to their mother, due to a drive to obtain more than the base requirements in attention and nutrients; there are countless parallels in the context of human communication. Previous works in static game theory have established interesting results in modeling misaligned talk, such as the presence of multiple equilibria and the rapid shrinkage of lexica as misalignment of interest increases. Here we expand both the static theory, but also show using evolutionary game theory which equilibria are selected and why. We make a strong connection to linguistics via intensifiers—words such as “so”, “really”, and “very”—which suggests this literature may be immediately salient to sociolinguistics and other disciplines.",
     "citation": "KRIEGER, Madison S., 2023, « Evolutionary dynamics of hyperbolic language », <em>PLOS Computational Biology</em> 19, e1010872.",
     "tags": [
-      "hyperbole_&_figures",
-      "statistics"
+      "hyperbole_&_figures"
     ],
     "framework": [
-      "Linguistics"
+      "Linguistics",
+      "Mathematics & Statistics"
     ],
     "thesis_chapter": [
       "Chapitre 4"
@@ -9193,7 +9235,9 @@
     "isbn": "9780521380560",
     "abstract": "",
     "citation": "LAMBRECHT, Knud, 1994, <em>Information structure and sentence form: topic, focus, and the mental representations of discourse referents</em>, Cambridge: Cambridge university press.",
-    "tags": [],
+    "tags": [
+      "grammar"
+    ],
     "framework": [
       "Grammar"
     ],
@@ -9257,7 +9301,9 @@
     "isbn": "",
     "abstract": "",
     "citation": "LAPAIRE, Jean-Rémi, ROTGE, Wilfrid, 2002, <em>Linguistique et grammaire de l’anglais</em>,3e éd. Toulouse [Haute-Garonne]: Presses universitaires du Mirail.",
-    "tags": [],
+    "tags": [
+      "grammar"
+    ],
     "framework": [
       "Grammar"
     ],
@@ -9575,7 +9621,8 @@
     "abstract": "",
     "citation": "LEVIN, Beth, RAPPAPORT, Malka, 1986, « The Formation of Adjectival Passives », <em>Linguistic Inquiry</em> 17, 623‑661.",
     "tags": [
-      "emotion_words"
+      "emotion_words",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -9921,7 +9968,9 @@
     "isbn": "9780511605789",
     "abstract": "This 1999 textbook investigates definiteness both from a comparative and a theoretical point of view, showing how languages express definiteness and what definiteness is. It surveys a large number of languages to discover the range of variation in relation to definiteness and related grammatical phenomena, such as demonstratives, possessives and personal pronouns. It outlines work done on the nature of definiteness in semantics, pragmatics and syntax, and develops an account on which definiteness is a grammatical category represented in syntax as a functional head (the widely discussed D). Consideration is also given to the origins and evolution of definite articles in the light of the comparative and theoretical findings. Among the claims advanced are that definiteness does not occur in all languages, though the pragmatic concept which it grammaticalizes probably does",
     "citation": "LYONS, Christopher, 1999, <em>Definiteness</em>, Cambridge: Cambridge University Press.",
-    "tags": [],
+    "tags": [
+      "grammar"
+    ],
     "framework": [
       "Grammar"
     ],
@@ -10678,7 +10727,8 @@
     "abstract": "",
     "citation": "MATTIELLO, Elisa, 2022, « Language Aggression in English Slang: The Case of the -o Suffix », In KNOBLOCK, N. (ed.): « The grammar of hate: morphosyntactic features of hateful, aggressive, and dehumanizing discourse », 34‑58.",
     "tags": [
-      "emotive_words"
+      "emotive_words",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -10804,10 +10854,11 @@
     "abstract": "\"Corpus linguistics is the study of language data on a large scale - the computer-aided analysis of very extensive collections of transcribed utterances or written texts. This textbook outlines the basic methods of corpus linguistics, explains how the discipline of corpus linguistics developed, and surveys the major approaches to the use of corpus data. It uses a broad range of examples to show how corpus data has led to methodological and theoretical innovation in linguistics in general. Clear and detailed explanations lay out the key issues of method and theory in contemporary corpus linguistics. A structured and coherent narrative links the historical development of the field to current topics in 'mainstream' linguistics. Practical activities and questions for discussion at the end of each chapter encourage students to test their understanding of what they have read and an extensive glossary provides easy access to definitions of technical terms used in the text\"--",
     "citation": "MCENERY, Tony, HARDIE, Andrew, 2012, <em>Corpus linguistics: method, theory and practice</em>, Cambridge ; New York: Cambridge University Press.",
     "tags": [
-      "statistics"
+      "methodology"
     ],
     "framework": [
-      "Linguistics"
+      "Linguistics",
+      "Corpus Linguistics"
     ],
     "thesis_chapter": [
       "Chapitre 2"
@@ -10985,7 +11036,9 @@
     "isbn": "9782200612276",
     "abstract": "",
     "citation": "MIGNOT, Elise, 2016, <em>Linguistique anglaise: cours complet, méthodologie par l’exemple, exercices corrigés en ligne</em>, Malakoff (Hauts-de-Seine): Armand Colin.",
-    "tags": [],
+    "tags": [
+      "grammar"
+    ],
     "framework": [
       "Grammar"
     ],
@@ -11022,7 +11075,8 @@
     "abstract": "",
     "citation": "MIGNOT, Élise, 2017, « La morphologie du nom en anglais, vers une sémantique des parties du discours », Paris: Sorbonne Université.",
     "tags": [
-      "nominalization"
+      "nominalization",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -11269,8 +11323,7 @@
     "abstract": "Words often convey affect -- emotions, feelings, and attitudes. Further, different words can convey affect to various degrees (intensities). However, existing manually created lexicons for basic emotions (such as anger and fear) indicate only coarse categories of affect association (for example, associated with anger or not associated with anger). Automatic lexicons of affect provide fine degrees of association, but they tend not to be accurate as human-created lexicons. Here, for the first time, we present a manually created affect intensity lexicon with real-valued scores of intensity for four basic emotions: anger, fear, joy, and sadness. (We will subsequently add entries for more emotions such as disgust, anticipation, trust, and surprise.) We refer to this dataset as the NRC Affect Intensity Lexicon, or AIL for short. AIL has entries for close to 6,000 English words. We used a technique called best-worst scaling (BWS) to create the lexicon. BWS improves annotation consistency and obtains reliable fine-grained scores (split-half reliability &gt; 0.91). We also compare the entries in AIL with the entries in the NRC VAD Lexicon, which has valence, arousal, and dominance (VAD) scores for 20K English words. We find that anger, fear, and sadness words, on average, have very similar VAD scores. However, sadness words tend to have slightly lower dominance scores than fear and anger words. The Affect Intensity Lexicon has applications in automatic emotion analysis in a number of domains such as commerce, education, intelligence, and public health. AIL is also useful in the building of natural language generation systems.",
     "citation": "MOHAMMAD, Saif M., 2018, « Word Affect Intensities », <em>Proceedings of the Eleventh International Conference on Language Resources and Evaluation</em>.",
     "tags": [
-      "emotion_words",
-      "statistics"
+      "emotion_words"
     ],
     "framework": [
       "Corpus Linguistics"
@@ -11829,7 +11882,8 @@
     "abstract": "Abstract This article discusses the racialization of welfare in the popular discourse. In the 1960s, Aid to Families with Dependent Children shifted from a program serving primarily white widows and supporting them in their work as mothers to a punitive program aiding a disproportionate number of women of color who were divorced, deserted, or never married. A narrative of race, sexual deviance, fraud, family breakup, and community disintegration came to dominate discussions of welfare and black poverty. At a moment when theories of scientific racism were in decline, stereotypes and images of black women as ?welfare queens? reinscribed racial domination in the popular and political discourse. But, at the same time, a black-led movement for welfare rights challenged these negative portrayals and called for a broader safety net and a reconceptualization of welfare.",
     "citation": "NADASEN, Premilla, 2007, « From Widow to ?Welfare Queen?: Welfare and the Politics of Race », <em>Black Women, Gender + Families</em> 1, 52‑77.",
     "tags": [
-      "racism_&_prejudice"
+      "racism_&_prejudice",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -12697,7 +12751,9 @@
     "isbn": "9780203992951",
     "abstract": "Written by a pioneer in the field of sociological theory, whose first work, \"The Structure of Social Action\", was a controversial and influential text when published in 1937, this book presents more recent advances in the author's work on the theory of action",
     "citation": "PARSONS, Talcott, 1991, <em>The social system</em>,2 ed. Hoboken: Taylor and Francis.",
-    "tags": [],
+    "tags": [
+      "social_theory"
+    ],
     "framework": [
       "Sociology"
     ],
@@ -12836,11 +12892,11 @@
     "abstract": "",
     "citation": "PENNEBAKER, James W., 2013, <em>The secret life of pronouns: what our words say about us</em>,Paperback edition. New York: Bloomsbury.",
     "tags": [
-      "pronouns",
-      "statistics"
+      "pronouns"
     ],
     "framework": [
-      "Corpus Linguistics"
+      "Corpus Linguistics",
+      "Psychology & Neuroscience"
     ],
     "thesis_chapter": [
       "Chapitre 1",
@@ -12947,7 +13003,6 @@
     "abstract": "",
     "citation": "PETERSON, Jillian, DENSLEY, James, 2025, « The Violence Project database of mass shootings in the United States »,https://www.theviolenceproject.org.",
     "tags": [
-      "statistics",
       "war_&_violence"
     ],
     "framework": [
@@ -13324,11 +13379,11 @@
     "abstract": "This dissertation examines the effects of verbal irony, from the point of view of reader-response and cognitive theory, on the interpretation of a literary text. The analytical techniques developed are then applied to the short stories of Charles Nodier. A careful comparison of significant recent studies of the classification and analysis of irony, both literary and non-literary, from a variety of critical perspectives, serves as the basis for the elaboration of a system of classification schemes involving linguistic and contextual indicators, actantial distribution, and rhetorical strategy. The influence of these elements on the interpretation of ironic enunciations by the reader can then be evaluated in terms of the cognitive processes involved in the integration of the perceived text into the reader's contextual framework. Interpretation of irony depends on the recognition of an incongruity between the apparent meaning of an enunciation and the expectations generated by the receiver's model of the speaker. This emphasis on the importance of cognitive model building related to actantial roles facilitates the description of that irony which is intended by an enunciator using the words of a character or narrator who is not self-conscious.    Since the data include a wide variety of information about a large number of enunciations, the study describes in detail the development of a computer tool for managing data about stylistic devices in literary texts.    In Nodier's short fiction, irony serves primarily to influence the reader's feelings towards societal attitudes and secondarily to increase the reader's sympathy for the enunciator of the text. By manipulating group associations, the reader is brought to disdain the pedantic self-assuredness of nineteenth century positivism and to empathize with the victims of powerful groups who believe in their own superiority. Irony which targets the speaker or the text itself acts to soften the reader's criticism by encouraging a dissociation from unsympathetic critical opponents.",
     "citation": "PONTERIO, Robert, 1987, « Verbal Irony in the Short Fiction of Charles Nodier: A ComputerAssisted Study (france) », In « ProQuest Dissertations and Theses », United States -Illinois: University of Illinois at Urbana-Champaign, https://www.proquest.com/dissertations-theses/verbal-irony-short-fiction-charlesnodier/docview/303471876/se-2?accountid=9641.",
     "tags": [
-      "hyperbole_&_figures",
-      "statistics"
+      "hyperbole_&_figures"
     ],
     "framework": [
-      "Literature"
+      "Literature",
+      "Corpus Linguistics"
     ],
     "thesis_chapter": [
       "Chapitre 6"
@@ -13355,7 +13410,9 @@
     "isbn": "9780030852305",
     "abstract": "",
     "citation": "POSTAL, Paul M., 1971, <em>Cross-over phenomena</em>, New York, NY: Holt, Rinehart and Winston.",
-    "tags": [],
+    "tags": [
+      "grammar"
+    ],
     "framework": [
       "Grammar"
     ],
@@ -13513,7 +13570,8 @@
     "abstract": "Tea Party movement, conservative populist social and political movement that emerged in 2009 in the United States, generally opposing excessive taxation and government intervention in the private sector while supporting stronger immigration controls. Learn more about the Tea Party movement in this article.",
     "citation": "RAY, Michael, 2025, « Tea Party movement », In « Encyclopedia https://www.britannica.com/topic/Tea-Party-movement. Britannica »,",
     "tags": [
-      "conservatism"
+      "conservatism",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -14122,7 +14180,6 @@
     "abstract": "About six-in-ten U.S. adults (58%) favor stricter gun laws. Another 26% say that U.S. gun laws are about right, while 15% favor less strict gun laws.",
     "citation": "SCHAEFFER, Katherine, 2024, « Key facts about Americans and guns », In « Pew Research Center », https://www.pewresearch.org/short-reads/2024/07/24/key-facts-aboutamericans-and-guns/.",
     "tags": [
-      "statistics",
       "war_&_violence"
     ],
     "framework": [
@@ -14290,7 +14347,8 @@
     "citation": "SCHMID, Hans-Jörg, 1999, « Cognitive Effects of Shell Nouns », In VAN HOEK, K., A.A. KIBRIK &amp; L. NOORDMAN (ed.): « Current Issues in Linguistic Theory », 111.",
     "tags": [
       "nominalization",
-      "shell_nouns"
+      "shell_nouns",
+      "grammar"
     ],
     "framework": [
       "Grammar",
@@ -14334,7 +14392,8 @@
     "citation": "SCHMID, Hans-Jörg, 2000, <em>English abstract nouns as conceptual shells</em>, Berlin, Boston: De Gruyter Mouton.",
     "tags": [
       "nominalization",
-      "shell_nouns"
+      "shell_nouns",
+      "grammar"
     ],
     "framework": [
       "Grammar",
@@ -14380,7 +14439,8 @@
     "citation": "SCHMID, Hans-Jörg, 2018, « Shell nouns in English – a personal roundup », <em>Caplletra. Revista Internacional de Filologia</em>, 109.",
     "tags": [
       "nominalization",
-      "shell_nouns"
+      "shell_nouns",
+      "grammar"
     ],
     "framework": [
       "Grammar",
@@ -14421,7 +14481,7 @@
     "doi": "",
     "url": "",
     "isbn": "9781350115514",
-    "abstract": "Intro -- Title Page -- Copyright Page -- Contents -- Illustrations -- Acknowledgments -- Chapter 1: From Fake News to Tremendous Success: Introduction -- Part I: Rhetoric and Repetition -- Chapter 2: It's Just Words, Folks. It's Just Words: Donald Trump's Distinctive Linguistic Style -- Chapter 3: I Know Words, I Have the Best Words: Repetitions, Parallelisms, and Matters of (In)Coherence -- Chapter 4: A Man who Was Just an Incredible Man, an Incredible Man: Age Factors and Coherence in Donald Trump's Spontaneous Speech -- Part II: Evaluation and Emotion -- Chapter 5: Very Emotional, Totally Conservative, and Somewhat All over the Place: An Analysis of Intensifiers in Donald Trump's Speech -- Chapter 6: Crooked Hillary, Lyin' Ted, and Failing New York Times: Nicknames in Donald Trump's Tweets -- Chapter 7: I'm Doing Great with the Hispanics.Nobody Knows It: The Distancing Effect of Donald Trump's the-Plurals -- Part III: Discourse and Metaphor -- Chapter 8: Either We WIN this Election, or We Are Going to LOSE this Country!: Trump's Warlike Competition Metaphor -- Chapter 9: Silence and Denial: Trump's Discourse on the Environment -- Chapter 10: Donald Trump's \"Fake News\" Agenda: A Pragmatic Account of Rhetorical Delegitimization -- Chapter 11: Sorry Not Sorry: Political Apology in the Age of Trump -- Part IV: Conclusion -- Chapter 12: Great Movement versus Crooked Opponents: Is Donald Trump's Language Populist? -- Contributors -- Index",
+    "abstract": "",
     "citation": "SCHNEIDER, U. &amp; M. EITELMANN, 2020, Linguistic inquiries into Donald Trump’s language: from « fake news » to « tremendous success », London New York Oxford New Delhi Sydney: Bloomsbury Academic.",
     "tags": [
       "Trump",
@@ -14469,7 +14529,8 @@
     "tags": [
       "conspiracy",
       "enemy_&_otherness",
-      "fear"
+      "fear",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -14747,7 +14808,8 @@
     "abstract": "John Searle offers a profound understanding of how we create a social reality - a reality of money, property, governments, marriages, stock markets and cocktail parties. The paradox addressed is that these facts only exist because we think they exist and yet they have an objective existence. Continuing a line begun in his 'The Construction of Social Reality', Searle identifies the precise role of language in the creation of all 'institutional facts'. His aim is to show how mind, language and civilization are natural products of the basic facts of the physical world described by physics, chemistry & biology",
     "citation": "SEARLE, John R., 2010, <em>Making the social world: the structure of human civilization</em>, New York Oxford: Oxford University Press.",
     "tags": [
-      "speech_acts"
+      "speech_acts",
+      "social_theory"
     ],
     "framework": [
       "Philosophy"
@@ -14894,7 +14956,8 @@
     "abstract": "",
     "citation": "SIMMEL, Georg, 1950, <em>The sociology of Georg Simmel</em>, New York: The Free Press.",
     "tags": [
-      "enemy_&_otherness"
+      "enemy_&_otherness",
+      "social_theory"
     ],
     "framework": [
       "Sociology"
@@ -14993,7 +15056,7 @@
     "doi": "",
     "url": "",
     "isbn": "9780367360368",
-    "abstract": "Part I : general concepts -- The concept of disease / Dominic Sisti and Arthur L. Caplan -- Disease, illness, and sickness / Bjorn Hofmann -- Health and well-being / Daniel M. Hausman -- Disability and normality / Anita Silvers -- Mechanisms in medicine / Phyllis Illari -- Causality and causal interference in medicine / Julian Reiss -- Frequency and propensity : the interpretation of probability in causal models for medicine / Donald Gillies -- Reductionism in the biomedical sciences / Holly K. Andersen -- Realism and constructivism in medicine / Jeremy R. Simon -- Part II : specific concepts -- Birth / Christina Scèhues -- Death / Steven Luper -- Pain, chronic pain, and suffering / Valerie Gray Hardcastle -- Measuring placebo effects / Jeremy Howick -- The concept of genetic disease / Jonathan Michael Kaplan -- Diagnostic categories / Annemarie Jutel -- Classificatory challenges in psychopathology / Harold Kincaid -- Classificatory challenges in physical disease / Mathias Brochhausen -- Part III : research methods (a) evidence in medicine -- The randomized controlled trial : internal and external validity ./ Adam La Caze -- The hierarchy of evidence, meta-analysis, and systematic review / Robyn Bluhm -- Statistical evidence and the reliability of medical research / Mattia Andreoletti and David Teira -- Bayesian versus frequentist clinical trials / Cecillia Nardini -- Observational research / Olaf M. Dekkers and Jane P. Vandenbroucke -- Philosophy of epidemiology / Alex Broadbent -- Complementary/alternative medicine and the evidence requirement / Kirsten Hansen and Klemens Kappel -- Part III : research methods (b) other research methods -- Models in medicine / Michael Wilde and Jon Williamson -- Discovery in medicine / Brendan Clarke -- Explanation in medicine / Mèael Lemoine -- The case study in medicine / Rachel A. Ankeny -- Values in medical research / Kirstin Borgerson -- Outcome measures in medicine / Leah McClimans -- Measuring harms / Jacob Stegenga -- Expert consensus / Miriam Solomon -- Part IV : clinical methods -- Clinical judgment / Ross Upshur and Benjamin Chin-Yee -- Narrative medicine / Danielle Spencer -- Medical decision making : diagnosis, treatment, and prognosis / Ashley Graham Kennedy -- Part V : variability and diversity -- Personalized and precision medicine / Alex Gamma -- Gender in medicine / Immaculada de Melo-Martâin and Kristen Intemann -- Race in Medicine / Sean A. Valles -- Atypical bodies in medical care / Ellen K. Feder -- Part VI : perspectives -- The biomedical model and the biopsychosocial model in medicine / Fred Gifford -- Models in mental illness / Jacqueline Sullivan -- Phenomenology and hermeneutics in medicine / Havi Carel -- Evolutionary medicine / Michael Cournoyea -- Philosophy of nursing : caring, holism and the nursing role(s) / Mark Risjord -- Contemporary Chinese medicine and its theoretical foundations / Judith Farquhar -- Double truths and the postcolonial predicament of Chinese medicine / Eric I. Karchmer -- Medicine as a commodity / Carl Elliott",
+    "abstract": "",
     "citation": "SOLOMON, M., J.R. SIMON &amp; H. KINCAID, 2020, <em>The Routledge companion to philosophy of medicine</em>,First issued in paperback. New York London: Routledge, Taylor &amp; Francis Group.",
     "tags": [
       "health_&_pandemic"
@@ -15352,11 +15415,11 @@
     "abstract": "",
     "citation": "SPIRER, Herbert F., SPIRER, Louise, JAFFE, Abram J., 1998, <em>Misused statistics</em>,2. ed., rev.expanded. New York: Dekker.",
     "tags": [
-      "manipulation",
-      "statistics"
+      "manipulation"
     ],
     "framework": [
-      "Sociology"
+      "Sociology",
+      "Mathematics & Statistics"
     ],
     "thesis_chapter": [
       "Chapitre 6"
@@ -15417,7 +15480,8 @@
     "abstract": "This paper aims to present the application of a new method for metaphor identification in discourse, the Pragglejaz Metaphor Identification Procedure, in two corpus-linguistic projects. It provides background information to the method and then",
     "citation": "STEEN, Gerard, 2010, « Pragglejaz in practice: Finding metaphorically used words in natural discourse ».",
     "tags": [
-      "metaphor"
+      "metaphor",
+      "methodology"
     ],
     "framework": [
       "Linguistics"
@@ -15667,7 +15731,8 @@
     "tags": [
       "Trump",
       "emotive_words",
-      "enemy_&_otherness"
+      "enemy_&_otherness",
+      "grammar"
     ],
     "framework": [
       "Grammar"
@@ -15932,7 +15997,8 @@
     "citation": "VAÏSSE, Justin, 2008, « George W. Bush a-t-il trahi, tué ou transfiguré le conservatisme américain ? »:, <em>Vingtième Siècle. Revue d’histoire</em> n° 97, 25‑37.",
     "tags": [
       "Bush",
-      "conservatism"
+      "conservatism",
+      "american_political_history"
     ],
     "framework": [
       "History"
@@ -15963,8 +16029,7 @@
     "abstract": "Stock estimates of the US unauthorized foreign-born population are routinely published, but less is known about this population’s dynamics. Using a series of residual estimates based on 2000 Census and 2001–2022 American Community Survey (ACS), I estimate the components of change for the unauthorized immigrant population from 2000 to 2022 by region and country of origin. Further, I develop and present novel measures of expected duration in unauthorized status and demographic impact of unauthorized entries (i.e., person-years lived in unauthorized status). Results reveal dramatic changes over the last two decades. In the early 2000s, the unauthorized immigrant population was dominated by Mexicans who tended to remain in the United States for extended periods of time and whose demographic impact on the US population was substantial. After the 2007–2008 Great Recession, a new pattern emerged. Unauthorized migrants now arrive from across the globe, including Central America and Asia (up through 2018), and most recently from Europe, Africa, Canada, Venezuela, and other parts of South America. These new unauthorized immigrants are more likely to arrive on temporary nonimmigrant visas (which typically allow a foreigner to live and work in the United States for six years) and, with the exception of Venezuelans, spend less time in unauthorized status. Overall, the demographic impact of this new type of unauthorized migration is lower than it was two decades ago.",
     "citation": "VAN HOOK, Jennifer, 2024, « Beyond Stocks and Surges: The Demographic Impact of the Unauthorized Immigrant Population in the United States », <em>Population and development review</em> 50, 1369‑1400.",
     "tags": [
-      "immigration",
-      "statistics"
+      "immigration"
     ],
     "framework": [
       "Sociology"
@@ -16552,7 +16617,9 @@
     "isbn": "",
     "abstract": "",
     "citation": "VIRTANEN, Tuija, 2009, « Discourses linguistic meets corpus linguistics: Theoretical and methodological issues in the troubled relationship », In RENOUF, A. &amp; A. KEHOE (ed.): « Corpus Linguistics: Recements and Reassessments », 49‑65.",
-    "tags": [],
+    "tags": [
+      "methodology"
+    ],
     "framework": [
       "Corpus Linguistics"
     ],
@@ -16961,8 +17028,7 @@
     "abstract": "On April 22, 2019, the President issued a memorandum to address the issue of nonimmigrants that “overstay” the period of time for which they are admitted (White House 2019). The memorandum directed the Secretary of State “to engage with the...",
     "citation": "WARREN, Robert, 2019, « Overstays Exceeded Illegal Border Crossers after 2010 Because Illegal Entries Dropped to Their Lowest Level in Decades », Center for Migration Studies, https://cmsny.org/publications/essay-warren-042419/.",
     "tags": [
-      "immigration",
-      "statistics"
+      "immigration"
     ],
     "framework": [
       "Sociology"
@@ -17762,7 +17828,8 @@
     "tags": [
       "ideology",
       "political_discourse",
-      "racism_&_prejudice"
+      "racism_&_prejudice",
+      "methodology"
     ],
     "framework": [
       "Discourse Analysis",
@@ -17989,7 +18056,9 @@
     "isbn": "9781594204340",
     "abstract": "",
     "citation": "ZELIZER, Julian E., 2015, <em>The Fierce Urgency of Now: Lyndon Johnson, Congress, and the Battle for the Great Society</em>, East Rutherford: Penguin Publishing Group.",
-    "tags": [],
+    "tags": [
+      "american_political_history"
+    ],
     "framework": [
       "History"
     ],
@@ -18059,11 +18128,12 @@
     "abstract": "",
     "citation": "BOYD, R. L., ASHOKKUMAR, A., SERAJ, S., &amp; PENNEBAKER, J. W. (2022). The development and psychometric properties of LIWC-22. Austin, TX: University of Texas at Austin. https://www.liwc.app",
     "tags": [
-      "statistics",
-      "emotion_words"
+      "emotion_words",
+      "methodology"
     ],
     "framework": [
-      "Corpus Linguistics"
+      "Corpus Linguistics",
+      "Psychology & Neuroscience"
     ],
     "thesis_chapter": [],
     "best_quote": null,
@@ -18096,7 +18166,7 @@
     "abstract": "",
     "citation": "KILGARRIFF , Adam, BAISA, Vít, BUŠTA, Jan, JAKUBÍČEK, Miloš, KOVÁŘ, Vojtěch, MICHELFEIT, Jan, RYCHLÝ, Pavel, SUCHOMEL Vít, 2014, “The Sketch Engine: ten years on”. Lexicography, 1: 7-36. https://app.sketchengine.eu/",
     "tags": [
-      "statistics"
+      "methodology"
     ],
     "framework": [
       "Corpus Linguistics"
@@ -18125,13 +18195,50 @@
     "abstract": "",
     "citation": "MONCOMBLE, Florent, 2024 (2023), ‘APP_Extractor’. Software. Arras, France: Université d’Artois. https://fmoncomble.github.io/APP_extractor/.",
     "tags": [
-      "statistics"
+      "methodology"
     ],
     "framework": [
       "Corpus Linguistics"
     ],
     "thesis_chapter": [],
     "best_quote": null,
+    "cover_url": null,
+    "related_pubs": []
+  },
+  {
+    "citekey": "link1999mentalhealth",
+    "zotero_key": null,
+    "title": "Public conceptions of mental illness: labels, causes, dangerousness, and social distance.",
+    "authors": [
+      "Bruce G. Link",
+      "Jo C. Phelan",
+      "Michaeline Bresnahan",
+      "Ann Stueve",
+      "Bernice A. Pescosolido"
+    ],
+    "section": "main",
+    "pub_year": "1999",
+    "item_type": "journalArticle",
+    "publication": "American Journal of Public Health",
+    "publisher": "",
+    "place": "",
+    "doi": "10.2105/AJPH.89.9.1328",
+    "url": "https://ajph.aphapublications.org/doi/full/10.2105/AJPH.89.9.1328",
+    "isbn": "",
+    "abstract": "The authors used nationwide survey data to characterize current public conceptions related to recognition of mental illness and perceived causes, dangerousness, and desired social distance. METHODS: Data were derived from a vignette experiment included in the 1996 General Social Survey. Respondents (n = 1444) were randomly assigned to 1 of 5 vignette conditions. Four vignettes described psychiatric disorders meeting diagnostic criteria, and the fifth depicted a \"troubled person\" with subclinical problems and worries. RESULTS: Results indicate that the majority of the public identifies schizophrenia (88%) and major depression (69%) as mental illnesses and that most report multicausal explanations combining stressful circumstances with biologic and genetic factors. Results also show, however, that smaller proportions associate alcohol (49%) or drug (44%) abuse with mental illness and that symptoms of mental illness remain strongly connected with public fears about potential violence and with a desire for limited social interaction. CONCLUSIONS: While there is reason for optimism in the public's recognition of mental illness and causal attributions, a strong stereotype of dangerousness and desire for social distance persist. These latter conceptions are likely to negatively affect people with mental illness.",
+    "citation": "Link, Bruce G., Phelan, Jo C., Bresnahan, Michaeline, Stueve, Ann, Pescosolido, Bernice A., 1999, \"Public conceptions of mental illness: labels, causes, dangerousness, and social distance.\", <em>American Journal of Public Health </em> 89, 1328‑1333.",
+    "tags": [
+      "emotion",
+      "health_&_pandemic",
+      "fear"
+    ],
+    "framework": [
+      "Psychology & Neuroscience"
+    ],
+    "thesis_chapter": [
+      "Chapitre 4"
+    ],
+    "best_quote": "It is not just that the symptoms are undesirable but that they induce fear (i.e., fear that the person will do something violent).[...]The ideas of \"danger\" and \"fear\" that Star emphasized nearly 50 years ago are still with us and play a large role in public perceptions of people with mental illnesses. ",
     "cover_url": null,
     "related_pubs": []
   }

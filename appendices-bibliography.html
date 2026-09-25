@@ -58,7 +58,7 @@
             color: #3fb950;
         }
 
-        /* ============ Keywords popup ============ */
+        /* ============ FENÊTRE DES MOTS-CLÉS ============ */
         .search-row {
             display: flex;
             align-items: center;
@@ -202,7 +202,7 @@
             border-radius: 999px;
             background: var(--dot, #9aa39e);
             box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
-            /* pour voir les couleurs zotero trop claires */
+            /* rend visibles les couleurs Zotero très claires */
             flex-shrink: 0;
         }
 
@@ -210,6 +210,17 @@
             font-family: 'Fira Code', monospace;
             font-size: 0.66rem;
             color: #9aa39e;
+        }
+
+        .tag-option.is-field {
+            border-style: dashed;
+            background: transparent;
+        }
+
+        .tag-option.is-field:hover {
+            border-style: solid;
+            border-color: #3fb950;
+            color: #2f6b4f;
         }
 
         .tag-option.is-active {
@@ -632,9 +643,10 @@
                     class="w-full md:w-1/2 px-4 py-2 rounded-md border border-gray-300 bg-transparent text-on-surface focus:outline-none focus:border-primary transition-colors" />
                 <div class="tag-browser">
                     <button type="button" id="tag-browser-btn" class="tag-browser-btn" aria-haspopup="dialog"
-                        aria-expanded="false" aria-controls="tag-browser-panel" title="Parcourir les mots-clés">
+                        aria-expanded="false" aria-controls="tag-browser-panel"
+                        title="Parcourir les mots-clés et les domaines">
                         <span class="material-symbols-outlined">sell</span>
-                        <span>Keywords</span>
+                        <span>Mots-clés</span>
                     </button>
                     <div id="tag-browser-panel" class="tag-browser-panel" role="dialog" aria-label="Mots-clés" hidden>
                         <div class="tag-browser-head">
@@ -731,6 +743,8 @@
         let chapterMeta = [];   // [{label, title}] dans l'ordre de la thèse
         let tagGroupOf = {};    // clé normalisée du tag -> groupe
         let tagGroupOrder = [];
+        let fieldOrder = [];    // domaines, dans l'ordre défini par build_bibliography.py
+        const FIELD_GROUP_LABEL = "Field";
 
         // --- BULLETPROOF MATCHING ---
         function getMatchKey(str) {
@@ -1206,11 +1220,42 @@
                 });
                 wrap.append(label, chips);
             });
+
+            // --- dernier groupe : les domaines (filtre "Domaine", une entrée peut en avoir plusieurs)
+            const fieldCounts = {};
+            allEntries.forEach(e => (e.framework || []).forEach(f => { fieldCounts[f] = (fieldCounts[f] || 0) + 1; }));
+            const fields = Object.keys(fieldCounts).sort((a, b) => {
+                const ra = fieldOrder.indexOf(a), rb = fieldOrder.indexOf(b);
+                return (ra === -1 ? 999 : ra) - (rb === -1 ? 999 : rb) || a.localeCompare(b);
+            });
+            if (fields.length) {
+                const label = document.createElement("p");
+                label.className = "tag-group-label";
+                label.textContent = FIELD_GROUP_LABEL;
+                const chips = document.createElement("div");
+                chips.className = "tag-group-chips";
+                fields.forEach(field => {
+                    const btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.className = "tag-option is-field";
+                    btn.dataset.field = field;
+                    btn.innerHTML = `<span>${field}</span><span class="tag-option-count">${fieldCounts[field]}</span>`;
+                    btn.addEventListener("click", () => {
+                        activeFilters.framework = activeFilters.framework === field ? null : field;
+                        applyFilters();
+                        closeTagBrowser();
+                    });
+                    chips.appendChild(btn);
+                });
+                wrap.append(label, chips);
+            }
         }
 
         function syncTagBrowser() {
             document.querySelectorAll(".tag-option").forEach(b => {
-                const active = b.dataset.tag === activeFilters.tag;
+                const active = b.dataset.field
+                    ? b.dataset.field === activeFilters.framework
+                    : b.dataset.tag === activeFilters.tag;
                 b.classList.toggle("is-active", active);
                 if (active) { b.style.backgroundColor = ""; b.style.borderColor = ""; b.style.color = ""; }
             });
@@ -1298,6 +1343,7 @@
                         tagGroupOf[getMatchKey(item.tag)] = item.group || "Other";
                     });
                     tagGroupOrder = meta.tag_groups || [];
+                    fieldOrder = meta.fields || [];
                     chapterMeta = meta.chapters || [];
                 }
             } catch (metaErr) {
