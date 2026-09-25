@@ -260,6 +260,16 @@
             animation: flash-term 1.1s ease;
         }
 
+        .entry-definition .bibref {
+            color: var(--primary, #2f6b4f);
+            text-decoration: none;
+            border-bottom: 1px dotted color-mix(in srgb, var(--primary, #2f6b4f) 40%, transparent);
+        }
+
+        .entry-definition .bibref:hover {
+            border-bottom-style: solid;
+        }
+
         @keyframes flash-term {
             0% {
                 color: var(--primary, #2f6b4f);
@@ -317,14 +327,16 @@
 
     <div id="footer-placeholder"></div>
     <script src="scripts.js"></script>
-
     <script>
         const GLOSSARY_JSON_PATH = "./src/glossary.json";
+        const BIBLIOGRAPHY_JSON_PATH = "./src/bibliography.json";
+        const BIBLIOGRAPHY_PAGE = "app-bibliography.html";
         const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
         let allTerms = [];
         let termsById = new Map();
         let termsByNormalizedName = new Map();
+        let biblioByKey = new Map();   // citekey -> entrée de bibliography.json
 
         function stripAccents(str) {
             return (str || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -351,26 +363,50 @@
                 .replace(/>/g, "&gt;");
         }
 
-        // Transforme un fragment de texte (déjà destiné à un seul bloc) en insérant
-        // des liens cliquables pour toute occurrence de [[Terme]] ou [[Terme|Texte affiché]].
+        // Texte d'une définition sans balisage : [[Terme|Affiché]] -> Affiché,
+        // [@citekey|Affiché] -> Affiché. Sert à la recherche plein texte.
+        function stripMarkup(text) {
+            return (text || "")
+                .replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (m, t, d) => d || t)
+                .replace(/\[@([^\]|]+)\|([^\]]+)\]/g, (m, k, d) => d);
+        }
+
+        // Transforme un fragment de texte (déjà destiné à un seul bloc) en insérant :
+        //  - des renvois internes pour [[Terme]] ou [[Terme|Texte affiché]] ;
+        //  - des liens vers la bibliographie pour [@citekey|Texte affiché].
         function renderInline(text) {
             const escaped = escapeHtml(text);
-            return escaped.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, targetRaw, displayRaw) => {
-                const target = targetRaw.trim();
-                const display = (displayRaw || targetRaw).trim();
-                const targetEntry = termsByNormalizedName.get(normalize(target));
-                if (!targetEntry) {
-                    // terme référencé mais introuvable dans le glossaire : affiché tel quel, non cliquable
-                    return display;
-                }
-                return `<button type="button" class="xref" data-target="${targetEntry.id}">${display}</button>`;
-            });
+            return escaped
+                .replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, targetRaw, displayRaw) => {
+                    const target = targetRaw.trim();
+                    const display = (displayRaw || targetRaw).trim();
+                    const targetEntry = termsByNormalizedName.get(normalize(target));
+                    if (!targetEntry) {
+                        // terme référencé mais introuvable dans le glossaire : affiché tel quel, non cliquable
+                        return display;
+                    }
+                    return `<button type="button" class="xref" data-target="${targetEntry.id}">${display}</button>`;
+                })
+                .replace(/\[@([^\]|]+)\|([^\]]+)\]/g, (match, keyRaw, displayRaw) => {
+                    const key = keyRaw.trim();
+                    const display = displayRaw.trim();
+                    const ref = biblioByKey.get(key);
+                    if (!ref) {
+                        // citekey absente de la bibliographie : affichée telle quelle, non cliquable
+                        console.warn(`[glossary] citekey inconnue : ${key}`);
+                        return display;
+                    }
+                    const tip = (ref.citation || ref.title || "")
+                        .replace(/<[^>]+>/g, "")
+                        .replace(/"/g, "&quot;");
+                    return `<a class="bibref" href="${BIBLIOGRAPHY_PAGE}#${encodeURIComponent(key)}" title="${tip}">${display}</a>`;
+                });
         }
 
         // Transforme le texte brut d'une définition en blocs HTML : les lignes
         // "1. ...", "2. ..." consécutives deviennent une liste ordonnée <ol>,
         // les autres lignes deviennent des paragraphes <p>. Les lignes vides
-        // séparent les blocs. Les [[wikilinks]] sont résolus dans chaque ligne.
+        // séparent les blocs. Les [[wikilinks]] et [@citekey|…] sont résolus dans chaque ligne.
         function renderDefinition(text) {
             const lines = (text || "").split("\n").map(l => l.trim()).filter(l => l.length > 0);
             let html = "";
@@ -532,7 +568,7 @@
                 group.querySelectorAll(".glossary-entry").forEach(entryEl => {
                     const entry = termsById.get(entryEl.dataset.id);
                     const haystack = normalize(
-                        [entry.term, (entry.aliases || []).join(" "), entry.definition, (entry.tags || []).join(" ")].join(" ")
+                        [entry.term, (entry.aliases || []).join(" "), stripMarkup(entry.definition), (entry.tags || []).join(" ")].join(" ")
                     );
                     const matches = query === "" || haystack.includes(query);
                     entryEl.classList.toggle("is-hidden-by-filter", !matches);
@@ -564,11 +600,23 @@
             groups.forEach(g => observer.observe(g));
         }
 
+        // Charge la bibliographie pour résoudre les [@citekey|…]. En cas d'échec,
+        // le glossaire s'affiche quand même, citations en texte simple.
+        async function loadBibliographyIndex() {
+            try {
+                const res = await fetch(BIBLIOGRAPHY_JSON_PATH);
+                const bib = await res.json();
+                biblioByKey = new Map((bib || []).map(e => [e.citekey, e]));
+            } catch (err) {
+                console.warn("[glossary] Bibliographie indisponible, citations non liées :", err);
+            }
+        }
+
         async function loadGlossary() {
             const loadingMsg = document.getElementById("loading-message");
             let entries;
             try {
-                const res = await fetch(GLOSSARY_JSON_PATH);
+                const [res] = await Promise.all([fetch(GLOSSARY_JSON_PATH), loadBibliographyIndex()]);
                 entries = await res.json();
             } catch (err) {
                 console.error("[glossary] Impossible de charger le glossaire :", err);

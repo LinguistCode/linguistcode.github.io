@@ -1371,6 +1371,11 @@
             buildChapterFilters(entries);
             buildTagBrowser();
             applyFilters();
+            const key = decodeURIComponent(location.hash.slice(1));
+            if (key) {
+                const match = allEntries.find(e => e.citekey === key);
+                if (match) openDetailPane(match);
+            }
         }
 
         document.addEventListener("DOMContentLoaded", loadBibliography);

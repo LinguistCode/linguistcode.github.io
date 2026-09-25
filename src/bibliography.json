@@ -56,12 +56,13 @@
       "political_discourse"
     ],
     "framework": [
-      "Linguistics"
+      "Linguistics",
+      "Rhetoric & Argumentation"
     ],
     "thesis_chapter": [
       "Chapitre 5"
     ],
-    "best_quote": null,
+    "best_quote": "De plus, ces échos de terme à terme, parce qu’ils se forment sur les mêmes bases lexicales et parce qu’ils s’ouvrent et se bouclent à des lieux stratégiques, renforcent la «qualité» du discours : la répétition de ces termes donne, à tort ou à raison, l’impression d’une argumentation bien structurée, et, par là même, contribue à la formation d’un ethos gaullien.",
     "cover_url": null,
     "related_pubs": [
       {
@@ -13807,11 +13808,10 @@
     "doi": "10.1075/jlp.20002.rey",
     "url": "https://doi.org/10.1075/jlp.20002.rey",
     "isbn": "",
-    "abstract": "Abstract                            This paper contextualizes Donald Trump’s political “Message” (               Lempert and                         Silverstein 2012               ) within the current anti-intellectualism phenomenon in the Post-Truth era. Trump’s Presidential                     Announcement Speech marks the beginning of the Trump era, as it introduces critical traits of his persona, message and political                     agenda to the general audience. From a Discourse Analysis approach, this paper considers Aristotelian modes of persuasion and the                     multimodal concept of “Message” (               ibid.               ), to contribute to the literature on Trump’s political communication by focusing on the                     cult of personality and self-representation (i.e. non-politician, overachieving businessman, great leader). Trump built his                     candidacy and presidency around his persona, distancing himself from the Republican Party and traditional politicians. These                     strategies allowed Trump to evoke an Ethos capable of saving America. His personal fight against every enemy and threat                     encapsulates a simple and ingenuous dichotomy “I vs. them” with the populist intention of completing a hyperbolic task: Make                     America great again.",
-    "citation": "REYES, Antonio, 2020, « I, Trump: The cult of personality, anti-intellectualism and the PostTruth era », <em>Journal of Language and Politics</em> 19, 869‑893. RICŒUR, Paul, 1975, La métaphore vive, Paris: Éd. du Seuil.",
+    "abstract": " This paper contextualizes Donald Trump’s political “Message” (Lempert and Silverstein 2012) within the current anti-intellectualism phenomenon in the Post-Truth era. Trump’s Presidential                     Announcement Speech marks the beginning of the Trump era, as it introduces critical traits of his persona, message and political                     agenda to the general audience. From a Discourse Analysis approach, this paper considers Aristotelian modes of persuasion and the                     multimodal concept of “Message” (               ibid.               ), to contribute to the literature on Trump’s political communication by focusing on the                     cult of personality and self-representation (i.e. non-politician, overachieving businessman, great leader). Trump built his                     candidacy and presidency around his persona, distancing himself from the Republican Party and traditional politicians. These                     strategies allowed Trump to evoke an Ethos capable of saving America. His personal fight against every enemy and threat                     encapsulates a simple and ingenuous dichotomy “I vs. them” with the populist intention of completing a hyperbolic task: Make                     America great again.",
+    "citation": "REYES, Antonio, 2020, « I, Trump: The cult of personality, anti-intellectualism and the Post-Truth era », <em>Journal of Language and Politics</em> 19, 869‑893.",
     "tags": [
       "Trump",
-      "populism",
       "post-truth"
     ],
     "framework": [
@@ -18240,6 +18240,37 @@
     ],
     "best_quote": "It is not just that the symptoms are undesirable but that they induce fear (i.e., fear that the person will do something violent).[...]The ideas of \"danger\" and \"fear\" that Star emphasized nearly 50 years ago are still with us and play a large role in public perceptions of people with mental illnesses. ",
     "cover_url": null,
+    "related_pubs": []
+  },
+  {
+    "citekey": "ricoeurMetaphoreVive1975",
+    "zotero_key": null,
+    "title": "La Métaphore Vive",
+    "authors": [
+      "Paul Ricœur"
+    ],
+    "section": "main",
+    "pub_year": "1975",
+    "item_type": "Book",
+    "publication": "",
+    "publisher": "Editions du Seuil",
+    "place": "Paris",
+    "doi": "",
+    "url": "",
+    "isbn": "978-2-02-002749-6",
+    "abstract": "",
+    "citation": "RICOEUR, Paul, 1975, La métaphore vive, Paris: Éd. du Seuil.",
+    "tags": [
+      "metaphor"
+    ],
+    "framework": [
+      "Philosophy"
+    ],
+    "thesis_chapter": [
+      "Chapitre 4"
+    ],
+    "best_quote": "Nous dirons que la métaphore tient ensemble dans une signification simple deux parties manquantes différentes des contextes différents de cette signification. 11 ne s'agit donc plus d'un simple déplacement des mots, mais d'un commerce entre pensées, c'est-à-dire d'une transaction entre contextes. Si la métaphore est une habileté, un talent, c'est un talent de pensée. La rhétorique n'est que la réflexion et la traduction de ce talent dans un  savoir distinctif.",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9782020027496-L.jpg",
     "related_pubs": []
   }
 ]
