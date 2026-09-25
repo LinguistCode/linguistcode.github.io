@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Aurélien Amet | Annexes</title>
+    <title>Aurélien Amet | Bibliographie et annexes</title>
     <link rel="icon" type="image/png" href="src/favicon.png" />
 
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -21,7 +21,153 @@
     <link href="css/app-sidebar.css" rel="stylesheet" />
 
     <style>
-        /* ============ GRILLE BENTO DES ANNEXES ============ */
+        /* ============ BIBLIOGRAPHIE (hors annexes) ============ */
+        .biblio-band {
+            position: relative;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: start;
+            gap: 1.75rem;
+            background-color: #004d40;
+            color: #ffffff;
+            padding: 2.25rem 3rem;
+            text-decoration: none;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(14px);
+            animation: cardIn 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        }
+
+        .biblio-band:hover {
+            box-shadow: 0 22px 48px -20px rgba(0, 77, 64, 0.55);
+            transform: translateY(-3px);
+        }
+
+        .biblio-band:active {
+            transform: translateY(-1px) scale(0.992);
+            transition-duration: 0.1s;
+        }
+
+        .biblio-band .appendix-icon-wrap {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .biblio-band:hover .appendix-icon-wrap {
+            background-color: #ffffff;
+            transform: rotate(-8deg) scale(1.06);
+        }
+
+        .biblio-band .appendix-icon {
+            color: #ffffff;
+        }
+
+        .biblio-band:hover .appendix-icon {
+            color: #004d40;
+        }
+
+        .biblio-title {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 2.3rem;
+            line-height: 1.1;
+            margin-bottom: 0.7rem;
+        }
+
+        .biblio-desc {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.82);
+            max-width: 60ch;
+            margin-bottom: 1.25rem;
+        }
+
+        .biblio-band .pill {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.45);
+            color: #ffffff;
+        }
+
+        .biblio-band .appendix-arrow {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .biblio-band:hover .appendix-arrow {
+            color: #ffffff;
+            transform: translate(3px, -3px);
+        }
+
+        .biblio-glyph {
+            position: absolute;
+            right: 2rem;
+            bottom: -2rem;
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 11rem;
+            line-height: 1;
+            color: #ffffff;
+            opacity: 0.06;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.4s ease;
+        }
+
+        .biblio-band:hover .biblio-glyph {
+            opacity: 0.1;
+            transform: translateY(-6px);
+        }
+
+        @media (max-width: 768px) {
+            .biblio-band {
+                grid-template-columns: 1fr auto;
+                padding: 1.75rem;
+            }
+
+            .biblio-band .appendix-icon-wrap {
+                grid-column: 1;
+            }
+
+            .biblio-band .biblio-body {
+                grid-column: 1 / -1;
+                grid-row: 2;
+            }
+
+            .biblio-band .appendix-arrow {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .biblio-title {
+                font-size: 1.9rem;
+            }
+        }
+
+        /* ============ EN-TÊTE DE SECTION « ANNEXES » ============ */
+        .section-head {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-head h2 {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 2.25rem;
+            color: #004d40;
+            line-height: 1.2;
+            flex-shrink: 0;
+        }
+
+        .section-head::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background-color: #e2e2de;
+            transform: translateY(-0.4rem);
+        }
+
+        /* ============ GRILLE DES ANNEXES ============ */
         .appendix-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -44,13 +190,9 @@
             transition: border-color 0.3s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
         }
 
-        .appendix-card.is-compact {
-            grid-column: span 2;
-        }
-
         @media (max-width: 1024px) {
             .appendix-card {
-                grid-column: span 6 !important;
+                grid-column: span 6;
             }
         }
 
@@ -188,6 +330,28 @@
             opacity: 0.07;
             transform: translateY(-4px);
         }
+
+        /* ============ ACCESSIBILITÉ ============ */
+        .biblio-band:focus-visible,
+        .appendix-card:focus-visible {
+            outline: 3px solid #94d3c1;
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .biblio-band,
+            .appendix-card {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+
+            .biblio-band:hover,
+            .appendix-card:hover {
+                transform: none;
+            }
+        }
     </style>
 </head>
 
@@ -200,110 +364,125 @@
 
         <section class="mb-16">
             <h1 class="font-headline text-5xl md:text-7xl italic text-primary leading-tight mb-8">
-                Annexes
+                Bibliographie et annexes
             </h1>
             <p class="font-body text-lg text-on-surface-variant leading-relaxed max-w-3xl">
-                Cette section rassemble les matériaux complémentaires de la thèse : bibliographie annotée, glossaire
-                des notions mobilisées, scripts python utilisés, discours du corpus et relevés d'occurrences. Chaque
-                vignette ouvre une interface
-                dédiée et interrogeable. Le menu flottant à gauche permet de naviguer entre chaque section et de revenir
-                sur cette page.
+                Cette page donne accès à la bibliographie annotée de la thèse, puis à ses annexes : discours du
+                corpus, relevés d'occurrences, scripts Python utilisés et glossaire des notions mobilisées. Chaque
+                vignette ouvre une interface dédiée et interrogeable. Le menu flottant à gauche permet de naviguer
+                entre chaque section et de revenir sur cette page.
+            </p>
         </section>
 
-        <section class="appendix-grid mb-24">
+        <!-- Bibliographie  -->
+        <section class="mb-20" aria-labelledby="biblio-heading">
+            <a href="app-bibliography.html" class="biblio-band" style="animation-delay: 0ms">
+                <span class="biblio-glyph" aria-hidden="true">§</span>
+                <div class="appendix-icon-wrap">
+                    <span class="material-symbols-outlined appendix-icon" aria-hidden="true">auto_stories</span>
+                </div>
+                <div class="biblio-body">
+                    <h2 id="biblio-heading" class="biblio-title">Bibliographie annotée</h2>
+                    <p class="biblio-desc">
+                        L'ensemble des ouvrages et articles mobilisés dans la thèse, avec fiches de lecture, citations
+                        clés et cadre théorique associé à chaque référence.
+                    </p>
+                    <div class="appendix-tags">
+                        <span class="pill">Recherche &amp; filtres</span>
+                        <span class="pill">Index par chapitre</span>
+                        <span class="pill">Relation entre publications</span>
+                    </div>
+                </div>
+                <span class="material-symbols-outlined appendix-arrow" aria-hidden="true">arrow_outward</span>
+            </a>
+        </section>
 
-            <a href="app-bibliography.html" class="appendix-card" style="animation-delay: 0ms">
-                <span class="appendix-card-glyph">§</span>
-                <div class="appendix-card-top">
-                    <div class="appendix-icon-wrap">
-                        <span class="material-symbols-outlined appendix-icon">auto_stories</span>
-                    </div>
-                    <span class="material-symbols-outlined appendix-arrow">arrow_outward</span>
-                </div>
-                <span class="appendix-index">ANNEXE 0</span>
-                <h2 class="appendix-title">Bibliographie annotée</h2>
-                <p class="appendix-desc">
-                    L'ensemble des ouvrages et articles mobilisés dans la thèse, avec fiches de lecture, citations
-                    clés et cadre théorique associé à chaque référence.
-                </p>
-                <div class="appendix-tags">
-                    <span class="pill">Recherche &amp; filtres</span>
-                    <span class="pill">Par chapitre</span>
-                </div>
-            </a>
-            <a href="app-corpus.html" class="appendix-card" style="animation-delay: 240ms">
-                <span class="appendix-card-glyph">⁂</span>
-                <div class="appendix-card-top">
-                    <div class="appendix-icon-wrap">
-                        <span class="material-symbols-outlined appendix-icon">dataset</span>
-                    </div>
-                    <span class="material-symbols-outlined appendix-arrow">arrow_outward</span>
-                </div>
-                <span class="appendix-index">ANNEXE A</span>
-                <h2 class="appendix-title">Corpus</h2>
-                <p class="appendix-desc">
-                    Le corpus linguistique constitué et annoté pour les besoins de la recherche.
-                </p>
-                <div class="appendix-tags">
-                    <span class="pill">Corpus annoté</span>
-                </div>
-            </a>
+        <!-- Annexes A–D -->
+        <section class="mb-24" aria-labelledby="annexes-heading">
+            <div class="section-head">
+                <h2 id="annexes-heading">Annexes</h2>
+            </div>
 
-            <a href="app-data.html" class="appendix-card is-compact" style="animation-delay: 320ms">
-                <span class="appendix-card-glyph">%</span>
-                <div class="appendix-card-top">
-                    <div class="appendix-icon-wrap">
-                        <span class="material-symbols-outlined appendix-icon">bar_chart</span>
-                    </div>
-                    <span class="material-symbols-outlined appendix-arrow">arrow_outward</span>
-                </div>
-                <span class="appendix-index">ANNEXE B</span>
-                <h2 class="appendix-title">Données</h2>
-                <p class="appendix-desc">
-                    Jeux de données bruts et résultats statistiques produits au fil de l'analyse.
-                </p>
-                <div class="appendix-tags">
-                    <span class="pill">Données brutes</span>
-                </div>
-            </a>
+            <div class="appendix-grid">
 
-            <a href="app-pyScripts.html" class="appendix-card is-compact" style="animation-delay: 160ms">
-                <span class="appendix-card-glyph">&lt;/&gt;</span>
-                <div class="appendix-card-top">
-                    <div class="appendix-icon-wrap">
-                        <span class="material-symbols-outlined appendix-icon">terminal</span>
+                <a href="app-corpus.html" class="appendix-card" style="animation-delay: 120ms">
+                    <span class="appendix-card-glyph" aria-hidden="true">⁂</span>
+                    <div class="appendix-card-top">
+                        <div class="appendix-icon-wrap">
+                            <span class="material-symbols-outlined appendix-icon" aria-hidden="true">dataset</span>
+                        </div>
+                        <span class="material-symbols-outlined appendix-arrow" aria-hidden="true">arrow_outward</span>
                     </div>
-                    <span class="material-symbols-outlined appendix-arrow">arrow_outward</span>
-                </div>
-                <span class="appendix-index">ANNEXE C</span>
-                <h2 class="appendix-title">Scripts Python</h2>
-                <p class="appendix-desc">
-                    Code utilisé pour le traitement et l'analyse des données de la thèse.
-                </p>
-                <div class="appendix-tags">
-                    <span class="pill">Code source</span>
-                </div>
-            </a>
+                    <span class="appendix-index">ANNEXE A</span>
+                    <h3 class="appendix-title">Corpus</h3>
+                    <p class="appendix-desc">
+                        L'intégralité des fichiers du corpus. Possibilité de rechercher un fichier à partiri d'une
+                        chaîne de caractères, par président et par année.
+                    </p>
+                    <div class="appendix-tags">
+                        <span class="pill">3 343 fichers</span>
+                    </div>
+                </a>
 
-            <a href="app-glossary.html" class="appendix-card is-compact" style="animation-delay: 80ms">
-                <span class="appendix-card-glyph">?</span>
-                <div class="appendix-card-top">
-                    <div class="appendix-icon-wrap">
-                        <span class="material-symbols-outlined appendix-icon">abc</span>
+                <a href="app-data.html" class="appendix-card" style="animation-delay: 200ms">
+                    <span class="appendix-card-glyph" aria-hidden="true">%</span>
+                    <div class="appendix-card-top">
+                        <div class="appendix-icon-wrap">
+                            <span class="material-symbols-outlined appendix-icon" aria-hidden="true">bar_chart</span>
+                        </div>
+                        <span class="material-symbols-outlined appendix-arrow" aria-hidden="true">arrow_outward</span>
                     </div>
-                    <span class="material-symbols-outlined appendix-arrow">arrow_outward</span>
-                </div>
-                <span class="appendix-index">ANNEXE D</span>
-                <h2 class="appendix-title">Glossaire</h2>
-                <p class="appendix-desc">
-                    Définitions des concepts et notions complexes employés dans la thèse, avec renvois croisés
-                    entre entrées liées.
-                </p>
-                <div class="appendix-tags">
-                    <span class="pill">A–Z</span>
-                    <span class="pill">Renvois croisés</span>
-                </div>
-            </a>
+                    <span class="appendix-index">ANNEXE B</span>
+                    <h3 class="appendix-title">Relevés d'occurrences</h3>
+                    <p class="appendix-desc">
+                        Jeux de données bruts et résultats statistiques produits au fil de l'analyse.
+                    </p>
+                    <div class="appendix-tags">
+                        <span class="pill">Données brutes</span>
+                        <span class="pill">Fichiers Excels</span>
+                    </div>
+                </a>
+
+                <a href="app-pyScripts.html" class="appendix-card" style="animation-delay: 280ms">
+                    <span class="appendix-card-glyph" aria-hidden="true">&lt;/&gt;</span>
+                    <div class="appendix-card-top">
+                        <div class="appendix-icon-wrap">
+                            <span class="material-symbols-outlined appendix-icon" aria-hidden="true">terminal</span>
+                        </div>
+                        <span class="material-symbols-outlined appendix-arrow" aria-hidden="true">arrow_outward</span>
+                    </div>
+                    <span class="appendix-index">ANNEXE C</span>
+                    <h3 class="appendix-title">Scripts Python</h3>
+                    <p class="appendix-desc">
+                        Les scripts utilisés lors du travail de recherche.
+                    </p>
+                    <div class="appendix-tags">
+                        <span class="pill">Code commenté</span>
+                        <span class="pill">Console interactive</span>
+                    </div>
+                </a>
+
+                <a href="app-glossary.html" class="appendix-card" style="animation-delay: 360ms">
+                    <span class="appendix-card-glyph" aria-hidden="true">?</span>
+                    <div class="appendix-card-top">
+                        <div class="appendix-icon-wrap">
+                            <span class="material-symbols-outlined appendix-icon" aria-hidden="true">abc</span>
+                        </div>
+                        <span class="material-symbols-outlined appendix-arrow" aria-hidden="true">arrow_outward</span>
+                    </div>
+                    <span class="appendix-index">ANNEXE D</span>
+                    <h3 class="appendix-title">Glossaire</h3>
+                    <p class="appendix-desc">
+                        Définitions des concepts et notions employés dans la thèse, avec renvois croisés
+                        entre entrées liées.
+                    </p>
+                    <div class="appendix-tags">
+                        <span class="pill">66 notions</span>
+                        <span class="pill">Renvois croisés</span>
+                    </div>
+                </a>
+
+            </div>
         </section>
 
     </main>
