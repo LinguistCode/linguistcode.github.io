@@ -36,47 +36,13 @@
                 Retrouvez ici l'ensemble des relevés effectués depuis Sketch Engine, au format xlsx. Il s'agit de
                 fichier de travail dont la mise en page n'a pas été revue.
                 Tous les fichiers ne disposent pas de la même quantité d'informations. Certains sont juste un output du
-                concordancier, tandis que d'autres sont annotés et triés sur plusieurs onglets.
+                concordancier, tandis que d'autres sont annotés et triés sur plusieurs onglets. Les fichiers issus de
+                LIWC-22 sont également disponibles.
             </p>
         </section>
 
         <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-            <div
-                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
-                <div>
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
-                            <span class="material-symbols-outlined text-3xl"
-                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
-                        </div>
-                        <div class="flex gap-2">
-                            <span
-                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
-                            <span
-                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">4
-                                Onglets</span>
-                        </div>
-                    </div>
-                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">Annexe A : Répertoire Lexical de
-                        la Peur</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
-                        Inventaire lexicologique complet indexant les lemmes associés aux affects de la peur, de la
-                        terreur et de l'anxiété. Ce document contient les ventilations fréquentielles brutes et
-                        relatives par président (Bush, Obama, Trump) ainsi que par sous-période chronologique.
-                    </p>
-                </div>
-                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
-                    <span class="text-xs font-mono text-outline">Format : .xlsx (1.2 Mo)</span>
-                    <a href="https://docs.google.com/spreadsheets/d/ID_GOOGLE_SHEETS_ANNEXE_A" target="_blank"
-                        class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
-                        Visualiser le tableau
-                        <span
-                            class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
-                    </a>
-                </div>
-            </div>
-
+            <!-- KEYWORDS -->
             <div
                 class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
                 <div>
@@ -87,100 +53,562 @@
                         </div>
                         <div class="flex gap-2">
                             <span
-                                class="bg-emerald-100 text-emerald-800 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel
+                                & json</span>
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">
+                                3 Onglets</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">
+                                Chapitre 1</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">Keywords : 100 keywords de chaque
+                        président</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
+                        Chaque onglet du fichier présente les 100 premiers keywords issus de chaque sous-corpus. Le
+                        fichier .json présente les résultats du script de comparaison : quels mots sont présents chez
+                        les trois présidents, quels mots sont président unique chez l'un ou l'autre. Aucun mot-clé
+                        saillant n'est partagé par les trois présidents. Aucun mot-clé partagé <i>uniquement</i>par Bush
+                        et Trump.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (32 Ko)</span>
+                    <div class="flex items-center gap-2">
+                        <a href="https://docs.google.com/spreadsheets/d/12t8Z0wMiuTMVUjyKMRyw8i-2D1RkOP6D/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                            target="_blank"
+                            class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                            Tableau
+                            <span
+                                class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1exroVL-c0u6mcWJ_4evb-ob828ZpJWu7/view?usp=sharing"
+                            target="_blank"
+                            class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                            Résultats
+                            <span
+                                class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- IDEOLOGY -->
+            <div
+                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
                             <span
                                 class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">2
                                 Onglets</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">
+                                Chapitre 2</span>
                         </div>
                     </div>
-                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">Annexe B : Matrices de
-                        Cooccurrences & TXM</h3>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC A : Ideologue & Ideology
+                    </h3>
                     <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
-                        Tableaux de contingence croisant les mots-pôles de la peur avec leurs environnements contextuels
-                        immédiats (L5, R5). Données exportées et normalisées après traitement textométrique sous TXM,
-                        indispensables pour l'évaluation des indices de spécificité rhétorique.
+                        Relevé des occurences de <i>ideologue</i> et <i>ideology</i> dans le corpus
                     </p>
                 </div>
                 <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
-                    <span class="text-xs font-mono text-outline">Format : .xlsx (3.4 Mo)</span>
-                    <a href="https://docs.google.com/spreadsheets/d/ID_GOOGLE_SHEETS_ANNEXE_B" target="_blank"
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (208 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1eKdquFhkjfWggf9pchRcx5npAZ7l9hTa/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
                         class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
-                        Visualiser le tableau
+                        Tableau
                         <span
                             class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
                     </a>
                 </div>
             </div>
-
+            <!--AFRAID-->
             <div
                 class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
                 <div>
                     <div class="flex justify-between items-start mb-6">
                         <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
                             <span class="material-symbols-outlined text-3xl"
-                                style="font-variation-settings: 'FILL' 1;">assignment_ind</span>
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
                         </div>
                         <div class="flex gap-2">
                             <span
-                                class="bg-emerald-100 text-emerald-800 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
                             <span
                                 class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">1
                                 Onglet</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                3</span>
                         </div>
                     </div>
-                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">Annexe C : Métadonnées Complètes
-                        du Corpus</h3>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC B : Afraid</h3>
                     <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
-                        Tableau récapitulatif listant l'intégralité des 3 344 textes analysés. Comprend les colonnes de
-                        classification fine : date exacte, locuteur, nature évenementielle du discours (State of the
-                        Union, allocution de crise, meetings de campagne), volume exact en mots et clés d'indexation
-                        internes.
+                        Relevé de <i>afraid</i> dans le corpus.
                     </p>
                 </div>
                 <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
-                    <span class="text-xs font-mono text-outline">Format : .xlsx (850 Ko)</span>
-                    <a href="https://docs.google.com/spreadsheets/d/ID_GOOGLE_SHEETS_ANNEXE_C" target="_blank"
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (72 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1CjPcMxxe71nYe14_f0kkXru0j8U1RNVE/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
                         class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
-                        Visualiser le tableau
+                        Tableau
                         <span
                             class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
                     </a>
                 </div>
             </div>
-
+            <!--FEAR-->
             <div
                 class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
                 <div>
                     <div class="flex justify-between items-start mb-6">
                         <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
                             <span class="material-symbols-outlined text-3xl"
-                                style="font-variation-settings: 'FILL' 1;">account_tree</span>
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
                         </div>
                         <div class="flex gap-2">
                             <span
-                                class="bg-emerald-100 text-emerald-800 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
                             <span
-                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">3
-                                Onglets</span>
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">1
+                                Onglet</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                3</span>
                         </div>
                     </div>
-                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">Annexe D : Typologies
-                        Lexico-Grammaticales</h3>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC C : Fear</h3>
                     <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
-                        Classifications lexico-grammaticales de l'interface syntaxe/sémantique des modificateurs
-                        adjectivaux de l'émotion. Permet d'analyser comment l'adjectif (ex: *horrific*, *terrifying*)
-                        opère un glissement de la simple dénotation vers une fonction de référence idéologique.
+                        Relevé de <i>fear</i> dans le corpus.
                     </p>
                 </div>
                 <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
-                    <span class="text-xs font-mono text-outline">Format : .xlsx (1.7 Mo)</span>
-                    <a href="https://docs.google.com/spreadsheets/d/ID_GOOGLE_SHEETS_ANNEXE_D" target="_blank"
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (170 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1_HQOuyDr9V7D1JLVWv7pZ8ZEfLq5rHZu/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
                         class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
-                        Visualiser le tableau
+                        Tableau
                         <span
                             class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
                     </a>
                 </div>
+            </div>
+            <!--PANIC-->
+            <div
+                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">1
+                                Onglet</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                3</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC D : Panic</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
+                        Relevé de <i>panic</i> dans le corpus.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (20 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1xac8kv7QXLlWO9Nl6L7-8AafKMQuUIrO/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                        Tableau
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+            <!--Scare-->
+            <div
+                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">1
+                                Onglet</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                3</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC E : Scare</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
+                        Relevé de <i>scare</i> dans le corpus.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (72 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1u8ydgHKOta_ZKJeIO6-0I5tIrTCjSgQ9/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                        Tableau
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+            <!--TERROR-->
+            <div
+                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">1
+                                Onglet</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                3</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC F : Terror</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
+                        Relevé de <i>terror</i> dans le corpus.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (680 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1AUvaN6SViFGoXXuILk6LsL9hUbQHRp6f/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                        Tableau
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+            <!--HORROR-->
+            <div
+                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">7
+                                Onglets</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                3</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC G : Horror</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
+                        Relevé de <i>horror</i> dans le corpus. Contient les différentes de sélection permettant
+                        d'établir si une occurrence fonctionne comme un <i>shell noun</i>.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (105 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1128ZK3pazVTbH-EaOeNoyUjuYhGwQyC0/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                        Tableau
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+            <!--RANG NOMS-->
+            <div
+                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">analytics</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">1
+                                Onglet</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                3</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">Rangs : noms
+                    </h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
+                        Rangs des noms du corpus, avec fréquences brutes et relatives, ALDF, rangs minimums et rangs
+                        denses.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (996 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1ihG6bbDCx6jxHHZdDjmgGKW4jz-XnG2u/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                        Tableau
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+            <!--WATER META-->
+            <div
+                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">6
+                                Onglets</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                4</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC H : Métaphores de l'eau</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
+                        Relevé des métaphores de l'eau à partir de mots-clés. Tri par président réalisé dans différents
+                        onglets.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (765 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1haZveneIVsUikWVt-ti7jJdZUCPQFHdE/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                        Tableau
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+            <!--SICKNESS META-->
+            <div
+                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">6
+                                Onglets</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                4</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC I : Métaphores de la maladie
+                    </h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
+                        Relevé des métaphores de la maladie à partir de mots-clés. Les onglets montrent les différentes
+                        étapes du tri et le calcul des fréquences.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (610 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1snTGBmqbC93xUBzMIzZECVvaozcpAmq1/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                        Tableau
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+            <!--WAR META-->
+            <div
+                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">3
+                                Onglets</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                4</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC J : Métaphores de la guerre
+                    </h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
+                        Relevé des emplois métaphorique du lexème <i>war</i>>, répartis en trois onglets, par président.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (134 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1tId4thJ-U-sbVPkJXNQGLXELFlgQxcWO/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                        Tableau
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+            <!--Guerre-->
+            <div
+                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">2
+                                Onglets</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                4</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC K : Lexique de la guerre
+                    </h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
+                        Relevé du lexique de la guerre présent dans le corpus à partir d'une liste de mots-clés.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (8 543 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1MDSO-3PB-MuejR9dhbUSN9-4quZhHORU/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                        Tableau
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+            <!--Religion-->
+            <div
+                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">8
+                                Onglets</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                5</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC L : Lexique Religieux
+                    </h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
+                        Relevé des <i>faith-terms</i> et des <i>god-terms</i> de Hughes (2020) dans les sous-corpus Bush
+                        et Trump.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (8 543 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/1MDSO-3PB-MuejR9dhbUSN9-4quZhHORU/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                        Tableau
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+            <!--Mensonge-->
+            <div
+                class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">table_chart</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Excel</span>
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">3
+                                Onglets</span>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Chapitre
+                                6</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline text-2xl font-semibold text-primary mb-3">KWIC M : Mensonge
+                    </h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-6 text-justify">
+                        Relevé du nom et du verbe "lie".
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+                    <span class="text-xs font-mono text-outline">Format : .xlsx (8 543 Ko)</span>
+                    <a href="https://docs.google.com/spreadsheets/d/18r2FDc7MnvQU2g8zVZh4eHxzCQLHdvux/edit?usp=sharing&ouid=103325052536898776539&rtpof=true&sd=true"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-4 py-2.5 text-xs font-label uppercase tracking-widest rounded shadow-sm transition-colors group">
+                        Tableau
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                    </a>
+                </div>
+            </div>
             </div>
 
         </section>
