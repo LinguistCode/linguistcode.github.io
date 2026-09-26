@@ -1,31 +1,3 @@
-#!/usr/bin/env python3
-"""
-Compare l'annotation automatique (colonne "Valence", ex. produite par
-analyse_valence_collocations.py) à une annotation manuelle de contrôle
-(colonne "Verification"), pour évaluer la fiabilité du script.
-
-Calcule :
-- le taux d'accord simple (% de lignes où les deux annotations concordent)
-- le kappa de Cohen (accord corrigé du hasard, mesure standard en
-  linguistique de corpus / annotation de contenu)
-- une matrice de confusion (pour voir sur quelles paires de labels
-  portent les désaccords : ex. Neutre confondu avec Positif, etc.)
-
-Ne modifie AUCUNE colonne du fichier : lecture seule, résultats affichés
-dans la console (et, en option, exportés dans un fichier texte).
-
-Le script repère les colonnes par leur EN-TÊTE ("Valence" et
-"Verification"), peu importe leur position exacte dans le tableau.
-La colonne "Valence" peut contenir du texte du type
-"Positif (+0.620, VADER)" : seul le premier mot (le label) est comparé.
-
-Installation :
-    python -m pip install openpyxl
-
-Usage :
-    python comparer_annotations.py fichier.xlsx
-"""
-
 import sys
 import re
 import openpyxl
@@ -51,8 +23,10 @@ def extraire_label(valeur):
 
 
 def trouver_colonne(ws, nom_recherche):
-    """Retourne le numéro de colonne dont l'en-tête (ligne 1) correspond
-    au nom recherché (insensible à la casse/accents approximative)."""
+    ###------------------------------------------------------------------
+    ### Retourne le numéro de colonne dont l'en-tête (ligne 1) correspond
+    ### au nom recherché (insensible à la casse/accents approximative).
+    ###------------------------------------------------------------------
     for col in range(1, ws.max_column + 1):
         entete = ws.cell(row=1, column=col).value
         if entete and nom_recherche.lower() in str(entete).lower():
@@ -61,11 +35,11 @@ def trouver_colonne(ws, nom_recherche):
 
 
 def kappa_cohen(paires):
-    """
-    Calcule le kappa de Cohen à partir d'une liste de tuples
-    (label_auto, label_manuel).
-    kappa = (accord_observé - accord_attendu) / (1 - accord_attendu)
-    """
+    ###-------------------------------------------------------------------
+    ### Calcule le kappa de Cohen à partir d'une liste de tuples
+    ### (label_auto, label_manuel).
+    ### kappa = (accord_observé - accord_attendu) / (1 - accord_attendu)
+    ###-------------------------------------------------------------------
     n = len(paires)
     if n == 0:
         return None
@@ -127,8 +101,7 @@ def main(fichier):
         if auto is None or manuel is None:
             continue  # ligne pas encore évaluée manuellement : on l'ignore
         if auto == "Non trouvé":
-            # Cas particulier : le script n'a rien pu évaluer. On le compte
-            # à part plutôt que de fausser l'accord/désaccord.
+            # Cas particulier : le script n'a rien pu évaluer. On le compte à part plutôt que de fausser l'accord/désaccord.
             lignes_ignorees += 1
             continue
 
@@ -150,7 +123,9 @@ def main(fichier):
     for a, m in paires:
         matrice[m][a] += 1
 
-    # --- Affichage -----------------------------------------------------
+    ###--------------------------------------------------------------------
+    ### --- Affichage -----------------------------------------------------
+    ###--------------------------------------------------------------------
     print(f"Fichier : {fichier}")
     print(f"Lignes comparées : {n} "
           f"(+ {lignes_ignorees} ignorées car 'Non trouvé' par le script)")

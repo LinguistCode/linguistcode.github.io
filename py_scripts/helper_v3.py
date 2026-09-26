@@ -7,7 +7,8 @@ def main():
         "1": {"name": "Bush Corpus", "tokens": 3439334},
         "2": {"name": "Obama Corpus", "tokens": 3471270},
         "3": {"name": "Trump Corpus", "tokens": 1626297},
-        "4": {"name": "Full Corpus", "tokens": 8536901}
+        "4": {"name": "Full Corpus", "tokens": 8536901},
+        "5": {"name": "enTenTen Corpus", "tokens": 61585997113}
     }
 
     while True:
@@ -26,7 +27,7 @@ def main():
             for k, v in corpora.items(): 
                 print(f"{k}. {v['name']}")
             
-            c = input("Sélectionnez le corpus (1/2/3/4) : ")
+            c = input("Sélectionnez le corpus (1/2/3/4/5) : ")
             scale = int(input("Base de référence (ex: 10000, 100000) : "))
             raw_input = input("Occurrences brutes (séparées par des points-virgules) : ")
             
@@ -61,17 +62,19 @@ def main():
             for k, v in corpora.items(): 
                 print(f"{k}. {v['name']}")
                 
-            c1 = input("Corpus 1 (1/2/3/4) : ")
-            c2 = input("Corpus 2 (1/2/3/4) : ")
+            c1 = input("Corpus 1 (1/2/3/4/5) : ")
+            c2 = input("Corpus 2 (1/2/3/4/5) : ")
             o1 = int(input(f"Occurrences brutes dans {corpora[c1]['name']} : "))
             o2 = int(input(f"Occurrences brutes dans {corpora[c2]['name']} : "))
             
             n1, n2 = corpora[c1]["tokens"], corpora[c2]["tokens"]
 
+            ###--------------------------------------------------------------------
             # Tableau de contingence 2x2 complet (méthode standard, Dunning 1993) :
             #              mot        reste du corpus
             # Corpus 1     o1         n1 - o1
             # Corpus 2     o2         n2 - o2
+            ###--------------------------------------------------------------------
             autre1 = n1 - o1
             autre2 = n2 - o2
 

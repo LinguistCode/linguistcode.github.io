@@ -63,6 +63,6 @@ def traiter_fichiers_txt(dossier):
 # UTILISATION
 # ==========================================
 
-chemin_du_dossier = r"G:\My Drive\00 - Université\00 - Doctorat\00 - Recherches These\00 - Corpus\BUSH - Janvier à mars 2004 v1" 
+chemin_du_dossier = r"path_to_file" 
 
 traiter_fichiers_txt(chemin_du_dossier)

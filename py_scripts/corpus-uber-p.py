@@ -4,7 +4,7 @@ import math
 from scipy import stats
 
 def calculate_uber_index(tokens):
-    """Calcule l'Indice de Uber pour une liste de tokens."""
+    ###Calcule l'Indice de Uber pour une liste de tokens.
     n_tokens = len(tokens)
     if n_tokens <= 1:
         return 0
@@ -16,11 +16,10 @@ def calculate_uber_index(tokens):
     return (math.log(n_tokens)**2) / (math.log(n_tokens) - math.log(n_types))
 
 def get_uber_scores_for_corpus(directory_path, chunk_size=10000):
-    """
-    Parcourt récursivement un dossier et tous ses sous-dossiers, 
-    lit les fichiers .txt, concatène le texte, le divise en blocs 
-    et calcule l'Indice de Uber.
-    """
+    ###--------------------------------------------------------------------
+    ### Parcourt récursivement un dossier et tous ses sous-dossiers, lit les fichiers .txt, concatène le texte, le divise en blocs 
+    ### et calcule l'Indice de Uber.
+    ###--------------------------------------------------------------------
     all_tokens = []
     
     # 1. Parcours récursif de l'arborescence
@@ -48,9 +47,9 @@ def get_uber_scores_for_corpus(directory_path, chunk_size=10000):
     return scores
 
 def main():
-    # ---------------------------------------------------------
-    # 1. Configuration des chemins
-    # ---------------------------------------------------------
+    ###--------------------------------------------------------------------
+    ### 1. Configuration des chemins
+    ###--------------------------------------------------------------------
     path_bush = r"D:\Local_corpus\Bush"
     path_obama = r"D:\Local_corpus\Obama"
     path_trump = r"D:\Local_corpus\Trump"
@@ -64,9 +63,9 @@ def main():
     
     print(f"Blocs générés : Bush ({len(scores_bush)}), Obama ({len(scores_obama)}), Trump ({len(scores_trump)})\n")
 
-    # ---------------------------------------------------------
-    # 2. Test ANOVA (Analyse de variance globale)
-    # ---------------------------------------------------------
+    ###--------------------------------------------------------------------
+    ### 2. Test ANOVA (Analyse de variance globale)
+    ###--------------------------------------------------------------------
     f_stat, p_value = stats.f_oneway(scores_bush, scores_obama, scores_trump)
     
     print("=== RÉSULTATS ANOVA ===")
@@ -76,9 +75,9 @@ def main():
     if p_value < 0.05:
         print("-> Différence globale significative. Lancement du test post-hoc...\n")
         
-        # ---------------------------------------------------------
-        # 3. Test Post-Hoc de Tukey (Comparaisons par paires)
-        # ---------------------------------------------------------
+        ###--------------------------------------------------------------------
+        ### 3. Test Post-Hoc de Tukey (Comparaisons par paires)
+        ###--------------------------------------------------------------------
         res = stats.tukey_hsd(scores_bush, scores_obama, scores_trump)
         
         print("=== COMPARAISONS PAR PAIRES (TUKEY HSD) ===")

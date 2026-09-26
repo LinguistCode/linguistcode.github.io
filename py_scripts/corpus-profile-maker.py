@@ -43,9 +43,9 @@ def analyser_corpus(dossier, chemin_sortie_json):
     nombre_types = len(types_uniques)
     uber_index = None
 
-    # ==========================================
-    # CALCUL DE L'UBER INDEX
-    # ==========================================
+    ###--------------------------------------------------------------------
+    ### CALCUL DE L'UBER INDEX
+    ###--------------------------------------------------------------------
     # S'assurer qu'il y a des données pour éviter les erreurs mathématiques
     if total_tokens > 0 and nombre_types > 0:
         log_n = math.log(total_tokens)
@@ -59,9 +59,9 @@ def analyser_corpus(dossier, chemin_sortie_json):
         else:
             print("Avertissement : Le nombre de types est égal au nombre de tokens.")
 
-    # ==========================================
-    # CRÉATION ET SAUVEGARDE DU JSON
-    # ==========================================
+    ###--------------------------------------------------------------------
+    ### CRÉATION ET SAUVEGARDE DU JSON
+    ###--------------------------------------------------------------------
     resultats = {
         "dossier_analyse": str(chemin.resolve()),
         "fichiers_traites": len(fichiers_txt),
@@ -77,9 +77,9 @@ def analyser_corpus(dossier, chemin_sortie_json):
     except Exception as e:
          print(f"Erreur lors de la sauvegarde du fichier JSON : {e}")
 
-    # ==========================================
-    # AFFICHAGE DES RÉSULTATS DANS LA CONSOLE
-    # ==========================================
+    ###--------------------------------------------------------------------
+    ### AFFICHAGE DES RÉSULTATS DANS LA CONSOLE
+    ###--------------------------------------------------------------------
     print("=== RÉSULTATS DE L'ANALYSE ===")
     print(f"Tokens : {total_tokens:,}".replace(',', ' '))
     print(f"Types  : {nombre_types:,}".replace(',', ' '))
@@ -88,10 +88,10 @@ def analyser_corpus(dossier, chemin_sortie_json):
     
     print(f"\nLes résultats ont été sauvegardés dans : {chemin_sortie_json}")
 
-# ==========================================
-# CONFIGURATION
-# ==========================================
-dossier_cible = r"D:\Local_corpus\Bush" 
-fichier_json = r"D:\Local_corpus\Bush\profil-bush-updated.json"
+###--------------------------------------------------------------------
+### CONFIGURATION
+###--------------------------------------------------------------------
+dossier_cible = r"path" 
+fichier_json = r"path"
 
 analyser_corpus(dossier_cible, fichier_json)

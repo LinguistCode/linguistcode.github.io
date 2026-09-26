@@ -1,38 +1,3 @@
-#!/usr/bin/env python3
-"""
-Analyse la valence (positif/négatif) et l'émotion de collocations anglaises,
-par comparaison à des dictionnaires lexicaux (approche lexicon-based).
-
-Colonne 1 (A) : "collocation"  -> lue, JAMAIS modifiée
-Colonne 8 (H) : Valence        -> écrite/écrasée
-Colonne 9 (I) : Émotion        -> écrite/écrasée
-Toutes les autres colonnes sont laissées strictement intactes.
-
-Méthode (en cascade, pour maximiser la couverture ET la fiabilité) :
-1. VADER (vaderSentiment) : lexique de sentiment ~7500 mots, gère les
-   négations/intensificateurs ("not good", "very bad"). Essayé en premier
-   car le plus fin.
-2. SentiWordNet (via NLTK/WordNet) : lexique beaucoup plus large
-   (~117 000 mots), utilisé UNIQUEMENT si aucun mot de l'expression n'est
-   dans VADER. Chaque mot est lemmatisé et étiqueté grammaticalement
-   (POS-tagging) pour choisir le bon sens WordNet.
-3. "Non trouvé" seulement si NI VADER NI SentiWordNet ne connaissent le mot.
-La source utilisée est indiquée dans la cellule, pour auditer la fiabilité.
-
-Émotion (secondaire) : NRCLex (NRC Word-Emotion Association Lexicon).
-Best-effort : si rien n'est trouvé ou si le module échoue, le script
-continue sans bloquer l'analyse de valence (qui reste prioritaire).
-
-Installation :
-    python -m pip install openpyxl vaderSentiment nrclex nltk
-(les données NLTK nécessaires - wordnet, sentiwordnet, tagger - sont
-téléchargées automatiquement au premier lancement : connexion internet
-requise la première fois)
-
-Usage :
-    python analyse_valence_collocations.py entree.xlsx sortie.xlsx
-"""
-
 import sys
 import re
 import openpyxl
@@ -66,8 +31,7 @@ COLONNE_ENTREE = 1      # A : collocation
 COLONNE_VALENCE = 8     # H
 COLONNE_EMOTION = 9     # I
 
-# Seuils recommandés par les auteurs de VADER pour le score "compound"
-# (conservés aussi pour SentiWordNet, échelle comparable -1..+1)
+# Seuils recommandés par les auteurs de VADER pour le score "compound" (conservés aussi pour SentiWordNet, échelle comparable -1..+1)
 SEUIL_POSITIF = 0.05
 SEUIL_NEGATIF = -0.05
 
@@ -171,8 +135,7 @@ def analyser_emotion(texte):
                  if k not in ("positive", "negative") and v > 0}
 
         if not freqs:
-            # Repli : tenter avec les lemmes (forme de base), qui matchent
-            # parfois mieux le lexique NRC que la forme fléchie d'origine.
+            # Repli : tenter avec les lemmes (forme de base), qui matchent parfois mieux le lexique NRC que la forme fléchie d'origine.
             mots = extraire_mots(texte)
             try:
                 tags = pos_tag(mots)
