@@ -1,15 +1,23 @@
 
-# Pour trouver quels mots d'un texte sont présents dans le NRC Emotion Intensity Lexicon de Mohammad (2018) : https://saifmohammad.com/WebPages/AffectIntensity.htm
-#Usage:
-#    fear_lexicon.py --lexicon LEXIQUE.txt --corpus CORPUS.txt [--out resultats.tsv]
+### ---------------------
+# Which words of a text appear in the NRC Emotion Intensity Lexicon (Mohammad 2018):
+# Usage:
+#   fear_lexicon.py --lexicon LEXIQUE.txt --corpus CORPUS.txt [--out resultats.tsv]
+### ---------------------
 
-import argparse # module pour analyser les arguments passés CLI
-import re # module pour les regex (ici pour la tokenisation)
-import sys # module pour les flux d'entrée/sortie (ici pour stderr et stdout)
-from collections import Counter # classe qui permet de compter les occurrences d'éléments dans un itérable (ici les tokens du corpus)
+import argparse # command-line arguments (--lexicon, --corpus, --out)
+import re # regex, for the tokenisation
+import sys # stdout / stderr streams
+from collections import Counter # token counts in one line
 
 
-def load_lexicon(path): # charge le fichier lexique du NRCEIL, récupère les mots et leurs scores. Accepte tabulations ou espaces comme séparateurs. 
+### ---------------------
+# Load the lexicon -> {word: score}. Tabs or spaces both accepted.
+# Takes the FIRST column as the word and the LAST one as the score,
+# so the full NRC file (word / emotion / score) keeps only the last emotion
+# seen for a word -> feed it the fear-only file.
+### ---------------------
+def load_lexicon(path):
     lexicon = {}
     with open(path, encoding="utf-8") as f:
         for lineno, line in enumerate(f, start=1):
@@ -17,7 +25,7 @@ def load_lexicon(path): # charge le fichier lexique du NRCEIL, récupère les mo
             if not line.strip():
                 continue
             parts = line.split("\t")
-            parts = [p for p in parts if p != ""]  # gère les doubles tabulations
+            parts = [p for p in parts if p != ""]  ### copes with double tabs
             if len(parts) < 2:
                 parts = line.split()
             if len(parts) < 2:
@@ -36,7 +44,7 @@ def load_lexicon(path): # charge le fichier lexique du NRCEIL, récupère les mo
 
 
 def tokenize(text):
-    #Tokenisation simple: suites de lettres (Unicode), minuscules.
+    # Simple tokenisation: runs of Unicode letters, lowercased (no digits, no "_").
     return re.findall(r"[^\W\d_]+", text.lower(), re.UNICODE)
 
 
@@ -54,14 +62,16 @@ def main():
     tokens = tokenize(text)
     counts = Counter(tokens)
 
+    # Keep only the types that are in the lexicon: (word, frequency, score).
     matches = [
         (word, count, lexicon[word])
         for word, count in counts.items()
         if word in lexicon
     ]
-    # tri par fréquence décroissante, puis alphabétique 
+    # Sort by frequency (descending), then alphabetically for ties.
     matches.sort(key=lambda x: (-x[1], x[0]))
 
+    # Results go to the --out file if given, otherwise to the console.
     out = open(args.out, "w", encoding="utf-8") if args.out else sys.stdout
     try:
         out.write("\n")
@@ -72,6 +82,7 @@ def main():
         if args.out:
             out.close()
 
+    # Summary on stderr so it never ends up inside the --out file.
     total_tokens = len(tokens)
     total_matches = sum(c for _, c, _ in matches)
     print(file=sys.stderr)
@@ -80,7 +91,7 @@ def main():
         f"({total_matches} occurrences sur {total_tokens} tokens)",
         file=sys.stderr,
     )
-    print("-" *30, file=sys.stderr) # séparateur visiuel pour bien marquer la fin du programme
+    print("-" *30, file=sys.stderr) # visual separator to mark the end of the run
 
 if __name__ == "__main__":
     main()

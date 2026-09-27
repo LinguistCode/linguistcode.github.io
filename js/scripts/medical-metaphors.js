@@ -1,20 +1,15 @@
 /**
  * medical-metaphors.js
  * -----------------------------------------------------------------
- * Portage JS de medical-metaphors.py.
- *
- * Contrairement aux autres modules, celui-ci accepte un fichier .xlsx
- * fourni par l'utilisateur (lu entièrement côté client via SheetJS —
- * aucun envoi réseau, rien ne quitte le navigateur). La classification
- * reproduit fidèlement les règles Python (mêmes regex, même ordre de
- * priorité), puis propose le résultat en téléchargement CSV.
+ * La classification produite par se script est une adaptation du script python qui utilise spaCy. 
+ * Moins précis, il propose des résultats satisfaisants. Téléchargement résultats en CSV.
  *
  * Colonnes attendues dans le fichier (insensible à la casse) :
  *   Kwic, Left, Right   — export KWIC Sketch Engine standard.
  */
 
 (function () {
-    // ---------- Règles portées telles quelles depuis medical-metaphors.py ----------
+    // ---------- Règles de détection ----------
 
     const LITERAL_PATTERNS = [
         /\b(diagnosed|diagnosis|doctor|physician|hospital|clinic|treatment|therapy|medicine|patient|medical|health care|healthcare)\b/i,
@@ -155,8 +150,8 @@
     }
 
     function normalizeColumns(rows) {
-        // Rend la lecture des colonnes insensible à la casse/espaces, comme
-        // pourrait le faire un utilisateur import son propre export KWIC.
+        // Rend la lecture des colonnes insensible à la casse/espaces, 
+        // comme pourrait le faire un utilisateur import son propre export KWIC.
         return rows.map(row => {
             const normalized = {};
             for (const key of Object.keys(row)) {

@@ -1,14 +1,11 @@
-/**
- * cochran.js
+/**--Cochran.js--
  * -----------------------------------------------------------------
- * Portage JS de cochran.py — calcul de la taille d'échantillon requise
- * (formule de Cochran, avec correction pour population finie).
- * Purement arithmétique, aucune dépendance externe : portage 1:1.
+ * calcul de la taille requise pour avoir un échantillon représentatif
+ * -----------------------------------------------------------------
  */
 
 (function () {
-    // Mêmes valeurs par défaut que le script Python (issues de la thèse)
-    const DEFAULTS = {
+    const DEFAULTS = { /*Valeurs utilisées dans la thèse, détaillées dans le chapitre 4*/
         N: 9958,
         Z: 1.96,
         p: 0.5,

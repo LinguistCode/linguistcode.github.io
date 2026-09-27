@@ -1,15 +1,8 @@
-/**
- * keywords-compare.js
- * -----------------------------------------------------------------
- * Portage JS de keywords-compare.py.
- * Compare 3 fichiers .xlsx de keywords (ex: top 100 par président),
- * calcule les intersections/différences (logique de Venn), affiche
- * les résultats dans le terminal et propose le même export JSON que
- * le script Python original.
- *
- * Dépendance : SheetJS (xlsx.full.min.js). Chargée dynamiquement au
- * premier lancement si elle n'est pas déjà présente sur la page —
- * aucune modification du HTML n'est nécessaire.
+/**--keywords-compare.js--
+ * -------------------------------------------------------------
+ * Compare 3 fichiers .xlsx de keywords, calcule les intersections/différences (logique de Venn), 
+ * affiche les résultats dans le terminal et propose le même export JSON que le script Python original.
+ * -------------------------------------------------------------
  */
 
 (function () {

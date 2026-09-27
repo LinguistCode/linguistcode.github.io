@@ -483,37 +483,49 @@
 
     <script>
         // 1. MANIFESTE DES SCRIPTS
-        // Mettez ici les informations et le chemin vers vos fichiers .py (dossier local ou URL raw github)
+        // Mettre ici les informations et le chemin vers scripts .py
         const scriptsManifest = [
             {
-                title: "Préparation et Nettoyage de Corpus",
-                description: "Traitement des fichiers bruts, suppression des annotations entre crochets (applaudissements, rires) et renommage intelligent basé sur l'extraction des métadonnées du fichier texte.",
-                tags: ["Python", "Regex", "OS"],
-                filepath: "./py_scripts/cleaning-corpus.py"
+                title: "Nettoyage et renommage du corpus",
+                description: "Traitement des fichiers bruts de l'American Presidency Project : renommage normalisé (initiale du président, date, titre), suppression des cinq lignes d'en-tête et des annotations de réaction du public entre crochets. Deux rapports JSON recensent les marqueurs de locuteur (« The President: ») et les crochets inattendus, à vérifier manuellement.",
+                tags: ["Python", "Regex", "JSON"],
+                filepath: "./py_scripts/full-cleaner.py"
             },
             {
-                title: "Génération de l'Index JSON",
-                description: "Scanner de répertoires récursif (pathlib) qui extrait les noms de fichiers pour construire une base de données JSON complète des discours (Président, Date, Titre) pour le web.",
-                tags: ["Python", "Pathlib", "JSON"],
-                filepath: "./py_scripts/corpus-uber-p.py"
+                title: "Comptage des discours",
+                description: "Décompte récursif des fichiers texte d'un dossier du corpus, utilisé pour contrôler l'intégrité du corpus après chaque étape de traitement.",
+                tags: ["Python", "Pathlib"],
+                filepath: "./py_scripts/count-speeches.py"
+            },
+            {
+                title: "Profil lexical du corpus (tokenisation regex)",
+                description: "Calcul du nombre de tokens, du nombre de types et de l'indice de richesse lexicale Über sur l'ensemble des fichiers d'un dossier, avec une tokenisation par expression régulière (lettres uniquement), et export JSON des résultats.",
+                tags: ["Python", "Regex", "JSON"],
+                filepath: "./py_scripts/corpus-profile-maker.py"
+            },
+            {
+                title: "Comptage Tokens/Types et Über Index via spaCy",
+                description: "Analyse NLP d'un corpus de fichiers texte : tokenisation linguistique avec spaCy, comptage des tokens et types uniques, calcul de l'indice de richesse lexicale Über, avec export JSON des résultats. Une version démonstrative de ce pipeline est disponible dans le terminal ci-dessous (spaCy n'a pas d'équivalent JavaScript exécutable côté navigateur).",
+                tags: ["Python", "spaCy", "NLP"],
+                filepath: "./py_scripts/NLP-count.py"
             },
             {
                 title: "Fréquence relative, Index Über & Log-vraisemblance",
-                description: "Outil interactif en ligne de commande calculant trois statistiques de corpus sur les données Bush / Obama / Trump / Full : fréquence relative normalisée, index de richesse lexicale Über, et test de keyness par log-vraisemblance (G²) avec p-value.",
+                description: "Outil interactif en ligne de commande calculant trois statistiques sur les corpus Bush / Obama / Trump / Full et sur le corpus de référence enTenTen : fréquence relative normalisée, indice de richesse lexicale Über, et test de keyness par log-vraisemblance (G²) avec p-value.",
                 tags: ["Python", "SciPy", "Statistiques"],
-                filepath: "./py_scripts/helper_v2.py"
+                filepath: "./py_scripts/helper_v3.py"
             },
             {
-                title: "Classification des Métaphores de Maladie",
-                description: "Classifieur littéral / métaphorique / ambigu appliqué aux concordances KWIC du champ lexical de la maladie, basé sur des règles lexicales et un système de score contextuel avec départage par mot-nœud.",
-                tags: ["Python", "Pandas", "Regex"],
-                filepath: "./py_scripts/medical-metaphors.py"
+                title: "Comparaison de la richesse lexicale par blocs (ANOVA)",
+                description: "Découpage de chaque corpus présidentiel en blocs de 10 000 tokens et calcul de l'indice Über par bloc. Les trois distributions sont comparées par une ANOVA à un facteur, suivie d'un test post-hoc de Tukey HSD lorsque la différence globale est significative.",
+                tags: ["Python", "SciPy", "Statistiques"],
+                filepath: "./py_scripts/corpus-uber-p.py"
             },
             {
-                title: "Comparaison des Keywords entre Présidents",
-                description: "Chargement de trois listes de keywords (fichiers Excel), puis calcul des ensembles communs, spécifiques et partagés par paire via la logique des ensembles (Venn), avec export JSON structuré des résultats.",
-                tags: ["Python", "Pandas", "JSON"],
-                filepath: "./py_scripts/keywords-compare.py"
+                title: "Test bootstrap sur l'indice Über",
+                description: "Comparaison de l'indice Über de deux textes par rééchantillonnage bootstrap (10 000 itérations) : intervalles de confiance à 95 % et p-value unilatérale de la différence.",
+                tags: ["Python", "NumPy", "Statistiques"],
+                filepath: "./py_scripts/uber_bootstrap.py"
             },
             {
                 title: "Calculateur d'Échantillon (Formule de Cochran)",
@@ -522,12 +534,35 @@
                 filepath: "./py_scripts/cochran.py"
             },
             {
-                title: "Comptage Tokens/Types et Über Index via spaCy",
-                description: "Analyse NLP d'un corpus de fichiers texte : tokenisation linguistique avec spaCy, comptage des tokens et types uniques, calcul de l'indice de richesse lexicale Über, avec export JSON des résultats. Une version démonstrative de ce pipeline est disponible dans le terminal ci-dessous (spaCy n'a pas d'équivalent JavaScript exécutable côté navigateur).",
-                tags: ["Python", "spaCy", "NLP"],
-                filepath: "./py_scripts/NLP-count.py"
+                title: "Comparaison des Keywords entre Présidents",
+                description: "Chargement de trois listes de keywords (fichiers Excel), puis calcul des ensembles communs, spécifiques et partagés par paire via la logique des ensembles (Venn), avec export JSON structuré des résultats.",
+                tags: ["Python", "Pandas", "JSON"],
+                filepath: "./py_scripts/keywords-compare.py"
+            },
+            {
+                title: "Repérage lexical avec le NRC Emotion Intensity Lexicon",
+                description: "Identification des mots d'un texte présents dans le NRC Emotion Intensity Lexicon (Mohammad 2018), avec leur fréquence et leur score d'intensité, triés par fréquence décroissante.",
+                tags: ["Python", "Lexique", "CLI"],
+                filepath: "./py_scripts/fear_lexicon.py"
+            },
+            {
+                title: "Valence et émotion des collocations",
+                description: "Attribution automatique d'une valence (positive, négative ou neutre) à chaque collocation d'un fichier Excel, avec VADER et, à défaut, SentiWordNet, ainsi que de l'émotion dominante selon le lexique NRC (NRCLex).",
+                tags: ["Python", "NLTK", "VADER"],
+                filepath: "./py_scripts/coloc_eval.py"
+            },
+            {
+                title: "Fiabilité de l'annotation automatique (kappa de Cohen)",
+                description: "Comparaison des valences attribuées automatiquement avec l'annotation manuelle : taux d'accord, kappa de Cohen interprété selon la grille de Landis & Koch (1977), matrice de confusion et détail des désaccords.",
+                tags: ["Python", "OpenPyXL", "Statistiques"],
+                filepath: "./py_scripts/coloc_eval_kappa.py"
+            },
+            {
+                title: "Classification des métaphores de la maladie",
+                description: "Classifieur littéral / métaphorique / ambigu appliqué aux concordances KWIC du champ lexical de la maladie, fondé sur des marqueurs lexicaux, des patrons syntaxiques spaCy (« the cancer of… », « infected by… ») et une heuristique des noms abstraits. Inclut des tests de régression et le calcul de la fiabilité inter-annotateurs (précision, rappel, F1, kappa de Cohen).",
+                tags: ["Python", "spaCy", "Pandas"],
+                filepath: "./py_scripts/disease_metaphor_v1.py"
             }
-
         ];
 
         // 2. FONCTION DE CHARGEMENT DYNAMIQUE (Mise à jour avec Accordéon)
@@ -597,19 +632,28 @@
          MOTEUR DE TERMINAL + SCRIPTS EXÉCUTABLES
          ------------------------------------------------------------
          Pour ajouter un nouveau script au terminal :
-           1. Créez js/scripts/mon-script.js (copiez js/scripts/corpus-stats.js
-              comme modèle et appelez registerTerminalScript({...}) dedans).
-           2. Ajoutez une ligne <script src="js/scripts/mon-script.js"></script>
+           1. Créer js/scripts/mon-script.js (copier js/scripts/corpus-stats.js
+              comme modèle et appeler registerTerminalScript({...}) dedans).
+           2. Ajouter une ligne <script src="js/scripts/mon-script.js"></script>
               ci-dessous.
-         L'ordre de chargement importe : le registre d'abord, puis les
-         scripts individuels, puis le moteur en dernier.
+         L'ordre de chargement importe : le registre et les utilitaires
+         partagés (scripts-helpers.js) d'abord, puis les scripts
+         individuels, puis le moteur en dernier !
     ============================================================ -->
     <script src="js/scripts-registry.js"></script>
+    <script src="js/scripts-helpers.js"></script>
     <script src="js/scripts/corpus-stats.js"></script>
-    <script src="js/scripts/medical-metaphors.js"></script>
+    <script src="js/scripts/count-speeches.js"></script>
+    <script src="js/scripts/full-cleaner.js"></script>
+    <script src="js/scripts/corpus-profile.js"></script>
+    <script src="js/scripts/nlp-count-demo.js"></script>
+    <script src="js/scripts/uber-anova.js"></script>
+    <script src="js/scripts/uber-bootstrap.js"></script>
     <script src="js/scripts/cochran.js"></script>
     <script src="js/scripts/keywords-compare.js"></script>
-    <script src="js/scripts/nlp-count-demo.js"></script>
+    <script src="js/scripts/fear-lexicon.js"></script>
+    <script src="js/scripts/coloc-kappa.js"></script>
+    <script src="js/scripts/medical-metaphors.js"></script>
 
     <!--Actual engine & sidebar logic below-->
     <script src="js/terminal-engine.js"></script>

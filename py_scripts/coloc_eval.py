@@ -1,9 +1,19 @@
+### ---------------------
+# Step 1: automatic valence (+ dominant emotion) of each collocation in an .xlsx file (collocations in column A).
+#   Valence -> VADER first; if VADER knows none of the words, SentiWordNet.
+#   Emotion -> NRCLex (secondary, optional).
+# Results written in columns H (Valence) and I (Émotion) of a NEW file.
+# Step 2 = coloc_eval_kappa.py, to check these labels against my manual ones.
+### ---------------------
+
 import sys
 import re
 import openpyxl
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-# --- Téléchargement (silencieux, best-effort) des ressources NLTK ----------
+### ---------------------
+### NLTK resources: silent, best-effort download (already there -> nothing happens)
+### ---------------------
 import nltk
 for _res in ("punkt", "punkt_tab", "wordnet", "omw-1.4", "sentiwordnet",
              "averaged_perceptron_tagger", "averaged_perceptron_tagger_eng"):
@@ -19,22 +29,28 @@ from nltk.stem import WordNetLemmatizer
 
 LEMMATIZER = WordNetLemmatizer()
 
-# --- Émotion (secondaire) : NRCLex, dépendance optionnelle ------------------
+### ---------------------
+### Emotion = secondary, NRCLex is optional: the script still runs without it.
+### ---------------------
 try:
     from nrclex import NRCLex
     NRCLEX_OK = True
 except ImportError:
     NRCLEX_OK = False
 
-# --- Paramètres --------------------------------------------------------
-COLONNE_ENTREE = 1      # A : collocation
-COLONNE_VALENCE = 8     # H
-COLONNE_EMOTION = 9     # I
+### ---------------------
+### SETTINGS
+### ---------------------
+COLONNE_ENTREE = 1      ### A: collocation
+COLONNE_VALENCE = 8     ### H
+COLONNE_EMOTION = 9     ### I
 
-# Seuils recommandés par les auteurs de VADER pour le score "compound" (conservés aussi pour SentiWordNet, échelle comparable -1..+1)
+### Thresholds recommended by the VADER authors for the "compound" score.
+### Reused for SentiWordNet since its scale is comparable (-1..+1).
 SEUIL_POSITIF = 0.05
 SEUIL_NEGATIF = -0.05
 
+### NRC emotion labels -> French labels written in the file.
 EMOTIONS_FR = {
     "fear": "Peur", "anger": "Colère", "anticip": "Anticipation",
     "anticipation": "Anticipation", "trust": "Confiance", "surprise": "Surprise",
@@ -43,12 +59,12 @@ EMOTIONS_FR = {
 
 
 def extraire_mots(texte):
-    """Tokenisation simple : suites de lettres/apostrophes, en minuscules."""
+    ### Basic tokenisation: runs of ASCII letters/apostrophes, lowercased.
     return re.findall(r"[a-zA-Z']+", str(texte).lower())
 
 
 def treebank_vers_wordnet(tag):
-    """Convertit un tag POS (NLTK/Penn Treebank) vers la constante WordNet."""
+    ### NLTK POS tag (Penn Treebank) -> WordNet constant. None = not a content word.
     if tag.startswith("J"):
         return wn.ADJ
     if tag.startswith("V"):
@@ -61,20 +77,19 @@ def treebank_vers_wordnet(tag):
 
 
 def score_sentiwordnet(texte):
-    """
-    Score de valence via SentiWordNet, moyenné sur les mots reconnus.
-    Chaque mot est lemmatisé puis on prend le sens WordNet le plus fréquent
-    (première entrée), dont le score = pos_score - neg_score (échelle -1..+1,
-    l'objectivité/neutralité venant réduire ce score vers 0).
-    Retourne None si aucun mot n'est reconnu.
-    """
+    ### ---------------------
+    ### Fallback valence with SentiWordNet, averaged over the recognised words.
+    ### Each word: lemmatised, then FIRST WordNet sense = most frequent one,
+    ### score = pos_score - neg_score (-1..+1, objectivity pulls it towards 0).
+    ### None if no word is recognised at all.
+    ### ---------------------
     mots = extraire_mots(texte)
     if not mots:
         return None
     try:
         tags = pos_tag(mots)
     except Exception:
-        tags = [(m, "NN") for m in mots]  # repli : traiter tout comme nom
+        tags = [(m, "NN") for m in mots]  ### fallback: treat everything as a noun
 
     scores = []
     for mot, tag in tags:
@@ -88,7 +103,7 @@ def score_sentiwordnet(texte):
             synsets = []
         if not synsets:
             continue
-        sens_principal = synsets[0]  # sens le plus fréquent dans WordNet
+        sens_principal = synsets[0]  ### most frequent sense in WordNet
         scores.append(sens_principal.pos_score() - sens_principal.neg_score())
 
     if not scores:
@@ -97,11 +112,13 @@ def score_sentiwordnet(texte):
 
 
 def analyser_valence(texte, analyzer):
-    """
-    Retourne (label, score, source).
-    label : "Positif" / "Négatif" / "Neutre" / "Non trouvé".
-    source : "VADER" ou "SentiWordNet" (ou None si "Non trouvé").
-    """
+    ### ---------------------
+    ### Returns (label, score, source).
+    ### label: "Positif" / "Négatif" / "Neutre" / "Non trouvé".
+    ### source: "VADER" or "SentiWordNet" (None if "Non trouvé").
+    ### VADER only if at least one word is in its lexicon; otherwise its
+    ### compound = 0 would pass for "Neutre" when it really means "unknown".
+    ### ---------------------
     mots = extraire_mots(texte)
     mots_connus_vader = [m for m in mots if m in analyzer.lexicon]
 
@@ -126,16 +143,18 @@ def analyser_valence(texte, analyzer):
 
 
 def analyser_emotion(texte):
-    """Émotion dominante selon NRCLex (analyse secondaire, best-effort)."""
+    ### Dominant emotion according to NRCLex (secondary analysis, best-effort).
     if not NRCLEX_OK:
         return "N/A (nrclex non installé)"
     try:
         obj = NRCLex(str(texte))
+        ### positive/negative are valence, not emotions -> left out.
         freqs = {k: v for k, v in obj.affect_frequencies.items()
                  if k not in ("positive", "negative") and v > 0}
 
         if not freqs:
-            # Repli : tenter avec les lemmes (forme de base), qui matchent parfois mieux le lexique NRC que la forme fléchie d'origine.
+            ### Fallback: retry with lemmas, which sometimes match the NRC
+            ### lexicon better than the inflected forms.
             mots = extraire_mots(texte)
             try:
                 tags = pos_tag(mots)
@@ -154,6 +173,7 @@ def analyser_emotion(texte):
 
         if not freqs:
             return "Aucune"
+        ### Highest frequency wins (ties: first one met).
         top = max(freqs, key=freqs.get)
         return EMOTIONS_FR.get(top, top.capitalize())
     except Exception:
@@ -165,6 +185,7 @@ def main(fichier_entree, fichier_sortie):
     ws = wb.active
     analyzer = SentimentIntensityAnalyzer()
 
+    ### Just a warning if column A is not the collocation column: the run goes on anyway.
     entete = ws.cell(row=1, column=COLONNE_ENTREE).value
     if not entete or "collocation" not in str(entete).lower():
         print(f"Avertissement : la colonne 1 s'intitule '{entete}', pas "
@@ -176,6 +197,9 @@ def main(fichier_entree, fichier_sortie):
     total = positifs = negatifs = neutres = non_trouves = 0
     par_source = {"VADER": 0, "SentiWordNet": 0}
 
+    ### ---------------------
+    ### ROW LOOP (row 1 = header)
+    ### ---------------------
     for row in range(2, ws.max_row + 1):
         collocation = ws.cell(row=row, column=COLONNE_ENTREE).value
         if collocation is None or str(collocation).strip() == "":
@@ -185,6 +209,7 @@ def main(fichier_entree, fichier_sortie):
         label, score, source = analyser_valence(collocation, analyzer)
         emotion = analyser_emotion(collocation)
 
+        ### Cell format "Positif (+0.620, VADER)" -> coloc_eval_kappa.py knows how to read it back.
         if label == "Non trouvé":
             non_trouves += 1
             valeur_cellule = "Non trouvé"
@@ -201,8 +226,12 @@ def main(fichier_entree, fichier_sortie):
         ws.cell(row=row, column=COLONNE_VALENCE, value=valeur_cellule)
         ws.cell(row=row, column=COLONNE_EMOTION, value=emotion)
 
+    ### Saved under a NEW name -> the input file is never overwritten.
     wb.save(fichier_sortie)
 
+    ### ---------------------
+    ### CONSOLE SUMMARY
+    ### ---------------------
     print(f"Terminé : {fichier_sortie}")
     print(f"  Lignes analysées : {total}")
     print(f"  Positif / Négatif / Neutre : {positifs} / {negatifs} / {neutres}")

@@ -1,60 +1,51 @@
-"""
-==============================================================================
- ANALYSE DES EMPLOIS METAPHORIQUES DU CHAMP LEXICAL DE LA MALADIE
-==============================================================================
-Adaptation de war_metaphor_v3.py au domaine source de la MALADIE (et non plus
-de la guerre). Ce script part d'exports de concordancier (Sketch Engine) et
-classe chaque occurrence en "littéral" / "métaphorique" / "ambigu" sur la
-base de marqueurs lexicaux, d'un pattern syntaxique dynamique ("the cancer/
-disease/virus/plague/epidemic... of ___" / "infected/plagued/sickened/
-poisoned/afflicted by ___") et d'une heuristique morpho-lexicale pour les
-noms abstraits.
+### ---------------------
+### METAPHORICAL USES OF THE DISEASE LEXICAL FIELD
+### ---------------------
+### Adapted from war_metaphor_v3.py: same pipeline, but the source domain is
+### DISEASE instead of WAR. Takes concordance exports (Sketch Engine) and labels
+### each hit "literal" / "metaphorical" / "ambiguous" from:
+###   - lexical markers,
+###   - a dynamic syntactic pattern ("the cancer/disease/virus/plague/epidemic...
+###     of ___" / "infected/plagued/sickened/poisoned/afflicted by ___"),
+###   - a morpho-lexical heuristic for abstract nouns.
 
-Logique (symétrique à la version "guerre") :
-  - Les mots-déclencheurs du domaine source (cancer, disease, virus, plague,
-    epidemic, sickness, illness, infection ; infect, sicken, poison, afflict)
-    ne sont volontairement PAS comptés comme marqueurs : comme "war"/"fight"
-    dans la version précédente, ils apparaissent aussi bien en emploi
-    littéral (contexte clinique réel) qu'en emploi métaphorique, et ne sont
-    donc pas discriminants à eux seuls.
-  - LITERAL_MARKERS = vocabulaire clinique concret (patient, hôpital,
-    médecin...) qui signale un contexte médical réellement littéral.
-  - METAPHORICAL_MARKERS = maux sociaux/politiques abstraits (corruption,
-    racisme, extrémisme...) qui sont les cibles typiques des métaphores de
-    la maladie dans le discours présidentiel ("the cancer of corruption",
-    "infected by division").
+### Logic (mirror of the war version):
+###   - Source-domain trigger words (cancer, disease, virus, plague, epidemic,
+###     sickness, illness, infection; infect, sicken, poison, afflict) are NOT
+###     counted as markers, on purpose: like "war"/"fight" in the previous
+###     version, they occur in literal (real clinical) AND metaphorical uses,
+###     so on their own they discriminate nothing.
+###   - LITERAL_MARKERS = concrete clinical vocabulary (patient, hospital,
+###     doctor...) -> the context really is medical.
+###   - METAPHORICAL_MARKERS = abstract social/political evils (corruption,
+###     racism, extremism...) = the usual targets of disease metaphors in
+###     presidential speech ("the cancer of corruption", "infected by division").
 
-WORKFLOW EN DEUX ETAPES (important pour ta partie méthodo) :
-  1) Lancer le script normalement (bloc __main__) -> il traite le(s)
-     corpus, génère le classeur Excel avec un onglet "Inter_Annotator_Task"
-     contenant une colonne "Manual_Annotation" VIDE.
-  2) Toi (ou un second annotateur) remplissez cette colonne à la main avec
-     "literal" / "metaphorical" / "ambiguous" pour chaque ligne.
-  3) Tu relances ensuite evaluate_reliability(chemin_du_fichier_annote) qui
-     recharge ce même onglet, compare Manual_Annotation (vérité terrain)
-     à category (prédiction du script), et calcule accuracy, precision/
-     recall/F1 par catégorie, ainsi que le kappa de Cohen. Un onglet
-     "Reliability_Report" est ajouté au classeur.
+### TWO-STEP WORKFLOW (matters for the methodology chapter):
+###   1) Run the script (__main__ block) -> processes the corpus/corpora and
+###      writes the Excel workbook, with an "Inter_Annotator_Task" sheet whose
+###      "Manual_Annotation" column is EMPTY.
+###   2) Fill that column by hand (me, or a second annotator) with
+###      "literal" / "metaphorical" / "ambiguous" for every row.
+###   3) Call evaluate_reliability(path_to_annotated_file): it reloads that
+###      sheet, compares Manual_Annotation (ground truth) with category (the
+###      script's prediction), computes accuracy, precision/recall/F1 per
+###      category and Cohen's kappa, and adds a "Reliability_Report" sheet.
 
-Ce script ne dépend PAS de scikit-learn : les métriques sont recalculées
-« à la main » à partir de la matrice de confusion, pour ne pas ajouter de
-dépendance externe et pour que tu puisses vérifier les formules toi-même
-dans ta thèse (annexe méthodo).
+### No scikit-learn on purpose: the metrics are recomputed by hand from the
+### confusion matrix -> one dependency less, and every formula can be checked
+### for the methodology appendix.
 
-FORMATS DE CORPUS ACCEPTÉS EN ENTRÉE (détection automatique par extension) :
-  - .xlsx / .xls : export KWIC Sketch Engine avec colonnes
-      "Reference" / "Left" / "Kwic" / "Right" (le nom de corpus/locuteur
-      est extrait automatiquement de la colonne Reference, ex.
-      "doc#0,Trump/2016/..." -> "Trump", sauf si tu forces un nom via
-      load_all_corpora()).
-      Comme le mot-nœud réel (Kwic) est connu, la traçabilité gauche/
-      droite se calcule par rapport à ce vrai nœud, et non plus par
-      rapport au milieu artificiel de la phrase.
-  - .txt : une phrase par ligne, ou export KWIC tabulé
-      (left \\t node \\t right) sans le vrai index du nœud -> on retombe
-      alors sur le milieu de la phrase comme pivot.
-==============================================================================
-"""
+### INPUT FORMATS (picked from the file extension):
+###   - .xlsx / .xls: Sketch Engine KWIC export, columns "Reference" / "Left" /
+###     "Kwic" / "Right". The corpus/speaker name is read from Reference
+###     (e.g. "doc#0,Trump/2016/..." -> "Trump") unless forced through
+###     load_all_corpora(). The real node word (Kwic) is known, so left/right
+###     traceability is measured from that node, not from the artificial
+###     middle of the sentence.
+###   - .txt: one sentence per line, or tab-separated KWIC (left \t node \t right)
+###     without the node index -> falls back on the middle of the sentence.
+### ---------------------
 
 import re
 import spacy
@@ -66,16 +57,16 @@ import os
 from datetime import datetime
 from openpyxl import load_workbook
 
-# ==========================================
-# 0. VERSION DU SCRIPT
-# ==========================================
-# Change à chaque modification livrée. Affiché au démarrage (voir plus bas)
-# pour vérifier facilement quelle version tu es en train d'exécuter.
+### ---------------------
+### 0. SCRIPT VERSION
+### ---------------------
+### Bump it at every delivered change. Printed at start-up (see below) so I
+### always know which version produced a given output.
 SCRIPT_VERSION = "v1.0.0 (2026-07-14) - adaptation domaine MALADIE (base war_metaphor_v3.2.5)"
 
-# ==========================================
-# 1. CONFIGURATION ET LOGGING
-# ==========================================
+### ---------------------
+### 1. CONFIG + LOGGING (one timestamped log file per run + console)
+### ---------------------
 log_filename = f"nlp_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 logging.basicConfig(
     level=logging.INFO,
@@ -88,9 +79,9 @@ logging.basicConfig(
 
 logging.info(f"Démarrage du script d'analyse NLP — {SCRIPT_VERSION}")
 
-# ==========================================
-# 2. LEXIQUES ET CONTRÔLE DE CHEVAUCHEMENT
-# ==========================================
+### ---------------------
+### 2. LEXICONS + OVERLAP CHECK
+### ---------------------
 LITERAL_MARKERS = {"patient", "hospital", "doctor", "nurse", "vaccine",
                     "symptom", "diagnosis", "treatment", "surgery",
                     "medication", "clinic", "physician", "prescription",
@@ -102,10 +93,9 @@ METAPHORICAL_MARKERS = {"corruption", "racism", "hatred", "extremism",
                          "misinformation", "radicalization", "partisanship",
                          "prejudice"}
 
-# Liste curatée de noms abstraits fréquents dans ce type de discours
-# (complète l'heuristique morphologique ci-dessous : un mot peut être
-# abstrait sans porter un des suffixes listés, ex. "greed", "crime",
-# "hatred", "poverty" -> ne se terminent pas par un des suffixes ci-dessous).
+### Hand-picked abstract nouns that are frequent in this kind of discourse.
+### Complements the suffix heuristic below: a noun can be abstract without any
+### of the listed suffixes ("greed", "crime", "hatred", "poverty"...).
 KNOWN_ABSTRACT_NOUNS = {
     "corruption", "racism", "extremism", "terrorism", "radicalization",
     "misinformation", "division", "inequality", "violence", "ignorance",
@@ -117,7 +107,8 @@ KNOWN_ABSTRACT_NOUNS = {
 ABSTRACT_SUFFIXES = ("tion", "sion", "ism", "ity", "ment", "ness", "ance",
                       "ence", "acy", "hood", "dom")
 
-# Détection de chevauchement (Sécurité méthodologique)
+### Methodological safety net: a word in BOTH lists would count for both sides
+### -> stop the whole run before any analysis.
 overlap = LITERAL_MARKERS.intersection(METAPHORICAL_MARKERS)
 if overlap:
     logging.error(f"ERREUR CRITIQUE: Chevauchement détecté dans les lexiques: {overlap}")
@@ -127,26 +118,24 @@ else:
 
 
 def is_abstract_noun(lemma: str) -> bool:
-    """
-    Heuristique combinée pour juger si un nom est abstrait :
-      1) appartenance à la liste curatée KNOWN_ABSTRACT_NOUNS
-      2) sinon, heuristique morphologique par suffixe (-tion, -ism, -ity...)
-    """
+    ### Combined heuristic to decide whether a noun is abstract:
+    ###   1) it is in the curated KNOWN_ABSTRACT_NOUNS list,
+    ###   2) otherwise, morphological test on the suffix (-tion, -ism, -ity...).
     lemma = lemma.lower()
     if lemma in KNOWN_ABSTRACT_NOUNS:
         return True
     return lemma.endswith(ABSTRACT_SUFFIXES)
 
 
-# ==========================================
-# 3. CHARGEMENT DE SPACY ET MATCHER
-# ==========================================
+### ---------------------
+### 3. SPACY + MATCHER
+### ---------------------
 logging.info("Chargement du modèle spaCy (en_core_web_sm)...")
 nlp = spacy.load("en_core_web_sm", disable=["ner"])
 
 matcher = Matcher(nlp.vocab)
-# Pattern A (construction nominale) : "the cancer/disease/virus/plague/
-# epidemic/sickness/illness/infection OF ___"
+### Pattern A (nominal): "the cancer/disease/virus/plague/epidemic/sickness/
+### illness/infection OF (det/adj)* NOUN+"
 pattern_nominal = [
     {"LEMMA": {"IN": ["cancer", "disease", "virus", "plague", "epidemic",
                        "sickness", "illness", "infection"]}},
@@ -154,8 +143,8 @@ pattern_nominal = [
     {"POS": {"IN": ["DET", "ADJ"]}, "OP": "*"},
     {"POS": "NOUN", "OP": "+"},
 ]
-# Pattern B (construction verbale) : "infected/plagued/sickened/poisoned/
-# afflicted BY/WITH ___"
+### Pattern B (verbal): "infected/plagued/sickened/poisoned/afflicted
+### BY/WITH (det/adj)* NOUN+"
 pattern_verbal = [
     {"LEMMA": {"IN": ["infect", "plague", "sicken", "poison", "afflict"]}},
     {"LOWER": {"IN": ["by", "with"]}},
@@ -165,19 +154,17 @@ pattern_verbal = [
 matcher.add("DISEASE_METAPHOR_TARGET", [pattern_nominal, pattern_verbal])
 
 
-# ==========================================
-# 4. TESTS DE RÉGRESSION
-# ==========================================
+### ---------------------
+### 4. REGRESSION TESTS
+### ---------------------
 def run_regression_tests():
-    """
-    Jeu de tests de non-régression. Toute modification des lexiques ou de
-    l'heuristique doit être validée contre CES phrases avant d'être utilisée
-    sur le corpus réel. Ajoute ici toute phrase qui t'a posé problème par le
-    passé : c'est la meilleure garantie que l'analyse reste stable.
-    """
+    ### Non-regression test set. ANY change to the lexicons or the heuristic must
+    ### pass on THESE sentences before touching the real corpus. Add here every
+    ### sentence that caused trouble at some point: best guarantee that the
+    ### classification stays stable.
     logging.info("Lancement des tests de régression...")
     test_cases = [
-        # --- Cas littéraux (contexte clinique réel) ---
+        ### Literal cases (real clinical context)
         ("The patient was admitted to the hospital.", "literal"),
         ("The doctor prescribed new medication for the illness.", "literal"),
         ("The nurse monitored the patient's vital signs in the ward.", "literal"),
@@ -189,7 +176,7 @@ def run_regression_tests():
         ("The hospital quarantined patients exposed to the virus.", "literal"),
         ("The vaccine was administered to hundreds of patients this week.", "literal"),
 
-        # --- Cas métaphoriques (pattern nominal "the X of ___") ---
+        ### Metaphorical cases, nominal pattern "the X of ___"
         ("This is the cancer of corruption eating away at our institutions.", "metaphorical"),
         ("We must confront the disease of racism in our society.", "metaphorical"),
         ("The virus of extremism continues to spread across the country.", "metaphorical"),
@@ -198,18 +185,18 @@ def run_regression_tests():
         ("The sickness of greed has taken hold of Washington.", "metaphorical"),
         ("Officials warn that the infection of misinformation is spreading online.", "metaphorical"),
 
-        # --- Cas métaphoriques (pattern verbal "infected/plagued/... by/with ___") ---
+        ### Metaphorical cases, verbal pattern "infected/plagued/... by/with ___"
         ("Our politics have been infected by division and mistrust.", "metaphorical"),
         ("The nation remains plagued by inequality.", "metaphorical"),
         ("Communities have been poisoned by prejudice for generations.", "metaphorical"),
         ("This institution has been sickened by corruption for decades.", "metaphorical"),
         ("Our discourse has been afflicted by partisanship.", "metaphorical"),
 
-        # --- Cas métaphoriques via marqueurs seuls (sans pattern dynamique) ---
+        ### Metaphorical cases through markers only (no dynamic pattern)
         ("Racism and hatred continue to divide our nation.", "metaphorical"),
         ("Terrorism and radicalization threaten our shared future.", "metaphorical"),
 
-        # --- Cas ambigus ---
+        ### Ambiguous cases
         ("It is a sickness.", "ambiguous"),
         ("The illness continued for years.", "ambiguous"),
         ("The virus spread quickly last winter.", "ambiguous"),
@@ -232,21 +219,16 @@ def run_regression_tests():
     logging.info(f"Tests de régression : OK ({len(test_cases)} phrases). Le modèle de classification est stable.")
 
 
-# ==========================================
-# 5. FONCTION D'ANALYSE PRINCIPALE
-# ==========================================
+### ---------------------
+### 5. MAIN ANALYSIS FUNCTION
+### ---------------------
 def analyze_sentence(text, corpus_name, kwic_word=None, kwic_char_pos=None, reference=None):
-    """
-    kwic_word / kwic_char_pos : quand le texte provient d'un export KWIC
-    Sketch Engine, le vrai mot-nœud (et si possible sa position exacte en
-    caractères dans `text`) est connu. Dans ce cas, la traçabilité gauche/
-    droite est calculée par rapport à CE nœud réel plutôt que par rapport
-    au milieu artificiel de la phrase, ce qui rend la distance beaucoup
-    plus significative pour l'analyse.
-    reference : métadonnées du document source (colonne Reference de
-    Sketch Engine), reportées telles quelles dans le résultat pour
-    permettre de retrouver l'occurrence d'origine.
-    """
+    ### kwic_word / kwic_char_pos: with a Sketch Engine KWIC export, the real node
+    ### word (and ideally its exact character offset in `text`) is known. Left/right
+    ### traceability is then measured from THAT node instead of the artificial middle
+    ### of the sentence -> the distances actually mean something.
+    ### reference: source-document metadata (Sketch Engine Reference column), copied
+    ### as-is into the result so every hit can be traced back to its speech.
     try:
         doc = nlp(text)
 
@@ -255,10 +237,10 @@ def analyze_sentence(text, corpus_name, kwic_word=None, kwic_char_pos=None, refe
         traceability = []
         dynamic_targets = []
 
-        # Détermination du nœud pivot :
-        #  1) position exacte en caractères si fournie (cas xlsx Sketch Engine)
-        #  2) sinon, recherche du mot kwic_word dans le texte
-        #  3) sinon (txt sans nœud connu), repli sur le milieu de la phrase
+        ### Pick the pivot (node) token:
+        ###  1) exact character offset if given (Sketch Engine xlsx),
+        ###  2) otherwise, look for kwic_word in the text,
+        ###  3) otherwise (txt without a known node), middle of the sentence.
         expected_pos = None
         if kwic_char_pos is not None:
             expected_pos = kwic_char_pos
@@ -290,8 +272,9 @@ def analyze_sentence(text, corpus_name, kwic_word=None, kwic_char_pos=None, refe
                 score_meta += 1
                 traceability.append({"marker": lemma, "type": "metaphorical", "side": side, "distance": distance})
 
-        # Extraction dynamique (the cancer/disease/virus/... of ___ /
-        # infected/plagued/sickened/poisoned/afflicted by/with ___)
+        ### Dynamic extraction (the cancer/disease/virus/... of ___ /
+        ### infected/plagued/sickened/poisoned/afflicted by/with ___)
+        ### -> only counts if the target noun is abstract.
         matches = matcher(doc)
         for match_id, start, end in matches:
             span = doc[start:end]
@@ -300,7 +283,7 @@ def analyze_sentence(text, corpus_name, kwic_word=None, kwic_char_pos=None, refe
             target_distance = abs(span[-1].i - middle_index)
 
             if is_abstract_noun(target_noun):
-                score_meta += 2  # poids renforcé : structure syntaxique explicite
+                score_meta += 2  ### heavier weight: explicit syntactic structure
                 dynamic_targets.append(target_noun)
                 traceability.append({
                     "marker": f"dynamic:{target_noun}",
@@ -309,7 +292,8 @@ def analyze_sentence(text, corpus_name, kwic_word=None, kwic_char_pos=None, refe
                     "distance": target_distance
                 })
 
-        # Score de confiance normalisé, borné dans ]-1, 1[
+        ### Normalised confidence score, always within ]-1, 1[ (+1 in the denominator).
+        ### > 0 metaphorical, < 0 literal, exactly 0 ambiguous (includes "no marker at all").
         confidence_score = (score_meta - score_lit) / (score_meta + score_lit + 1)
 
         if confidence_score > 0:
@@ -335,11 +319,11 @@ def analyze_sentence(text, corpus_name, kwic_word=None, kwic_char_pos=None, refe
         return None
 
 
-# ==========================================
-# 6. CHARGEMENT DES CORPUS (exports Sketch Engine : .txt ou .xlsx)
-# ==========================================
+### ---------------------
+### 6. CORPUS LOADING (Sketch Engine exports: .txt or .xlsx)
+### ---------------------
 def _safe_str(value):
-    """Convertit proprement une valeur de cellule (NaN, float, etc.) en str."""
+    ### Clean conversion of a cell value (NaN, float, None...) to a stripped str.
     if value is None:
         return ""
     try:
@@ -351,12 +335,9 @@ def _safe_str(value):
 
 
 def extract_corpus_name_from_reference(reference):
-    """
-    Extrait le nom du locuteur/corpus depuis la colonne Reference d'un
-    export Sketch Engine, ex. "doc#0,Trump/2016/T - 2016-07-21 - ..."
-    -> "Trump". Utilisé seulement quand aucun corpus_name explicite n'est
-    fourni (voir load_corpus_from_kwic_excel).
-    """
+    ### Speaker/corpus name from the Sketch Engine Reference column,
+    ### e.g. "doc#0,Trump/2016/T - 2016-07-21 - ..." -> "Trump".
+    ### Only used when no explicit corpus_name is given (see load_corpus_from_kwic_excel).
     reference = _safe_str(reference)
     if not reference:
         return "unknown"
@@ -370,8 +351,8 @@ def extract_corpus_name_from_reference(reference):
 
 
 def _normalize_kwic_columns(df):
-    """Renomme les colonnes vers les noms canoniques Reference/Left/Kwic/Right,
-    insensible à la casse et aux espaces superflus."""
+    ### Rename the columns to the canonical Reference/Left/Kwic/Right,
+    ### whatever the case or stray spaces in the export.
     canonical = {"reference": "Reference", "left": "Left", "kwic": "Kwic", "right": "Right"}
     rename_map = {col: canonical[str(col).strip().lower()]
                   for col in df.columns if str(col).strip().lower() in canonical}
@@ -379,21 +360,15 @@ def _normalize_kwic_columns(df):
 
 
 def load_corpus_from_file(filepath, corpus_name=None, encoding="utf-8"):
-    """
-    Charge un export de concordancier au format texte (.txt).
-    Gère deux formats courants, ligne par ligne, sans planter sur une ligne
-    malformée (elle est loguée et ignorée, le traitement continue) :
-
-      - Format "phrase simple" : une phrase par ligne.
-      - Format KWIC tabulé : colonnes "left context \\t node \\t right
-        context". Les 3 colonnes sont recollées en une seule phrase.
-        NB : dans ce format texte, l'index exact du nœud n'est pas
-        récupéré (contrairement au format .xlsx) ; la traçabilité
-        gauche/droite retombe alors sur le milieu de la phrase.
-
-    Retourne une liste de dicts {"corpus", "text", "kwic", "reference"}
-    (kwic/reference = None pour ce format).
-    """
+    ### Loads a concordance export in plain text (.txt). Two usual formats, line by
+    ### line; a malformed line is logged and skipped, the rest keeps going:
+    ###   - "plain sentence": one sentence per line,
+    ###   - tab-separated KWIC: "left context \t node \t right context", the 3
+    ###     columns glued back into one sentence.
+    ###     NB: here the exact node index is lost (unlike .xlsx) -> left/right
+    ###     traceability falls back on the middle of the sentence.
+    ### Returns a list of dicts {"corpus", "text", "kwic", "reference"}
+    ### (kwic/reference = None for this format).
     records = []
     if not os.path.exists(filepath):
         logging.error(f"Fichier introuvable, ignoré : {filepath}")
@@ -435,24 +410,16 @@ def load_corpus_from_file(filepath, corpus_name=None, encoding="utf-8"):
 
 
 def load_corpus_from_kwic_excel(filepath, corpus_name=None, sheet_name=0):
-    """
-    Charge un export KWIC Sketch Engine au format .xlsx, avec les colonnes
-    "Reference" / "Left" / "Kwic" / "Right" (comme dans diseasemeta-test.xlsx).
-
-    - Le mot-nœud (colonne Kwic) et sa position exacte en caractères dans
-      le texte reconstitué (Left + Kwic + Right) sont conservés, pour que
-      analyze_sentence() calcule la traçabilité gauche/droite par rapport
-      au VRAI nœud plutôt que par rapport au milieu de la phrase.
-    - Si corpus_name est fourni, il est utilisé pour toutes les lignes.
-      Sinon, le nom de corpus est extrait automatiquement de la colonne
-      Reference pour chaque ligne (utile si un même fichier mélange
-      plusieurs locuteurs/années).
-    - Chaque ligne malformée est loguée et ignorée sans interrompre le
-      chargement du reste du fichier.
-
-    Retourne une liste de dicts {"corpus", "text", "kwic", "kwic_char_pos",
-    "reference"}.
-    """
+    ### Loads a Sketch Engine KWIC export (.xlsx) with the columns
+    ### "Reference" / "Left" / "Kwic" / "Right" (same layout as diseasemeta-test.xlsx).
+    ###   - Keeps the node word (Kwic) and its exact character offset in the rebuilt
+    ###     text (Left + Kwic + Right), so analyze_sentence() measures left/right
+    ###     from the REAL node, not from the middle of the sentence.
+    ###   - corpus_name given -> used for every row. Otherwise the corpus name is
+    ###     read from Reference row by row (useful when one file mixes several
+    ###     speakers/years).
+    ###   - Each malformed row is logged and skipped without stopping the load.
+    ### Returns a list of dicts {"corpus", "text", "kwic", "kwic_char_pos", "reference"}.
     records = []
     if not os.path.exists(filepath):
         logging.error(f"Fichier introuvable, ignoré : {filepath}")
@@ -486,11 +453,11 @@ def load_corpus_from_kwic_excel(filepath, corpus_name=None, sheet_name=0):
                 logging.warning(f"Ligne {row_number} sans mot-nœud (Kwic) dans {filepath}, ignorée.")
                 continue
 
-            # Reconstruction du texte + position exacte du nœud (en caractères)
+            ### Rebuild the text + exact character offset of the node
             parts = []
             if left:
                 parts.append(left)
-            kwic_char_pos = sum(len(p) + 1 for p in parts)  # +1 pour l'espace de jointure
+            kwic_char_pos = sum(len(p) + 1 for p in parts)  ### +1 = joining space
             parts.append(kwic)
             if right:
                 parts.append(right)
@@ -518,24 +485,20 @@ def load_corpus_from_kwic_excel(filepath, corpus_name=None, sheet_name=0):
 
 
 def load_corpus(filepath, corpus_name=None):
-    """
-    Dispatcher générique : choisit le bon loader selon l'extension du
-    fichier (.xlsx/.xls -> export KWIC Sketch Engine, sinon -> .txt).
-    """
+    ### Generic dispatcher: picks the loader from the extension
+    ### (.xlsx/.xls -> Sketch Engine KWIC export, anything else -> .txt).
     ext = os.path.splitext(filepath)[1].lower()
     if ext in (".xlsx", ".xls"):
         return load_corpus_from_kwic_excel(filepath, corpus_name=corpus_name)
     return load_corpus_from_file(filepath, corpus_name=corpus_name)
 
 
-# ==========================================
-# 7. ÉCHANTILLONNAGE ET TRAITEMENT
-# ==========================================
+### ---------------------
+### 7. PROCESSING + EXPORTS
+### ---------------------
 def process_corpus(records, corpus_name):
-    """
-    records : liste de dicts (voir load_corpus*) OU liste de phrases (str),
-    pour rester compatible avec un usage direct/ad hoc.
-    """
+    ### records: list of dicts (see load_corpus*) OR plain list of sentences (str),
+    ### so the function also works for quick ad hoc tests.
     results = []
     for idx, record in enumerate(records):
         if idx % 50 == 0 and idx > 0:
@@ -558,8 +521,8 @@ def process_corpus(records, corpus_name):
             if res:
                 results.append(res)
         except Exception as e:
-            # Filet de sécurité supplémentaire : une occurrence corrompue ne
-            # doit jamais interrompre le traitement du corpus.
+            ### Extra safety net: one corrupted hit must never stop the processing
+            ### of the whole corpus.
             logging.error(f"Échec inattendu sur l'occurrence #{idx} du corpus {corpus_name}, ignorée -> {str(e)}")
             continue
 
@@ -567,16 +530,17 @@ def process_corpus(records, corpus_name):
 
 
 def generate_exports(df, sample_size=30, output_path=None):
+    ### Writes the 4-sheet Excel workbook: All_Data, Summary,
+    ### Inter_Annotator_Task (to annotate by hand), Metaphor_Targets_Freq.
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
     excel_path = output_path or f"NLP_Results_{timestamp}.xlsx"
 
     with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
-        # Onglet 1 : données brutes
+        ### Sheet 1: raw data (one row per hit)
         df.to_excel(writer, sheet_name='All_Data', index=False)
 
-        # Onglet 2 : synthèse (littéral / métaphorique / ambigu), globale
-        # puis ventilée par corpus (utile dès qu'un même fichier mélange
-        # plusieurs présidents/locuteurs).
+        ### Sheet 2: summary (literal / metaphorical / ambiguous), overall first, then
+        ### per corpus (needed as soon as one file mixes several presidents).
         logging.info("Génération de la synthèse (Summary)...")
         CATEGORIES = ["literal", "metaphorical", "ambiguous"]
 
@@ -585,7 +549,7 @@ def generate_exports(df, sample_size=30, output_path=None):
                 writer, sheet_name='Summary', index=False
             )
         else:
-            # -- Synthèse globale --
+            ### Overall summary
             overall_counts = df['category'].value_counts().reindex(CATEGORIES, fill_value=0)
             overall_df = pd.DataFrame({
                 "category": list(CATEGORIES) + ["TOTAL"],
@@ -595,7 +559,7 @@ def generate_exports(df, sample_size=30, output_path=None):
                 overall_df["count"] / overall_df["count"].iloc[-1] * 100
             ).round(1)
 
-            # -- Synthèse par corpus (un président = une ligne) --
+            ### Summary per corpus (one president = one row)
             per_corpus = pd.crosstab(df['corpus'], df['category'])
             for cat in CATEGORIES:
                 if cat not in per_corpus.columns:
@@ -616,7 +580,8 @@ def generate_exports(df, sample_size=30, output_path=None):
                                  startrow=start_row_per_corpus, startcol=0)
             writer.sheets['Summary'][f'A{start_row_per_corpus}'] = "Synthèse par corpus / président"
 
-        # Onglet 3 : échantillonnage stratifié pour annotation manuelle
+        ### Sheet 3: stratified sample for manual annotation (sample_size rows max per
+        ### category, fixed random_state so the sample can be regenerated identically).
         logging.info("Génération de l'échantillon stratifié...")
         stratified_parts = []
         for cat, group in df.groupby('category'):
@@ -626,17 +591,17 @@ def generate_exports(df, sample_size=30, output_path=None):
         stratified_sample.insert(0, 'Manual_Annotation', '')
         stratified_sample.to_excel(writer, sheet_name='Inter_Annotator_Task', index=False)
 
-        # Onglet 4 : fréquence des cibles métaphoriques par corpus
+        ### Sheet 4: frequency of the metaphor targets per corpus
         logging.info("Génération du tableau croisé des cibles...")
         df_targets = df[df['dynamic_targets'] != ""]
         if not df_targets.empty:
             df_exploded = df_targets.assign(
                 dynamic_targets=df_targets['dynamic_targets'].str.split(', ')
             ).explode('dynamic_targets').reset_index(drop=True)
-            # reset_index(drop=True) est indispensable : dès qu'une occurrence a
-            # PLUSIEURS cibles dynamiques (ex. "poverty, terror"), .explode() duplique
-            # l'index d'origine, et pd.crosstab(..., margins=True) échoue ensuite avec
-            # "cannot reindex on an axis with duplicate labels" sur un axe non-unique.
+            ### reset_index(drop=True) is mandatory: as soon as a hit has SEVERAL dynamic
+            ### targets (e.g. "poverty, terror"), .explode() duplicates the original index,
+            ### and pd.crosstab(..., margins=True) then fails with "cannot reindex on an
+            ### axis with duplicate labels".
             freq_table = pd.crosstab(df_exploded['dynamic_targets'], df_exploded['corpus'], margins=True)
             freq_table.to_excel(writer, sheet_name='Metaphor_Targets_Freq')
         else:
@@ -648,11 +613,11 @@ def generate_exports(df, sample_size=30, output_path=None):
     return excel_path
 
 
-# ==========================================
-# 8. FIABILITÉ INTER-ANNOTATEUR (precision/recall/accord)
-# ==========================================
+### ---------------------
+### 8. INTER-ANNOTATOR RELIABILITY (precision / recall / agreement)
+### ---------------------
 def _confusion_counts(y_true, y_pred, labels):
-    """Construit la matrice de confusion sous forme de dict {(true, pred): n}."""
+    ### Confusion matrix as a dict {(true, pred): n}.
     counts = {(t, p): 0 for t in labels for p in labels}
     for t, p in zip(y_true, y_pred):
         if t in labels and p in labels:
@@ -661,11 +626,11 @@ def _confusion_counts(y_true, y_pred, labels):
 
 
 def _cohen_kappa(counts, labels, n):
-    """Kappa de Cohen calculé à la main à partir de la matrice de confusion."""
+    ### Cohen's kappa computed by hand from the confusion matrix.
     po = sum(counts[(l, l)] for l in labels) / n
 
-    row_totals = {l: sum(counts[(l, p)] for p in labels) for l in labels}   # vérité terrain
-    col_totals = {l: sum(counts[(t, l)] for t in labels) for l in labels}   # prédiction du script
+    row_totals = {l: sum(counts[(l, p)] for p in labels) for l in labels}   ### ground truth
+    col_totals = {l: sum(counts[(t, l)] for t in labels) for l in labels}   ### script prediction
 
     pe = sum((row_totals[l] / n) * (col_totals[l] / n) for l in labels)
 
@@ -675,19 +640,13 @@ def _cohen_kappa(counts, labels, n):
 
 
 def evaluate_reliability(annotated_excel_path, sheet_name="Inter_Annotator_Task", report_excel_path=None):
-    """
-    À appeler APRES avoir rempli manuellement la colonne 'Manual_Annotation'
-    dans l'onglet Inter_Annotator_Task du classeur généré par generate_exports().
-
-    Compare :
-      - 'category'          -> prédiction automatique du script
-      - 'Manual_Annotation' -> vérité terrain (ton annotation manuelle)
-
-    Calcule : accuracy globale, precision/recall/F1 par catégorie, et le
-    kappa de Cohen (accord au-delà du hasard). Ajoute un onglet
-    'Reliability_Report' au classeur (ou à report_excel_path si fourni),
-    et renvoie un dict avec toutes les métriques pour ta partie méthodo.
-    """
+    # Call this AFTER filling the 'Manual_Annotation' column by hand in the Inter_Annotator_Task sheet of the workbook written by generate_exports().
+    # Compares:
+    #   - 'category'          -> automatic prediction of the script
+    #   - 'Manual_Annotation' -> ground truth (my manual annotation)
+    # Computes overall accuracy, precision/recall/F1 per category and Cohen's
+    # kappa (agreement beyond chance). Adds a 'Reliability_Report' sheet to the workbook (or to report_excel_path if given) 
+    # and returns a dict with every metric, ready for the methodology chapter.
     logging.info(f"Évaluation de la fiabilité à partir de : {annotated_excel_path}")
 
     df = pd.read_excel(annotated_excel_path, sheet_name=sheet_name)
@@ -720,8 +679,8 @@ def evaluate_reliability(annotated_excel_path, sheet_name="Inter_Annotator_Task"
     per_class = {}
     for l in labels:
         tp = counts[(l, l)]
-        fp = sum(counts[(t, l)] for t in labels if t != l)   # prédit l, vérité != l
-        fn = sum(counts[(l, p)] for p in labels if p != l)   # vérité l, prédit != l
+        fp = sum(counts[(t, l)] for t in labels if t != l)   ### predicted l, truth != l
+        fn = sum(counts[(l, p)] for p in labels if p != l)   ### truth l, predicted != l
 
         precision = tp / (tp + fp) if (tp + fp) > 0 else float('nan')
         recall = tp / (tp + fn) if (tp + fn) > 0 else float('nan')
@@ -730,14 +689,14 @@ def evaluate_reliability(annotated_excel_path, sheet_name="Inter_Annotator_Task"
         else:
             f1 = float('nan')
 
-        support = sum(counts[(l, p)] for p in labels)  # nb réel d'occurrences de cette classe (vérité terrain)
+        support = sum(counts[(l, p)] for p in labels)  ### real number of hits of this class (ground truth)
         per_class[l] = {"precision": precision, "recall": recall, "f1": f1, "support": support}
 
     kappa = _cohen_kappa(counts, labels, n)
 
     logging.info(f"Fiabilité calculée sur {n} lignes annotées : accuracy={accuracy:.3f}, kappa de Cohen={kappa:.3f}")
 
-    # --- Construction des tableaux pour l'export ---
+    ### Tables for the export
     confusion_df = pd.DataFrame(
         [[counts[(t, p)] for p in labels] for t in labels],
         index=[f"Vérité: {l}" for l in labels],
@@ -777,28 +736,19 @@ def evaluate_reliability(annotated_excel_path, sheet_name="Inter_Annotator_Task"
     }
 
 
-# ==========================================
-# 9. LANCEMENT DU PROGRAMME
-# ==========================================
+### ---------------------
+### 9. RUN
+### ---------------------
 def load_all_corpora(corpus_files):
-    """
-    corpus_files : dict {nom_du_corpus: chemin_du_fichier} — le fichier peut
-    être un .txt (une phrase par ligne ou KWIC tabulé) OU un .xlsx (export
-    KWIC Sketch Engine avec colonnes Reference/Left/Kwic/Right) ; le format
-    est détecté automatiquement par extension (voir load_corpus()).
-    Le nom_du_corpus (la clé du dict) est appliqué à toutes les lignes du
-    fichier, qu'il s'agisse de .txt ou de .xlsx.
-
-    Retourne un dict {nom_du_corpus: [liste de records]}.
-    Si un fichier est absent ou vide, le corpus correspondant est ignoré
-    (loggé en warning) plutôt que de faire planter tout le script.
-
-    Cas particulier : si un même fichier .xlsx mélange plusieurs locuteurs
-    et que tu veux laisser le script détecter le corpus ligne à ligne à
-    partir de la colonne Reference, utilise directement
-    load_corpus_from_kwic_excel(chemin, corpus_name=None) plutôt que ce
-    dict (voir docstring de cette fonction).
-    """
+    ### corpus_files: dict {corpus_name: file_path}. The file can be a .txt (one
+    ### sentence per line or tab-separated KWIC) OR an .xlsx (Sketch Engine KWIC
+    ### export, Reference/Left/Kwic/Right); format picked from the extension
+    ### (see load_corpus()). The dict key is applied to EVERY row of the file.
+    ### Returns a dict {corpus_name: [records]}. A missing or empty file is logged
+    ### as a warning and skipped instead of crashing the whole script.
+    ### If a single .xlsx mixes several speakers and the corpus should be detected
+    ### row by row from Reference, call load_corpus_from_kwic_excel(path,
+    ### corpus_name=None) directly instead of using this dict.
     corpora = {}
     for name, path in corpus_files.items():
         records = load_corpus(path, corpus_name=name)
@@ -810,19 +760,13 @@ def load_all_corpora(corpus_files):
 
 
 def load_single_combined_file(filepath):
-    """
-    Charge UN SEUL export KWIC Sketch Engine (.xlsx) qui mélange les
-    occurrences de plusieurs présidents/locuteurs dans le même fichier.
-
-    Le nom de corpus n'est PAS forcé : il est détecté automatiquement,
-    ligne par ligne, à partir de la colonne 'Reference' (voir
-    extract_corpus_name_from_reference), donc deux lignes voisines peuvent
-    très bien appartenir à des corpus différents.
-
-    Retourne un dict {nom_du_corpus: [liste de records]} — exactement le
-    même format que load_all_corpora(), pour rester compatible avec la
-    suite du pipeline (process_corpus, generate_exports...).
-    """
+    ### Loads ONE Sketch Engine KWIC export (.xlsx) mixing the hits of several
+    ### presidents/speakers in the same file.
+    ### The corpus name is NOT forced: it is detected row by row from 'Reference'
+    ### (see extract_corpus_name_from_reference), so two neighbouring rows can
+    ### belong to different corpora.
+    ### Returns {corpus_name: [records]}, exactly like load_all_corpora(), so the
+    ### rest of the pipeline (process_corpus, generate_exports...) does not change.
     records = load_corpus_from_kwic_excel(filepath, corpus_name=None)
     corpora = {}
     for record in records:
@@ -838,22 +782,17 @@ def load_single_combined_file(filepath):
 
 
 if __name__ == "__main__":
-    # 1. Tests de sécurité
+    ### 1. Safety tests first: stop here if the classifier drifted
     run_regression_tests()
 
-    # 2. Chargement des corpus.
-    #    -> Deux modes possibles, au choix :
-    #       a) SINGLE_CORPUS_FILE : UN SEUL fichier .xlsx qui mélange les
-    #          occurrences des 3 présidents ; le corpus de chaque ligne est
-    #          détecté automatiquement à partir de la colonne 'Reference'
-    #          (ex. "doc#0,Trump/2016/..." -> "Trump"). C'est le mode
-    #          recommandé si ton export Sketch Engine combine déjà les
-    #          trois corpus dans un seul classeur.
-    #       b) CORPUS_FILES : un fichier .xlsx (ou .txt) par président,
-    #          avec le nom de corpus forcé par la clé du dict — utilisé
-    #          seulement si SINGLE_CORPUS_FILE n'existe pas sur le disque.
-    #    -> Si aucun des deux n'est trouvé, on retombe sur des données de
-    #       démonstration pour que le script reste exécutable tel quel.
+    ### 2. Load the corpora. Two modes:
+    ###    a) SINGLE_CORPUS_FILE: ONE .xlsx mixing the hits of the 3 presidents;
+    ###       the corpus of each row is detected from 'Reference'
+    ###       (e.g. "doc#0,Trump/2016/..." -> "Trump"). Preferred mode when the
+    ###       Sketch Engine export already combines the three corpora.
+    ###    b) CORPUS_FILES: one .xlsx (or .txt) per president, corpus name forced
+    ###       by the dict key -> only used if SINGLE_CORPUS_FILE is not on disk.
+    ###    -> Neither found: falls back on demo sentences so the script still runs.
     SINGLE_CORPUS_FILE = "KWIC-disease-ALL.xlsx"
 
     CORPUS_FILES = {
@@ -888,12 +827,12 @@ if __name__ == "__main__":
             ],
         }
 
-    # 3. Traitement
+    ### 3. Processing
     all_results = []
     for corpus_name, sentences in corpora.items():
         all_results.extend(process_corpus(sentences, corpus_name))
 
-    # 4. Export
+    ### 4. Export (20 rows per category in the annotation sample)
     df_results = pd.DataFrame(all_results)
     excel_path = generate_exports(df_results, sample_size=20)
 

@@ -1,12 +1,8 @@
-/**
- * nlp-count-demo.js
- * -----------------------------------------------------------------
- * NLP-count.py repose sur spaCy (tokenizer linguistique + modèle
- * en_core_web_sm), qui n'a pas d'équivalent en JavaScript. Un vrai
- * portage donnerait une approximation regex peu fiable et présentée
- * à tort comme équivalente à spaCy.
- *
- * Ce module propose donc une ANIMATION PÉDAGOGIQUE, plus détaillée
+/**--nlp-count-demo.js--
+ * -------------------------------------------------------------
+ * NLP-count.py repose sur spaCy (tokenizer linguistique + modèle en_core_web_sm), qui n'a pas d'équivalent en JavaScript. 
+ * Un vrai portage donnerait une approximation regex peu fiable.
+ * Ce script propose donc une démo, plus détaillée
  * qu'un simple résumé : chargement du modèle, désactivation des
  * modules inutiles, scan récursif du dossier, traitement fichier par
  * fichier (échantillon réel de noms de fichiers du corpus Trump),
@@ -16,7 +12,7 @@
  */
 
 (function () {
-    // Noms de fichiers réels du corpus (triés chronologiquement)
+    // Noms de fichiers du corpus
     const DEMO_FILES = [
         "T - 2017-04-29 - Remarks at a MAGA Rally.txt",
         "T - 2017-12-09 - Remarks at the Opening of the .txt",
@@ -41,8 +37,7 @@
         "uber_index": 45.5188
     };
 
-    // Phrase d'exemple purement pédagogique (n'entre PAS dans les résultats finaux),
-    // pour illustrer concrètement ce que fait le filtre is_alpha de spaCy.
+    // Phrase d'exemple qui n'entre PAS dans les résultats finaux, pour illustrer concrètement ce que fait le filtre is_alpha de spaCy.
     const TOY_SENTENCE = "Believe me, we've cut taxes by 20% -- and it's working!";
 
     function sleep(ms) {
@@ -87,9 +82,9 @@
         await scrollback.printTyped("> nlp.max_length fixé à 2 000 000 caractères (fichiers longs)", "tl-comment", 16);
         await sleep(400);
 
-        // ---- 2. Mini-exemple pédagogique de tokenisation ----
+        // ---- 2. Mini-exemple de tokenisation ----
         scrollback.print("", "");
-        await scrollback.printTyped("> Exemple pédagogique — ce que fait le filtre token.is_alpha :", "tl-info", 16);
+        await scrollback.printTyped("> Exemple — ce que fait le filtre token.is_alpha :", "tl-info", 16);
         await sleep(200);
         scrollback.print(`"${TOY_SENTENCE}"`, "tl-comment");
         await sleep(400);

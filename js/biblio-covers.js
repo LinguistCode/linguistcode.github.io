@@ -1,16 +1,8 @@
-/**
- * book-covers.js
- * -----------------------------------------------------------------
- * Génère des couvertures de livre factices, déterministes (même
- * citekey -> toujours la même couleur), à partir de bibliography.json
- * (produit par build-bibliography.py). Si une entrée a un cover_url,
- * l'image réelle est utilisée à la place.
- *
- * Usage :
- *   <link rel="stylesheet" href="css/book-covers.css">
- *   <div id="bibliography-shelf"></div>
- *   <script src="js/book-covers.js"></script>
- *   <script>BookCovers.init("#bibliography-shelf", "./data/bibliography.json");</script>
+/** --book-covers.js
+* -------------------------------------------------------------
+ * Génère des couvertures de livre factices, déterministes (même citekey -> toujours la même couleur), à partir de bibliography.json.
+ * Si une entrée a un cover_url, l'image réelle est utilisée à la place.
+* -------------------------------------------------------------
  */
 
 (function () {

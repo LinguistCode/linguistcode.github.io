@@ -1,22 +1,21 @@
-/**
- * corpus-stats.js
- * -----------------------------------------------------------------
- * Portage JS de helper_v2.py.
- * Regroupe les 3 fonctionnalités du menu Python original :
+/**--corpus-stats.js --
+ * -------------------------------------------------------------
+ * Regroupe 3 fonctionnalités  :
  *   1. Fréquence relative
  *   2. Index Über
  *   3. Log-vraisemblance (G²) et p-value
- * en un seul module de terminal, avec un sous-sélecteur interne
- * pour reproduire le menu du script source.
+ * Corpus disponibles : Bush, Obama, Trump, corpus complet et enTenTen21
+ * -------------------------------------------------------------
  */
 
 (function () {
-    // Corpus codés en dur, identiques au dictionnaire `corpora` du script Python
+    // Corpus codés en dur, comme dans le script python
     const CORPORA = {
         "1": { name: "Bush Corpus", tokens: 3439334 },
         "2": { name: "Obama Corpus", tokens: 3471270 },
         "3": { name: "Trump Corpus", tokens: 1626297 },
-        "4": { name: "Full Corpus", tokens: 8536901 }
+        "4": { name: "Full Corpus", tokens: 8536901 },
+        "5": { name: "enTenTen Corpus", tokens: 61585997113 }
     };
 
     const corpusOptionsHtml = Object.entries(CORPORA)
@@ -180,7 +179,7 @@
         await scrollback.thinking("initialisation du module scipy.stats.chi2");
         await scrollback.printTyped(`> comparaison : ${CORPORA[c1].name} vs ${CORPORA[c2].name}`, "tl-info", 10);
 
-        // Tableau de contingence 2x2 complet (méthode standard, Dunning 1993)
+        // Tableau de contingence 2x2 complet (méthode standard, voir Dunning 1993)
         const autre1 = n1 - o1;
         const autre2 = n2 - o2;
         const total_mot = o1 + o2;
@@ -247,12 +246,12 @@
 
     registerTerminalScript({
         id: "corpus-stats",
-        pill: "corpus_stats.js",
-        command: "./corpus_stats.py  # menu interactif",
+        pill: "helper_v3.js",
+        command: "./helper_v3.py  # menu interactif",
         ready: true,
         selfManagesRunButton: true, // ce script a un sous-menu ; il gère lui-même le bouton EXECUTE
         intro: [
-            { text: "Portage JS de helper_v2.py — 4 corpus (Bush, Obama, Trump, Full) codés en dur.", cls: "tl-comment" },
+            { text: "Portage JS de helper_v3.py — 5 corpus (Bush, Obama, Trump, Full, enTenTen) codés en dur.", cls: "tl-comment" },
             { text: "Sélectionnez une fonctionnalité ci-dessous (équivalent du menu 1/2/3 du script Python).", cls: "tl-comment" }
         ],
         renderForm() {

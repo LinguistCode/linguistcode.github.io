@@ -1,21 +1,25 @@
+### ---------------------
+# SCounts tokens, types, Uber index for a folder, but tokenised by spaCy instead of a regex 
+# --> contractions split properly ("don't" = do + n't), closer to what Sketch Engine counts.
+### ---------------------
+
 import spacy
 import math
 import json
 from pathlib import Path
 
 def analyser_corpus_nlp(dossier, chemin_sortie_json):
-    # ==========================================
-    # INITIALISATION DU MOTEUR NLP
-    # ==========================================
+    ### ---------------------
+    # LOAD SPACY
+    ### ---------------------
     print("Chargement du modèle linguistique spaCy en cours...")
-    # Charger le modèle anglais. 
-    # Désactiver les modules "parser" et "ner" (analyse syntaxique et entités nommées) 
-    # pour accélérer considérablement le traitement, car on veut que les tokens.
+    # English small model. Parser + NER switched off: I only need the tokens,
+    # and without them the run is MUCH faster.
     nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
     
     chemin = Path(dossier)
     
-    # Vérifier que le dossier racine existe bien.
+    # Stop right away if the folder path is wrong.
     if not chemin.exists() or not chemin.is_dir():
         print(f"Erreur : Le dossier '{dossier}' n'existe pas.")
         return
@@ -23,15 +27,15 @@ def analyser_corpus_nlp(dossier, chemin_sortie_json):
     total_tokens = 0
     types_uniques = set()
     
-    # Chercher tous les fichiers .txt dans le dossier et ses sous-dossiers.
+    ### rglob -> also the .txt files in subfolders.
     fichiers_txt = list(chemin.rglob('*.txt'))
     print(f"Analyse NLP de {len(fichiers_txt)} fichier(s) en cours...\n")
 
-    # ==========================================
-    # ANALYSE DES FICHIERS
-    # ==========================================
+    ### ---------------------
+    # FILE LOOP
+    ### ---------------------
     for index, fichier in enumerate(fichiers_txt, 1):
-        # Afficher la progression tous les 50 fichiers.
+        # Progress line every 50 files.
         if index % 50 == 0:
             print(f"Progression : {index} / {len(fichiers_txt)} fichiers analysés...")
             
@@ -39,19 +43,16 @@ def analyser_corpus_nlp(dossier, chemin_sortie_json):
             with open(fichier, 'r', encoding='utf-8') as f:
                 contenu = f.read()
                 
-                # Passer le texte au moteur NLP spaCy. Il va découper intelligemment les mots.
-                # Pour éviter de surcharger la RAM sur de très longs fichiers, 
-                # augmenter la limite de longueur si nécessaire (ici définie à 2 millions de caractères).
+                # spaCy refuses texts over 1M characters by default ->
+                # limit raised to 2M for the very long speeches (costs RAM).
                 nlp.max_length = 2000000 
                 doc = nlp(contenu)
                 
-                # Boucler sur chaque token identifié par spaCy.
                 for token in doc:
-                    # token.is_alpha vérifie que le token est bien composé de lettres.
-                    # Cela exclut automatiquement la ponctuation, les chiffres et les espaces.
+                    # is_alpha = letters only -> punctuation, digits and spaces are left out.
                     if token.is_alpha:
                         total_tokens += 1
-                        # Ajouter le mot en minuscules dans le set pour compter les Types.
+                        # Types counted in lowercase.
                         types_uniques.add(token.text.lower())
                 
         except UnicodeDecodeError:
@@ -62,10 +63,10 @@ def analyser_corpus_nlp(dossier, chemin_sortie_json):
     nombre_types = len(types_uniques)
     uber_index = None
 
-    # ==========================================
-    # CALCUL DE L'UBER INDEX
-    # ==========================================
-    # S'assurer qu'il y a des données pour éviter les erreurs mathématiques.
+    ### ---------------------
+    # UBER INDEX (natural log)
+    ### ---------------------
+    # Only if there is data, otherwise log(0) crashes.
     if total_tokens > 0 and nombre_types > 0:
         log_n = math.log(total_tokens)
         log_v = math.log(nombre_types)
@@ -76,9 +77,9 @@ def analyser_corpus_nlp(dossier, chemin_sortie_json):
         else:
             print("Avertissement : Le nombre de types est égal au nombre de tokens.")
 
-    # ==========================================
-    # CRÉATION ET SAUVEGARDE DU JSON
-    # ==========================================
+    ### ---------------------
+    # JSON EXPORT
+    ### ---------------------
     resultats = {
         "dossier_analyse": str(chemin.resolve()),
         "fichiers_traites": len(fichiers_txt),
@@ -93,9 +94,9 @@ def analyser_corpus_nlp(dossier, chemin_sortie_json):
     except Exception as e:
          print(f"Erreur lors de la sauvegarde du fichier JSON : {e}")
 
-    # ==========================================
-    # AFFICHAGE DES RÉSULTATS
-    # ==========================================
+    ### ---------------------
+    # CONSOLE SUMMARY
+    ### ---------------------
     print("\n=== RÉSULTATS DE L'ANALYSE NLP ===")
     print(f"Tokens : {total_tokens:,}".replace(',', ' '))
     print(f"Types  : {nombre_types:,}".replace(',', ' '))
@@ -104,11 +105,11 @@ def analyser_corpus_nlp(dossier, chemin_sortie_json):
     
     print(f"\nLes résultats ont été sauvegardés dans : {chemin_sortie_json}")
 
-# ==========================================
-# CONFIGURATION
-# ==========================================
-# Remplacer ces chemins par les chemins réels.
-dossier_cible = r"D:\myFiles\My Documents\Corpus pour calculs\corpus v5\Trump" 
-fichier_json = r"D:\myFiles\My Documents\Corpus pour calculs\resultats_v5_nlp_trump.json"
+### ---------------------
+# CONFIG
+### ---------------------
+# One run per president folder.
+dossier_cible = r"D:\path" 
+fichier_json = r"D:\path"
 
 analyser_corpus_nlp(dossier_cible, fichier_json)

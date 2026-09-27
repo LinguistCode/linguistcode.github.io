@@ -1,3 +1,9 @@
+### ---------------------
+# Step 2 after coloc_eval.py: how reliable is the automatic valence?
+# Compares the script's "Valence" column with my manual "Verification"
+# column -> raw agreement, Cohen's kappa, confusion matrix, list of disagreements.
+### ---------------------
+
 import sys
 import re
 import openpyxl
@@ -5,17 +11,16 @@ from collections import Counter
 
 
 def extraire_label(valeur):
-    """
-    Isole le label (Positif/Négatif/Neutre/Non trouvé) à partir d'une
-    cellule qui peut être soit déjà un label simple, soit une chaîne du
-    type "Positif (+0.620, VADER)".
-    """
+    ### ---------------------
+    # Get the bare label (Positif / Négatif / Neutre / Non trouvé) out of a cell.
+    # The cell is either already a label, or the full script output like "Positif (+0.620, VADER)".
+    ### ---------------------
     if valeur is None:
         return None
     texte = str(valeur).strip()
     if not texte:
         return None
-    # Le label est le ou les premiers mots avant une parenthèse éventuelle
+    # Label = first word, or first two words ("Non trouvé"), before any parenthesis.
     match = re.match(r"^([A-Za-zÀ-ÿ]+(?:\s[A-Za-zÀ-ÿ]+)?)", texte)
     if not match:
         return texte
@@ -23,10 +28,10 @@ def extraire_label(valeur):
 
 
 def trouver_colonne(ws, nom_recherche):
-    ###------------------------------------------------------------------
-    ### Retourne le numéro de colonne dont l'en-tête (ligne 1) correspond
-    ### au nom recherché (insensible à la casse/accents approximative).
-    ###------------------------------------------------------------------
+    ### ---------------------
+    # Column number whose header (row 1) contains the name I'm looking for.
+    # Case-insensitive substring match, so "Valence (auto)" is found too.
+    ### ---------------------
     for col in range(1, ws.max_column + 1):
         entete = ws.cell(row=1, column=col).value
         if entete and nom_recherche.lower() in str(entete).lower():
@@ -35,11 +40,11 @@ def trouver_colonne(ws, nom_recherche):
 
 
 def kappa_cohen(paires):
-    ###-------------------------------------------------------------------
-    ### Calcule le kappa de Cohen à partir d'une liste de tuples
-    ### (label_auto, label_manuel).
-    ### kappa = (accord_observé - accord_attendu) / (1 - accord_attendu)
-    ###-------------------------------------------------------------------
+    ### ---------------------
+    # Cohen's kappa from a list of (auto_label, manual_label) pairs.
+    # kappa = (observed agreement - expected agreement) / (1 - expected agreement)
+    # Expected agreement = what two raters would reach by chance, given how often each of them uses each label.
+    ### ---------------------
     n = len(paires)
     if n == 0:
         return None
@@ -55,14 +60,14 @@ def kappa_cohen(paires):
     )
 
     if accord_attendu == 1:
-        return 1.0  # cas limite : un seul label partout
+        return 1.0  # edge case: a single label everywhere -> formula would divide by 0
 
     kappa = (accord_observe - accord_attendu) / (1 - accord_attendu)
     return kappa
 
 
 def interpretation_kappa(k):
-    """Grille de Landis & Koch (1977), largement citée en linguistique."""
+    # Landis & Koch (1977) scale, the one everybody quotes in linguistics.
     if k < 0:
         return "désaccord (pire qu'un accord aléatoire)"
     if k < 0.20:
@@ -77,12 +82,13 @@ def interpretation_kappa(k):
 
 
 def main(fichier):
+    # data_only=True -> read the cached cell values, not the formulas.
     wb = openpyxl.load_workbook(fichier, data_only=True)
     ws = wb.active
 
     col_valence = trouver_colonne(ws, "Valence")
     col_verif = trouver_colonne(ws, "Verification")
-    # tolère aussi l'orthographe accentuée "Vérification"
+    # also accept the accented spelling "Vérification"
     if col_verif is None:
         col_verif = trouver_colonne(ws, "Vérification")
 
@@ -99,9 +105,10 @@ def main(fichier):
         manuel = extraire_label(ws.cell(row=row, column=col_verif).value)
 
         if auto is None or manuel is None:
-            continue  # ligne pas encore évaluée manuellement : on l'ignore
+            continue  # row not checked by hand yet -> skip it
         if auto == "Non trouvé":
-            # Cas particulier : le script n'a rien pu évaluer. On le compte à part plutôt que de fausser l'accord/désaccord.
+            # The script could not score this one: 
+            # count it apart instead of letting it distort the agreement figures.
             lignes_ignorees += 1
             continue
 
@@ -117,15 +124,15 @@ def main(fichier):
     taux_accord = len(accords) / n * 100
     kappa = kappa_cohen(paires)
 
-    # Matrice de confusion : lignes = manuel (référence), colonnes = auto
+    # Confusion matrix: rows = manual (reference), columns = script.
     labels = sorted(set([a for a, m in paires] + [m for a, m in paires]))
     matrice = {l: Counter() for l in labels}
     for a, m in paires:
         matrice[m][a] += 1
 
-    ###--------------------------------------------------------------------
-    ### --- Affichage -----------------------------------------------------
-    ###--------------------------------------------------------------------
+    ### ---------------------
+    ### DISPLAY
+    ### ---------------------
     print(f"Fichier : {fichier}")
     print(f"Lignes comparées : {n} "
           f"(+ {lignes_ignorees} ignorées car 'Non trouvé' par le script)")
@@ -147,6 +154,7 @@ def main(fichier):
         print(ligne)
     print()
 
+    # Most frequent disagreement types first -> says where the script goes wrong.
     if desaccords:
         print(f"Détail des {len(desaccords)} désaccords (script -> manuel) :")
         compte_desaccords = Counter(desaccords)

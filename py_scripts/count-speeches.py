@@ -1,24 +1,29 @@
+### ---------------------
+# Quick sanity check: how many speeches (.txt files) are in a corpus folder?
+# Handy after each cleaning pass to make sure no file got lost along the way.
+### ---------------------
+
 from pathlib import Path
 
 def count_txt_files(folder_path):
     path = Path(folder_path)
     
-    # Safety check: ensure the folder actually exists
+    # Bail out early if the path is wrong (typo in the drive letter, moved folder...).
     if not path.exists() or not path.is_dir():
         print(f"Error: The folder '{folder_path}' does not exist.")
         return
 
-    # .rglob() stands for "recursive glob". It searches the root and ALL subfolders.
-    # We turn the results into a list and simply count the length of that list.
+    # rglob = recursive glob -> also digs into the year subfolders.
+    # No need to open anything: just list the matches and take the length.
     total_files = len(list(path.rglob('*.txt')))
     
     print(f"Total .txt files found: {total_files}")
 
-# ==========================================
-# CONFIGURATION & USAGE
-# ==========================================
+### ---------------------
+# CONFIG
+### ---------------------
 
-# Replace with the path to the folder you want to scan
-target_folder = r"G:\Mon Drive\00 - Université\00 - Doctorat\00 - Recherches These\00 - Corpus\corpus v4\Bush"
+# Point this at the president folder to count (one run per president).
+target_folder = r"A:\path\to\folder"
 
 count_txt_files(target_folder)

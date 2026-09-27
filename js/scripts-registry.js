@@ -1,6 +1,5 @@
-/**
- * scripts-registry.js
- * -----------------------------------------------------------------
+/** -- scripts-registry.js
+ * -------------------------------------------------------------
  * Registre partagé des scripts exécutables dans le terminal.
  *
  * Chaque fichier dans js/scripts/*.js pousse un ou plusieurs objets
@@ -20,6 +19,7 @@
  *   renderForm() { return "...HTML..."; },   // construit le formulaire de saisie
  *   async run(scrollback) { ... }            // exécute le calcul et affiche le résultat
  * }
+ * ------------------------------------------------------------- 
  */
 
 window.terminalScripts = window.terminalScripts || [];

@@ -1,3 +1,9 @@
+### ---------------------
+# Corpus profile: tokens, types and Uber index for a whole folder of speeches.
+# Regex tokenisation (fast, no dependency). NLP-count.py is the spaCy version of the same thing 
+# ---> compare both outputs before quoting any figure.
+### ---------------------
+
 import re
 import math
 import json
@@ -6,7 +12,7 @@ from pathlib import Path
 def analyser_corpus(dossier, chemin_sortie_json):
     chemin = Path(dossier)
     
-    # Vérifier que le dossier racine existe bien
+    # Stop right away if the folder path is wrong.
     if not chemin.exists() or not chemin.is_dir():
         print(f"Erreur : Le dossier '{dossier}' n'existe pas.")
         return
@@ -14,20 +20,22 @@ def analyser_corpus(dossier, chemin_sortie_json):
     total_tokens = 0
     types_uniques = set()
     
-    # Expression régulière pour extraire uniquement les mots (incluant les accents)
+    # Words = runs of letters only (accented letters included). Digits and
+    # punctuation are dropped, so "9/11" gives nothing here.
     regex_mots = re.compile(r'[a-zA-ZÀ-ÿ]+')
 
-    # Chercher tous les fichiers .txt dans le dossier et ses sous-dossiers
+    # rglob -> also picks up the .txt files sitting in subfolders (years).
     fichiers_txt = list(chemin.rglob('*.txt'))
     print(f"Analyse de {len(fichiers_txt)} fichier(s) en cours...\n")
 
     for index, fichier in enumerate(fichiers_txt, 1):
-        # Affiche un message tous les 50 fichiers pour ne pas inonder la console
+        # Progress line every 50 files only, otherwise the console gets flooded.
         if index % 50 == 0:
             print(f"Progression : {index} / {len(fichiers_txt)} fichiers analysés...")
             
         try:
             with open(fichier, 'r', encoding='utf-8') as f:
+                # Lowercase BEFORE counting, so "Fear" and "fear" = one type.
                 contenu = f.read().lower() 
                 
                 mots = regex_mots.findall(contenu)
@@ -43,25 +51,25 @@ def analyser_corpus(dossier, chemin_sortie_json):
     nombre_types = len(types_uniques)
     uber_index = None
 
-    ###--------------------------------------------------------------------
-    ### CALCUL DE L'UBER INDEX
-    ###--------------------------------------------------------------------
-    # S'assurer qu'il y a des données pour éviter les erreurs mathématiques
+    ### ---------------------
+    # UBER INDEX
+    ### ---------------------
+    # U = (log N)^2 / (log N - log V), natural log. Only if there is data.
     if total_tokens > 0 and nombre_types > 0:
         log_n = math.log(total_tokens)
         log_v = math.log(nombre_types)
         
-        # Éviter la division par zéro (au cas où Tokens == Types)
+        ### If tokens == types the denominator is 0 -> skip instead of crashing.
         if log_n != log_v:
             uber_index = (log_n ** 2) / (log_n - log_v)
-            # Arrondir à 4 décimales pour la lisibilité
+            ### 4 decimals is plenty for the tables in the thesis.
             uber_index = round(uber_index, 4) 
         else:
             print("Avertissement : Le nombre de types est égal au nombre de tokens.")
 
-    ###--------------------------------------------------------------------
-    ### CRÉATION ET SAUVEGARDE DU JSON
-    ###--------------------------------------------------------------------
+    ### ---------------------
+    # JSON EXPORT
+    ### ---------------------
     resultats = {
         "dossier_analyse": str(chemin.resolve()),
         "fichiers_traites": len(fichiers_txt),
@@ -72,14 +80,14 @@ def analyser_corpus(dossier, chemin_sortie_json):
 
     try:
         with open(chemin_sortie_json, 'w', encoding='utf-8') as f_json:
-            # indent=4 permet de formater le fichier de manière lisible
+            ### indent=4 so the file stays readable by hand.
             json.dump(resultats, f_json, indent=4, ensure_ascii=False)
     except Exception as e:
          print(f"Erreur lors de la sauvegarde du fichier JSON : {e}")
 
-    ###--------------------------------------------------------------------
-    ### AFFICHAGE DES RÉSULTATS DANS LA CONSOLE
-    ###--------------------------------------------------------------------
+    ### ---------------------
+    # CONSOLE SUMMARY
+    ### ---------------------
     print("=== RÉSULTATS DE L'ANALYSE ===")
     print(f"Tokens : {total_tokens:,}".replace(',', ' '))
     print(f"Types  : {nombre_types:,}".replace(',', ' '))
@@ -88,9 +96,9 @@ def analyser_corpus(dossier, chemin_sortie_json):
     
     print(f"\nLes résultats ont été sauvegardés dans : {chemin_sortie_json}")
 
-###--------------------------------------------------------------------
-### CONFIGURATION
-###--------------------------------------------------------------------
+### ---------------------
+# CONFIG
+### ---------------------
 dossier_cible = r"path" 
 fichier_json = r"path"
 

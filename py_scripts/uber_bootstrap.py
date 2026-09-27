@@ -1,13 +1,7 @@
-"""
-Uber Index Bootstrap Significance Test
----------------------------------------
-Computes the Uber index (U) for two text corpora and tests whether
-the difference between them is statistically significant via bootstrapping.
-
-Usage:
-    python uber_bootstrap.py text1.txt text2.txt
-
-"""
+### ---------------------
+# Uber index: bootstrap significance test between 2 texts.
+# Computes U for each text, then resamples the tokens many times to get a distribution of U -> confidence intervals + p-value for the difference.
+### ---------------------
 
 import re
 import math
@@ -16,24 +10,22 @@ import numpy as np
 from collections import Counter
 
 
-# ── 1. Tokenization ──────────────────────────────────────────────────────────
+### ---------------------
+# 1. TOKENISATION
+### ---------------------
 
 def tokenize(text: str) -> list[str]:
-    """
-    Lowercase and extract word tokens.
-    Handles French accented characters (and other Latin extended chars), just in case.
-    """
+    # Lowercase + word tokens. Keeps apostrophes and hyphens inside words. Accented letters handled just in case.
     return re.findall(r"\b[a-zA-ZÀ-ÿ''\-]+\b", text.lower())
 
 
-# ── 2. Uber Index ─────────────────────────────────────────────────────────────
+### ---------------------
+# 2. UBER INDEX
+### ---------------------
 
 def uber_index(tokens: list[str]) -> float:
-    """
-    U = (log T)² / (log T − log V)
-    where T = number of tokens, V = number of types (unique tokens).
-    Uses log base 10.
-    """
+    # U = (log T)^2 / (log T - log V), T = tokens, V = types.
+    # WARNING: log base 10 here, not ln like other scripts -> the values are NOT on the same scale as corpus-profile-maker / helper_v3.
     T = len(tokens)
     V = len(set(tokens))
     if T == 0 or V == 0:
@@ -45,13 +37,14 @@ def uber_index(tokens: list[str]) -> float:
     return (logT ** 2) / (logT - logV)
 
 
-# ── 3. Bootstrap ──────────────────────────────────────────────────────────────
+### ---------------------
+# 3. BOOTSTRAP
+### ---------------------
 
 def bootstrap_uber(tokens: list[str], n_iter: int = 10_000, seed: int = 42) -> np.ndarray:
-    """
-    Resample tokens with replacement n_iter times and compute U each time.
-    Returns an array of U values representing the sampling distribution.
-    """
+    # Draw T tokens WITH replacement, n_iter times, and compute U each time.
+    # The array of U values = the sampling distribution of U for this text.
+    # Fixed seed (42) so the results are reproducible from one run to the next.
     np.random.seed(seed)
     T = len(tokens)
     arr = np.array(tokens)
@@ -69,7 +62,9 @@ def bootstrap_uber(tokens: list[str], n_iter: int = 10_000, seed: int = 42) -> n
     return np.array(results)
 
 
-# ── 4. Report ─────────────────────────────────────────────────────────────────
+### ---------------------
+# 4. REPORT (one text)
+### ---------------------
 
 def report(label: str, tokens: list[str], boot: np.ndarray) -> None:
     u_obs = uber_index(tokens)
@@ -78,10 +73,13 @@ def report(label: str, tokens: list[str], boot: np.ndarray) -> None:
     print(f"  Types   : {len(set(tokens)):,}")
     print(f"  U (obs) : {u_obs:.4f}")
     print(f"  U (boot): {np.mean(boot):.4f} ± {np.std(boot):.4f}")
+    ### 95% CI = 2.5th and 97.5th percentiles of the bootstrap distribution.
     print(f"  95% CI  : [{np.percentile(boot, 2.5):.4f}, {np.percentile(boot, 97.5):.4f}]")
 
 
-# ── 5. Main ───────────────────────────────────────────────────────────────────
+### ---------------------
+# 5. MAIN
+### ---------------------
 
 def main():
     if len(sys.argv) != 3:
@@ -97,6 +95,7 @@ def main():
     tokens1 = tokenize(texts[0])
     tokens2 = tokenize(texts[1])
 
+    # 10,000 iterations: slow on long texts, but stable CIs.
     N_BOOT = 10_000
     print(f"\nRunning {N_BOOT:,} bootstrap iterations per text...")
     boot1 = bootstrap_uber(tokens1, N_BOOT)
@@ -109,9 +108,12 @@ def main():
     report("Text 1 — " + paths[0], tokens1, boot1)
     report("Text 2 — " + paths[1], tokens2, boot2)
 
+    # Difference test. ONE-TAILED: H0 = text 2 is not richer than text 1.
+    # p = share of bootstrap differences <= 0.
+    # -> the order of the two files matters: put the one expected to be richer second.
     obs_diff  = uber_index(tokens2) - uber_index(tokens1)
     boot_diff = boot2 - boot1
-    p_val     = np.mean(boot_diff <= 0)   # one-tailed: H0 = Text2 ≤ Text1
+    p_val     = np.mean(boot_diff <= 0)   # one-tailed: H0 = Text2 <= Text1
 
     print("\n--- Difference (Text 2 − Text 1) ---")
     print(f"  Observed diff : {obs_diff:.4f}")
