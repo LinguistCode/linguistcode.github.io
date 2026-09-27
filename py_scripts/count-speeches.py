@@ -1,5 +1,5 @@
 ### ---------------------
-# Quick sanity check: how many speeches (.txt files) are in a corpus folder?
+# How many speeches (.txt files) are in a corpus folder?
 # Handy after each cleaning pass to make sure no file got lost along the way.
 ### ---------------------
 

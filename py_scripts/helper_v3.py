@@ -1,7 +1,6 @@
 ### ---------------------
 # Small interactive calculator for the stats I keep redoing by hand:
 #   1. relative frequency, 2. Uber index, 3. log-likelihood (G2) + p-value.
-# v3 = v2 + the enTenTen reference corpus (option 5).
 ### ---------------------
 
 import math

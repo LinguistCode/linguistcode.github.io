@@ -11,9 +11,9 @@ import pandas as pd
 # 1. INPUT FILES
 ### ---------------------
 # P1 / P2 / P3 = Bush / Obama / Trump. Keep that order, the JSON keys only say p1/p2/p3.
-file_p1 = r"D:\myFiles\My Documents\Corpus pour calculs\KEYWORD - BUSH - 100.xlsx"
-file_p2 = r"D:\myFiles\My Documents\Corpus pour calculs\KEYWORD - OBAMA - 100.xlsx"
-file_p3 = r"D:\myFiles\My Documents\Corpus pour calculs\KEYWORD - TRUMP - 100.xlsx"
+file_p1 = r"D:\path\KEYWORD - BUSH - 100.xlsx"
+file_p2 = r"D:\path\KEYWORD - OBAMA - 100.xlsx"
+file_p3 = r"D:\path\KEYWORD - TRUMP - 100.xlsx"
 
 # Name of the column holding the keywords in the Sketch Engine export.
 colonne_mots = "Item" 
