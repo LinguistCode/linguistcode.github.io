@@ -843,7 +843,7 @@
       "metaphor"
     ],
     "framework": [
-      "Linguistics"
+      "Corpus Linguistics"
     ],
     "thesis_chapter": [
       "Chapitre 2"
@@ -881,7 +881,8 @@
       "methodology"
     ],
     "framework": [
-      "Corpus Linguistics"
+      "Corpus Linguistics",
+      "Discourse Analysis"
     ],
     "thesis_chapter": [
       "Chapitre 2"
@@ -960,7 +961,8 @@
       "american_political_history"
     ],
     "framework": [
-      "History"
+      "History",
+      "Political Science"
     ],
     "thesis_chapter": [
       "Chapitre 5"
@@ -1067,7 +1069,8 @@
     "citation": "BARBER, Michael, POPE, Jeremy C., 2019b, « Does Party Trump Ideology? Disentangling Party and Ideology in America », <em>American Political Science Review</em> 113, 38‑54.",
     "tags": [
       "conservatism",
-      "ideology"
+      "ideology",
+      "Trump"
     ],
     "framework": [
       "Political Science"
@@ -1113,7 +1116,8 @@
       "semantics"
     ],
     "framework": [
-      "Linguistics"
+      "Linguistics",
+      "Grammar"
     ],
     "thesis_chapter": [
       "Chapitre 2"
@@ -1178,7 +1182,8 @@
       "political_discourse"
     ],
     "framework": [
-      "Linguistics"
+      "Discourse Analysis",
+      "Rhetoric & Argumentation"
     ],
     "thesis_chapter": [
       "Chapitre 5"
@@ -1279,7 +1284,8 @@
       "hyperbole_&_figures"
     ],
     "framework": [
-      "Linguistics"
+      "Linguistics",
+      "Discourse Analysis"
     ],
     "thesis_chapter": [
       "Chapitre 5"
@@ -1386,8 +1392,8 @@
     "pub_year": "2019",
     "item_type": "thesis",
     "publication": "",
-    "publisher": "",
-    "place": "",
+    "publisher": "Vrije Universiteit Amsterdam",
+    "place": "Amsterdam",
     "doi": "",
     "url": "",
     "isbn": "9789463324649",
@@ -1399,7 +1405,8 @@
       "political_discourse"
     ],
     "framework": [
-      "Political Science"
+      "Political Science",
+      "Discourse Analysis"
     ],
     "thesis_chapter": [
       "Chapitre 4"
@@ -1436,7 +1443,7 @@
     "thesis_chapter": [
       "Chapitre 6"
     ],
-    "best_quote": null,
+    "best_quote": "Pour leur part, des gouvernements ont fait un usage plus que suspect de la statistique publique. c’est l’un des motifs de la constitution de collectifs comme les «déchiffreurs de l’éducation» parmi lesquels daniel Blondet et jean-claude émin proposent un article dans ce dossier où ils montrent l’intérêt d’une approche critique des statistiques pour prévenir les usages biaisés.(2014:6)",
     "cover_url": null,
     "related_pubs": []
   },
@@ -1469,7 +1476,7 @@
     "thesis_chapter": [
       "Chapitre 3"
     ],
-    "best_quote": null,
+    "best_quote": "What continues to make epideictic discourse an appealing rhetorical choice for political leaders is that it persuades on deliberative questions without seeming to do so (Bostdorff & Vibbert, 1994; Smith, 1999). Audiences do not typically attend a groundbreaking ceremony or listen to a eulogy with the idea that speakers will attempt to persuade them on a matter of public policy. As a result, listeners’ defenses may be down, making them more open to epideictic rhetoric and the deliberative directions that it supports.(2011:297)",
     "cover_url": null,
     "related_pubs": []
   },
@@ -1501,7 +1508,7 @@
     "thesis_chapter": [
       "Chapitre 6"
     ],
-    "best_quote": null,
+    "best_quote": "Myth, to sum up, is a narrative that answers a need for significance.(2007:178)",
     "cover_url": "https://covers.openlibrary.org/b/isbn/9781139466790-M.jpg?default=false",
     "related_pubs": []
   },
@@ -1530,7 +1537,7 @@
       "populism"
     ],
     "framework": [
-      "Linguistics"
+      "Discourse Analysis"
     ],
     "thesis_chapter": [
       "Chapitre 1",
@@ -1538,7 +1545,7 @@
       "Chapitre 5",
       "Chapitre 6"
     ],
-    "best_quote": null,
+    "best_quote": "Il serait dangereux de ne voir dans l’usage de Twitter qui est fait par le président américain qu’une pratique anecdotique. En effet, Twitter permet d’exacerber le pouvoir majoritaire tout en présentant toutes les formes d’opposition comme illégitimes. Twitter permet aussi au président de passer outre les médias traditionnels et de contourner ainsi le « quatrième pouvoir ». Plus qu’un outil, Twitter est une passerelle qui permet la mutation d’une rhétorique populiste en une pratique politique populiste.(2018:88)",
     "cover_url": null,
     "related_pubs": []
   },
@@ -1558,7 +1565,7 @@
     "doi": "10.4000/lexis.3182",
     "url": "https://doi.org/10.4000/lexis.3182",
     "isbn": "",
-    "abstract": "",
+    "abstract": "It must be noticed that once again, the speaker appeals to pity, evoking the impact on the  future of “everyday Americans” and their families, presenting them as victims of the system. While the argumentative conclusion is different from those mentioned in previous analyses, the rhetoric strategies prove to be similar: the processes of victimization and dramatization aim at eliciting compassion. (2018:15)",
     "citation": "BOURSE, Sarah, 2018, « Conjuring up terror and tears: the evocative and persuasive power of loaded words in the political discourse on drug reform », <em>Lexis</em>.",
     "tags": [
       "emotion_words",
