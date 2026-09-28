@@ -121,7 +121,8 @@
       "political_discourse"
     ],
     "framework": [
-      "Pragmatics"
+      "Pragmatics",
+      "Discourse Analysis"
     ],
     "thesis_chapter": [
       "Chapitre 2"
@@ -288,7 +289,7 @@
       "grammar"
     ],
     "framework": [
-      "Grammar"
+      "Discourse Analysis"
     ],
     "thesis_chapter": [
       "Chapitre 5"
@@ -320,7 +321,8 @@
       "semantics"
     ],
     "framework": [
-      "Linguistics"
+      "Linguistics",
+      "Rhetoric & Argumentation"
     ],
     "thesis_chapter": [
       "Chapitre 1"
@@ -384,7 +386,8 @@
       "manipulation"
     ],
     "framework": [
-      "Philosophy"
+      "Philosophy",
+      "Political Science"
     ],
     "thesis_chapter": [
       "Chapitre 6"
@@ -432,7 +435,8 @@
       "post-truth"
     ],
     "framework": [
-      "Philosophy"
+      "Philosophy",
+      "Political Science"
     ],
     "thesis_chapter": [
       "Chapitre 6"
@@ -481,7 +485,8 @@
       "war_&_violence"
     ],
     "framework": [
-      "Philosophy"
+      "Philosophy",
+      "Political Science"
     ],
     "thesis_chapter": [
       "Chapitre 6"
@@ -578,7 +583,8 @@
       "fear"
     ],
     "framework": [
-      "Philosophy"
+      "Philosophy",
+      "Rhetoric & Argumentation"
     ],
     "thesis_chapter": [
       "Chapitre 2"
@@ -617,8 +623,8 @@
       "rhetorical_proofs"
     ],
     "framework": [
-      "Linguistics",
-      "Rhetoric & Argumentation"
+      "Rhetoric & Argumentation",
+      "Philosophy"
     ],
     "thesis_chapter": [
       "Chapitre 2",
@@ -644,10 +650,10 @@
     ],
     "section": "main",
     "pub_year": "2018",
-    "item_type": "journalArticle",
+    "item_type": "thesis",
     "publication": "",
-    "publisher": "Unpublished",
-    "place": "",
+    "publisher": "Université de Cergy-Pontoise",
+    "place": "Cergy-Pontoise",
     "doi": "10.13140/RG.2.2.26809.83046",
     "url": "https://doi.org/10.13140/RG.2.2.26809.83046",
     "isbn": "",
@@ -13789,6 +13795,38 @@
       "Chapitre 5"
     ],
     "best_quote": "\"From this perspective, foreign policy can be seen as a social and political practice of border building, as it discursively produces differences based on dichotomies such as “inside/outside”, “friend/enemy”, “self/other”, where the identity/alterity nexus operates in the co-constitution and (re)affirmation of social relations between political entities.\" (2023:107)",
+    "cover_url": null,
+    "related_pubs": []
+  },
+  {
+    "citekey": "rewis-letkowskaAnatomyFearInterplay2019",
+    "zotero_key": "",
+    "title": "The anatomy of fear: interplay between metaphor, metonymy and image schema in the conceptualization of fear/strach in English and Polish",
+    "authors": [
+      "Anna Rewiś-Łętkowska"
+    ],
+    "section": "main",
+    "pub_year": "2019",
+    "item_type": "journalArticle",
+    "publication": "Studia Pigoniana",
+    "publisher": "",
+    "place": "",
+    "doi": "10.12775/SP.2019.007",
+    "url": "https://doi.org/10.12775/SP.2019.007",
+    "isbn": "",
+    "abstract": "",
+    "citation": "REWIS-ŁETKOWSKA, Anna, 2019, « The anatomy of fear: interplay between metaphor, metonymy and image schema in the conceptualization of fear/strach in English and Polish », <em>Studia Pigoniana</em> 2, 119.",
+    "tags": [
+      "fear",
+      "metaphor"
+    ],
+    "framework": [
+      "Linguistics"
+    ],
+    "thesis_chapter": [
+      "Chapitre 2"
+    ],
+    "best_quote": null,
     "cover_url": null,
     "related_pubs": []
   },
